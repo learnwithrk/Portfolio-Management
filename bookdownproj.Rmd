@@ -1,0 +1,10 @@
+--- 
+title: "PORTFOLIO MANAGEMENT"
+author: "RAJAKRISHNAN MANIVEL"
+date: "`r Sys.Date()`"
+site: bookdown::bookdown_site
+---
+
+# PG TDC
+
+
