@@ -1,8 +1,17 @@
 book_filename: "bookdownproj"
-output_dir: docs
+output_dir: "docs"
 delete_merged_file: true
-edit: https://github.com/YOUR GITHUB USERNAME/YOUR REPO NAME/edit/main/%s
-view: https://github.com/YOUR GITHUB USERNAME/YOUR REPO NAME/blob/main/%s
+
+rmd_files:
+  - index.Rmd
+  - 02-ch.Rmd
+  - 03-ch.Rmd
+  - 04-ch.Rmd
+  - 05-ch.Rmd
+  - 06-ch.Rmd
+
+edit: https://github.com/learnwithrk/Portfolio-Management/edit/main/%s
+view: https://github.com/learnwithrk/Portfolio-Management/blob/main/%s
 language:
   ui:
     chapter_name: "Chapter "
