@@ -61,7 +61,7 @@ In the Indian regulatory context, the **Securities and Exchange Board of India (
 
 ### Investment vs. Speculation vs. Gambling
 
-
+<div style="overflow-x:auto;">
 ```{r invest-spec-gamble, echo=FALSE}
 comparison <- data.frame(
   Dimension = c("Time Horizon", "Risk Level", "Basis of Decision", "Expected Return",
@@ -82,6 +82,7 @@ kable(comparison,
   kable_styling(bootstrap_options = c("striped", "hover"), full_width = TRUE) %>%
   row_spec(0, bold = TRUE, color = "white", background = "#2c3e50")
 ```
+</div>
 
 *Source: Compiled based on SEBI guidelines and standard finance literature.*
 
@@ -390,6 +391,7 @@ Life insurance in India has evolved from pure risk protection to encompass inves
 - Regular income post-retirement
 - Annuity structure
 
+<div style="overflow-x:auto;">
 ```{r insurance-comparison, echo=FALSE}
 insurance_data <- data.frame(
   Product = c("Term Insurance", "ULIP", "Endowment", "Money Back", "SCSS"),
@@ -406,6 +408,7 @@ kable(insurance_data,
   kable_styling(bootstrap_options = c("striped", "hover"), full_width = TRUE) %>%
   row_spec(0, bold = TRUE, color = "white", background = "#2c3e50")
 ```
+</div>
 
 **Comparison of Insurance-Linked Investment Products**
 
@@ -549,6 +552,8 @@ Real estate has been the most preferred physical asset class among Indian househ
 
 **Forms of Real Estate Investment:**
 
+<div style="overflow-x:auto;">
+
 | Type | Characteristics | Entry Ticket | Liquidity |
 |------|-----------------|--------------|-----------|
 | Residential Property | Rental income + appreciation | ₹20 L–₹5 Cr+ | Very Low |
@@ -556,6 +561,8 @@ Real estate has been the most preferred physical asset class among Indian househ
 | Agricultural Land | Capital appreciation, restrictions | Varies | Very Low |
 | REITs (listed) | Listed trust owning commercial properties | ₹10,000–₹15,000 | High |
 | Real Estate Funds | Mutual fund investing in real estate stocks | ₹500 SIP | High |
+
+</div>
 
 *Source: Compiled from RBI, SEBI, NSE, BSE, AMFI and Government Reports (Latest Available Data).*
 
@@ -594,6 +601,7 @@ Gold occupies a unique position in Indian investment culture — it is simultane
 
 **Forms of Gold Investment in India:**
 
+<div style="overflow-x:auto;">
 ```{r gold-investment-forms, echo=FALSE}
 gold_forms <- data.frame(
   Form = c("Physical Gold (Jewellery)", "Gold Coins/Bars", "Gold ETFs",
@@ -614,6 +622,7 @@ kable(gold_forms,
   kable_styling(bootstrap_options = c("striped", "hover"), font_size = 11, full_width = TRUE) %>%
   row_spec(0, bold = TRUE, color = "white", background = "#2c3e50")
 ```
+</div>
 
 **Gold Investment Options in India (2024)**
 
@@ -921,7 +930,7 @@ During the COVID-19 pandemic (2020–2021), gold prices in India surged from ₹
 
 **1.** Investment is best defined as:
 - (A) Gambling with surplus funds
-- (B) ~~Commitment of present certain value for uncertain future return~~ ← **Correct**
+- (B) Commitment of present certain value for uncertain future return ← **Correct**
 - (C) Speculation in stock markets
 - (D) Depositing money in a savings account
 
