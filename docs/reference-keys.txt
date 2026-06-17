@@ -44,3 +44,14 @@ module-iii
 module-iv
 module-v
 trading-view-practicals
+program1-sma-trend
+objective
+steps
+step-1-go-to-tradingview-and-open-the-chart-section
+step-2-select-an-nse-stock-and-set-the-timeframe
+step-3-open-the-indicators-panel
+step-4-add-the-sma-and-set-the-length-to-50
+step-5-interpret-the-sma-on-the-chart
+trading-rules
+practice-exercise
+key-takeaways

@@ -1,1 +1,84 @@
 # Trading View Practicals
+
+**Program 1: SMA Trend Identification & Dynamic Support/Resistance**
+
+**Objective**
+
+Identify trend direction and find dynamic support/resistance levels using the Simple Moving Average (SMA) — applied here to Indian stock market (NSE/BSE) charts on TradingView.
+
+---
+
+**Steps**
+
+**Step 1: Go to TradingView and Open the Chart Section**
+
+1. Open your browser and navigate to **[tradingview.com](https://www.tradingview.com)**.
+2. Sign in to your account (or create one if you haven't already — it's free).
+3. From the top navigation bar, click on **"Products"** or directly click **"Chart"** to launch the chart workspace.
+4. You'll land on a blank or default chart (often showing a US ticker like AAPL by default) — don't worry, we'll change this to an Indian stock in the next step.
+
+**Step 2: Select an NSE Stock and Set the Timeframe**
+
+1. Click on the **symbol search bar** at the top-left of the chart (it may currently show a default ticker).
+2. Type the stock name — for example, **RELIANCE**.
+3. From the dropdown results, make sure to select the listing tagged **NSE** (National Stock Exchange of India), since TradingView also lists the same company on other exchanges. It should appear as `NSE:RELIANCE`.
+   - Other popular NSE examples you can try: `NSE:TCS`, `NSE:HDFCBANK`, `NSE:INFY`, `NSE:ICICIBANK`, `NSE:SBIN`.
+4. Once selected, the candlestick chart for Reliance Industries will load, denominated in **₹ (INR)**.
+5. Now set the timeframe for long-term investing analysis. Click on the **timeframe selector** in the top toolbar (it usually shows "1D" by default).
+6. Select **1W (1 Week)** from the dropdown, or type `1W` directly into the timeframe box and press Enter.
+7. The chart will now display weekly candles — each candle represents one full week of trading on NSE, which smooths out daily noise and is ideal for long-term trend analysis.
+
+> **Why weekly timeframe for Indian long-term investing?** NSE has frequent intraday volatility, especially around results season, RBI policy announcements, and budget days. A weekly chart filters this noise and reveals the broader trend more reliably for long-term positioning.
+
+**Step 3: Open the Indicators Panel**
+
+1. Look at the top toolbar of the chart and click on **"Indicators"** (it may show as "Indicators" with an `fx` or function-style icon, sometimes abbreviated visually).
+2. A panel titled **"Indicators & Strategies"** will pop up, with a search bar at the top.
+3. In the search box, type **"Simple Moving Average"**.
+4. You'll see one or more matching results in the list (TradingView sometimes shows it twice — once as a standalone built-in indicator, and once under community scripts). Use the **built-in "Moving Average Simple"** — it's the official one maintained by TradingView and is sufficient for this exercise.
+
+**Step 4: Add the SMA and Set the Length to 50**
+
+1. Click on **"Moving Average Simple"** from the search results. It will be added to your chart instantly with a default length (usually 9).
+2. To customize it, click the **gear/settings icon** next to the SMA name in the legend at the top-left of the chart (it appears once the indicator is added), or double-click directly on the SMA line on the chart.
+3. In the settings window that opens, find the **"Length"** field under the **Inputs** tab.
+4. Clear the existing value and type **50**.
+5. Click **OK** to apply.
+6. The chart will now redraw with a 50-period SMA line overlaid on the weekly candles. Since you're on the weekly timeframe, this represents the **50-week SMA** — roughly the average closing price over the last ~50 weeks (about 11–12 months), which is a popular long-term trend filter among Indian long-term investors and positional traders.
+
+**Step 5: Interpret the SMA on the Chart**
+
+Once the SMA 50 is plotted, observe where the current price sits relative to the line:
+
+- **Price Above SMA 50 → Uptrend**: The stock is trading above its 50-week average, suggesting sustained buying interest and a bullish long-term structure. Many Indian portfolio managers use this as a basic "trend filter" before considering fresh long-term buys.
+- **Price Below SMA 50 → Downtrend**: The stock is trading below its 50-week average, signaling weakness or a corrective/bearish phase. This is often used as a caution flag to avoid fresh long-term entries or to review existing holdings.
+- **SMA as Dynamic Support or Resistance**: Unlike a fixed horizontal support/resistance line, the SMA moves with price over time. In an uptrend, the SMA 50 frequently acts as a "floor" where price pulls back to and bounces from. In a downtrend, it often acts as a "ceiling" that price rallies up to and gets rejected from.
+
+---
+
+**Trading Rules**
+
+| Signal | Condition | Action |
+|---|---|---|
+| 🟢 **BUY** | Price approaches the 50 SMA from above and bounces off it (forms a reversal candle near the line) | Consider entering or adding to a long-term position |
+| 🔴 **SELL** | Price approaches the 50 SMA from below and gets rejected (fails to close above it) | Consider booking profits or avoiding fresh entry |
+
+> **Indian market context note:** Apply this technique to liquid, fundamentally sound NSE large-cap or Nifty 50 stocks for long-term investing decisions. For small-cap or low-liquidity stocks, SMA bounces can be less reliable due to erratic price action and lower trading volumes. Always combine this technical signal with basic fundamental checks (sector outlook, quarterly results, promoter holding trends) before making investment decisions — this manual covers a technical tool, not complete investment advice.
+
+---
+
+**Practice Exercise**
+
+1. Open `NSE:TCS` on the weekly timeframe and add a 50 SMA.
+2. Identify whether the stock is currently in an uptrend or downtrend based on price position relative to the SMA.
+3. Scroll back through the last 2–3 years of price history and mark at least two instances where price bounced off the 50 SMA, and one instance where it was rejected by the SMA.
+4. Repeat the exercise for `NSE:HDFCBANK` and compare the trend structure between the two stocks.
+
+**Key Takeaways**
+
+- The 50 SMA on a weekly chart is a simple, widely-used trend filter for long-term investing decisions on NSE-listed stocks.
+- Price position relative to the SMA (above vs. below) gives a quick read on the prevailing trend.
+- The SMA also acts as a dynamic support/resistance zone, offering potential entry (bounce) and exit (rejection) cues.
+- Always combine this with broader market context (Nifty 50 trend, sector performance) before acting on signals from a single stock chart.
+
+---
