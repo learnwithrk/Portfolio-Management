@@ -55,3 +55,7 @@ step-5-interpret-the-sma-on-the-chart
 trading-rules
 practice-exercise
 key-takeaways
+program-1-sma-trend-identification-dynamic-supportresistance
+program2-ema-crossover
+program3-vwap-intraday
+program3b-anchored-vwap

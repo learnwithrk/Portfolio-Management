@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Page not found | PORTFOLIO MANAGEMENT</title>
-  <meta name="description" content="Page not found | PORTFOLIO MANAGEMENT" />
+  <title>Chapter 7 Program 3: VWAP Intraday Trend Strategy | PORTFOLIO MANAGEMENT</title>
+  <meta name="description" content="Chapter 7 Program 3: VWAP Intraday Trend Strategy | PORTFOLIO MANAGEMENT" />
   <meta name="generator" content="bookdown 0.45 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Page not found | PORTFOLIO MANAGEMENT" />
+  <meta property="og:title" content="Chapter 7 Program 3: VWAP Intraday Trend Strategy | PORTFOLIO MANAGEMENT" />
   <meta property="og:type" content="book" />
   
   
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Page not found | PORTFOLIO MANAGEMENT" />
+  <meta name="twitter:title" content="Chapter 7 Program 3: VWAP Intraday Trend Strategy | PORTFOLIO MANAGEMENT" />
   
   
   
@@ -30,8 +30,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-
-
+<link rel="prev" href="trading-view-practicals.html"/>
+<link rel="next" href="program3b-anchored-vwap.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -134,9 +134,9 @@
 <ul>
 <li class="chapter" data-level="6.1" data-path="trading-view-practicals.html"><a href="trading-view-practicals.html#program-1-sma-trend-identification-dynamic-supportresistance"><i class="fa fa-check"></i><b>6.1</b> Program 1: SMA Trend Identification &amp; Dynamic Support/Resistance</a></li>
 <li class="chapter" data-level="6.2" data-path="trading-view-practicals.html"><a href="trading-view-practicals.html#program2-ema-crossover"><i class="fa fa-check"></i><b>6.2</b> Program 2: EMA Crossover Breakout Strategy</a></li>
-<li class="chapter" data-level="6.3" data-path="trading-view-practicals.html"><a href="trading-view-practicals.html#program3-vwap-intraday"><i class="fa fa-check"></i><b>6.3</b> Program 3: VWAP Intraday Trend Strategy</a></li>
-<li class="chapter" data-level="6.4" data-path="trading-view-practicals.html"><a href="trading-view-practicals.html#program3b-anchored-vwap"><i class="fa fa-check"></i><b>6.4</b> Program 3B: Anchored VWAP for Long-Term Investing</a></li>
 </ul></li>
+<li class="chapter" data-level="7" data-path="program3-vwap-intraday.html"><a href="program3-vwap-intraday.html"><i class="fa fa-check"></i><b>7</b> Program 3: VWAP Intraday Trend Strategy</a></li>
+<li class="chapter" data-level="8" data-path="program3b-anchored-vwap.html"><a href="program3b-anchored-vwap.html"><i class="fa fa-check"></i><b>8</b> Program 3B: Anchored VWAP for Long-Term Investing</a></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
 </ul>
@@ -156,19 +156,107 @@
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="page-not-found" class="section level1">
-<h1>Page not found</h1>
-<p>The page you requested cannot be found (perhaps it was moved or renamed).</p>
-<p>You may want to try searching to find the page's new location, or use
-the table of contents to find the page you are looking for.</p>
+<div id="program3-vwap-intraday" class="section level1 hasAnchor" number="7">
+<h1><span class="header-section-number">Chapter 7</span> Program 3: VWAP Intraday Trend Strategy<a href="program3-vwap-intraday.html#program3-vwap-intraday" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p><strong>Objective</strong></p>
+<p>To trade intraday using the Volume-Weighted Average Price (VWAP) on Indian stock market (NSE) charts on TradingView.</p>
+<blockquote>
+<p><strong>Important context shift:</strong> Unlike Programs 1 and 2, which used weekly charts for long-term trend analysis, this strategy is <strong>intraday</strong> — meaning all trading activity happens and is squared off within the same trading session. On NSE, the cash market trading session runs from <strong>9:15 AM to 3:30 PM IST</strong>. If you place an intraday order (commonly labeled <strong>MIS</strong> — Margin Intraday Square-off — with most Indian brokers like Zerodha, Upstox, or Groww), it will be automatically closed out by the broker shortly before market close if you haven’t exited manually, typically around <strong>3:15–3:20 PM IST</strong>. VWAP resets fresh at the start of every new trading day and is not meant to be analyzed across multiple days like the SMA/EMA in earlier programs.</p>
+</blockquote>
+<hr />
+<p><strong>Steps</strong></p>
+<p><strong>Step 1: Set the Timeframe to 5 Minutes</strong></p>
+<ol style="list-style-type: decimal">
+<li>With your NSE stock chart open, click on the <strong>timeframe selector</strong> in the top toolbar (it may currently show “1D”, “1W”, or whatever was last used).</li>
+<li>Select <strong>5m (5 Minutes)</strong> from the dropdown, or type <code>5</code> directly into the timeframe box and press Enter.</li>
+<li>The chart will now display 5-minute candles — each candle represents 5 minutes of trading activity within the NSE session. This shorter timeframe is essential for intraday strategies, as it captures the granular price-volume action needed for VWAP analysis.</li>
+</ol>
+<p><strong>Step 2: Open the Indicators Panel</strong></p>
+<ol style="list-style-type: decimal">
+<li>Click on <strong>“Indicators”</strong> in the top toolbar (shown with the <code>fx</code>-style icon).</li>
+<li>The <strong>“Indicators &amp; Strategies”</strong> search panel will open with a search bar at the top.</li>
+</ol>
+<p><strong>Step 3: Search and Add “VWAP”</strong></p>
+<ol style="list-style-type: decimal">
+<li>In the search box, type <strong>VWAP</strong>.</li>
+<li>From the results, select the <strong>built-in “VWAP”</strong> indicator (officially maintained by TradingView).</li>
+<li>Click on it once to add it directly to your chart — no length or period setting is required, since VWAP is a session-based (intraday-anchored) indicator by default and recalculates automatically from the start of each trading session.</li>
+</ol>
+<p><strong>Step 4: VWAP Added to the Chart</strong></p>
+<ol style="list-style-type: decimal">
+<li>The VWAP line will now appear overlaid on your 5-minute candlestick chart.</li>
+<li>Notice that the VWAP line starts fresh each trading day from the <strong>9:15 AM</strong> opening candle and builds up through the session as more price and volume data accumulates — it does not carry over from the previous day.</li>
+<li>As the day progresses, observe how price weaves above and below this line, and how the line itself smooths out compared to the choppier candle action.</li>
+</ol>
+<p><strong>Interpretation</strong></p>
+<table>
+<colgroup>
+<col width="33%" />
+<col width="33%" />
+<col width="33%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Observation</th>
+<th>Visual Cue</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>🟢 <strong>Price Above VWAP</strong></td>
+<td>Candles trading above the VWAP line</td>
+<td>Indicates <strong>institutional buying</strong> — large players (FIIs, DIIs, mutual funds) are likely accumulating at or above this average price, a bullish intraday signal</td>
+</tr>
+<tr class="even">
+<td>🔴 <strong>Price Below VWAP</strong></td>
+<td>Candles trading below the VWAP line</td>
+<td>Indicates <strong>selling pressure</strong> — large sell orders are weighing on price below the session average, a bearish intraday signal</td>
+</tr>
+<tr class="odd">
+<td>⚫ <strong>VWAP as Intraday Support/Resistance</strong></td>
+<td>Price repeatedly touching and reacting to the VWAP line</td>
+<td>The VWAP line itself often behaves like a dynamic support (in an uptrending session) or resistance (in a downtrending session) level through the day</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><strong>Why VWAP matters in the Indian intraday context:</strong> Institutional desks, mutual funds, and FII/DII trading desks frequently use VWAP as a benchmark to evaluate whether their own large block orders on NSE are executing at favorable prices. Because of this, VWAP tends to act as a genuine “fair value” reference point during the day — retail intraday traders watch it for the same reason, making it a self-reinforcing level.</p>
+</blockquote>
+<p><strong>Trading Rule</strong></p>
+<ul>
+<li>🟢 <strong>BUY</strong>: Enter when price <strong>pulls back to the VWAP line and reverses upward</strong> — i.e., the stock dips down to touch or approach VWAP during an otherwise uptrending session, forms a reversal candle (such as a bullish engulfing or hammer-like candle), and resumes its move higher. This suggests the pullback found support at the institutional average price level.</li>
+<li>🔴 <strong>AVOID / EXIT</strong>: If price breaks decisively below VWAP and stays below it, treat this as a loss of intraday bullish momentum — consider exiting existing long positions rather than holding through the session.</li>
+</ul>
+<p><strong>A Note on Risk Management for Indian Intraday Trading</strong></p>
+<ul>
+<li>Since this is an intraday (MIS) strategy, always set a <strong>stop-loss</strong> below recent swing lows or a fixed percentage of capital risk per trade — NSE intraday volatility (especially around results, RBI announcements, or global cues like US Fed decisions) can move prices sharply within minutes.</li>
+<li>Be mindful of <strong>margin and leverage rules</strong> set by SEBI and your broker for intraday (MIS) trades — leverage amounts vary by stock and broker, and positions must be squared off within the same session or they may be auto-closed by your broker’s risk management system (RMS), sometimes at unfavorable prices.</li>
+<li>Avoid taking fresh intraday VWAP trades in the <strong>first 5–10 minutes after market open (9:15–9:25 AM)</strong>, as this period often sees erratic price discovery before VWAP becomes a meaningful reference.</li>
+</ul>
+<p><strong>Practice Exercise</strong></p>
+<ol style="list-style-type: decimal">
+<li>Open <code>NSE:HDFCBANK</code> on the 5-minute timeframe during a live trading session (9:15 AM – 3:30 PM IST) and add the VWAP indicator.</li>
+<li>Track the stock for at least one hour and note every instance where price touches the VWAP line.</li>
+<li>Identify whether each touch resulted in a bounce (continuation of trend) or a breakdown (trend reversal).</li>
+<li>Repeat this observation on a different day with <code>NSE:TCS</code> and compare how VWAP behaves on a relatively calmer IT stock versus a more news-sensitive banking stock.</li>
+</ol>
+<p><strong>Key Takeaways</strong></p>
+<ul>
+<li>VWAP is a session-based intraday indicator that resets daily and reflects the true volume-weighted average price paid by all market participants during that NSE trading session.</li>
+<li>Price position relative to VWAP gives a quick read on whether institutional money is net buying or net selling during the day.</li>
+<li>VWAP pullback-and-reversal setups offer disciplined intraday entry points, but always pair them with a stop-loss given the leveraged nature of intraday trading.</li>
+<li>This strategy is best suited to liquid, high-volume NSE large-cap stocks; thinly traded stocks can produce unreliable VWAP signals due to inconsistent volume.</li>
+</ul>
+<hr />
 </div>
             </section>
 
           </div>
         </div>
       </div>
-
-
+<a href="trading-view-practicals.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="program3b-anchored-vwap.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -199,7 +287,7 @@ gitbook.start({
     "size": 2
   },
   "edit": {
-    "link": "https://github.com/learnwithrk/Portfolio-Management/edit/main/%s",
+    "link": "https://github.com/learnwithrk/Portfolio-Management/edit/main/06-ch.Rmd",
     "text": "Edit"
   },
   "history": {
@@ -207,7 +295,7 @@ gitbook.start({
     "text": null
   },
   "view": {
-    "link": "https://github.com/learnwithrk/Portfolio-Management/blob/main/%s",
+    "link": "https://github.com/learnwithrk/Portfolio-Management/blob/main/06-ch.Rmd",
     "text": null
   },
   "download": null,
