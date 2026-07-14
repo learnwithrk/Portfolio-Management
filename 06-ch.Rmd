@@ -334,3 +334,82 @@ This chapter works well alongside the tools from Programs 1 and 2:
 - AVWAP works best as a complementary tool alongside SMA/EMA trend analysis, since it adds a volume dimension that simple moving averages do not account for.
 
 ---
+
+## Program 4: MACD Momentum Strategy {#program4-macd-momentum}
+
+*Objective*
+
+To identify trend strength and potential reversals using the Moving Average Convergence Divergence (MACD) indicator — applied to Indian stock market (NSE/BSE) charts on TradingView for long-term investing decisions.
+
+
+> **What makes MACD different from Programs 1 and 2?** SMA and EMA are plotted directly on the price chart as overlays. MACD, by contrast, is an **oscillator** — it appears in a separate panel below the main price chart and measures the relationship between two EMAs (typically 12 and 26 period) along with a signal line and a histogram. This makes it especially useful for spotting **momentum shifts and divergences** that price-only overlays can miss.
+
+*Steps*
+
+*Step 1: Go to TradingView and Open Your Stock Chart*
+
+1. Open your browser and navigate to **[tradingview.com](https://www.tradingview.com)**.
+2. Sign in to your account.
+3. Search for and select your NSE stock — for example, type **RELIANCE** in the symbol search bar and choose the listing tagged **NSE** (it should appear as `NSE:RELIANCE`).
+4. Set the timeframe to **1W (1 Week)** using the timeframe selector in the top toolbar, so the chart displays weekly candles suitable for long-term analysis.
+
+*Step 2: Open the Indicators Panel*
+
+1. Click on **"Indicators"** in the top toolbar of the chart (shown with the `fx`-style icon).
+2. The **"Indicators & Strategies"** search panel will open.
+
+*Step 3: Search and Add MACD*
+
+1. In the search box, type **MACD**.
+2. From the results list, select the **built-in "MACD" (Moving Average Convergence Divergence)** indicator — the official one maintained by TradingView.
+3. Click on it once to add it to your chart. By default it uses the standard settings: a **12-period EMA**, a **26-period EMA**, and a **9-period signal line** — these defaults work well for weekly NSE stock analysis and generally don't need to be changed for this exercise.
+
+*Step 4: MACD Added Below the Chart*
+
+1. Unlike SMA/EMA, the MACD indicator does **not** sit on top of the price candles. Instead, it opens in a **separate panel directly below your main chart**.
+2. In this panel, you'll see three components:
+   - **MACD Line** (typically blue) — the difference between the 12-period and 26-period EMA.
+   - **Signal Line** (typically orange/red) — a 9-period EMA of the MACD line itself, used to generate crossover signals.
+   - **Histogram** (vertical bars, usually green/red) — visually represents the gap between the MACD line and the signal line; taller bars indicate stronger momentum in that direction.
+3. You'll also notice a **horizontal zero line** running through the middle of this panel — this is a key reference level used in the trading rule below.
+
+*Interpretation*
+
+| Signal | Visual Cue | Meaning |
+|---|---|---|
+| 🟢 **MACD Line Crossing Above Signal Line** | Blue line crosses upward over the orange/red signal line | **Buy** signal — momentum is turning positive |
+| 🔴 **MACD Line Crossing Below Signal Line** | Blue line crosses downward below the orange/red signal line | **Sell** signal — momentum is turning negative |
+| 🔵 **Divergence** | Price makes a new high/low on the main chart, but MACD fails to make a corresponding new high/low | **Reversal Signal** — momentum is weakening even though price is still extending, often an early warning of a trend change |
+
+> **Understanding Divergence in the Indian context:** Divergence is one of the most valuable uses of MACD for long-term NSE investors. For example, if a stock like `NSE:HDFCBANK` makes a new 52-week high but the MACD line makes a *lower* high compared to its previous peak, this is called **bearish divergence** — it suggests the rally is losing underlying momentum even though price looks strong, often preceding a correction. The reverse (price making a lower low while MACD makes a higher low) is **bullish divergence**, often seen near the end of prolonged corrections in quality stocks.
+
+*Trading Rule*
+
+- 🟢 **BUY**: Enter when there is a **MACD crossover above the zero line** — meaning the MACD line not only crosses above the signal line, but the crossover itself occurs while the MACD line is in positive territory (above the zero line on the panel). This combination signals that momentum has turned bullish **and** is strong enough to be in positive territory, filtering out weaker crossover signals that happen deep in negative territory during a still-strong downtrend.
+
+> **Why the zero line matters:** A crossover that happens *below* the zero line, while it can still mark a momentum shift, often happens during weak, range-bound, or recovering downtrends and tends to be less reliable for committing fresh long-term capital. Waiting for the crossover to occur above the zero line adds a layer of trend confirmation, similar in spirit to combining EMA crossovers with price position in Program 2.
+
+*Combining With Earlier Programs*
+
+MACD works well as a complementary momentum check alongside the trend tools from Programs 1 and 2:
+
+- Use **SMA 50** (Program 1) to confirm the stock is in a broad uptrend (price above the SMA).
+- Use **EMA 20/50 crossover** (Program 2) to confirm short-term momentum aligns with the long-term trend.
+- Use **MACD** (this chapter) as a final momentum and divergence check — particularly useful for catching early warning signs of trend exhaustion in stocks that otherwise look strong on the SMA/EMA overlays alone.
+
+*Practice Exercise*
+
+1. Open `NSE:TCS` on the Weekly timeframe and add the MACD indicator with default settings.
+2. Scroll through the last 2–3 years of price history and identify at least two MACD crossovers that occurred above the zero line, and one that occurred below it.
+3. Compare how price behaved after each type of crossover — did the above-zero-line crossovers tend to lead to stronger, more sustained moves?
+4. Look for any instance of bullish or bearish divergence between price and the MACD line on this chart, and note what happened to price in the weeks following that divergence.
+5. Repeat with `NSE:ICICIBANK` and compare the frequency and reliability of MACD signals between a banking stock and an IT stock.
+
+*Key Takeaways*
+
+- MACD is a momentum oscillator that sits below the price chart and tracks the relationship between a fast and slow EMA, helping identify both trend strength and early signs of reversal.
+- MACD line crossovers above/below the signal line generate basic buy/sell signals, while divergence between price and MACD often provides earlier warning of a weakening trend than price action alone.
+- Requiring the crossover to occur above the zero line adds a useful filter, helping long-term investors avoid weaker signals that occur during shaky or recovering downtrends.
+- MACD is most effective when used alongside trend-confirmation tools like SMA and EMA (Programs 1 and 2) rather than in isolation, especially for long-term investing decisions on NSE stocks.
+
+---

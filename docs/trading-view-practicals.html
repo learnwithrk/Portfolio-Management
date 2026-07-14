@@ -23,7 +23,7 @@
 <meta name="author" content="RAJAKRISHNAN MANIVEL" />
 
 
-<meta name="date" content="2026-06-20" />
+<meta name="date" content="2026-07-14" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -52,6 +52,10 @@
 <link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
 <link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
 <script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+<script src="libs/kePrint-0.0.1/kePrint.js"></script>
+<link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
+<link href="libs/bsTable-3.3.7/bootstrapTable.min.css" rel="stylesheet" />
+<script src="libs/bsTable-3.3.7/bootstrapTable.js"></script>
 
 
 
@@ -136,6 +140,7 @@
 <li class="chapter" data-level="6.2" data-path="trading-view-practicals.html"><a href="trading-view-practicals.html#program2-ema-crossover"><i class="fa fa-check"></i><b>6.2</b> Program 2: EMA Crossover Breakout Strategy</a></li>
 <li class="chapter" data-level="6.3" data-path="trading-view-practicals.html"><a href="trading-view-practicals.html#program3-vwap-intraday"><i class="fa fa-check"></i><b>6.3</b> Program 3: VWAP Intraday Trend Strategy</a></li>
 <li class="chapter" data-level="6.4" data-path="trading-view-practicals.html"><a href="trading-view-practicals.html#program3b-anchored-vwap"><i class="fa fa-check"></i><b>6.4</b> Program 3B: Anchored VWAP for Long-Term Investing</a></li>
+<li class="chapter" data-level="6.5" data-path="trading-view-practicals.html"><a href="trading-view-practicals.html#program4-macd-momentum"><i class="fa fa-check"></i><b>6.5</b> Program 4: MACD Momentum Strategy</a></li>
 </ul></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
@@ -565,6 +570,109 @@
 <li>AVWAP works best as a complementary tool alongside SMA/EMA trend analysis, since it adds a volume dimension that simple moving averages do not account for.</li>
 </ul>
 <hr />
+</div>
+<div id="program4-macd-momentum" class="section level2 hasAnchor" number="6.5">
+<h2><span class="header-section-number">6.5</span> Program 4: MACD Momentum Strategy<a href="trading-view-practicals.html#program4-macd-momentum" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p><em>Objective</em></p>
+<p>To identify trend strength and potential reversals using the Moving Average Convergence Divergence (MACD) indicator — applied to Indian stock market (NSE/BSE) charts on TradingView for long-term investing decisions.</p>
+<blockquote>
+<p><strong>What makes MACD different from Programs 1 and 2?</strong> SMA and EMA are plotted directly on the price chart as overlays. MACD, by contrast, is an <strong>oscillator</strong> — it appears in a separate panel below the main price chart and measures the relationship between two EMAs (typically 12 and 26 period) along with a signal line and a histogram. This makes it especially useful for spotting <strong>momentum shifts and divergences</strong> that price-only overlays can miss.</p>
+</blockquote>
+<p><em>Steps</em></p>
+<p><em>Step 1: Go to TradingView and Open Your Stock Chart</em></p>
+<ol style="list-style-type: decimal">
+<li>Open your browser and navigate to <strong><a href="https://www.tradingview.com">tradingview.com</a></strong>.</li>
+<li>Sign in to your account.</li>
+<li>Search for and select your NSE stock — for example, type <strong>RELIANCE</strong> in the symbol search bar and choose the listing tagged <strong>NSE</strong> (it should appear as <code>NSE:RELIANCE</code>).</li>
+<li>Set the timeframe to <strong>1W (1 Week)</strong> using the timeframe selector in the top toolbar, so the chart displays weekly candles suitable for long-term analysis.</li>
+</ol>
+<p><em>Step 2: Open the Indicators Panel</em></p>
+<ol style="list-style-type: decimal">
+<li>Click on <strong>“Indicators”</strong> in the top toolbar of the chart (shown with the <code>fx</code>-style icon).</li>
+<li>The <strong>“Indicators &amp; Strategies”</strong> search panel will open.</li>
+</ol>
+<p><em>Step 3: Search and Add MACD</em></p>
+<ol style="list-style-type: decimal">
+<li>In the search box, type <strong>MACD</strong>.</li>
+<li>From the results list, select the <strong>built-in “MACD” (Moving Average Convergence Divergence)</strong> indicator — the official one maintained by TradingView.</li>
+<li>Click on it once to add it to your chart. By default it uses the standard settings: a <strong>12-period EMA</strong>, a <strong>26-period EMA</strong>, and a <strong>9-period signal line</strong> — these defaults work well for weekly NSE stock analysis and generally don’t need to be changed for this exercise.</li>
+</ol>
+<p><em>Step 4: MACD Added Below the Chart</em></p>
+<ol style="list-style-type: decimal">
+<li>Unlike SMA/EMA, the MACD indicator does <strong>not</strong> sit on top of the price candles. Instead, it opens in a <strong>separate panel directly below your main chart</strong>.</li>
+<li>In this panel, you’ll see three components:
+<ul>
+<li><strong>MACD Line</strong> (typically blue) — the difference between the 12-period and 26-period EMA.</li>
+<li><strong>Signal Line</strong> (typically orange/red) — a 9-period EMA of the MACD line itself, used to generate crossover signals.</li>
+<li><strong>Histogram</strong> (vertical bars, usually green/red) — visually represents the gap between the MACD line and the signal line; taller bars indicate stronger momentum in that direction.</li>
+</ul></li>
+<li>You’ll also notice a <strong>horizontal zero line</strong> running through the middle of this panel — this is a key reference level used in the trading rule below.</li>
+</ol>
+<p><em>Interpretation</em></p>
+<table>
+<colgroup>
+<col width="33%" />
+<col width="33%" />
+<col width="33%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Signal</th>
+<th>Visual Cue</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>🟢 <strong>MACD Line Crossing Above Signal Line</strong></td>
+<td>Blue line crosses upward over the orange/red signal line</td>
+<td><strong>Buy</strong> signal — momentum is turning positive</td>
+</tr>
+<tr class="even">
+<td>🔴 <strong>MACD Line Crossing Below Signal Line</strong></td>
+<td>Blue line crosses downward below the orange/red signal line</td>
+<td><strong>Sell</strong> signal — momentum is turning negative</td>
+</tr>
+<tr class="odd">
+<td>🔵 <strong>Divergence</strong></td>
+<td>Price makes a new high/low on the main chart, but MACD fails to make a corresponding new high/low</td>
+<td><strong>Reversal Signal</strong> — momentum is weakening even though price is still extending, often an early warning of a trend change</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><strong>Understanding Divergence in the Indian context:</strong> Divergence is one of the most valuable uses of MACD for long-term NSE investors. For example, if a stock like <code>NSE:HDFCBANK</code> makes a new 52-week high but the MACD line makes a <em>lower</em> high compared to its previous peak, this is called <strong>bearish divergence</strong> — it suggests the rally is losing underlying momentum even though price looks strong, often preceding a correction. The reverse (price making a lower low while MACD makes a higher low) is <strong>bullish divergence</strong>, often seen near the end of prolonged corrections in quality stocks.</p>
+</blockquote>
+<p><em>Trading Rule</em></p>
+<ul>
+<li>🟢 <strong>BUY</strong>: Enter when there is a <strong>MACD crossover above the zero line</strong> — meaning the MACD line not only crosses above the signal line, but the crossover itself occurs while the MACD line is in positive territory (above the zero line on the panel). This combination signals that momentum has turned bullish <strong>and</strong> is strong enough to be in positive territory, filtering out weaker crossover signals that happen deep in negative territory during a still-strong downtrend.</li>
+</ul>
+<blockquote>
+<p><strong>Why the zero line matters:</strong> A crossover that happens <em>below</em> the zero line, while it can still mark a momentum shift, often happens during weak, range-bound, or recovering downtrends and tends to be less reliable for committing fresh long-term capital. Waiting for the crossover to occur above the zero line adds a layer of trend confirmation, similar in spirit to combining EMA crossovers with price position in Program 2.</p>
+</blockquote>
+<p><em>Combining With Earlier Programs</em></p>
+<p>MACD works well as a complementary momentum check alongside the trend tools from Programs 1 and 2:</p>
+<ul>
+<li>Use <strong>SMA 50</strong> (Program 1) to confirm the stock is in a broad uptrend (price above the SMA).</li>
+<li>Use <strong>EMA 20/50 crossover</strong> (Program 2) to confirm short-term momentum aligns with the long-term trend.</li>
+<li>Use <strong>MACD</strong> (this chapter) as a final momentum and divergence check — particularly useful for catching early warning signs of trend exhaustion in stocks that otherwise look strong on the SMA/EMA overlays alone.</li>
+</ul>
+<p><em>Practice Exercise</em></p>
+<ol style="list-style-type: decimal">
+<li>Open <code>NSE:TCS</code> on the Weekly timeframe and add the MACD indicator with default settings.</li>
+<li>Scroll through the last 2–3 years of price history and identify at least two MACD crossovers that occurred above the zero line, and one that occurred below it.</li>
+<li>Compare how price behaved after each type of crossover — did the above-zero-line crossovers tend to lead to stronger, more sustained moves?</li>
+<li>Look for any instance of bullish or bearish divergence between price and the MACD line on this chart, and note what happened to price in the weeks following that divergence.</li>
+<li>Repeat with <code>NSE:ICICIBANK</code> and compare the frequency and reliability of MACD signals between a banking stock and an IT stock.</li>
+</ol>
+<p><em>Key Takeaways</em></p>
+<ul>
+<li>MACD is a momentum oscillator that sits below the price chart and tracks the relationship between a fast and slow EMA, helping identify both trend strength and early signs of reversal.</li>
+<li>MACD line crossovers above/below the signal line generate basic buy/sell signals, while divergence between price and MACD often provides earlier warning of a weakening trend than price action alone.</li>
+<li>Requiring the crossover to occur above the zero line adds a useful filter, helping long-term investors avoid weaker signals that occur during shaky or recovering downtrends.</li>
+<li>MACD is most effective when used alongside trend-confirmation tools like SMA and EMA (Programs 1 and 2) rather than in isolation, especially for long-term investing decisions on NSE stocks.</li>
+</ul>
+<hr />
 
 </div>
 </div>
@@ -628,6 +736,20 @@ gitbook.start({
 });
 </script>
 
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
 </body>
 
 </html>
