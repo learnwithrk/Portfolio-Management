@@ -141,7 +141,7 @@ Fundamental analysis involves **evaluating a security's intrinsic value** by exa
 
 **Top-Down Approach:**
 
-```{mermaid}
+::: {.mermaid}
 flowchart TD
     A[Fundamental Analysis] --> B[Step 1: Economic Analysis]
     B --> C[Step 2: Industry Analysis]
@@ -240,7 +240,7 @@ India's forex reserves reached **$650 billion+ (2024)**, providing currency stab
 
 Michael Porter's Five Forces framework is the gold standard for **industry attractiveness analysis**:
 
-```{mermaid}
+::: {.mermaid}
 flowchart TD
     C[Competitive Rivalry\nHigh → Low returns] 
     A[Bargaining Power of Suppliers] -->|Input costs| C
