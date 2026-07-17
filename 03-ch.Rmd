@@ -1,1 +1,661 @@
-# Module III
+# Fundamental Analysis {#unit3}
+
+---
+
+::: {.learning-objectives}
+**Learning Objectives**
+
+After completing this unit, students will be able to:
+
+1. Differentiate between systematic and unsystematic risk, and measure both
+2. Perform top-down economic analysis using macroeconomic indicators relevant to India
+3. Conduct industry analysis using Porter's Five Forces and the industry life cycle model
+4. Evaluate companies through business model analysis and governance assessment
+5. Calculate and interpret key investor ratios including EPS, P/E, PEG, ROE, ROCE, and Debt-Equity Ratio
+6. Apply fundamental analysis to real Indian companies listed on NSE and BSE
+:::
+
+---
+
+## Risk and Return — Foundations {#risk-return}
+
+### The Risk-Return Relationship
+
+The most fundamental principle in finance is the **positive relationship between risk and expected return**. Rational investors demand higher compensation for accepting greater uncertainty. This is captured formally in:
+
+$$E(R_i) = R_f + \beta_i [E(R_m) - R_f]$$
+
+Where:
+- $E(R_i)$ = Expected return on security i
+- $R_f$ = Risk-free rate (India: 91-day T-bill rate ≈ 6.8%)
+- $\beta_i$ = Beta of security (systematic risk measure)
+- $E(R_m)$ = Expected market return (Nifty 50 historical CAGR ≈ 12%)
+- $[E(R_m) - R_f]$ = Market risk premium (≈ 5–6% in India)
+
+### Measuring Return
+
+**A. Holding Period Return (HPR):**
+$$HPR = \frac{(P_1 - P_0) + D}{P_0} \times 100$$
+
+**B. Annualised Return (CAGR):**
+$$CAGR = \left(\frac{P_n}{P_0}\right)^{1/n} - 1$$
+
+**C. Arithmetic Mean Return:**
+$$\bar{R} = \frac{R_1 + R_2 + \cdots + R_n}{n}$$
+
+**Example 3.1:** Infosys stock data for 2019–2023:
+
+```{r infosys-return, echo=TRUE}
+years <- 2019:2023
+prices <- c(715, 950, 1750, 1480, 1415)  # Approximate Dec closing prices
+dividends <- c(32, 27, 30, 34, 36)        # Annual dividends ₹
+
+returns <- numeric(length(prices) - 1)
+for (i in 2:length(prices)) {
+  returns[i-1] <- ((prices[i] - prices[i-1]) + dividends[i-1]) / prices[i-1] * 100
+}
+
+cat("Annual Returns (Infosys):\n")
+for(i in 1:length(returns)) cat(years[i+1], ":", round(returns[i], 2), "%\n")
+cat("\nMean Annual Return:", round(mean(returns), 2), "%\n")
+cat("Std Deviation (Risk):", round(sd(returns), 2), "%\n")
+cat("CAGR:", round(((prices[5]/prices[1])^(1/4)-1)*100, 2), "% p.a.\n")
+```
+
+### Types of Risk
+
+Investment risk is classically divided into two components:
+
+$$\text{Total Risk} = \text{Systematic Risk} + \text{Unsystematic Risk}$$
+
+**A. Systematic Risk (Market Risk)**
+
+Systematic risk affects **all securities** in the market and **cannot be diversified away**. It arises from macroeconomic forces that impact the entire economy.
+
+**Sources of Systematic Risk:**
+1. **Interest Rate Risk** — RBI repo rate changes affect all bond and stock valuations
+2. **Inflation Risk** — Rising CPI erodes real returns from fixed-income instruments
+3. **Market Risk** — Broad market crashes (2008, 2020 COVID crash)
+4. **Political Risk** — Government policy changes, elections, geopolitical events
+5. **Exchange Rate Risk** — INR/USD movements affect IT companies, importers, exporters
+6. **Reinvestment Risk** — Risk that coupons are reinvested at lower rates
+
+**Measurement: Beta (β)**
+$$\beta_i = \frac{Cov(R_i, R_m)}{Var(R_m)} = \frac{\sigma_{im}}{\sigma_m^2}$$
+
+| Beta Value | Interpretation | Example (Indian Stocks) |
+|-----------|----------------|------------------------|
+| β = 0 | No market risk | Government T-Bills |
+| 0 < β < 1 | Less volatile than market | ITC, HUL, TCS |
+| β = 1 | Moves with market | Nifty 50 ETF |
+| β > 1 | More volatile than market | Adani Enterprises, Zomato |
+| β < 0 | Moves opposite to market | Gold (negative correlation) |
+
+**B. Unsystematic Risk (Company/Industry-Specific Risk)**
+
+Unsystematic risk affects **only specific companies or industries** and **can be eliminated through diversification**.
+
+**Sources:**
+1. **Business Risk** — Operational issues, product failure, management changes
+2. **Financial Risk** — High leverage, liquidity crisis (IL&FS default, 2018)
+3. **Regulatory Risk** — SEBI investigations, TRAI rulings, environmental penalties
+4. **Competitive Risk** — Market share loss to competitors (Jio disrupting telecom)
+5. **Technology Risk** — Obsolescence of products/services
+
+```{r risk-diversification, echo=TRUE, fig.cap="Figure 3.1: Diversification and Risk Reduction"}
+# Simulate risk reduction through diversification
+n_stocks <- 1:30
+total_risk <- 25 / n_stocks + 8  # Systematic = 8%, unsystematic decreasing
+systematic_risk <- rep(8, 30)
+
+plot_risk <- data.frame(
+  Stocks = n_stocks,
+  Total_Risk = total_risk,
+  Systematic = systematic_risk
+)
+
+ggplot(plot_risk, aes(x = Stocks)) +
+  geom_line(aes(y = Total_Risk, color = "Total Portfolio Risk"), size = 1.5) +
+  geom_line(aes(y = Systematic, color = "Systematic Risk (Irreducible)"),
+            linetype = "dashed", size = 1.2) +
+  geom_ribbon(aes(ymin = Systematic, ymax = Total_Risk, fill = "Unsystematic Risk"),
+              alpha = 0.3) +
+  scale_color_manual(values = c("Total Portfolio Risk" = "#2980b9",
+                                 "Systematic Risk (Irreducible)" = "#c0392b")) +
+  scale_fill_manual(values = c("Unsystematic Risk" = "#f39c12")) +
+  labs(title = "Risk Reduction through Diversification",
+       subtitle = "Beyond 15–20 stocks, additional diversification adds little benefit",
+       x = "Number of Stocks in Portfolio", y = "Portfolio Risk (% Std Dev)",
+       color = "", fill = "") +
+  theme_minimal(base_size = 13) +
+  theme(legend.position = "bottom")
+```
+
+*Figure 3.1: Diversification and Risk Reduction*
+
+---
+
+## Fundamental Analysis — Framework {#fundamental-analysis}
+
+Fundamental analysis involves **evaluating a security's intrinsic value** by examining the underlying economic, industry, and company-level factors. The objective is to identify **undervalued or overvalued securities** in the market.
+
+**Top-Down Approach:**
+
+```{mermaid}
+flowchart TD
+    A[Fundamental Analysis] --> B[Step 1: Economic Analysis]
+    B --> C[Step 2: Industry Analysis]
+    C --> D[Step 3: Company Analysis]
+    D --> E[Step 4: Financial Analysis]
+    E --> F[Investment Decision]
+    F --> G{Intrinsic Value vs Market Price}
+    G -->|IV > Price| H[BUY]
+    G -->|IV < Price| I[SELL / AVOID]
+    G -->|IV ≈ Price| J[HOLD]
+    style A fill:#2c3e50,color:#fff
+    style H fill:#27ae60,color:#fff
+    style I fill:#c0392b,color:#fff
+    style J fill:#f39c12,color:#fff
+```
+
+*Figure 3.2: Top-Down Fundamental Analysis Framework*
+
+---
+
+## Economic Analysis {#economic-analysis}
+
+### Key Macroeconomic Indicators for Indian Investors
+
+**A. Gross Domestic Product (GDP)**
+
+GDP growth signals corporate earnings expansion. India's GDP growth trend:
+
+```{r gdp-trend, echo=FALSE, fig.cap="Figure 3.3: India GDP Growth Rate (2016–2026)"}
+gdp_data <- data.frame(
+  Year = 2016:2026,
+  GDP_Growth = c(8.3, 6.8, 6.5, 6.1, 4.0, -6.6, 8.7, 7.2, 7.6, 6.5, 6.8)
+)
+
+ggplot(gdp_data, aes(x = Year, y = GDP_Growth)) +
+  geom_col(aes(fill = GDP_Growth > 0), alpha = 0.85) +
+  geom_line(aes(group = 1), color = "#2c3e50", size = 1.3) +
+  geom_point(size = 2.5, color = "#2c3e50") +
+  geom_hline(yintercept = 0, color = "black", size = 0.5) +
+  scale_fill_manual(values = c("TRUE" = "#27ae60", "FALSE" = "#c0392b"),
+                    guide = "none") +
+  labs(title = "India Real GDP Growth Rate (%) — 2016 to 2026",
+       subtitle = "2020–21 contraction due to COVID-19; recovery strong post-2021",
+       x = "Fiscal Year", y = "GDP Growth (%)") +
+  scale_x_continuous(breaks = 2016:2026) +
+  geom_text(aes(label = GDP_Growth, vjust = ifelse(GDP_Growth > 0, -0.5, 1.2)),
+            size = 3.2, fontface = "bold") +
+  theme_minimal(base_size = 12) +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1))
+```
+
+*Source: Compiled from RBI, SEBI, NSE, BSE, AMFI and Government Reports (Latest Available Data).*
+
+**B. Inflation (CPI)**
+
+Rising inflation reduces real returns and forces RBI to raise repo rates, compressing equity valuations.
+
+**C. Repo Rate**
+
+The Reserve Bank of India's **repo rate** is the benchmark interest rate. It directly affects:
+- Cost of corporate borrowing → earnings
+- Bond yields → risk-free rate in CAPM
+- Real estate demand → mortgage rates
+- Currency value → import/export competitiveness
+
+```{r repo-rate-trend, echo=FALSE}
+macro_data <- data.frame(
+  Year = 2016:2026,
+  Repo_Rate = c(6.50, 6.00, 6.25, 6.50, 5.15, 4.00, 4.00, 6.25, 6.50, 6.25, 5.75),
+  CPI_Inflation = c(4.9, 3.3, 3.9, 4.8, 6.2, 5.1, 6.7, 5.5, 5.4, 4.9, 4.5)
+)
+
+kable(macro_data,
+      caption = "Table 3.1: India Macroeconomic Indicators (2016–2026)",
+      col.names = c("Year", "Repo Rate (%)", "CPI Inflation (%)"),
+      booktabs = TRUE) %>%
+  kable_styling(bootstrap_options = c("striped", "hover"), full_width = FALSE) %>%
+  row_spec(0, bold = TRUE, color = "white", background = "#2c3e50")
+```
+
+*Source: Compiled from RBI, SEBI, NSE, BSE, AMFI and Government Reports (Latest Available Data).*
+
+**D. Fiscal Deficit**
+
+India's fiscal deficit target (Union Budget 2024–25): **5.1% of GDP**. High fiscal deficits crowd out private investment and can trigger inflation — both negative for equity markets.
+
+**E. Foreign Exchange Reserves and INR**
+
+India's forex reserves reached **$650 billion+ (2024)**, providing currency stability. A depreciating INR benefits IT/pharma exporters (Infosys, TCS, Sun Pharma) but hurts importers (oil companies, airlines).
+
+---
+
+## Industry Analysis {#industry-analysis}
+
+### 3.4.1 Porter's Five Forces Model
+
+Michael Porter's Five Forces framework is the gold standard for **industry attractiveness analysis**:
+
+```{mermaid}
+flowchart TD
+    C[Competitive Rivalry\nHigh → Low returns] 
+    A[Bargaining Power of Suppliers] -->|Input costs| C
+    B[Bargaining Power of Buyers] -->|Revenue pressure| C
+    D[Threat of New Entrants] -->|Market share dilution| C
+    E[Threat of Substitutes] -->|Demand shift| C
+    style C fill:#2c3e50,color:#fff
+    style A fill:#2980b9,color:#fff
+    style B fill:#27ae60,color:#fff
+    style D fill:#c0392b,color:#fff
+    style E fill:#e67e22,color:#fff
+```
+
+*Figure 3.4: Porter's Five Forces Model*
+
+**Application to Indian IT Industry (TCS / Infosys):**
+
+| Force | Assessment | Impact |
+|-------|-----------|--------|
+| Competitive Rivalry | High (TCS, Infosys, Wipro, HCL, Accenture) | Moderate — large contracts mitigate |
+| Supplier Power | Low (large talent pool, though wage inflation rising) | Positive |
+| Buyer Power | Moderate (large MNCs have leverage; but switching costs exist) | Moderate |
+| New Entrants | Low (high capital + talent barriers) | Positive |
+| Substitutes | Rising (AI/automation threatens repetitive IT work) | Negative long-term |
+**Overall: Attractive industry with strong entry barriers**
+
+### Industry Life Cycle
+
+Every industry passes through four stages:
+
+| Stage | Characteristics | Investment Strategy |
+|-------|----------------|---------------------|
+| **Introduction** | High losses, heavy R&D, few players | High risk; potential for multi-bagger |
+| **Growth** | Rapid revenue growth, improving margins, rising competition | Best time to invest |
+| **Maturity** | Stable growth, established players, dividend payers | Value + income strategy |
+| **Decline** | Revenue falling, exit of players, margin compression | Avoid or exit |
+
+**Indian Industry Examples by Stage (2024):**
+
+| Stage | Industry | Examples |
+|-------|---------|---------|
+| Introduction | Green Hydrogen, Space Tech | NTPC Green Hydrogen, ISRO spinoffs |
+| Growth | Electric Vehicles, Data Centres | Tata Motors EV, Adani Data Centres |
+| Maturity | FMCG, Private Banking | HUL, Nestle India, HDFC Bank |
+| Decline | Legacy Telecom (Wireline), Print Media | Declining sector |
+
+*Source: Compiled from RBI, SEBI, NSE, BSE, AMFI and Government Reports (Latest Available Data).*
+
+---
+
+## Company Analysis {#company-analysis}
+
+### Business Model Analysis
+
+A company's business model defines how it creates, delivers, and captures value. Key elements:
+
+1. **Revenue Model** — How does the company earn? (SaaS subscription, toll, retail, B2B)
+2. **Cost Structure** — Fixed vs. variable costs; operating leverage
+3. **Value Proposition** — Why do customers choose this company?
+4. **Competitive Moat (Moat)** — Warren Buffett's concept of sustainable competitive advantage
+
+**Moat Analysis — Indian Companies:**
+
+| Company | Type of Moat | Evidence |
+|---------|-------------|---------|
+| Asian Paints | Brand + Distribution network | 55,000+ dealer network; 60% market share |
+| HDFC Bank | Low-cost deposit franchise + technology | CASA ratio 40%+; GNPA < 1.5% |
+| TCS | Scale + intellectual capital + client stickiness | 95%+ client retention; $29B revenue |
+| Avenue Supermarts (D-Mart) | EDLC (Every Day Low Cost) model | Owned stores → no rental risk |
+| Bajaj Finance | Risk analytics + cross-sell platform | 85M+ customers; 30%+ ROE |
+
+### Corporate Governance Assessment
+
+SEBI's **LODR (Listing Obligations and Disclosure Requirements) Regulations, 2015** mandate governance standards for listed Indian companies. Investors should assess:
+
+1. **Board composition** — Independent directors ≥ 1/3 of board
+2. **Audit committee** — Majority independent directors
+3. **Related party transactions** — Scrutinise for tunnelling
+4. **Promoter pledging** — High pledging = governance red flag
+5. **Remuneration** — CEO pay vs. performance alignment
+
+**Red Flag: Promoter Pledge Ratio**
+
+When promoters pledge their shares to borrow money, stock price declines can trigger **margin calls**, forcing sell-off. This cascaded into the **Adani group sell-off in early 2023** (triggered by Hindenburg Research report alleging governance concerns).
+
+---
+
+## Financial Analysis and Key Ratios {#financial-ratios}
+
+### Earnings Per Share (EPS)
+
+$$\boxed{EPS = \frac{\text{Profit After Tax} - \text{Preference Dividend}}{\text{Number of Equity Shares Outstanding}}}$$
+
+EPS measures the **net profit earned per equity share**. It is the single most important metric in equity valuation.
+
+**Types:**
+- **Basic EPS** — Uses actual shares outstanding
+- **Diluted EPS** — Accounts for potential shares from ESOPs, convertibles (always lower)
+- **Trailing EPS** — Based on last 12 months' actual earnings
+- **Forward EPS** — Based on next 12 months' estimated earnings
+
+### Price-to-Earnings Ratio (P/E)
+
+$$\boxed{P/E = \frac{\text{Market Price per Share}}{EPS}}$$
+
+**Interpretation:**
+- High P/E: Market expects high future growth OR stock may be overvalued
+- Low P/E: May signal undervaluation OR poor growth prospects
+
+```{r pe-comparison, echo=FALSE}
+pe_data <- data.frame(
+  Company = c("Asian Paints", "TCS", "Infosys", "HDFC Bank", "Reliance Industries",
+              "Bajaj Finance", "Avenue Supermarts", "ITC", "SBI", "ICICI Bank"),
+  Sector = c("FMCG", "IT", "IT", "Banking", "Conglomerate",
+             "NBFC", "Retail", "FMCG", "Banking", "Banking"),
+  EPS_TTM = c(47, 114, 63, 84, 101, 94, 47, 20, 67, 47),
+  CMP = c(2840, 4200, 1720, 1640, 3050, 7180, 5400, 475, 825, 1195),
+  PE_Ratio = round(c(2840, 4200, 1720, 1640, 3050, 7180, 5400, 475, 825, 1195) /
+                     c(47, 114, 63, 84, 101, 94, 47, 20, 67, 47), 1)
+)
+
+kable(pe_data,
+      caption = "Table 3.2: P/E Ratios of Select Indian Companies (Approximate, 2024)",
+      col.names = c("Company", "Sector", "EPS (₹ TTM)", "CMP (₹)", "P/E Ratio"),
+      booktabs = TRUE) %>%
+  kable_styling(bootstrap_options = c("striped", "hover"), full_width = TRUE) %>%
+  row_spec(0, bold = TRUE, color = "white", background = "#2c3e50")
+```
+
+*Source: Compiled from RBI, SEBI, NSE, BSE, AMFI and Government Reports (Latest Available Data).*
+
+### PEG Ratio (Price/Earnings to Growth)
+
+The PEG ratio adjusts P/E for expected growth, making comparisons across high-growth and value stocks more meaningful.
+
+$$\boxed{PEG = \frac{P/E \text{ Ratio}}{\text{Earnings Growth Rate (\%)}}}$$
+
+**Interpretation:**
+- PEG < 1: Potentially undervalued relative to growth
+- PEG = 1: Fairly priced
+- PEG > 1: Potentially overvalued
+
+**Example:** If Bajaj Finance has P/E of 35 and earnings growth of 25%, then:
+$$PEG = \frac{35}{25} = 1.4 \text{ (slightly overvalued for growth)}$$
+
+### Return on Equity (ROE)
+
+$$\boxed{ROE = \frac{\text{Net Profit After Tax}}{\text{Shareholders' Equity}} \times 100}$$
+
+ROE measures how efficiently a company generates profit from shareholders' money. **ROE > 15%** is generally considered good for Indian companies.
+
+**DuPont Analysis of ROE:**
+$$ROE = \underbrace{\frac{PAT}{Sales}}_{\text{Net Margin}} \times \underbrace{\frac{Sales}{Assets}}_{\text{Asset Turnover}} \times \underbrace{\frac{Assets}{Equity}}_{\text{Leverage}}$$
+
+```{r roe-comparison, echo=TRUE}
+companies <- c("HDFC Bank", "TCS", "Asian Paints", "Bajaj Finance", "ITC")
+net_margin <- c(0.23, 0.19, 0.15, 0.25, 0.28)
+asset_turnover <- c(0.08, 1.12, 1.10, 0.12, 0.68)
+leverage <- c(9.5, 1.6, 1.4, 6.5, 1.35)
+
+roe <- net_margin * asset_turnover * leverage * 100
+
+roe_df <- data.frame(
+  Company = companies,
+  Net_Margin = paste0(round(net_margin*100, 1), "%"),
+  Asset_Turnover = round(asset_turnover, 2),
+  Leverage = round(leverage, 1),
+  ROE = paste0(round(roe, 1), "%")
+)
+
+kable(roe_df,
+      caption = "Table 3.3: DuPont ROE Analysis — Select Indian Companies (2024)",
+      col.names = c("Company", "Net Profit Margin", "Asset Turnover", "Leverage", "ROE"),
+      booktabs = TRUE) %>%
+  kable_styling(bootstrap_options = c("striped", "hover"), full_width = TRUE) %>%
+  row_spec(0, bold = TRUE, color = "white", background = "#2c3e50")
+```
+
+*Source: Compiled from RBI, SEBI, NSE, BSE, AMFI and Government Reports (Latest Available Data).*
+
+### Return on Capital Employed (ROCE)
+
+$$\boxed{ROCE = \frac{EBIT}{\text{Capital Employed}} \times 100}$$
+
+$$\text{Capital Employed} = \text{Total Assets} - \text{Current Liabilities}$$
+
+ROCE measures return on total capital (debt + equity), making it superior to ROE for comparing capital-intensive companies. **Target: ROCE > Weighted Average Cost of Capital (WACC)**
+
+### Dividend Yield
+
+$$\boxed{\text{Dividend Yield} = \frac{\text{Annual Dividend per Share}}{\text{Market Price per Share}} \times 100}$$
+
+**High dividend yield stocks (2024):** ITC (3.5%), Coal India (7–8%), ONGC (5–6%), Power Grid (5%)
+
+### Debt-to-Equity Ratio
+
+$$\boxed{\text{D/E Ratio} = \frac{\text{Total Debt (Long Term + Short Term)}}{\text{Shareholders' Equity}}}$$
+
+A **high D/E ratio** indicates financial leverage risk:
+- Acceptable for mature companies with stable cash flows (utilities, banks)
+- Risky for cyclical companies in downturns
+
+```{r de-ratio-analysis, echo=FALSE}
+de_data <- data.frame(
+  Company = c("Tata Steel", "L&T", "Reliance Industries", "TCS", "Infosys",
+              "HUL", "Asian Paints", "HDFC Bank", "SBI", "Coal India"),
+  Debt_Equity = c(0.85, 1.20, 0.38, 0.00, 0.00, 0.01, 0.02, 9.80, 12.50, 0.01),
+  Interpretation = c("Moderate (Steel industry norm)",
+                     "High but manageable (long-term contracts)",
+                     "Reduced significantly (asset sales)",
+                     "Zero debt — cash-rich", "Zero debt — cash-rich",
+                     "Near-zero (FMCG asset-light)", "Near-zero (premium brand)",
+                     "High but natural for banking",
+                     "Very high but sovereign-backed",
+                     "Zero debt (PSU)")
+)
+
+kable(de_data,
+      caption = "Table 3.4: Debt-to-Equity Ratio — Select NSE Companies (2024)",
+      col.names = c("Company", "D/E Ratio", "Interpretation"),
+      booktabs = TRUE) %>%
+  kable_styling(bootstrap_options = c("striped", "hover"), full_width = TRUE) %>%
+  row_spec(0, bold = TRUE, color = "white", background = "#2c3e50")
+```
+
+*Source: Compiled from RBI, SEBI, NSE, BSE, AMFI and Government Reports (Latest Available Data).*
+
+### Book Value Per Share
+
+$$\boxed{BVPS = \frac{\text{Total Shareholders' Equity}}{\text{Number of Equity Shares}}}$$
+
+**Price-to-Book (P/B) Ratio:**
+$$P/B = \frac{\text{Market Price per Share}}{BVPS}$$
+
+P/B < 1 can signal undervaluation. For banks, P/B is a primary valuation metric.
+
+### Comprehensive Ratio Analysis — Reliance Industries (2023–24)
+
+**Example 3.2:** Analyse Reliance Industries Limited using key investor ratios.
+
+```{r reliance-analysis, echo=TRUE}
+# Reliance Industries FY2024 Data (approximate)
+ril_data <- list(
+  PAT = 70806,          # ₹ Crore
+  Revenue = 997690,     # ₹ Crore
+  EBIT = 107504,        # ₹ Crore
+  Total_Assets = 1743890,
+  Current_Liabilities = 432050,
+  Total_Equity = 660789,
+  Long_Term_Debt = 380000,
+  Short_Term_Debt = 85000,
+  EPS_Diluted = 104.73,
+  DPS = 10,             # Dividend per share
+  Shares = 678.45,      # Crore
+  CMP = 3050            # Approximate CMP
+)
+
+# Calculations
+eps <- ril_data$EPS_Diluted
+pe <- ril_data$CMP / eps
+roe <- ril_data$PAT / ril_data$Total_Equity * 100
+roce <- ril_data$EBIT / (ril_data$Total_Assets - ril_data$Current_Liabilities) * 100
+de <- (ril_data$Long_Term_Debt + ril_data$Short_Term_Debt) / ril_data$Total_Equity
+div_yield <- ril_data$DPS / ril_data$CMP * 100
+bvps <- ril_data$Total_Equity / ril_data$Shares * 100  # ₹ per share (Equity in Cr, shares in Cr)
+pb <- ril_data$CMP / bvps
+
+cat("=== Reliance Industries Key Ratios (FY2024) ===\n")
+cat("EPS (Diluted):     ₹", round(eps, 2), "\n")
+cat("P/E Ratio:         ", round(pe, 1), "x\n")
+cat("ROE:               ", round(roe, 2), "%\n")
+cat("ROCE:              ", round(roce, 2), "%\n")
+cat("Debt/Equity:       ", round(de, 2), "x\n")
+cat("Dividend Yield:    ", round(div_yield, 2), "%\n")
+cat("Book Value/Share: ₹", round(bvps, 2), "\n")
+cat("P/B Ratio:         ", round(pb, 2), "x\n")
+```
+
+---
+
+::: {.case-study}
+**Case Study 3.1: Infosys — Fundamental Analysis**
+
+**Company Background:** Infosys Limited (NSE: INFY) is India's second-largest IT services company with revenue of $18.5 billion (FY2024) and operations in 50+ countries. Founded in 1981 by N.R. Narayana Murthy and six co-founders with ₹10,000 initial capital.
+
+**Economic Context:** IT sector benefits from INR depreciation, global digital transformation spending, and India's engineering talent pool. FY2024 saw headwinds from US and European recession fears causing client spending cuts.
+
+**Industry Analysis:**
+- Porter's Threat of New Entrants: LOW (talent + capital barriers)
+- AI disruption risk: MEDIUM-HIGH (generative AI replacing lower-level coding)
+- Market opportunity: $500B+ global IT services market
+
+**Fundamental Metrics (FY2024):**
+- Revenue: $18.5B (+1.4% YoY — slowdown)
+- Operating Margin: 20.7%
+- EPS: ₹63 (Diluted)
+- ROE: 31.5%
+- Dividend yield: ~3.5%
+- Net cash: $4.2B (zero debt, cash-rich)
+
+**Valuation:** At CMP ₹1,720 and EPS ₹63, P/E is 27x — premium to PSU peers but reasonable for quality IT franchise. Strong governance, zero debt, and dividend growth history make it suitable for conservative long-term investors.
+
+**Investment Verdict:** ACCUMULATE on dips; target 12-month P/E of 28–30x → ₹1,800–1,900
+:::
+
+---
+
+::: {.research-corner}
+**Research Corner 3.1: AI-Augmented Fundamental Analysis**
+
+Traditional fundamental analysis is time-intensive. Modern AI tools are transforming the process:
+
+1. **ChatGPT / Claude** — Summarise annual reports, identify risks in MD&A sections, compare ratios across peers
+2. **Screener.in** — Free platform for 10-year financial data, automatic ratio calculation for all NSE/BSE companies
+3. **Tickertape** — AI-powered stock screener and portfolio analysis
+4. **StockEdge** — Club-based research + fundamental screening for Indian stocks
+5. **Bloomberg AI** — Institutional-grade fundamental and sentiment analysis
+
+**Research Finding:** Studies by **Gu, Kelly & Xiu (2020)** in the *Review of Financial Studies* demonstrated that machine learning-based stock selection significantly outperforms traditional factor models. The application of these methods to Indian markets (particularly Nifty 500) is an active research area.
+:::
+
+---
+
+## Summary {#unit3-summary}
+
+1. **Total risk = Systematic + Unsystematic risk**. Beta measures systematic risk; diversification eliminates unsystematic risk.
+
+2. **Top-down fundamental analysis** proceeds: Economic → Industry → Company → Financial.
+
+3. **Economic analysis** focuses on GDP growth, CPI inflation, RBI repo rate, fiscal deficit, and INR trends — all critical for Indian equity investors.
+
+4. **Porter's Five Forces** identifies industry attractiveness; the industry life cycle places sectors in growth context.
+
+5. **Company analysis** examines business model strength, competitive moat, and governance quality.
+
+6. **Key investor ratios**: EPS, P/E, PEG, ROE, ROCE, Dividend Yield, D/E, P/B — each reveals a specific dimension of value and risk.
+
+7. **DuPont analysis** decomposes ROE into margin, turnover, and leverage components for deeper diagnosis.
+
+---
+
+## Key Terms {#unit3-keyterms}
+
+1. **Systematic Risk** — Market-wide risk; non-diversifiable
+2. **Unsystematic Risk** — Company/industry-specific; diversifiable
+3. **Beta (β)** — Measure of systematic risk relative to market
+4. **CAPM** — Capital Asset Pricing Model; links return to beta
+5. **Risk Premium** — Extra return above risk-free rate for bearing risk
+6. **Fundamental Analysis** — Study of intrinsic value through economic, industry, and company data
+7. **EPS** — Earnings per share; profit per equity share
+8. **P/E Ratio** — Price-to-earnings; market's premium on earnings
+9. **PEG Ratio** — P/E adjusted for growth; better for high-growth companies
+10. **ROE** — Return on equity; efficiency of shareholders' funds
+11. **ROCE** — Return on capital employed; total capital efficiency
+12. **DuPont Analysis** — Decomposition of ROE into three drivers
+13. **Dividend Yield** — Annual dividend as % of market price
+14. **D/E Ratio** — Debt-to-equity; financial leverage measure
+15. **BVPS** — Book value per share; net assets per share
+16. **P/B Ratio** — Price-to-book; market premium over accounting value
+17. **Moat** — Sustainable competitive advantage
+18. **Promoter Pledging** — Promoters using shares as collateral; governance risk
+19. **Porter's Five Forces** — Industry analysis framework
+20. **Industry Life Cycle** — Introduction, growth, maturity, decline stages
+21. **CPI** — Consumer Price Index; measure of retail inflation
+22. **Fiscal Deficit** — Excess of government expenditure over revenue
+23. **LODR** — SEBI's Listing Obligations and Disclosure Requirements
+24. **Diluted EPS** — EPS after accounting for all potential equity dilution
+25. **Intrinsic Value** — True economic worth of a security, independent of market price
+
+---
+
+## MCQs — Unit III (Selected)
+
+**1.** Beta of a risk-free asset is:
+- (A) 1  (B) -1  (C) 0 ← **Correct**  (D) Infinity
+
+*Answer: C. A risk-free asset has zero correlation with market movements, hence β = 0.*
+
+**2.** Which risk CANNOT be eliminated through diversification?
+- (A) Business risk  (B) Financial risk  (C) Systematic risk ← **Correct**  (D) Regulatory risk
+
+**3.** A PEG ratio of 0.8 suggests:
+- (A) The stock is overvalued  (B) The stock is undervalued ← **Correct**  (C) Fairly valued  (D) No conclusion possible
+
+**4.** ROCE is superior to ROE because it:
+- (A) Uses market values  (B) Excludes leverage effect ← **Correct**  (C) Is always higher  (D) Uses cash flows
+
+**5.** High promoter pledging indicates:
+- (A) Strong governance  (B) Growth potential  (C) Governance concern ← **Correct**  (D) Low debt
+
+---
+
+## Numerical Problems — Unit III
+
+**Problem 3.1:** TCS FY2024: PAT = ₹45,908 Cr, Total Equity = ₹87,572 Cr, Shares = 362 Cr, CMP = ₹4,200, EBIT = ₹57,800 Cr, Total Assets = ₹1,82,000 Cr, Current Liabilities = ₹52,000 Cr. Calculate: EPS, P/E, ROE, ROCE, P/B.
+
+```{r tcs-ratios, echo=TRUE}
+pat <- 45908; equity <- 87572; shares <- 362
+cmp <- 4200; ebit <- 57800
+total_assets <- 182000; curr_liab <- 52000
+
+eps <- pat / shares
+pe <- cmp / eps
+roe <- pat / equity * 100
+roce <- ebit / (total_assets - curr_liab) * 100
+bvps <- equity / shares
+pb <- cmp / bvps
+
+cat("TCS Key Ratios (FY2024 Approximate):\n")
+cat("EPS: ₹", round(eps, 2), "\n")
+cat("P/E:", round(pe, 1), "x\n")
+cat("ROE:", round(roe, 2), "%\n")
+cat("ROCE:", round(roce, 2), "%\n")
+cat("BVPS: ₹", round(bvps, 2), "\n")
+cat("P/B:", round(pb, 2), "x\n")
+```
+
+*End of Unit III*
