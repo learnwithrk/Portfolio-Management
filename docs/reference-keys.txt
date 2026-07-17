@@ -49,7 +49,7 @@ essay-questions-10-marks-each
 analytical-questions-15-marks-each
 case-study-questions-20-marks-each
 Module1-mcqs
-module-ii
+section
 shares-meaning
 what-is-a-share
 rights-of-shareholders

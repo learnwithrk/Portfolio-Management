@@ -1,4 +1,4 @@
-# Module II
+#
 
 ---
 
@@ -18,9 +18,9 @@ After completing this unit, students will be able to:
 
 ---
 
-## 2.1 Shares — Meaning and Features {#shares-meaning}
+## Shares — Meaning and Features {#shares-meaning}
 
-### 2.1.1 What is a Share?
+### What is a Share?
 
 A **share** is a unit of ownership in a company. When a company raises capital by issuing shares to the public, it distributes ownership of the company into small, equal units. Each unit is a **share**. The holder of a share is called a **shareholder** or **stockholder** and has a proportionate claim on the company's assets and earnings.
 
@@ -33,7 +33,7 @@ In India, shares are issued under the **Companies Act, 2013** and are regulated 
 $$\text{Total Equity} = \text{Paid-up Capital} + \text{Reserves and Surplus}$$
 $$\text{Book Value per Share} = \frac{\text{Total Equity}}{\text{Number of Outstanding Shares}}$$
 
-### 2.1.2 Rights of Shareholders
+### Rights of Shareholders
 
 Shareholders enjoy several fundamental rights:
 
@@ -47,9 +47,9 @@ Shareholders enjoy several fundamental rights:
 
 ---
 
-## 2.2 Equity Shares {#equity-shares}
+## Equity Shares {#equity-shares}
 
-### 2.2.1 Meaning and Features
+### Meaning and Features
 
 **Equity shares** (also called **ordinary shares** or **common stock**) represent the primary and permanent capital of a company. Equity shareholders are the **true owners** of the business and bear the highest risk.
 
@@ -61,7 +61,7 @@ Shareholders enjoy several fundamental rights:
 - **Unlimited upside** — shares of companies like Infosys, TCS, and Reliance have created immense wealth
 - **Perpetual existence** — equity capital is permanent (no redemption)
 
-### 2.2.2 Types of Equity Shares
+### Types of Equity Shares
 
 ```{r equity-types, echo=FALSE}
 equity_types <- data.frame(
@@ -103,9 +103,9 @@ SEBI amended regulations in 2019 to allow **superior voting right shares (SR Sha
 
 ---
 
-## 2.3 Preference Shares {#preference-shares}
+## Preference Shares {#preference-shares}
 
-### 2.3.1 Meaning and Features
+### Meaning and Features
 
 **Preference shares** occupy a **middle position** between equity shares and debentures. Preference shareholders have a **preferential right** over equity shareholders in:
 - Payment of **dividends** (fixed rate)
@@ -115,7 +115,7 @@ However, preference shareholders generally **do not have voting rights** (unless
 
 $$\text{Preference Dividend} = \text{Face Value} \times \text{Dividend Rate (\%)}$$
 
-### 2.3.2 Types of Preference Shares
+### Types of Preference Shares
 
 ```{r pref-share-types, echo=FALSE}
 pref_types <- data.frame(
@@ -154,9 +154,9 @@ kable(pref_types,
 
 ---
 
-## 2.4 Debentures {#debentures}
+## Debentures {#debentures}
 
-### 2.4.1 Meaning
+### Meaning
 
 A **debenture** is a debt instrument issued by a company acknowledging its indebtedness. It represents a long-term loan to the company. Debenture holders are **creditors**, not owners, and have a legal right to receive:
 - Periodic **interest** (called coupon)
@@ -164,7 +164,7 @@ A **debenture** is a debt instrument issued by a company acknowledging its indeb
 
 In India, debentures issued to public must be listed on stock exchanges (NSE or BSE debt segment) and rated by credit rating agencies like **CRISIL**, **ICRA**, **CARE**, or **India Ratings**.
 
-### 2.4.2 Types of Debentures
+### Types of Debentures
 
 ```{r deb-types, echo=FALSE}
 deb_data <- data.frame(
@@ -202,9 +202,9 @@ kable(deb_data,
 
 ---
 
-## 2.5 Mutual Funds {#mutual-funds}
+## Mutual Funds {#mutual-funds}
 
-### 2.5.1 Meaning and Structure
+### Meaning and Structure
 
 A **mutual fund** is a professionally managed collective investment vehicle that pools money from many investors and invests in a diversified portfolio of securities. In India, mutual funds are regulated by **SEBI** under the **SEBI (Mutual Funds) Regulations, 1996** (amended multiple times through 2023).
 
@@ -263,7 +263,7 @@ ggplot(mf_df, aes(x = Year, y = AUM)) +
 
 *Source: Compiled from RBI, SEBI, NSE, BSE, AMFI and Government Reports (Latest Available Data).*
 
-### 2.5.2 Advantages of Mutual Funds
+### Advantages of Mutual Funds
 
 1. **Professional Management** — Experienced fund managers conduct research and manage portfolios
 2. **Diversification** — Even ₹500 SIP invests in 50–100 stocks
@@ -276,7 +276,7 @@ ggplot(mf_df, aes(x = Year, y = AUM)) +
 9. **Economies of Scale** — Lower transaction costs due to bulk purchases
 10. **Variety** — 40+ AMCs, 1,500+ schemes across all risk profiles
 
-### 2.5.3 Risks in Mutual Fund Investment
+### Risks in Mutual Fund Investment
 
 | Risk Type | Description | Affected Funds |
 |-----------|-------------|----------------|
@@ -293,9 +293,9 @@ ggplot(mf_df, aes(x = Year, y = AUM)) +
 
 ---
 
-## 2.6 Net Asset Value (NAV) {#nav}
+## Net Asset Value (NAV) {#nav}
 
-### 2.6.1 Meaning of NAV
+### Meaning of NAV
 
 The **Net Asset Value (NAV)** is the per-unit market value of a mutual fund scheme. It represents the price at which investors can buy (subscription) or sell (redemption) units of the fund.
 
@@ -305,7 +305,7 @@ $$\boxed{NAV = \frac{\text{Total Assets} - \text{Total Liabilities}}{\text{Numbe
 - **Total Assets** = Market value of securities + Cash and equivalents + Receivables + Accrued income
 - **Total Liabilities** = Payables + Accrued expenses + Management fee payable
 
-### 2.6.2 NAV Calculation — Worked Example
+### NAV Calculation — Worked Example
 
 **Example 2.1:** Calculate the NAV of "Axis Bluechip Fund" given the following data as on March 31, 2024:
 
@@ -339,7 +339,7 @@ cat("Net Assets: ₹", net_assets, "Crore\n")
 cat("NAV per unit: ₹", round(NAV, 2), "\n")
 ```
 
-### 2.6.3 NAV and Returns
+### NAV and Returns
 
 **Absolute Return:**
 $$\text{Absolute Return (\%)} = \frac{NAV_{current} - NAV_{purchase}}{NAV_{purchase}} \times 100$$
@@ -363,9 +363,9 @@ cat("CAGR:", round(cagr * 100, 2), "% per annum\n")
 
 ---
 
-## 2.7 Expense Ratio {#expense-ratio}
+## Expense Ratio {#expense-ratio}
 
-### 2.7.1 Meaning and Importance
+### Meaning and Importance
 
 The **Expense Ratio (ER)** is the annual cost charged by a mutual fund to manage an investor's money, expressed as a percentage of the fund's daily average AUM. It covers:
 - **Fund management fee** (largest component)
@@ -400,7 +400,7 @@ kable(er_limits,
 
 *Source: Compiled from RBI, SEBI, NSE, BSE, AMFI and Government Reports (Latest Available Data).*
 
-### 2.7.2 Expense Ratio Calculation — Worked Example
+### Expense Ratio Calculation — Worked Example
 
 **Example 2.3:** A mutual fund has daily average AUM of ₹12,000 Crore. Annual expenses: Management fee ₹108 Cr, Distribution ₹36 Cr, Trustee fee ₹6 Cr, Others ₹10 Cr. Calculate Total Expense Ratio.
 
@@ -472,9 +472,9 @@ ggplot(plot_df, aes(x = Year, y = Corpus, color = Plan)) +
 
 ---
 
-## 2.8 Types of Mutual Funds {#mf-types}
+## Types of Mutual Funds {#mf-types}
 
-### 2.8.1 SEBI Categorisation of Mutual Fund Schemes (2017)
+### SEBI Categorisation of Mutual Fund Schemes (2017)
 
 SEBI issued a landmark **circular on mutual fund categorisation and rationalisation in October 2017** (effective June 2018), mandating that each AMC can offer only **one scheme per category**. This brought standardisation and comparability to India's mutual fund landscape.
 
@@ -519,7 +519,7 @@ flowchart TD
 
 *Figure 2.4: SEBI Categorisation of Mutual Fund Schemes (2017)*
 
-### 2.8.2 Major Categories — Detailed Analysis
+### Major Categories — Detailed Analysis
 
 **A. Large Cap Funds**
 - Must invest minimum **80% in top 100 companies by market capitalisation** (as defined by AMFI)
@@ -609,9 +609,9 @@ gridExtra::grid.arrange(p1, p2, ncol = 2)
 
 ---
 
-## 2.9 Exchange Traded Funds (ETFs) {#etfs}
+## Exchange Traded Funds (ETFs) {#etfs}
 
-### 2.9.1 Meaning and Structure
+### Meaning and Structure
 
 An **Exchange Traded Fund (ETF)** is a mutual fund that is **listed and traded on stock exchanges** like shares, while tracking a specific **index, commodity, or basket of assets**. ETFs combine the diversification benefits of mutual funds with the trading flexibility of stocks.
 
@@ -679,9 +679,9 @@ A landmark development in Indian capital markets was the **EPFO's decision in 20
 
 ---
 
-## 2.10 Real Estate Investment Trusts (REITs) {#reits}
+## Real Estate Investment Trusts (REITs) {#reits}
 
-### 2.10.1 Meaning and Structure
+### Meaning and Structure
 
 A **Real Estate Investment Trust (REIT)** is a listed entity that owns, operates, or finances **income-generating real estate** assets. REITs allow retail investors to invest in large commercial properties (office parks, malls, hospitals) with a minimum of ₹10,000–15,000.
 
@@ -735,9 +735,9 @@ flowchart LR
 
 ---
 
-## 2.11 Infrastructure Investment Trusts (InvITs) {#invits}
+## Infrastructure Investment Trusts (InvITs) {#invits}
 
-### 2.11.1 Meaning and Structure
+### Meaning and Structure
 
 An **Infrastructure Investment Trust (InvIT)** is a collective investment vehicle — similar in structure to REITs — that pools investor money to invest in **operational infrastructure projects** such as roads, power transmission lines, gas pipelines, and telecom towers.
 
@@ -810,7 +810,7 @@ The global shift from active to passive investing is accelerating in India. Key 
 
 ---
 
-## 2.12 Summary {#unit2-summary}
+## Summary {#unit2-summary}
 
 1. **Shares** are units of company ownership. Equity shareholders are residual claimants with voting rights; preference shareholders have priority in dividend and capital repayment.
 
