@@ -337,7 +337,7 @@ This chapter works well alongside the tools from Programs 1 and 2:
 
 ## Program 4: MACD Momentum Strategy {#program4-macd-momentum}
 
-*Objective*
+**Objective**
 
 To identify trend strength and potential reversals using the Moving Average Convergence Divergence (MACD) indicator — applied to Indian stock market (NSE/BSE) charts on TradingView for long-term investing decisions.
 

@@ -2,3 +2,949 @@
 
 ---
 
+::: {.learning-objectives}
+**Learning Objectives**
+
+After completing this unit, students will be able to:
+
+1. Explain the meaning, features, and types of shares, debentures, and other financial securities
+2. Distinguish between equity and preference shares, and among the types of each
+3. Analyse the structure, advantages, and risks of mutual fund investments
+4. Calculate Net Asset Value (NAV) and Expense Ratio with numerical illustrations
+5. Describe the SEBI categorisation of mutual fund schemes (2017–present)
+6. Evaluate Exchange Traded Funds (ETFs), REITs, and InvITs as investment instruments
+7. Assess the growth and future prospects of ETFs, REITs, and InvITs in the Indian market
+:::
+
+---
+
+## 2.1 Shares — Meaning and Features {#shares-meaning}
+
+### 2.1.1 What is a Share?
+
+A **share** is a unit of ownership in a company. When a company raises capital by issuing shares to the public, it distributes ownership of the company into small, equal units. Each unit is a **share**. The holder of a share is called a **shareholder** or **stockholder** and has a proportionate claim on the company's assets and earnings.
+
+In India, shares are issued under the **Companies Act, 2013** and are regulated by **SEBI** (Securities and Exchange Board of India). They are traded on stock exchanges — primarily the **NSE (National Stock Exchange)** and **BSE (Bombay Stock Exchange)**.
+
+> *"A share is not just a piece of paper — it is a proportionate ownership of a living, breathing business enterprise."* — Benjamin Graham
+
+**Share Capital Structure:**
+
+$$\text{Total Equity} = \text{Paid-up Capital} + \text{Reserves and Surplus}$$
+$$\text{Book Value per Share} = \frac{\text{Total Equity}}{\text{Number of Outstanding Shares}}$$
+
+### 2.1.2 Rights of Shareholders
+
+Shareholders enjoy several fundamental rights:
+
+1. **Right to dividend** — proportionate share in distributed profits
+2. **Right to vote** — one share, one vote (equity shareholders) on company matters
+3. **Right to information** — access to annual reports, quarterly results
+4. **Right to transfer** — free transfer of listed shares on stock exchanges
+5. **Pre-emptive right (Right Issue)** — first right to subscribe to new share issues
+6. **Right to residual claims** — claim on assets during liquidation (after creditors)
+7. **Right to attend AGM** — participate in Annual General Meetings
+
+---
+
+## 2.2 Equity Shares {#equity-shares}
+
+### 2.2.1 Meaning and Features
+
+**Equity shares** (also called **ordinary shares** or **common stock**) represent the primary and permanent capital of a company. Equity shareholders are the **true owners** of the business and bear the highest risk.
+
+**Key Features:**
+- **Variable dividend** — declared by the Board, not fixed
+- **Last in dividend priority** — preference shareholders paid first
+- **Residual claimants** — in liquidation, equity holders receive what remains after all liabilities
+- **Voting rights** — full voting rights in all company matters
+- **Unlimited upside** — shares of companies like Infosys, TCS, and Reliance have created immense wealth
+- **Perpetual existence** — equity capital is permanent (no redemption)
+
+### 2.2.2 Types of Equity Shares
+
+```{r equity-types, echo=FALSE}
+equity_types <- data.frame(
+  Type = c("Ordinary / Common Shares", "Founder Shares / Promoter Shares",
+           "Sweat Equity Shares", "Employee Stock Option Plan (ESOP)",
+           "Bonus Shares", "Right Shares", "Deferred Shares"),
+  Features = c(
+    "Standard equity with full voting rights and dividend entitlement",
+    "Held by founders; may carry differential voting rights (DVR)",
+    "Issued to directors/employees for know-how or IPR at discount",
+    "Options to buy shares at predetermined price; reward tool",
+    "Issued free to existing shareholders from reserves",
+    "Offered to existing shareholders at discount before public issue",
+    "Dividend deferred until preference and equity holders are paid"
+  ),
+  Indian_Example = c(
+    "Reliance Industries, TCS, HDFC Bank",
+    "Infosys founder shares (N.R. Narayana Murthy, Nilekani)",
+    "ESOP-heavy tech startups: Zomato, Nykaa",
+    "Wipro, Infosys ESOP programmes",
+    "TCS 1:1 bonus (2022), Asian Paints frequent bonuses",
+    "Tata Motors Rights Issue (2021 — ₹15,000 Cr)",
+    "Historically used; rare in modern India"
+  )
+)
+
+kable(equity_types,
+      caption = "Table 2.1: Types of Equity Shares and Indian Examples",
+      col.names = c("Type", "Features", "Indian Example"),
+      booktabs = TRUE) %>%
+  kable_styling(bootstrap_options = c("striped", "hover"), font_size = 11, full_width = TRUE) %>%
+  row_spec(0, bold = TRUE, color = "white", background = "#2c3e50")
+```
+
+*Source: Compiled from Companies Act 2013, SEBI Regulations, and NSE/BSE corporate action data.*
+
+**Differential Voting Rights (DVR) Shares:**
+SEBI amended regulations in 2019 to allow **superior voting right shares (SR Shares)** for promoters of technology companies during their IPO. This was triggered by concerns that founders of new-age companies (like Zomato, Paytm) would lose control post-IPO to institutional investors. The concept borrows from Google's Class A / Class B share structure.
+
+---
+
+## 2.3 Preference Shares {#preference-shares}
+
+### 2.3.1 Meaning and Features
+
+**Preference shares** occupy a **middle position** between equity shares and debentures. Preference shareholders have a **preferential right** over equity shareholders in:
+- Payment of **dividends** (fixed rate)
+- **Repayment of capital** in case of winding up
+
+However, preference shareholders generally **do not have voting rights** (unless dividends are in arrear for two consecutive years).
+
+$$\text{Preference Dividend} = \text{Face Value} \times \text{Dividend Rate (\%)}$$
+
+### 2.3.2 Types of Preference Shares
+
+```{r pref-share-types, echo=FALSE}
+pref_types <- data.frame(
+  Type = c("Cumulative", "Non-Cumulative", "Participating", "Non-Participating",
+           "Redeemable", "Irredeemable", "Convertible", "Non-Convertible"),
+  Description = c(
+    "Unpaid dividends accumulate; must be paid before equity dividend",
+    "Lapsed dividends are not carried forward",
+    "Right to share in surplus profits after fixed dividend",
+    "Only entitled to fixed dividend, no additional profit share",
+    "Redeemed by company after a specified period (max 20 yrs in India)",
+    "Not redeemed during company's lifetime (banned in India post-1988)",
+    "Can be converted into equity shares after specified period",
+    "Cannot be converted into equity"
+  ),
+  Key_Feature = c(
+    "Investor-protective; safe during loss years",
+    "No backlog; company-friendly",
+    "Upside participation in good years",
+    "Fixed income only",
+    "Capital returned; SEBI regulated",
+    "Permanent capital; phased out",
+    "Equity upside with preference security",
+    "Pure fixed-income; no equity participation"
+  )
+)
+
+kable(pref_types,
+      caption = "Table 2.2: Types of Preference Shares",
+      booktabs = TRUE) %>%
+  kable_styling(bootstrap_options = c("striped", "hover"), font_size = 11, full_width = TRUE) %>%
+  row_spec(0, bold = TRUE, color = "white", background = "#2c3e50")
+```
+
+*Source: Compiled from Companies Act, 2013 and SEBI Regulations.*
+
+---
+
+## 2.4 Debentures {#debentures}
+
+### 2.4.1 Meaning
+
+A **debenture** is a debt instrument issued by a company acknowledging its indebtedness. It represents a long-term loan to the company. Debenture holders are **creditors**, not owners, and have a legal right to receive:
+- Periodic **interest** (called coupon)
+- **Repayment of principal** at maturity
+
+In India, debentures issued to public must be listed on stock exchanges (NSE or BSE debt segment) and rated by credit rating agencies like **CRISIL**, **ICRA**, **CARE**, or **India Ratings**.
+
+### 2.4.2 Types of Debentures
+
+```{r deb-types, echo=FALSE}
+deb_data <- data.frame(
+  Classification = c("On Security", "On Security", "On Convertibility", "On Convertibility",
+                     "On Convertibility", "On Redemption", "On Coupon"),
+  Type = c("Secured Debentures", "Unsecured Debentures",
+           "Fully Convertible Debentures (FCDs)",
+           "Partly Convertible Debentures (PCDs)",
+           "Non-Convertible Debentures (NCDs)",
+           "Redeemable / Irredeemable",
+           "Fixed / Floating Rate"),
+  Description = c(
+    "Backed by charge on company's assets; safer for investors",
+    "No asset backing; higher risk, higher yield",
+    "Entire amount converted to equity on specified date",
+    "Partial conversion to equity; balance redeemed",
+    "Not convertible; pure debt instrument; most common in India",
+    "Redeemable at par/premium on maturity; irredeemable rare",
+    "Fixed coupon vs. linked to MIBOR/T-Bill rate"
+  )
+)
+
+kable(deb_data,
+      caption = "Table 2.3: Types of Debentures",
+      col.names = c("Classification Basis", "Type", "Description"),
+      booktabs = TRUE) %>%
+  kable_styling(bootstrap_options = c("striped", "hover"), full_width = TRUE) %>%
+  row_spec(0, bold = TRUE, color = "white", background = "#2c3e50") %>%
+  collapse_rows(columns = 1, valign = "middle")
+```
+
+*Source: Compiled from Companies Act, 2013 and SEBI (LODR) Regulations, 2015.*
+
+**Indian NCD Market:** Non-Convertible Debentures (NCDs) have become a popular retail investment avenue in India. Bajaj Finance, HDFC, Shriram Transport Finance, and Tata Capital have issued retail NCDs with coupon rates ranging from 7.5% to 10% p.a., offering returns superior to bank FDs with credit risk.
+
+---
+
+## 2.5 Mutual Funds {#mutual-funds}
+
+### 2.5.1 Meaning and Structure
+
+A **mutual fund** is a professionally managed collective investment vehicle that pools money from many investors and invests in a diversified portfolio of securities. In India, mutual funds are regulated by **SEBI** under the **SEBI (Mutual Funds) Regulations, 1996** (amended multiple times through 2023).
+
+```{mermaid}
+flowchart TD
+    A[Investors / Unit Holders] -->|Pool Money| B[Asset Management Company - AMC]
+    B -->|Invests| C[Diversified Portfolio]
+    C --> D[Equity Shares]
+    C --> E[Government Bonds]
+    C --> F[Corporate Debentures]
+    C --> G[Money Market Instruments]
+    C --> H[Gold / REITs]
+    B --> I[Fund Manager]
+    I --> B
+    B -->|Returns| A
+    J[SEBI] -->|Regulates| B
+    K[Trustee] -->|Oversees| B
+    L[Custodian] -->|Holds Assets| B
+    M[Registrar & Transfer Agent] -->|Handles Units| A
+    style A fill:#2980b9,color:#fff
+    style B fill:#2c3e50,color:#fff
+    style J fill:#c0392b,color:#fff
+    style I fill:#27ae60,color:#fff
+```
+
+*Figure 2.1: Three-tier Structure of Indian Mutual Funds*
+
+**Three-Tier Structure:**
+1. **Sponsors** — the parent company that establishes the mutual fund (e.g., HDFC Ltd. → HDFC AMC)
+2. **Trustees** — independent board overseeing the AMC, protecting investors' interests
+3. **AMC (Asset Management Company)** — manages investments, employs fund managers
+
+**Key Industry Statistics:**
+
+```{r mf-industry-growth, echo=FALSE, fig.cap="Figure 2.2: Indian Mutual Fund Industry AUM Growth (2016–2026)"}
+mf_years <- 2016:2026
+mf_aum <- c(13.46, 17.54, 22.86, 24.51, 26.33, 31.02,
+             37.72, 40.04, 50.78, 58.91, 67.40) # ₹ Lakh Crore (approximate)
+
+mf_df <- data.frame(Year = mf_years, AUM = mf_aum)
+
+ggplot(mf_df, aes(x = Year, y = AUM)) +
+  geom_col(fill = "#2980b9", alpha = 0.8) +
+  geom_line(aes(group = 1), color = "#c0392b", size = 1.5) +
+  geom_point(color = "#c0392b", size = 3) +
+  geom_text(aes(label = paste0("₹", AUM, "L Cr")), vjust = -0.5, size = 2.8, color = "#2c3e50") +
+  labs(title = "Indian Mutual Fund Industry AUM (2016–2026)",
+       subtitle = "Total AUM grew from ₹13.46 Lakh Crore to ₹67.40 Lakh Crore",
+       x = "Year", y = "AUM (₹ Lakh Crore)") +
+  scale_x_continuous(breaks = 2016:2026) +
+  scale_y_continuous(expand = c(0.05, 0)) +
+  theme_minimal(base_size = 12) +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1),
+        plot.title = element_text(face = "bold", color = "#2c3e50"))
+```
+
+*Source: Compiled from RBI, SEBI, NSE, BSE, AMFI and Government Reports (Latest Available Data).*
+
+### 2.5.2 Advantages of Mutual Funds
+
+1. **Professional Management** — Experienced fund managers conduct research and manage portfolios
+2. **Diversification** — Even ₹500 SIP invests in 50–100 stocks
+3. **Affordability** — Start SIP with as low as ₹100/month
+4. **Liquidity** — Open-end funds redeemable any business day at NAV
+5. **Transparency** — Daily NAV disclosure; monthly portfolio disclosure
+6. **Regulatory Protection** — SEBI regulations protect investors; AMFI code of conduct
+7. **Tax Efficiency** — ELSS funds offer Section 80C benefits; long-term capital gains taxed at 10% (>₹1 lakh)
+8. **Flexibility** — SIP, SWP, STP options; switch between funds
+9. **Economies of Scale** — Lower transaction costs due to bulk purchases
+10. **Variety** — 40+ AMCs, 1,500+ schemes across all risk profiles
+
+### 2.5.3 Risks in Mutual Fund Investment
+
+| Risk Type | Description | Affected Funds |
+|-----------|-------------|----------------|
+| Market Risk | Portfolio value falls with market | Equity funds |
+| Credit Risk | Issuer defaults on bond payment | Debt funds |
+| Interest Rate Risk | Bond prices fall when rates rise | Debt funds |
+| Liquidity Risk | Fund unable to sell assets | Close-end funds |
+| Concentration Risk | Overdependence on few stocks/sectors | Thematic funds |
+| Currency Risk | Loss from foreign exchange movement | International funds |
+| Manager Risk | Fund manager's incorrect decisions | All actively managed funds |
+| Inflation Risk | Returns don't beat inflation | Conservative funds |
+
+*Source: Compiled from RBI, SEBI, NSE, BSE, AMFI and Government Reports (Latest Available Data).*
+
+---
+
+## 2.6 Net Asset Value (NAV) {#nav}
+
+### 2.6.1 Meaning of NAV
+
+The **Net Asset Value (NAV)** is the per-unit market value of a mutual fund scheme. It represents the price at which investors can buy (subscription) or sell (redemption) units of the fund.
+
+$$\boxed{NAV = \frac{\text{Total Assets} - \text{Total Liabilities}}{\text{Number of Units Outstanding}}}$$
+
+**Components:**
+- **Total Assets** = Market value of securities + Cash and equivalents + Receivables + Accrued income
+- **Total Liabilities** = Payables + Accrued expenses + Management fee payable
+
+### 2.6.2 NAV Calculation — Worked Example
+
+**Example 2.1:** Calculate the NAV of "Axis Bluechip Fund" given the following data as on March 31, 2024:
+
+| Component | Amount (₹ Crore) |
+|-----------|-----------------|
+| Equity portfolio market value | 8,450 |
+| Liquid funds / Cash | 320 |
+| Dividend receivable | 48 |
+| Other receivables | 22 |
+| Management fee payable | 15 |
+| Other liabilities | 8 |
+| Number of units | 250 crore |
+
+**Solution:**
+$$\text{Total Assets} = 8,450 + 320 + 48 + 22 = ₹8,840 \text{ Cr}$$
+$$\text{Total Liabilities} = 15 + 8 = ₹23 \text{ Cr}$$
+$$\text{Net Assets} = 8,840 - 23 = ₹8,817 \text{ Cr}$$
+$$NAV = \frac{8,817 \text{ Cr}}{250 \text{ Cr units}} = ₹35.27 \text{ per unit}$$
+
+```{r nav-calculation, echo=TRUE}
+# NAV Calculation
+total_assets <- 8450 + 320 + 48 + 22  # in Crore
+total_liabilities <- 15 + 8
+net_assets <- total_assets - total_liabilities
+units_outstanding <- 250  # Crore units
+
+NAV <- net_assets / units_outstanding
+cat("Total Assets: ₹", total_assets, "Crore\n")
+cat("Total Liabilities: ₹", total_liabilities, "Crore\n")
+cat("Net Assets: ₹", net_assets, "Crore\n")
+cat("NAV per unit: ₹", round(NAV, 2), "\n")
+```
+
+### 2.6.3 NAV and Returns
+
+**Absolute Return:**
+$$\text{Absolute Return (\%)} = \frac{NAV_{current} - NAV_{purchase}}{NAV_{purchase}} \times 100$$
+
+**CAGR (for periods > 1 year):**
+$$CAGR = \left(\frac{NAV_{current}}{NAV_{purchase}}\right)^{\frac{1}{n}} - 1$$
+
+**Example 2.2:** An investor purchased units of HDFC Flexi Cap Fund at NAV ₹18.50 on April 1, 2016. The NAV on March 31, 2024 was ₹52.80. Calculate absolute return and CAGR.
+
+```{r nav-returns, echo=TRUE}
+nav_purchase <- 18.50
+nav_current <- 52.80
+years_held <- 8
+
+absolute_return <- ((nav_current - nav_purchase) / nav_purchase) * 100
+cagr <- (nav_current / nav_purchase)^(1/years_held) - 1
+
+cat("Absolute Return:", round(absolute_return, 2), "%\n")
+cat("CAGR:", round(cagr * 100, 2), "% per annum\n")
+```
+
+---
+
+## 2.7 Expense Ratio {#expense-ratio}
+
+### 2.7.1 Meaning and Importance
+
+The **Expense Ratio (ER)** is the annual cost charged by a mutual fund to manage an investor's money, expressed as a percentage of the fund's daily average AUM. It covers:
+- **Fund management fee** (largest component)
+- **Trustee fee**
+- **Registrar and transfer agent fee**
+- **Marketing and distribution expenses** (only in Regular Plans)
+- **Audit, legal, and custodian fees**
+
+$$\boxed{\text{Expense Ratio (\%)} = \frac{\text{Total Annual Fund Expenses}}{\text{Average Daily AUM}} \times 100}$$
+
+**SEBI Expense Ratio Limits (as of 2024):**
+
+```{r expense-ratio-limits, echo=FALSE}
+er_limits <- data.frame(
+  AUM_Slab = c("First ₹500 Cr", "Next ₹250 Cr", "Next ₹1,250 Cr",
+               "Next ₹3,000 Cr", "Next ₹5,000 Cr", "Next ₹40,000 Cr",
+               "Balance above ₹50,000 Cr"),
+  Equity_TER = c("2.25%", "2.00%", "1.75%", "1.60%", "1.50%",
+                  "Reduce by 0.05% per ₹5,000 Cr", "1.05%"),
+  Debt_TER = c("2.00%", "1.75%", "1.50%", "1.35%", "1.25%",
+                "Reduce by 0.05%", "0.80%"),
+  Index_ETF = c("1.00%", "1.00%", "1.00%", "1.00%", "1.00%", "1.00%", "1.00%")
+)
+
+kable(er_limits,
+      caption = "Table 2.4: SEBI Maximum TER Limits for Mutual Funds",
+      col.names = c("AUM Slab", "Equity TER Max", "Debt TER Max", "Index/ETF Max"),
+      booktabs = TRUE) %>%
+  kable_styling(bootstrap_options = c("striped", "hover"), full_width = TRUE) %>%
+  row_spec(0, bold = TRUE, color = "white", background = "#2c3e50")
+```
+
+*Source: Compiled from RBI, SEBI, NSE, BSE, AMFI and Government Reports (Latest Available Data).*
+
+### 2.7.2 Expense Ratio Calculation — Worked Example
+
+**Example 2.3:** A mutual fund has daily average AUM of ₹12,000 Crore. Annual expenses: Management fee ₹108 Cr, Distribution ₹36 Cr, Trustee fee ₹6 Cr, Others ₹10 Cr. Calculate Total Expense Ratio.
+
+```{r expense-ratio-calc, echo=TRUE}
+aum <- 12000  # Crore
+management_fee <- 108
+distribution <- 36
+trustee <- 6
+others <- 10
+
+total_expenses <- management_fee + distribution + trustee + others
+TER <- (total_expenses / aum) * 100
+
+cat("Total Annual Expenses: ₹", total_expenses, "Crore\n")
+cat("Average AUM: ₹", aum, "Crore\n")
+cat("Total Expense Ratio (TER):", round(TER, 3), "%\n")
+cat("Impact on ₹1 Lakh invested:", round(100000 * TER/100), "per annum\n")
+```
+
+**Direct vs. Regular Plans:**
+SEBI mandated Direct Plans in 2013 — these exclude distributor commissions and hence have **lower expense ratios by 0.5%–1.2%**. Over 20 years, this difference compounds significantly.
+
+```{r direct-vs-regular, echo=TRUE, fig.cap="Figure 2.3: Direct Plan vs. Regular Plan Wealth Creation (20-Year SIP ₹10,000/Month)"}
+monthly_sip <- 10000
+months <- 240
+gross_return <- 0.12 / 12  # Monthly
+
+# Regular plan: 12% gross, 1.5% TER → ~10.5% net return
+regular_return <- (0.12 - 0.015) / 12
+direct_return <- (0.12 - 0.005) / 12  # Direct: 0.5% TER
+
+fv_regular <- monthly_sip * (((1 + regular_return)^months - 1) / regular_return)
+fv_direct <- monthly_sip * (((1 + direct_return)^months - 1) / direct_return)
+
+cat("20-Year SIP in Regular Plan: ₹", format(round(fv_regular), big.mark = ","), "\n")
+cat("20-Year SIP in Direct Plan:  ₹", format(round(fv_direct), big.mark = ","), "\n")
+cat("Extra wealth from Direct Plan: ₹", format(round(fv_direct - fv_regular), big.mark = ","), "\n")
+
+# Plot comparison
+year_seq <- 1:20
+corpus_regular <- sapply(year_seq, function(y) {
+  m <- y * 12
+  monthly_sip * (((1 + regular_return)^m - 1) / regular_return)
+})
+corpus_direct <- sapply(year_seq, function(y) {
+  m <- y * 12
+  monthly_sip * (((1 + direct_return)^m - 1) / direct_return)
+})
+
+plot_df <- data.frame(
+  Year = rep(year_seq, 2),
+  Corpus = c(corpus_regular, corpus_direct) / 100000,
+  Plan = rep(c("Regular Plan (TER 1.5%)", "Direct Plan (TER 0.5%)"), each = 20)
+)
+
+ggplot(plot_df, aes(x = Year, y = Corpus, color = Plan)) +
+  geom_line(size = 1.4) +
+  geom_point(size = 2) +
+  scale_color_manual(values = c("Regular Plan (TER 1.5%)" = "#c0392b",
+                                 "Direct Plan (TER 0.5%)" = "#27ae60")) +
+  labs(title = "Direct vs. Regular Plan: Impact of Expense Ratio",
+       subtitle = "SIP ₹10,000/Month, 20 Years, 12% Gross Return",
+       x = "Year", y = "Corpus (₹ Lakhs)", color = "") +
+  theme_minimal(base_size = 13) +
+  theme(legend.position = "bottom")
+```
+
+*Source: Compiled from RBI, SEBI, NSE, BSE, AMFI and Government Reports (Latest Available Data).*
+
+---
+
+## 2.8 Types of Mutual Funds {#mf-types}
+
+### 2.8.1 SEBI Categorisation of Mutual Fund Schemes (2017)
+
+SEBI issued a landmark **circular on mutual fund categorisation and rationalisation in October 2017** (effective June 2018), mandating that each AMC can offer only **one scheme per category**. This brought standardisation and comparability to India's mutual fund landscape.
+
+```{mermaid}
+flowchart TD
+    A[SEBI Categorisation of Mutual Funds] --> B[Equity Schemes]
+    A --> C[Debt Schemes]
+    A --> D[Hybrid Schemes]
+    A --> E[Solution-Oriented Schemes]
+    A --> F[Other Schemes]
+    
+    B --> B1[Multi Cap / Flexi Cap]
+    B --> B2[Large Cap / Mid Cap / Small Cap]
+    B --> B3[ELSS - Tax Saving]
+    B --> B4[Sectoral / Thematic]
+    B --> B5[Focused Fund]
+    
+    C --> C1[Overnight / Liquid]
+    C --> C2[Short / Medium Duration]
+    C --> C3[Credit Risk Fund]
+    C --> C4[Gilt Fund]
+    C --> C5[Corporate Bond Fund]
+    
+    D --> D1[Aggressive Hybrid]
+    D --> D2[Balanced Advantage / Dynamic]
+    D --> D3[Multi-Asset Allocation]
+    D --> D4[Arbitrage Fund]
+    
+    E --> E1[Retirement Fund]
+    E --> E2[Children's Fund]
+    
+    F --> F1[Index Funds / ETFs]
+    F --> F2[FoF - Fund of Funds]
+    
+    style A fill:#2c3e50,color:#fff
+    style B fill:#2980b9,color:#fff
+    style C fill:#27ae60,color:#fff
+    style D fill:#e67e22,color:#fff
+    style E fill:#8e44ad,color:#fff
+    style F fill:#c0392b,color:#fff
+```
+
+*Figure 2.4: SEBI Categorisation of Mutual Fund Schemes (2017)*
+
+### 2.8.2 Major Categories — Detailed Analysis
+
+**A. Large Cap Funds**
+- Must invest minimum **80% in top 100 companies by market capitalisation** (as defined by AMFI)
+- Lower risk than mid/small cap; benchmark: Nifty 50 / Sensex
+- Suitable for conservative equity investors
+- Examples: Axis Bluechip Fund, Mirae Asset Large Cap Fund, ICICI Prudential Bluechip Fund
+
+**B. Mid Cap Funds**
+- Must invest minimum **65% in 101st–250th companies** by market cap
+- Higher growth potential; higher volatility
+- Examples: HDFC Mid-Cap Opportunities Fund, Kotak Emerging Equity Fund
+
+**C. Small Cap Funds**
+- Minimum **65% in 251st company onwards** by market cap
+- Highest growth potential and highest risk among equity categories
+- Examples: Nippon India Small Cap Fund, SBI Small Cap Fund
+
+**D. ELSS (Equity Linked Savings Scheme)**
+- Minimum **80% in equity**
+- **3-year lock-in** (shortest among 80C investments)
+- Section 80C benefit up to ₹1.5 lakh
+- Examples: Axis Long Term Equity, Mirae Asset Tax Saver Fund
+
+**E. Liquid Funds**
+- Invest in money market instruments with maturity up to **91 days**
+- Very low risk; returns slightly above savings account (5.5–6.5% p.a.)
+- Suitable for emergency fund management
+
+**F. Gilt Funds**
+- Invest **80% minimum in government securities**
+- Zero credit risk; high interest rate risk
+- Suitable when interest rates are expected to fall
+
+```{r mf-category-comparison, echo=FALSE, fig.cap="Figure 2.5: Mutual Fund Category Risk-Return Matrix (2016–2026)"}
+mf_categories <- data.frame(
+  Category = c("Liquid", "Overnight", "Short Duration", "Corporate Bond",
+               "Gilt", "Balanced Hybrid", "Large Cap", "Flexi Cap",
+               "Mid Cap", "Small Cap", "ELSS", "Sectoral"),
+  Risk = c(1, 1, 2, 3, 4, 5, 6, 7, 8, 9, 7, 9),
+  Return_3yr = c(6.2, 6.0, 6.8, 7.5, 8.5, 11.0, 13.2, 15.8, 18.5, 21.2, 14.5, 20.0)
+)
+
+ggplot(mf_categories, aes(x = Risk, y = Return_3yr, label = Category)) +
+  geom_point(aes(color = Return_3yr), size = 5) +
+  ggrepel::geom_text_repel(size = 3.2, fontface = "bold") +
+  scale_color_gradient(low = "#27ae60", high = "#c0392b") +
+  labs(title = "Mutual Fund Category: Risk vs. 3-Year Return",
+       subtitle = "Indian Mutual Funds (Approximate 3-Year CAGR, 2021–2024)",
+       x = "Risk Level (1 = Lowest, 9 = Highest)",
+       y = "3-Year CAGR (%)", color = "Return (%)") +
+  theme_minimal(base_size = 12)
+```
+
+*Source: Compiled from RBI, SEBI, NSE, BSE, AMFI and Government Reports (Latest Available Data).*
+
+**SIP Growth in India (2016–2026):**
+
+```{r sip-growth-india, echo=FALSE, fig.cap="Figure 2.6: SIP Monthly Contribution and Folios (2016–2026)"}
+sip_data <- data.frame(
+  Year = 2016:2026,
+  SIP_Monthly_Cr = c(3122, 4571, 7119, 8183, 8055, 9609, 10121,
+                      12976, 16928, 19089, 23500), # ₹ Crore per month (approximate)
+  SIP_Folios_Cr = c(1.00, 1.44, 2.00, 2.50, 3.10, 3.50, 4.20,
+                     5.50, 6.80, 8.00, 10.00) # Crore folios
+)
+
+p1 <- ggplot(sip_data, aes(x = Year, y = SIP_Monthly_Cr)) +
+  geom_col(fill = "#2980b9", alpha = 0.8) +
+  geom_line(aes(group = 1), color = "#c0392b", size = 1.2) +
+  labs(title = "Monthly SIP Contribution (₹ Crore)", x = "Year", y = "₹ Crore") +
+  scale_x_continuous(breaks = 2016:2026) +
+  theme_minimal(base_size = 10) +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1))
+
+p2 <- ggplot(sip_data, aes(x = Year, y = SIP_Folios_Cr)) +
+  geom_col(fill = "#27ae60", alpha = 0.8) +
+  geom_line(aes(group = 1), color = "#e67e22", size = 1.2) +
+  labs(title = "SIP Folios (Crore)", x = "Year", y = "Crore Folios") +
+  scale_x_continuous(breaks = 2016:2026) +
+  theme_minimal(base_size = 10) +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1))
+
+gridExtra::grid.arrange(p1, p2, ncol = 2)
+```
+
+*Source: Compiled from RBI, SEBI, NSE, BSE, AMFI and Government Reports (Latest Available Data).*
+
+---
+
+## 2.9 Exchange Traded Funds (ETFs) {#etfs}
+
+### 2.9.1 Meaning and Structure
+
+An **Exchange Traded Fund (ETF)** is a mutual fund that is **listed and traded on stock exchanges** like shares, while tracking a specific **index, commodity, or basket of assets**. ETFs combine the diversification benefits of mutual funds with the trading flexibility of stocks.
+
+**Key Features of ETFs:**
+- Passively managed (track an index)
+- Lower expense ratio than actively managed funds (0.05%–0.50%)
+- Real-time pricing (unlike NAV-based mutual funds)
+- Can be bought/sold anytime during market hours
+- Minimum investment = 1 unit (at market price)
+- No exit load in most cases
+- Require **demat account** (unlike regular mutual funds)
+
+**ETF vs. Index Fund:**
+
+| Feature | ETF | Index Fund |
+|---------|-----|------------|
+| Trading | Real-time on exchange | End-of-day NAV |
+| Demat | Required | Not required |
+| Minimum Amount | 1 unit | ₹100–₹500 SIP |
+| Expense Ratio | 0.05%–0.25% | 0.15%–0.50% |
+| Tracking Error | Slightly higher | Lower |
+| Liquidity | Higher (intraday) | T+3 redemption |
+
+**ETF Growth in India:**
+
+```{r etf-growth, echo=FALSE, fig.cap="Figure 2.7: ETF AUM Growth in India (2016–2026)"}
+etf_data <- data.frame(
+  Year = 2016:2026,
+  ETF_AUM = c(0.41, 0.83, 1.02, 1.49, 2.12, 2.64,
+               3.28, 5.16, 6.80, 8.20, 9.50) # ₹ Lakh Crore
+)
+
+ggplot(etf_data, aes(x = Year, y = ETF_AUM)) +
+  geom_col(fill = "#8e44ad", alpha = 0.8) +
+  geom_line(aes(group = 1), color = "#f39c12", size = 1.5) +
+  geom_point(color = "#f39c12", size = 3) +
+  labs(title = "ETF AUM in India (2016–2026)",
+       subtitle = "CAGR ~35% — ETF AUM grew from ₹0.41 to ₹9.50 Lakh Crore",
+       x = "Year", y = "AUM (₹ Lakh Crore)") +
+  scale_x_continuous(breaks = 2016:2026) +
+  theme_minimal(base_size = 13) +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1))
+```
+
+*Source: Compiled from RBI, SEBI, NSE, BSE, AMFI and Government Reports (Latest Available Data).*
+
+**Popular ETFs in India (2024):**
+
+| ETF Name | Tracks | AUM (₹ Cr) | Expense Ratio |
+|----------|--------|-----------|---------------|
+| Nippon India Nifty 50 BeES | Nifty 50 | ~12,000 | 0.04% |
+| HDFC Nifty 50 ETF | Nifty 50 | ~10,500 | 0.10% |
+| SBI Nifty 50 ETF | Nifty 50 | ~1,10,000+ (EPFO) | 0.07% |
+| Nippon India Junior BeES | Nifty Next 50 | ~3,800 | 0.13% |
+| ICICI Prudential Midcap ETF | Nifty Midcap 150 | ~800 | 0.18% |
+| Nippon India Gold BeES | Gold (MCX) | ~8,500 | 0.82% |
+| Nippon India Silver ETF | Silver (MCX) | ~1,200 | 0.65% |
+| Bharat Bond ETF April 2030 | PSU Bonds Ladder | ~15,000 | 0.0005% |
+
+*Source: Compiled from RBI, SEBI, NSE, BSE, AMFI and Government Reports (Latest Available Data).*
+
+**Special Feature: EPFO and ETFs**
+
+A landmark development in Indian capital markets was the **EPFO's decision in 2015 to invest 5% (later increased to 15%) of incremental EPF corpus in equity ETFs** tracking Nifty 50 and Sensex. This makes EPFO one of the largest domestic institutional investors through the ETF route, protecting subscribers' retirement savings through passive equity exposure.
+
+---
+
+## 2.10 Real Estate Investment Trusts (REITs) {#reits}
+
+### 2.10.1 Meaning and Structure
+
+A **Real Estate Investment Trust (REIT)** is a listed entity that owns, operates, or finances **income-generating real estate** assets. REITs allow retail investors to invest in large commercial properties (office parks, malls, hospitals) with a minimum of ₹10,000–15,000.
+
+SEBI introduced REIT regulations in **2014**, and the **first Indian REIT — Embassy Office Parks REIT — was listed on NSE in April 2019**.
+
+**Structure of a REIT:**
+
+```{mermaid}
+flowchart LR
+    A[Retail & Institutional Investors] -->|Units| B[REIT Trust]
+    B -->|Manager| C[Investment Manager]
+    C -->|Acquires / Manages| D[Special Purpose Vehicles - SPVs]
+    D -->|Holds| E[Commercial Properties]
+    E --> E1[Office Parks]
+    E --> E2[Retail Malls]
+    E --> E3[Warehouses]
+    E --> E4[Hospitals]
+    D -->|Income| B
+    B -->|90% Distribution| A
+    F[SEBI] -->|Regulates| B
+    style B fill:#2c3e50,color:#fff
+    style F fill:#c0392b,color:#fff
+    style A fill:#2980b9,color:#fff
+```
+
+*Figure 2.8: Structure of Indian REITs*
+
+**Mandatory Requirements under SEBI REIT Regulations:**
+- **Minimum 80% assets** in completed, rent-generating properties
+- **Minimum 90% distributable cash** must be distributed to unit holders every 6 months
+- Must be listed on NSE or BSE
+- Minimum public float: 25% of total units
+
+**Indian REITs (2024):**
+
+| REIT | Listed | Portfolio | AUM (₹ Cr) | Distribution Yield |
+|------|--------|-----------|-----------|-------------------|
+| Embassy Office Parks REIT | April 2019 | 45 Mn sqft (Bengaluru, Mumbai, NCR) | ~42,000 | ~6.5% |
+| Mindspace Business Parks REIT | August 2020 | 32 Mn sqft (Mumbai, Hyderabad, Pune) | ~25,000 | ~6.2% |
+| Brookfield India REIT | February 2021 | 27 Mn sqft (NCR, Mumbai, Kolkata) | ~18,000 | ~7.5% |
+| Nexus Select Trust (Retail REIT) | May 2023 | 17 retail malls across India | ~15,000 | ~6.0% |
+
+*Source: Compiled from RBI, SEBI, NSE, BSE, AMFI and Government Reports (Latest Available Data).*
+
+**REITs as an Investment:**
+- **Rental income** from commercial properties distributed quarterly
+- **Capital appreciation** as property values rise
+- Lower entry barrier vs. direct real estate
+- Portfolio diversification (real estate exposure without physical ownership)
+- **Tax treatment**: REIT distributions partly taxable as business income, partly as dividend
+
+---
+
+## 2.11 Infrastructure Investment Trusts (InvITs) {#invits}
+
+### 2.11.1 Meaning and Structure
+
+An **Infrastructure Investment Trust (InvIT)** is a collective investment vehicle — similar in structure to REITs — that pools investor money to invest in **operational infrastructure projects** such as roads, power transmission lines, gas pipelines, and telecom towers.
+
+SEBI introduced InvIT regulations in **2014**. India's first InvIT — **IRB InvIT Fund** — listed in May 2017.
+
+**REIT vs. InvIT:**
+
+| Feature | REIT | InvIT |
+|---------|------|-------|
+| Assets | Commercial real estate | Infrastructure projects |
+| Revenue Source | Rental income | Toll, transmission charges, gas fees |
+| Underlying Asset | Buildings / properties | Roads, pipelines, towers |
+| Risk | Lower (stable rents) | Medium (traffic/usage-dependent) |
+| First India Listing | Embassy REIT (2019) | IRB InvIT (2017) |
+
+*Source: Compiled from RBI, SEBI, NSE, BSE, AMFI and Government Reports (Latest Available Data).*
+
+**Major Listed InvITs in India (2024):**
+
+| InvIT | Assets | Listed | Yield |
+|-------|--------|--------|-------|
+| IRB InvIT Fund | National highways (BOT) | May 2017 | ~10–12% |
+| IndInfravit Trust | Highway NHAI projects | March 2018 | ~11% |
+| Powergrid InvIT | Power transmission assets | May 2021 | ~10% |
+| India Grid Trust (IndiGrid) | Power transmission (Sterlite) | June 2017 | ~11–12% |
+
+*Source: Compiled from RBI, SEBI, NSE, BSE, AMFI and Government Reports (Latest Available Data).*
+
+**Growth of REITs and InvITs:**
+
+```{r reit-invit-growth, echo=FALSE, fig.cap="Figure 2.9: REIT and InvIT AUM Growth in India (2017–2026)"}
+ri_data <- data.frame(
+  Year = 2017:2026,
+  REIT_AUM = c(0, 0, 0.10, 0.42, 0.65, 0.90, 1.20, 1.60, 2.10, 2.80),
+  InvIT_AUM = c(0.08, 0.20, 0.45, 0.80, 1.10, 1.40, 1.80, 2.20, 2.70, 3.20)
+)
+
+ri_long <- tidyr::pivot_longer(ri_data, -Year, names_to = "Type", values_to = "AUM")
+
+ggplot(ri_long, aes(x = Year, y = AUM, fill = Type)) +
+  geom_col(position = "dodge", alpha = 0.85) +
+  scale_fill_manual(values = c("REIT_AUM" = "#2980b9", "InvIT_AUM" = "#27ae60"),
+                    labels = c("REIT AUM", "InvIT AUM")) +
+  labs(title = "REIT and InvIT AUM Growth (₹ Lakh Crore)",
+       subtitle = "REITs launched 2019; InvITs launched 2017",
+       x = "Year", y = "AUM (₹ Lakh Crore)", fill = "") +
+  scale_x_continuous(breaks = 2017:2026) +
+  theme_minimal(base_size = 12) +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1),
+        legend.position = "bottom")
+```
+
+*Source: Compiled from RBI, SEBI, NSE, BSE, AMFI and Government Reports (Latest Available Data).*
+
+---
+
+::: {.research-corner}
+**Research Corner 2.1: The Future of Passive Investing in India**
+
+The global shift from active to passive investing is accelerating in India. Key research observations:
+
+1. **SPIVA India Scorecard (S&P, 2024)** shows that over 10 years, **over 80% of large-cap active funds underperformed** the Nifty 50 TRI (Total Return Index).
+
+2. **EPFO's ETF mandate** has democratised passive investing, with ₹2.5+ lakh crore invested in equity ETFs by EPFO as of 2024.
+
+3. **Zero-commission direct plans** and growing financial literacy are driving retail investors toward direct index ETFs.
+
+**Research Gap:** The tracking error of Indian ETFs — especially for mid-cap and small-cap indices — remains significantly higher than developed market ETFs. Research into optimal ETF creation/redemption mechanisms for Indian markets is needed.
+:::
+
+---
+
+## 2.12 Summary {#unit2-summary}
+
+1. **Shares** are units of company ownership. Equity shareholders are residual claimants with voting rights; preference shareholders have priority in dividend and capital repayment.
+
+2. **Debentures** are debt instruments — NCDs, FCDs, and PCDs represent the primary classifications used in Indian markets. CRISIL, ICRA, and CARE ratings guide investor decisions.
+
+3. **Mutual funds** are the most accessible financial investment vehicle for retail investors — professionally managed, diversified, and SEBI-regulated. India's MF industry crossed ₹67 lakh crore AUM in 2026.
+
+4. **NAV** is the per-unit value of a mutual fund, calculated daily. Total returns depend on NAV appreciation plus dividend distributions.
+
+5. **Expense Ratio** directly erodes investor returns. Direct plans save 0.5%–1.2% annually, compounding to significant wealth over 15–20 years.
+
+6. **SEBI's 2017 categorisation** brought standardisation — one scheme per category per AMC — enabling investors to make meaningful comparisons.
+
+7. **ETFs** track indices passively at very low cost and can be traded intraday. EPFO's ETF mandate is a landmark development for Indian capital markets.
+
+8. **REITs** enable retail investors to invest in commercial real estate with ₹10,000–15,000, earning distribution yields of 6–8% p.a. Four REITs are listed in India (2024).
+
+9. **InvITs** invest in operating infrastructure projects (roads, power lines, gas pipelines), offering yields of 10–12% p.a. with government-backed revenue streams.
+
+---
+
+## Key Terms {#unit2-keyterms}
+
+1. **Share** — Unit of ownership in a company
+2. **Equity Share** — Ordinary share with full ownership rights and residual claims
+3. **Preference Share** — Share with priority dividend rights over equity
+4. **Cumulative Preference Share** — Unpaid dividends accumulate for future payment
+5. **Convertible Preference Share** — Convertible into equity shares at specified date
+6. **Debenture** — Long-term debt instrument issued by companies
+7. **NCD (Non-Convertible Debenture)** — Debenture that cannot be converted to equity
+8. **ESOP** — Employee Stock Option Plan; equity compensation for employees
+9. **Bonus Share** — Free share issued to existing shareholders from reserves
+10. **Rights Issue** — Offer to existing shareholders to buy new shares at discount
+11. **Mutual Fund** — Pooled investment vehicle managed by professional AMC
+12. **AMC** — Asset Management Company; manages mutual fund investments
+13. **NAV** — Net Asset Value; per-unit market value of mutual fund
+14. **Expense Ratio / TER** — Annual cost charged by fund as % of AUM
+15. **Direct Plan** — Mutual fund plan without distributor commission
+16. **Regular Plan** — Mutual fund plan through distributors with higher TER
+17. **SIP** — Systematic Investment Plan; regular fixed-amount investment
+18. **ELSS** — Equity Linked Savings Scheme; 3-year lock-in, Section 80C benefit
+19. **Large Cap Fund** — Fund investing 80%+ in top 100 companies by market cap
+20. **Mid Cap Fund** — Fund investing 65%+ in 101st–250th companies by market cap
+21. **Gilt Fund** — Fund investing 80%+ in government securities
+22. **ETF** — Exchange Traded Fund; passively managed, exchange-listed index fund
+23. **Tracking Error** — Deviation of ETF/Index fund returns from benchmark index
+24. **REIT** — Real Estate Investment Trust; listed vehicle owning commercial properties
+25. **InvIT** — Infrastructure Investment Trust; listed vehicle owning infrastructure assets
+26. **Distribution Yield** — Annual distributions as % of unit price (REIT/InvIT)
+27. **AMFI** — Association of Mutual Funds in India; industry body
+28. **DVR Shares** — Differential Voting Rights shares; promoted by SEBI in 2019
+29. **Sweat Equity** — Shares issued to employees/directors for non-cash contributions
+30. **EPFO** — Employees' Provident Fund Organisation; invests in equity ETFs
+
+---
+
+## Review Questions — Unit II {#unit2-review}
+
+### Very Short Answer Questions
+
+1. What is the difference between equity share and preference share in one sentence?
+2. Name four types of preference shares.
+3. What is the full form of ELSS?
+4. State the SEBI-mandated distribution percentage for REITs.
+5. Who introduced ETFs in India and when was the first equity ETF listed?
+6. What is the minimum lock-in period for ELSS?
+7. Define Expense Ratio.
+8. State the SEBI categorisation rule for large cap funds.
+9. Name the four listed REITs in India as of 2024.
+10. What is the difference between an NCD and an FCD?
+
+### Essay Questions
+
+1. Explain the SEBI categorisation of mutual fund schemes (2017). Why was this circular significant for the Indian mutual fund industry? Discuss with examples.
+2. "Direct plans in mutual funds are always superior to regular plans for long-term investors." Do you agree? Justify with numerical illustrations showing the impact of expense ratio over 20 years.
+3. Critically evaluate REITs as an investment avenue for retail investors in India. Discuss the regulatory framework, available REITs, and their historical performance.
+4. Explain the structure and growth of InvITs in India. How do they differ from REITs? Which sectors are currently represented in Indian InvITs?
+5. Discuss the role of ETFs in democratising equity investment in India. Evaluate the EPFO's ETF mandate and its impact on domestic capital markets.
+
+---
+
+## MCQs — Unit II (Selected)
+
+**1.** The SEBI (Mutual Fund) Regulations were first issued in:
+- (A) 1992  (B) 1996 ← **Correct**  (C) 2000  (D) 2003
+
+*Answer: B. SEBI (Mutual Fund) Regulations were enacted in 1996.*
+
+**2.** NAV of a mutual fund is calculated:
+- (A) Weekly  (B) Monthly  (C) Daily ← **Correct**  (D) Quarterly
+
+*Answer: C. NAV is disclosed daily on business days by all open-end mutual funds.*
+
+**3.** The first REIT in India was:
+- (A) Mindspace REIT  (B) Brookfield REIT  (C) Embassy Office Parks REIT ← **Correct**  (D) Nexus Select Trust
+
+*Answer: C. Embassy Office Parks REIT was listed on NSE in April 2019, the first REIT in India.*
+
+**4.** ELSS funds have a mandatory lock-in of:
+- (A) 1 year  (B) 2 years  (C) 3 years ← **Correct**  (D) 5 years
+
+*Answer: C. ELSS has a 3-year lock-in — the shortest among Section 80C instruments.*
+
+**5.** Which of the following is a passively managed fund?
+- (A) Flexi Cap Fund  (B) Mid Cap Fund  (C) ELSS Fund  (D) Index Fund ← **Correct**
+
+*Answer: D. Index funds (and ETFs) are passively managed, tracking a benchmark index.*
+
+---
+
+## Numerical Problems — Unit II
+
+**Problem 2.1:** A mutual fund has the following: Equity portfolio ₹5,200 Cr, Bonds ₹1,800 Cr, Cash ₹150 Cr, Receivables ₹50 Cr, Total liabilities ₹80 Cr. Number of units: 350 Cr. Calculate NAV.
+
+```{r nav-problem, echo=TRUE}
+equity <- 5200; bonds <- 1800; cash <- 150; recv <- 50
+liabilities <- 80; units <- 350
+
+total_assets <- equity + bonds + cash + recv
+nav <- (total_assets - liabilities) / units
+cat("NAV =", round(nav, 4), "per unit\n")
+```
+
+**Problem 2.2:** You invested ₹50,000 in an equity fund at NAV ₹25. After 5 years NAV is ₹56.20. Calculate CAGR.
+
+```{r cagr-problem, echo=TRUE}
+nav_buy <- 25; nav_sell <- 56.20; years <- 5
+cagr <- (nav_sell/nav_buy)^(1/years) - 1
+cat("CAGR:", round(cagr*100, 2), "% per annum\n")
+units_held <- 50000/nav_buy
+gain <- (nav_sell - nav_buy) * units_held
+cat("Investment value:", format(nav_sell * units_held, big.mark = ","), "\n")
+cat("Capital Gain: ₹", format(gain, big.mark = ","), "\n")
+```
+
+*End of Unit II*
+
