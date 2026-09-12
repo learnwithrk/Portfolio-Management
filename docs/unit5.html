@@ -1,0 +1,2167 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 5 Portfolio Selection and Revision | PORTFOLIO MANAGEMENT</title>
+  <meta name="description" content="Chapter 5 Portfolio Selection and Revision | PORTFOLIO MANAGEMENT" />
+  <meta name="generator" content="bookdown 0.45 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter 5 Portfolio Selection and Revision | PORTFOLIO MANAGEMENT" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 5 Portfolio Selection and Revision | PORTFOLIO MANAGEMENT" />
+  
+  
+  
+
+<meta name="author" content="RAJAKRISHNAN MANIVEL" />
+
+
+<meta name="date" content="2026-09-12" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="unit4.html"/>
+<link rel="next" href="trading-view-practicals.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+<script src="libs/kePrint-0.0.1/kePrint.js"></script>
+<link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
+<link href="libs/bsTable-3.3.7/bootstrapTable.min.css" rel="stylesheet" />
+<script src="libs/bsTable-3.3.7/bootstrapTable.js"></script>
+
+
+<style type="text/css">
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">PORTFOLIO</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Fundamentals of Investment</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#investment-meaning"><i class="fa fa-check"></i><b>1.1</b> Investment — Meaning, Nature, and Characteristics</a>
+<ul>
+<li class="chapter" data-level="1.1.1" data-path="index.html"><a href="index.html#meaning-of-investment"><i class="fa fa-check"></i><b>1.1.1</b> Meaning of Investment</a></li>
+<li class="chapter" data-level="1.1.2" data-path="index.html"><a href="index.html#investment-vs.-speculation-vs.-gambling"><i class="fa fa-check"></i><b>1.1.2</b> Investment vs. Speculation vs. Gambling</a></li>
+<li class="chapter" data-level="1.1.3" data-path="index.html"><a href="index.html#characteristics-of-investment"><i class="fa fa-check"></i><b>1.1.3</b> Characteristics of Investment</a></li>
+</ul></li>
+<li class="chapter" data-level="1.2" data-path="index.html"><a href="index.html#classification"><i class="fa fa-check"></i><b>1.2</b> Classification of Investments</a>
+<ul>
+<li class="chapter" data-level="1.2.1" data-path="index.html"><a href="index.html#financial-investments"><i class="fa fa-check"></i><b>1.2.1</b> Financial Investments</a></li>
+<li class="chapter" data-level="1.2.2" data-path="index.html"><a href="index.html#physical-real-investments"><i class="fa fa-check"></i><b>1.2.2</b> Physical / Real Investments</a></li>
+<li class="chapter" data-level="1.2.3" data-path="index.html"><a href="index.html#hybrid-investments"><i class="fa fa-check"></i><b>1.2.3</b> Hybrid Investments</a></li>
+</ul></li>
+<li class="chapter" data-level="1.3" data-path="index.html"><a href="index.html#need-investment"><i class="fa fa-check"></i><b>1.3</b> Need for Investment</a>
+<ul>
+<li class="chapter" data-level="1.3.1" data-path="index.html"><a href="index.html#wealth-creation"><i class="fa fa-check"></i><b>1.3.1</b> Wealth Creation</a></li>
+<li class="chapter" data-level="1.3.2" data-path="index.html"><a href="index.html#inflation-protection"><i class="fa fa-check"></i><b>1.3.2</b> Inflation Protection</a></li>
+<li class="chapter" data-level="1.3.3" data-path="index.html"><a href="index.html#retirement-planning"><i class="fa fa-check"></i><b>1.3.3</b> Retirement Planning</a></li>
+<li class="chapter" data-level="1.3.4" data-path="index.html"><a href="index.html#tax-planning"><i class="fa fa-check"></i><b>1.3.4</b> Tax Planning</a></li>
+</ul></li>
+<li class="chapter" data-level="1.4" data-path="index.html"><a href="index.html#investment-avenues"><i class="fa fa-check"></i><b>1.4</b> Investment Avenues</a>
+<ul>
+<li class="chapter" data-level="1.4.1" data-path="index.html"><a href="index.html#government-securities-g-secs-and-t-bills"><i class="fa fa-check"></i><b>1.4.1</b> Government Securities (G-Secs and T-Bills)</a></li>
+<li class="chapter" data-level="1.4.2" data-path="index.html"><a href="index.html#insurance-policies-as-investment-instruments"><i class="fa fa-check"></i><b>1.4.2</b> Insurance Policies as Investment Instruments</a></li>
+<li class="chapter" data-level="1.4.3" data-path="index.html"><a href="index.html#bank-deposits"><i class="fa fa-check"></i><b>1.4.3</b> Bank Deposits</a></li>
+<li class="chapter" data-level="1.4.4" data-path="index.html"><a href="index.html#provident-fund-schemes"><i class="fa fa-check"></i><b>1.4.4</b> Provident Fund Schemes</a></li>
+<li class="chapter" data-level="1.4.5" data-path="index.html"><a href="index.html#post-office-schemes"><i class="fa fa-check"></i><b>1.4.5</b> Post Office Schemes</a></li>
+<li class="chapter" data-level="1.4.6" data-path="index.html"><a href="index.html#real-estate-investment"><i class="fa fa-check"></i><b>1.4.6</b> Real Estate Investment</a></li>
+<li class="chapter" data-level="1.4.7" data-path="index.html"><a href="index.html#gold-as-an-investment"><i class="fa fa-check"></i><b>1.4.7</b> Gold as an Investment</a></li>
+<li class="chapter" data-level="1.4.8" data-path="index.html"><a href="index.html#silver-as-an-investment"><i class="fa fa-check"></i><b>1.4.8</b> Silver as an Investment</a></li>
+</ul></li>
+<li class="chapter" data-level="1.5" data-path="index.html"><a href="index.html#arthashastra"><i class="fa fa-check"></i><b>1.5</b> Core Investment Lessons in Arthashastra</a>
+<ul>
+<li class="chapter" data-level="1.5.1" data-path="index.html"><a href="index.html#introduction-to-kautilyas-economic-thought"><i class="fa fa-check"></i><b>1.5.1</b> Introduction to Kautilya’s Economic Thought</a></li>
+<li class="chapter" data-level="1.5.2" data-path="index.html"><a href="index.html#kautilyas-wealth-principles-and-modern-investment"><i class="fa fa-check"></i><b>1.5.2</b> Kautilya’s Wealth Principles and Modern Investment</a></li>
+<li class="chapter" data-level="1.5.3" data-path="index.html"><a href="index.html#comparative-table-arthashastra-vs.-modern-portfolio-management"><i class="fa fa-check"></i><b>1.5.3</b> Comparative Table: Arthashastra vs. Modern Portfolio Management</a></li>
+</ul></li>
+<li class="chapter" data-level="1.6" data-path="index.html"><a href="index.html#Module1-summary"><i class="fa fa-check"></i><b>1.6</b> Summary</a></li>
+<li class="chapter" data-level="1.7" data-path="index.html"><a href="index.html#Module1-keyterms"><i class="fa fa-check"></i><b>1.7</b> Key Terms</a></li>
+<li class="chapter" data-level="1.8" data-path="index.html"><a href="index.html#Module1-review"><i class="fa fa-check"></i><b>1.8</b> Review Questions</a>
+<ul>
+<li class="chapter" data-level="1.8.1" data-path="index.html"><a href="index.html#very-short-answer-questions-2-marks-each"><i class="fa fa-check"></i><b>1.8.1</b> Very Short Answer Questions (2 marks each)</a></li>
+<li class="chapter" data-level="1.8.2" data-path="index.html"><a href="index.html#short-answer-questions-5-marks-each"><i class="fa fa-check"></i><b>1.8.2</b> Short Answer Questions (5 marks each)</a></li>
+<li class="chapter" data-level="1.8.3" data-path="index.html"><a href="index.html#essay-questions-10-marks-each"><i class="fa fa-check"></i><b>1.8.3</b> Essay Questions (10 marks each)</a></li>
+<li class="chapter" data-level="1.8.4" data-path="index.html"><a href="index.html#analytical-questions-15-marks-each"><i class="fa fa-check"></i><b>1.8.4</b> Analytical Questions (15 marks each)</a></li>
+<li class="chapter" data-level="1.8.5" data-path="index.html"><a href="index.html#case-study-questions-20-marks-each"><i class="fa fa-check"></i><b>1.8.5</b> Case Study Questions (20 marks each)</a></li>
+</ul></li>
+<li class="chapter" data-level="1.9" data-path="index.html"><a href="index.html#Module1-mcqs"><i class="fa fa-check"></i><b>1.9</b> MCQs — Module I</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="unit2.html"><a href="unit2.html"><i class="fa fa-check"></i><b>2</b> Financial Investments</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="unit2.html"><a href="unit2.html#shares-meaning"><i class="fa fa-check"></i><b>2.1</b> Shares — Meaning and Features</a>
+<ul>
+<li class="chapter" data-level="2.1.1" data-path="unit2.html"><a href="unit2.html#what-is-a-share"><i class="fa fa-check"></i><b>2.1.1</b> What is a Share?</a></li>
+<li class="chapter" data-level="2.1.2" data-path="unit2.html"><a href="unit2.html#rights-of-shareholders"><i class="fa fa-check"></i><b>2.1.2</b> Rights of Shareholders</a></li>
+</ul></li>
+<li class="chapter" data-level="2.2" data-path="unit2.html"><a href="unit2.html#equity-shares"><i class="fa fa-check"></i><b>2.2</b> Equity Shares</a>
+<ul>
+<li class="chapter" data-level="2.2.1" data-path="unit2.html"><a href="unit2.html#meaning-and-features"><i class="fa fa-check"></i><b>2.2.1</b> Meaning and Features</a></li>
+<li class="chapter" data-level="2.2.2" data-path="unit2.html"><a href="unit2.html#types-of-equity-shares"><i class="fa fa-check"></i><b>2.2.2</b> Types of Equity Shares</a></li>
+</ul></li>
+<li class="chapter" data-level="2.3" data-path="unit2.html"><a href="unit2.html#preference-shares"><i class="fa fa-check"></i><b>2.3</b> Preference Shares</a>
+<ul>
+<li class="chapter" data-level="2.3.1" data-path="unit2.html"><a href="unit2.html#meaning-and-features-1"><i class="fa fa-check"></i><b>2.3.1</b> Meaning and Features</a></li>
+<li class="chapter" data-level="2.3.2" data-path="unit2.html"><a href="unit2.html#types-of-preference-shares"><i class="fa fa-check"></i><b>2.3.2</b> Types of Preference Shares</a></li>
+</ul></li>
+<li class="chapter" data-level="2.4" data-path="unit2.html"><a href="unit2.html#debentures"><i class="fa fa-check"></i><b>2.4</b> Debentures</a>
+<ul>
+<li class="chapter" data-level="2.4.1" data-path="unit2.html"><a href="unit2.html#meaning"><i class="fa fa-check"></i><b>2.4.1</b> Meaning</a></li>
+<li class="chapter" data-level="2.4.2" data-path="unit2.html"><a href="unit2.html#types-of-debentures"><i class="fa fa-check"></i><b>2.4.2</b> Types of Debentures</a></li>
+</ul></li>
+<li class="chapter" data-level="2.5" data-path="unit2.html"><a href="unit2.html#mutual-funds"><i class="fa fa-check"></i><b>2.5</b> Mutual Funds</a>
+<ul>
+<li class="chapter" data-level="2.5.1" data-path="unit2.html"><a href="unit2.html#meaning-and-structure"><i class="fa fa-check"></i><b>2.5.1</b> Meaning and Structure</a></li>
+<li class="chapter" data-level="2.5.2" data-path="unit2.html"><a href="unit2.html#advantages-of-mutual-funds"><i class="fa fa-check"></i><b>2.5.2</b> Advantages of Mutual Funds</a></li>
+<li class="chapter" data-level="2.5.3" data-path="unit2.html"><a href="unit2.html#risks-in-mutual-fund-investment"><i class="fa fa-check"></i><b>2.5.3</b> Risks in Mutual Fund Investment</a></li>
+</ul></li>
+<li class="chapter" data-level="2.6" data-path="unit2.html"><a href="unit2.html#nav"><i class="fa fa-check"></i><b>2.6</b> Net Asset Value (NAV)</a>
+<ul>
+<li class="chapter" data-level="2.6.1" data-path="unit2.html"><a href="unit2.html#meaning-of-nav"><i class="fa fa-check"></i><b>2.6.1</b> Meaning of NAV</a></li>
+<li class="chapter" data-level="2.6.2" data-path="unit2.html"><a href="unit2.html#nav-calculation-worked-example"><i class="fa fa-check"></i><b>2.6.2</b> NAV Calculation — Worked Example</a></li>
+<li class="chapter" data-level="2.6.3" data-path="unit2.html"><a href="unit2.html#nav-and-returns"><i class="fa fa-check"></i><b>2.6.3</b> NAV and Returns</a></li>
+</ul></li>
+<li class="chapter" data-level="2.7" data-path="unit2.html"><a href="unit2.html#expense-ratio"><i class="fa fa-check"></i><b>2.7</b> Expense Ratio</a>
+<ul>
+<li class="chapter" data-level="2.7.1" data-path="unit2.html"><a href="unit2.html#meaning-and-importance"><i class="fa fa-check"></i><b>2.7.1</b> Meaning and Importance</a></li>
+<li class="chapter" data-level="2.7.2" data-path="unit2.html"><a href="unit2.html#expense-ratio-calculation-worked-example"><i class="fa fa-check"></i><b>2.7.2</b> Expense Ratio Calculation — Worked Example</a></li>
+</ul></li>
+<li class="chapter" data-level="2.8" data-path="unit2.html"><a href="unit2.html#mf-types"><i class="fa fa-check"></i><b>2.8</b> Types of Mutual Funds</a>
+<ul>
+<li class="chapter" data-level="2.8.1" data-path="unit2.html"><a href="unit2.html#sebi-categorisation-of-mutual-fund-schemes-2017"><i class="fa fa-check"></i><b>2.8.1</b> SEBI Categorisation of Mutual Fund Schemes (2017)</a></li>
+<li class="chapter" data-level="2.8.2" data-path="unit2.html"><a href="unit2.html#major-categories-detailed-analysis"><i class="fa fa-check"></i><b>2.8.2</b> Major Categories — Detailed Analysis</a></li>
+</ul></li>
+<li class="chapter" data-level="2.9" data-path="unit2.html"><a href="unit2.html#etfs"><i class="fa fa-check"></i><b>2.9</b> Exchange Traded Funds (ETFs)</a>
+<ul>
+<li class="chapter" data-level="2.9.1" data-path="unit2.html"><a href="unit2.html#meaning-and-structure-1"><i class="fa fa-check"></i><b>2.9.1</b> Meaning and Structure</a></li>
+</ul></li>
+<li class="chapter" data-level="2.10" data-path="unit2.html"><a href="unit2.html#reits"><i class="fa fa-check"></i><b>2.10</b> Real Estate Investment Trusts (REITs)</a>
+<ul>
+<li class="chapter" data-level="2.10.1" data-path="unit2.html"><a href="unit2.html#meaning-and-structure-2"><i class="fa fa-check"></i><b>2.10.1</b> Meaning and Structure</a></li>
+</ul></li>
+<li class="chapter" data-level="2.11" data-path="unit2.html"><a href="unit2.html#invits"><i class="fa fa-check"></i><b>2.11</b> Infrastructure Investment Trusts (InvITs)</a>
+<ul>
+<li class="chapter" data-level="2.11.1" data-path="unit2.html"><a href="unit2.html#meaning-and-structure-3"><i class="fa fa-check"></i><b>2.11.1</b> Meaning and Structure</a></li>
+</ul></li>
+<li class="chapter" data-level="2.12" data-path="unit2.html"><a href="unit2.html#unit2-summary"><i class="fa fa-check"></i><b>2.12</b> Summary</a></li>
+<li class="chapter" data-level="2.13" data-path="unit2.html"><a href="unit2.html#unit2-keyterms"><i class="fa fa-check"></i><b>2.13</b> Key Terms</a></li>
+<li class="chapter" data-level="2.14" data-path="unit2.html"><a href="unit2.html#unit2-review"><i class="fa fa-check"></i><b>2.14</b> Review Questions — Unit II</a>
+<ul>
+<li class="chapter" data-level="2.14.1" data-path="unit2.html"><a href="unit2.html#very-short-answer-questions"><i class="fa fa-check"></i><b>2.14.1</b> Very Short Answer Questions</a></li>
+<li class="chapter" data-level="2.14.2" data-path="unit2.html"><a href="unit2.html#essay-questions"><i class="fa fa-check"></i><b>2.14.2</b> Essay Questions</a></li>
+</ul></li>
+<li class="chapter" data-level="2.15" data-path="unit2.html"><a href="unit2.html#mcqs-unit-ii-selected"><i class="fa fa-check"></i><b>2.15</b> MCQs — Unit II (Selected)</a></li>
+<li class="chapter" data-level="2.16" data-path="unit2.html"><a href="unit2.html#numerical-problems-unit-ii"><i class="fa fa-check"></i><b>2.16</b> Numerical Problems — Unit II</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="unit3.html"><a href="unit3.html"><i class="fa fa-check"></i><b>3</b> Fundamental Analysis</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="unit3.html"><a href="unit3.html#risk-return"><i class="fa fa-check"></i><b>3.1</b> Risk and Return — Foundations</a>
+<ul>
+<li class="chapter" data-level="3.1.1" data-path="unit3.html"><a href="unit3.html#the-risk-return-relationship"><i class="fa fa-check"></i><b>3.1.1</b> The Risk-Return Relationship</a></li>
+<li class="chapter" data-level="3.1.2" data-path="unit3.html"><a href="unit3.html#measuring-return"><i class="fa fa-check"></i><b>3.1.2</b> Measuring Return</a></li>
+<li class="chapter" data-level="3.1.3" data-path="unit3.html"><a href="unit3.html#types-of-risk"><i class="fa fa-check"></i><b>3.1.3</b> Types of Risk</a></li>
+</ul></li>
+<li class="chapter" data-level="3.2" data-path="unit3.html"><a href="unit3.html#fundamental-analysis"><i class="fa fa-check"></i><b>3.2</b> Fundamental Analysis — Framework</a></li>
+<li class="chapter" data-level="3.3" data-path="unit3.html"><a href="unit3.html#economic-analysis"><i class="fa fa-check"></i><b>3.3</b> Economic Analysis</a>
+<ul>
+<li class="chapter" data-level="3.3.1" data-path="unit3.html"><a href="unit3.html#key-macroeconomic-indicators-for-indian-investors"><i class="fa fa-check"></i><b>3.3.1</b> Key Macroeconomic Indicators for Indian Investors</a></li>
+</ul></li>
+<li class="chapter" data-level="3.4" data-path="unit3.html"><a href="unit3.html#industry-analysis"><i class="fa fa-check"></i><b>3.4</b> Industry Analysis</a>
+<ul>
+<li class="chapter" data-level="3.4.1" data-path="unit3.html"><a href="unit3.html#porters-five-forces-model"><i class="fa fa-check"></i><b>3.4.1</b> 3.4.1 Porter’s Five Forces Model</a></li>
+<li class="chapter" data-level="3.4.2" data-path="unit3.html"><a href="unit3.html#industry-life-cycle"><i class="fa fa-check"></i><b>3.4.2</b> Industry Life Cycle</a></li>
+</ul></li>
+<li class="chapter" data-level="3.5" data-path="unit3.html"><a href="unit3.html#company-analysis"><i class="fa fa-check"></i><b>3.5</b> Company Analysis</a>
+<ul>
+<li class="chapter" data-level="3.5.1" data-path="unit3.html"><a href="unit3.html#business-model-analysis"><i class="fa fa-check"></i><b>3.5.1</b> Business Model Analysis</a></li>
+<li class="chapter" data-level="3.5.2" data-path="unit3.html"><a href="unit3.html#corporate-governance-assessment"><i class="fa fa-check"></i><b>3.5.2</b> Corporate Governance Assessment</a></li>
+</ul></li>
+<li class="chapter" data-level="3.6" data-path="unit3.html"><a href="unit3.html#financial-ratios"><i class="fa fa-check"></i><b>3.6</b> Financial Analysis and Key Ratios</a>
+<ul>
+<li class="chapter" data-level="3.6.1" data-path="unit3.html"><a href="unit3.html#earnings-per-share-eps"><i class="fa fa-check"></i><b>3.6.1</b> Earnings Per Share (EPS)</a></li>
+<li class="chapter" data-level="3.6.2" data-path="unit3.html"><a href="unit3.html#price-to-earnings-ratio-pe"><i class="fa fa-check"></i><b>3.6.2</b> Price-to-Earnings Ratio (P/E)</a></li>
+<li class="chapter" data-level="3.6.3" data-path="unit3.html"><a href="unit3.html#peg-ratio-priceearnings-to-growth"><i class="fa fa-check"></i><b>3.6.3</b> PEG Ratio (Price/Earnings to Growth)</a></li>
+<li class="chapter" data-level="3.6.4" data-path="unit3.html"><a href="unit3.html#return-on-equity-roe"><i class="fa fa-check"></i><b>3.6.4</b> Return on Equity (ROE)</a></li>
+<li class="chapter" data-level="3.6.5" data-path="unit3.html"><a href="unit3.html#return-on-capital-employed-roce"><i class="fa fa-check"></i><b>3.6.5</b> Return on Capital Employed (ROCE)</a></li>
+<li class="chapter" data-level="3.6.6" data-path="unit3.html"><a href="unit3.html#dividend-yield"><i class="fa fa-check"></i><b>3.6.6</b> Dividend Yield</a></li>
+<li class="chapter" data-level="3.6.7" data-path="unit3.html"><a href="unit3.html#debt-to-equity-ratio"><i class="fa fa-check"></i><b>3.6.7</b> Debt-to-Equity Ratio</a></li>
+<li class="chapter" data-level="3.6.8" data-path="unit3.html"><a href="unit3.html#book-value-per-share"><i class="fa fa-check"></i><b>3.6.8</b> Book Value Per Share</a></li>
+<li class="chapter" data-level="3.6.9" data-path="unit3.html"><a href="unit3.html#comprehensive-ratio-analysis-reliance-industries-202324"><i class="fa fa-check"></i><b>3.6.9</b> Comprehensive Ratio Analysis — Reliance Industries (2023–24)</a></li>
+</ul></li>
+<li class="chapter" data-level="3.7" data-path="unit3.html"><a href="unit3.html#unit3-summary"><i class="fa fa-check"></i><b>3.7</b> Summary</a></li>
+<li class="chapter" data-level="3.8" data-path="unit3.html"><a href="unit3.html#unit3-keyterms"><i class="fa fa-check"></i><b>3.8</b> Key Terms</a></li>
+<li class="chapter" data-level="3.9" data-path="unit3.html"><a href="unit3.html#mcqs-unit-iii-selected"><i class="fa fa-check"></i><b>3.9</b> MCQs — Unit III (Selected)</a></li>
+<li class="chapter" data-level="3.10" data-path="unit3.html"><a href="unit3.html#numerical-problems-unit-iii"><i class="fa fa-check"></i><b>3.10</b> Numerical Problems — Unit III</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="unit4.html"><a href="unit4.html"><i class="fa fa-check"></i><b>4</b> Technical Analysis</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="unit4.html"><a href="unit4.html#ta-intro"><i class="fa fa-check"></i><b>4.1</b> Introduction to Technical Analysis</a>
+<ul>
+<li class="chapter" data-level="4.1.1" data-path="unit4.html"><a href="unit4.html#meaning-and-philosophy"><i class="fa fa-check"></i><b>4.1.1</b> Meaning and Philosophy</a></li>
+<li class="chapter" data-level="4.1.2" data-path="unit4.html"><a href="unit4.html#technical-vs.-fundamental-analysis"><i class="fa fa-check"></i><b>4.1.2</b> Technical vs. Fundamental Analysis</a></li>
+</ul></li>
+<li class="chapter" data-level="4.2" data-path="unit4.html"><a href="unit4.html#dow-theory"><i class="fa fa-check"></i><b>4.2</b> Dow Theory</a>
+<ul>
+<li class="chapter" data-level="4.2.1" data-path="unit4.html"><a href="unit4.html#origins-and-significance"><i class="fa fa-check"></i><b>4.2.1</b> Origins and Significance</a></li>
+<li class="chapter" data-level="4.2.2" data-path="unit4.html"><a href="unit4.html#the-six-tenets-of-dow-theory"><i class="fa fa-check"></i><b>4.2.2</b> The Six Tenets of Dow Theory</a></li>
+</ul></li>
+<li class="chapter" data-level="4.3" data-path="unit4.html"><a href="unit4.html#trend-analysis"><i class="fa fa-check"></i><b>4.3</b> Trend Analysis</a>
+<ul>
+<li class="chapter" data-level="4.3.1" data-path="unit4.html"><a href="unit4.html#meaning-of-trend"><i class="fa fa-check"></i><b>4.3.1</b> Meaning of Trend</a></li>
+<li class="chapter" data-level="4.3.2" data-path="unit4.html"><a href="unit4.html#uptrend"><i class="fa fa-check"></i><b>4.3.2</b> Uptrend</a></li>
+<li class="chapter" data-level="4.3.3" data-path="unit4.html"><a href="unit4.html#downtrend"><i class="fa fa-check"></i><b>4.3.3</b> Downtrend</a></li>
+<li class="chapter" data-level="4.3.4" data-path="unit4.html"><a href="unit4.html#sideways-ranging-trend"><i class="fa fa-check"></i><b>4.3.4</b> Sideways / Ranging Trend</a></li>
+</ul></li>
+<li class="chapter" data-level="4.4" data-path="unit4.html"><a href="unit4.html#moving-averages"><i class="fa fa-check"></i><b>4.4</b> Moving Averages</a>
+<ul>
+<li class="chapter" data-level="4.4.1" data-path="unit4.html"><a href="unit4.html#meaning-and-purpose"><i class="fa fa-check"></i><b>4.4.1</b> Meaning and Purpose</a></li>
+<li class="chapter" data-level="4.4.2" data-path="unit4.html"><a href="unit4.html#simple-moving-average-sma"><i class="fa fa-check"></i><b>4.4.2</b> Simple Moving Average (SMA)</a></li>
+<li class="chapter" data-level="4.4.3" data-path="unit4.html"><a href="unit4.html#exponential-moving-average-ema"><i class="fa fa-check"></i><b>4.4.3</b> Exponential Moving Average (EMA)</a></li>
+</ul></li>
+<li class="chapter" data-level="4.5" data-path="unit4.html"><a href="unit4.html#macd"><i class="fa fa-check"></i><b>4.5</b> MACD — Moving Average Convergence and Divergence</a>
+<ul>
+<li class="chapter" data-level="4.5.1" data-path="unit4.html"><a href="unit4.html#meaning-and-components"><i class="fa fa-check"></i><b>4.5.1</b> Meaning and Components</a></li>
+<li class="chapter" data-level="4.5.2" data-path="unit4.html"><a href="unit4.html#macd-calculation-worked-example"><i class="fa fa-check"></i><b>4.5.2</b> MACD Calculation — Worked Example</a></li>
+<li class="chapter" data-level="4.5.3" data-path="unit4.html"><a href="unit4.html#macd-trading-signals"><i class="fa fa-check"></i><b>4.5.3</b> MACD Trading Signals</a></li>
+</ul></li>
+<li class="chapter" data-level="4.6" data-path="unit4.html"><a href="unit4.html#pivot-points"><i class="fa fa-check"></i><b>4.6</b> Pivot Points</a>
+<ul>
+<li class="chapter" data-level="4.6.1" data-path="unit4.html"><a href="unit4.html#meaning-1"><i class="fa fa-check"></i><b>4.6.1</b> Meaning</a></li>
+<li class="chapter" data-level="4.6.2" data-path="unit4.html"><a href="unit4.html#calculation"><i class="fa fa-check"></i><b>4.6.2</b> Calculation</a></li>
+<li class="chapter" data-level="4.6.3" data-path="unit4.html"><a href="unit4.html#worked-example"><i class="fa fa-check"></i><b>4.6.3</b> Worked Example</a></li>
+</ul></li>
+<li class="chapter" data-level="4.7" data-path="unit4.html"><a href="unit4.html#vwap"><i class="fa fa-check"></i><b>4.7</b> Volume Weighted Average Price (VWAP)</a>
+<ul>
+<li class="chapter" data-level="4.7.1" data-path="unit4.html"><a href="unit4.html#meaning-and-importance-1"><i class="fa fa-check"></i><b>4.7.1</b> Meaning and Importance</a></li>
+<li class="chapter" data-level="4.7.2" data-path="unit4.html"><a href="unit4.html#vwap-calculation-worked-example"><i class="fa fa-check"></i><b>4.7.2</b> VWAP Calculation — Worked Example</a></li>
+<li class="chapter" data-level="4.7.3" data-path="unit4.html"><a href="unit4.html#vwap-trading-strategies"><i class="fa fa-check"></i><b>4.7.3</b> VWAP Trading Strategies</a></li>
+</ul></li>
+<li class="chapter" data-level="4.8" data-path="unit4.html"><a href="unit4.html#ai-tools"><i class="fa fa-check"></i><b>4.8</b> AI Tools in Technical Analysis</a>
+<ul>
+<li class="chapter" data-level="4.8.1" data-path="unit4.html"><a href="unit4.html#the-ai-revolution-in-technical-analysis"><i class="fa fa-check"></i><b>4.8.1</b> The AI Revolution in Technical Analysis</a></li>
+<li class="chapter" data-level="4.8.2" data-path="unit4.html"><a href="unit4.html#platform-by-platform-analysis"><i class="fa fa-check"></i><b>4.8.2</b> Platform-by-Platform Analysis</a></li>
+<li class="chapter" data-level="4.8.3" data-path="unit4.html"><a href="unit4.html#comparison-matrix-of-ai-technical-analysis-tools"><i class="fa fa-check"></i><b>4.8.3</b> Comparison Matrix of AI Technical Analysis Tools</a></li>
+<li class="chapter" data-level="4.8.4" data-path="unit4.html"><a href="unit4.html#strengths-and-limitations-of-ai-in-technical-analysis"><i class="fa fa-check"></i><b>4.8.4</b> Strengths and Limitations of AI in Technical Analysis</a></li>
+</ul></li>
+<li class="chapter" data-level="4.9" data-path="unit4.html"><a href="unit4.html#unit4-summary"><i class="fa fa-check"></i><b>4.9</b> Summary</a></li>
+<li class="chapter" data-level="4.10" data-path="unit4.html"><a href="unit4.html#unit4-keyterms"><i class="fa fa-check"></i><b>4.10</b> Key Terms</a></li>
+<li class="chapter" data-level="4.11" data-path="unit4.html"><a href="unit4.html#mcqs-unit-iv-selected"><i class="fa fa-check"></i><b>4.11</b> MCQs — Unit IV (Selected)</a></li>
+<li class="chapter" data-level="4.12" data-path="unit4.html"><a href="unit4.html#numerical-problems-unit-iv"><i class="fa fa-check"></i><b>4.12</b> Numerical Problems — Unit IV</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="unit5.html"><a href="unit5.html"><i class="fa fa-check"></i><b>5</b> Portfolio Selection and Revision</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="unit5.html"><a href="unit5.html#portfolio-analysis"><i class="fa fa-check"></i><b>5.1</b> 5.1 Portfolio Analysis — Introduction</a>
+<ul>
+<li class="chapter" data-level="5.1.1" data-path="unit5.html"><a href="unit5.html#what-is-a-portfolio"><i class="fa fa-check"></i><b>5.1.1</b> 5.1.1 What is a Portfolio?</a></li>
+<li class="chapter" data-level="5.1.2" data-path="unit5.html"><a href="unit5.html#portfolio-in-the-indian-context"><i class="fa fa-check"></i><b>5.1.2</b> 5.1.2 Portfolio in the Indian Context</a></li>
+</ul></li>
+<li class="chapter" data-level="5.2" data-path="unit5.html"><a href="unit5.html#portfolio-risk-return"><i class="fa fa-check"></i><b>5.2</b> 5.2 Return and Risk of a Portfolio</a>
+<ul>
+<li class="chapter" data-level="5.2.1" data-path="unit5.html"><a href="unit5.html#portfolio-return"><i class="fa fa-check"></i><b>5.2.1</b> 5.2.1 Portfolio Return</a></li>
+<li class="chapter" data-level="5.2.2" data-path="unit5.html"><a href="unit5.html#portfolio-risk-two-asset-portfolio"><i class="fa fa-check"></i><b>5.2.2</b> 5.2.2 Portfolio Risk (Two-Asset Portfolio)</a></li>
+<li class="chapter" data-level="5.2.3" data-path="unit5.html"><a href="unit5.html#three-asset-portfolio-risk"><i class="fa fa-check"></i><b>5.2.3</b> 5.2.3 Three-Asset Portfolio Risk</a></li>
+</ul></li>
+<li class="chapter" data-level="5.3" data-path="unit5.html"><a href="unit5.html#markowitz"><i class="fa fa-check"></i><b>5.3</b> 5.3 Modern Portfolio Theory — Markowitz Model</a>
+<ul>
+<li class="chapter" data-level="5.3.1" data-path="unit5.html"><a href="unit5.html#background"><i class="fa fa-check"></i><b>5.3.1</b> 5.3.1 Background</a></li>
+<li class="chapter" data-level="5.3.2" data-path="unit5.html"><a href="unit5.html#assumptions-of-the-markowitz-model"><i class="fa fa-check"></i><b>5.3.2</b> 5.3.2 Assumptions of the Markowitz Model</a></li>
+<li class="chapter" data-level="5.3.3" data-path="unit5.html"><a href="unit5.html#the-efficient-frontier"><i class="fa fa-check"></i><b>5.3.3</b> 5.3.3 The Efficient Frontier</a></li>
+<li class="chapter" data-level="5.3.4" data-path="unit5.html"><a href="unit5.html#capital-market-line-cml"><i class="fa fa-check"></i><b>5.3.4</b> 5.3.4 Capital Market Line (CML)</a></li>
+</ul></li>
+<li class="chapter" data-level="5.4" data-path="unit5.html"><a href="unit5.html#portfolio-selection"><i class="fa fa-check"></i><b>5.4</b> 5.4 Portfolio Selection</a>
+<ul>
+<li class="chapter" data-level="5.4.1" data-path="unit5.html"><a href="unit5.html#selection-criteria"><i class="fa fa-check"></i><b>5.4.1</b> 5.4.1 Selection Criteria</a></li>
+<li class="chapter" data-level="5.4.2" data-path="unit5.html"><a href="unit5.html#practical-portfolio-construction-indian-example"><i class="fa fa-check"></i><b>5.4.2</b> 5.4.2 Practical Portfolio Construction — Indian Example</a></li>
+</ul></li>
+<li class="chapter" data-level="5.5" data-path="unit5.html"><a href="unit5.html#portfolio-revision"><i class="fa fa-check"></i><b>5.5</b> 5.5 Portfolio Revision</a>
+<ul>
+<li class="chapter" data-level="5.5.1" data-path="unit5.html"><a href="unit5.html#meaning-and-need"><i class="fa fa-check"></i><b>5.5.1</b> 5.5.1 Meaning and Need</a></li>
+<li class="chapter" data-level="5.5.2" data-path="unit5.html"><a href="unit5.html#constraints-on-portfolio-revision"><i class="fa fa-check"></i><b>5.5.2</b> 5.5.2 Constraints on Portfolio Revision</a></li>
+<li class="chapter" data-level="5.5.3" data-path="unit5.html"><a href="unit5.html#portfolio-rebalancing-strategies"><i class="fa fa-check"></i><b>5.5.3</b> 5.5.3 Portfolio Rebalancing Strategies</a></li>
+</ul></li>
+<li class="chapter" data-level="5.6" data-path="unit5.html"><a href="unit5.html#portfolio-evaluation"><i class="fa fa-check"></i><b>5.6</b> 5.6 Portfolio Evaluation</a></li>
+<li class="chapter" data-level="5.7" data-path="unit5.html"><a href="unit5.html#sharpe-ratio"><i class="fa fa-check"></i><b>5.7</b> 5.7 Sharpe Ratio</a>
+<ul>
+<li class="chapter" data-level="5.7.1" data-path="unit5.html"><a href="unit5.html#formula-and-meaning"><i class="fa fa-check"></i><b>5.7.1</b> 5.7.1 Formula and Meaning</a></li>
+<li class="chapter" data-level="5.7.2" data-path="unit5.html"><a href="unit5.html#sharpe-ratio-worked-example"><i class="fa fa-check"></i><b>5.7.2</b> 5.7.2 Sharpe Ratio — Worked Example</a></li>
+</ul></li>
+<li class="chapter" data-level="5.8" data-path="unit5.html"><a href="unit5.html#treynor-ratio"><i class="fa fa-check"></i><b>5.8</b> 5.8 Treynor Ratio</a>
+<ul>
+<li class="chapter" data-level="5.8.1" data-path="unit5.html"><a href="unit5.html#formula-and-meaning-1"><i class="fa fa-check"></i><b>5.8.1</b> 5.8.1 Formula and Meaning</a></li>
+<li class="chapter" data-level="5.8.2" data-path="unit5.html"><a href="unit5.html#treynor-ratio-worked-example"><i class="fa fa-check"></i><b>5.8.2</b> 5.8.2 Treynor Ratio — Worked Example</a></li>
+</ul></li>
+<li class="chapter" data-level="5.9" data-path="unit5.html"><a href="unit5.html#jensens-alpha"><i class="fa fa-check"></i><b>5.9</b> 5.9 Jensen’s Alpha</a>
+<ul>
+<li class="chapter" data-level="5.9.1" data-path="unit5.html"><a href="unit5.html#formula-and-meaning-2"><i class="fa fa-check"></i><b>5.9.1</b> 5.9.1 Formula and Meaning</a></li>
+<li class="chapter" data-level="5.9.2" data-path="unit5.html"><a href="unit5.html#jensens-alpha-worked-example"><i class="fa fa-check"></i><b>5.9.2</b> 5.9.2 Jensen’s Alpha — Worked Example</a></li>
+<li class="chapter" data-level="5.9.3" data-path="unit5.html"><a href="unit5.html#comprehensive-performance-comparison"><i class="fa fa-check"></i><b>5.9.3</b> 5.9.3 Comprehensive Performance Comparison</a></li>
+</ul></li>
+<li class="chapter" data-level="5.10" data-path="unit5.html"><a href="unit5.html#unit5-summary"><i class="fa fa-check"></i><b>5.10</b> 5.10 Summary</a></li>
+<li class="chapter" data-level="5.11" data-path="unit5.html"><a href="unit5.html#unit5-keyterms"><i class="fa fa-check"></i><b>5.11</b> Key Terms</a></li>
+<li class="chapter" data-level="5.12" data-path="unit5.html"><a href="unit5.html#unit5-review"><i class="fa fa-check"></i><b>5.12</b> Review Questions — Unit V</a>
+<ul>
+<li class="chapter" data-level="5.12.1" data-path="unit5.html"><a href="unit5.html#very-short-answer-questions-1"><i class="fa fa-check"></i><b>5.12.1</b> Very Short Answer Questions</a></li>
+<li class="chapter" data-level="5.12.2" data-path="unit5.html"><a href="unit5.html#essay-questions-1"><i class="fa fa-check"></i><b>5.12.2</b> Essay Questions</a></li>
+<li class="chapter" data-level="5.12.3" data-path="unit5.html"><a href="unit5.html#analytical-questions"><i class="fa fa-check"></i><b>5.12.3</b> Analytical Questions</a></li>
+</ul></li>
+<li class="chapter" data-level="5.13" data-path="unit5.html"><a href="unit5.html#mcqs-unit-v-selected"><i class="fa fa-check"></i><b>5.13</b> MCQs — Unit V (Selected)</a></li>
+<li class="chapter" data-level="5.14" data-path="unit5.html"><a href="unit5.html#numerical-problems-unit-v"><i class="fa fa-check"></i><b>5.14</b> Numerical Problems — Unit V</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="trading-view-practicals.html"><a href="trading-view-practicals.html"><i class="fa fa-check"></i><b>6</b> Trading View Practicals</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="trading-view-practicals.html"><a href="trading-view-practicals.html#program-1-sma-trend-identification-dynamic-supportresistance"><i class="fa fa-check"></i><b>6.1</b> Program 1: SMA Trend Identification &amp; Dynamic Support/Resistance</a></li>
+<li class="chapter" data-level="6.2" data-path="trading-view-practicals.html"><a href="trading-view-practicals.html#program2-ema-crossover"><i class="fa fa-check"></i><b>6.2</b> Program 2: EMA Crossover Breakout Strategy</a></li>
+<li class="chapter" data-level="6.3" data-path="trading-view-practicals.html"><a href="trading-view-practicals.html#program3-vwap-intraday"><i class="fa fa-check"></i><b>6.3</b> Program 3: VWAP Intraday Trend Strategy</a></li>
+<li class="chapter" data-level="6.4" data-path="trading-view-practicals.html"><a href="trading-view-practicals.html#program3b-anchored-vwap"><i class="fa fa-check"></i><b>6.4</b> Program 3B: Anchored VWAP for Long-Term Investing</a></li>
+<li class="chapter" data-level="6.5" data-path="trading-view-practicals.html"><a href="trading-view-practicals.html#program4-macd-momentum"><i class="fa fa-check"></i><b>6.5</b> Program 4: MACD Momentum Strategy</a></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">PORTFOLIO MANAGEMENT</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="unit5" class="section level1 hasAnchor" number="5">
+<h1><span class="header-section-number">Chapter 5</span> Portfolio Selection and Revision<a href="unit5.html#unit5" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<hr />
+<div class="learning-objectives">
+<p><strong>Learning Objectives</strong></p>
+<p>After completing this unit, students will be able to:</p>
+<ol style="list-style-type: decimal">
+<li>Explain the concept of a portfolio and the principle of portfolio diversification</li>
+<li>Calculate portfolio return and portfolio risk (variance and standard deviation)</li>
+<li>Describe Markowitz Modern Portfolio Theory and construct the Efficient Frontier</li>
+<li>Apply portfolio selection criteria using the mean-variance framework</li>
+<li>Discuss the need for and constraints on portfolio revision</li>
+<li>Evaluate portfolio performance using Sharpe Ratio, Treynor Ratio, and Jensen’s Alpha</li>
+<li>Interpret performance measures in the context of Indian mutual funds and benchmark indices</li>
+</ol>
+</div>
+<hr />
+<div id="portfolio-analysis" class="section level2 hasAnchor" number="5.1">
+<h2><span class="header-section-number">5.1</span> 5.1 Portfolio Analysis — Introduction<a href="unit5.html#portfolio-analysis" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="what-is-a-portfolio" class="section level3 hasAnchor" number="5.1.1">
+<h3><span class="header-section-number">5.1.1</span> 5.1.1 What is a Portfolio?<a href="unit5.html#what-is-a-portfolio" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>A <strong>portfolio</strong> is a collection of financial investments — stocks, bonds, mutual fund units, ETFs, real estate, gold — held by an individual or institutional investor. The fundamental insight of portfolio theory is that:</p>
+<blockquote>
+<p><em>“The whole is different from — and often better than — the sum of its parts.”</em></p>
+</blockquote>
+<p>Combining assets that respond differently to market events can <strong>reduce total risk</strong> without proportionally reducing expected return. This is the mathematical basis of <strong>diversification</strong>.</p>
+<p><strong>Portfolio vs. Individual Security:</strong></p>
+<table>
+<colgroup>
+<col width="25%" />
+<col width="62%" />
+<col width="12%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Aspect</th>
+<th>Individual Security</th>
+<th>Portfolio</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Risk</td>
+<td>Full company/sector risk</td>
+<td>Risk is averaged and reduced</td>
+</tr>
+<tr class="even">
+<td>Return</td>
+<td>Dependent on single security</td>
+<td>Weighted average of all holdings</td>
+</tr>
+<tr class="odd">
+<td>Volatility</td>
+<td>Higher</td>
+<td>Lower (due to diversification)</td>
+</tr>
+<tr class="even">
+<td>Suitability</td>
+<td>Experts / Speculators</td>
+<td>All investors</td>
+</tr>
+<tr class="odd">
+<td>Monitoring</td>
+<td>Single security</td>
+<td>Multiple holdings</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="portfolio-in-the-indian-context" class="section level3 hasAnchor" number="5.1.2">
+<h3><span class="header-section-number">5.1.2</span> 5.1.2 Portfolio in the Indian Context<a href="unit5.html#portfolio-in-the-indian-context" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Indian investors increasingly hold portfolios through:
+- <strong>Direct equity</strong> (Demat accounts on NSE/BSE — 160 million+ demat accounts in 2024)
+- <strong>Mutual funds</strong> (8.7 crore SIP accounts in 2024)
+- <strong>Portfolio Management Services (PMS)</strong> — minimum ₹50 lakh, SEBI-regulated
+- <strong>Alternative Investment Funds (AIFs)</strong> — minimum ₹1 crore, for HNIs
+- <strong>National Pension System (NPS)</strong> — pension portfolio managed by PFRDA</p>
+<hr />
+</div>
+</div>
+<div id="portfolio-risk-return" class="section level2 hasAnchor" number="5.2">
+<h2><span class="header-section-number">5.2</span> 5.2 Return and Risk of a Portfolio<a href="unit5.html#portfolio-risk-return" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="portfolio-return" class="section level3 hasAnchor" number="5.2.1">
+<h3><span class="header-section-number">5.2.1</span> 5.2.1 Portfolio Return<a href="unit5.html#portfolio-return" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>The <strong>expected return of a portfolio</strong> is the <strong>weighted average</strong> of the expected returns of its constituent securities:</p>
+<p><span class="math display">\[\boxed{E(R_p) = \sum_{i=1}^{n} w_i \cdot E(R_i)}\]</span></p>
+<p>Where:
+- <span class="math inline">\(w_i\)</span> = Weight of security <span class="math inline">\(i\)</span> in portfolio (proportion of total investment)
+- <span class="math inline">\(E(R_i)\)</span> = Expected return of security <span class="math inline">\(i\)</span>
+- <span class="math inline">\(\sum w_i = 1\)</span> (weights must sum to 1)</p>
+<p><strong>Example 5.1:</strong> A portfolio consists of:</p>
+<table>
+<thead>
+<tr class="header">
+<th>Stock</th>
+<th>Weight</th>
+<th>Expected Return</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>TCS</td>
+<td>30%</td>
+<td>14%</td>
+</tr>
+<tr class="even">
+<td>HDFC Bank</td>
+<td>25%</td>
+<td>12%</td>
+</tr>
+<tr class="odd">
+<td>Reliance Industries</td>
+<td>20%</td>
+<td>11%</td>
+</tr>
+<tr class="even">
+<td>Asian Paints</td>
+<td>15%</td>
+<td>13%</td>
+</tr>
+<tr class="odd">
+<td>ITC</td>
+<td>10%</td>
+<td>9%</td>
+</tr>
+</tbody>
+</table>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="unit5.html#cb1-1" tabindex="-1"></a>stocks <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;TCS&quot;</span>, <span class="st">&quot;HDFC Bank&quot;</span>, <span class="st">&quot;Reliance&quot;</span>, <span class="st">&quot;Asian Paints&quot;</span>, <span class="st">&quot;ITC&quot;</span>)</span>
+<span id="cb1-2"><a href="unit5.html#cb1-2" tabindex="-1"></a>weights <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fl">0.30</span>, <span class="fl">0.25</span>, <span class="fl">0.20</span>, <span class="fl">0.15</span>, <span class="fl">0.10</span>)</span>
+<span id="cb1-3"><a href="unit5.html#cb1-3" tabindex="-1"></a>exp_returns <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fl">0.14</span>, <span class="fl">0.12</span>, <span class="fl">0.11</span>, <span class="fl">0.13</span>, <span class="fl">0.09</span>)</span>
+<span id="cb1-4"><a href="unit5.html#cb1-4" tabindex="-1"></a></span>
+<span id="cb1-5"><a href="unit5.html#cb1-5" tabindex="-1"></a>port_return <span class="ot">&lt;-</span> <span class="fu">sum</span>(weights <span class="sc">*</span> exp_returns)</span>
+<span id="cb1-6"><a href="unit5.html#cb1-6" tabindex="-1"></a></span>
+<span id="cb1-7"><a href="unit5.html#cb1-7" tabindex="-1"></a>result_df <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">Stock =</span> stocks,</span>
+<span id="cb1-8"><a href="unit5.html#cb1-8" tabindex="-1"></a>                         <span class="at">Weight =</span> <span class="fu">paste0</span>(weights<span class="sc">*</span><span class="dv">100</span>, <span class="st">&quot;%&quot;</span>),</span>
+<span id="cb1-9"><a href="unit5.html#cb1-9" tabindex="-1"></a>                         <span class="at">Exp_Return =</span> <span class="fu">paste0</span>(exp_returns<span class="sc">*</span><span class="dv">100</span>, <span class="st">&quot;%&quot;</span>),</span>
+<span id="cb1-10"><a href="unit5.html#cb1-10" tabindex="-1"></a>                         <span class="at">Contribution =</span> <span class="fu">paste0</span>(<span class="fu">round</span>(weights<span class="sc">*</span>exp_returns<span class="sc">*</span><span class="dv">100</span>, <span class="dv">3</span>), <span class="st">&quot;%&quot;</span>))</span>
+<span id="cb1-11"><a href="unit5.html#cb1-11" tabindex="-1"></a></span>
+<span id="cb1-12"><a href="unit5.html#cb1-12" tabindex="-1"></a><span class="fu">kable</span>(result_df,</span>
+<span id="cb1-13"><a href="unit5.html#cb1-13" tabindex="-1"></a>      <span class="at">caption =</span> <span class="st">&quot;Table 5.1: Portfolio Return Calculation&quot;</span>,</span>
+<span id="cb1-14"><a href="unit5.html#cb1-14" tabindex="-1"></a>      <span class="at">col.names =</span> <span class="fu">c</span>(<span class="st">&quot;Stock&quot;</span>, <span class="st">&quot;Weight (w)&quot;</span>, <span class="st">&quot;Expected Return&quot;</span>, <span class="st">&quot;Contribution (w × r)&quot;</span>),</span>
+<span id="cb1-15"><a href="unit5.html#cb1-15" tabindex="-1"></a>      <span class="at">booktabs =</span> <span class="cn">TRUE</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb1-16"><a href="unit5.html#cb1-16" tabindex="-1"></a>  <span class="fu">kable_styling</span>(<span class="at">bootstrap_options =</span> <span class="fu">c</span>(<span class="st">&quot;striped&quot;</span>, <span class="st">&quot;hover&quot;</span>), <span class="at">full_width =</span> <span class="cn">FALSE</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb1-17"><a href="unit5.html#cb1-17" tabindex="-1"></a>  <span class="fu">row_spec</span>(<span class="dv">0</span>, <span class="at">bold =</span> <span class="cn">TRUE</span>, <span class="at">color =</span> <span class="st">&quot;white&quot;</span>, <span class="at">background =</span> <span class="st">&quot;#2c3e50&quot;</span>)</span></code></pre></div>
+<table class="table table-striped table-hover" style="width: auto !important; margin-left: auto; margin-right: auto;">
+<caption>
+<span id="tab:portfolio-return-calc">Table 5.1: </span><span id="tab:portfolio-return-calc">Table 5.2: </span>Table 5.1: Portfolio Return Calculation
+</caption>
+<thead>
+<tr>
+<th style="text-align:left;font-weight: bold;color: white !important;background-color: rgba(44, 62, 80, 1) !important;">
+Stock
+</th>
+<th style="text-align:left;font-weight: bold;color: white !important;background-color: rgba(44, 62, 80, 1) !important;">
+Weight (w)
+</th>
+<th style="text-align:left;font-weight: bold;color: white !important;background-color: rgba(44, 62, 80, 1) !important;">
+Expected Return
+</th>
+<th style="text-align:left;font-weight: bold;color: white !important;background-color: rgba(44, 62, 80, 1) !important;">
+Contribution (w × r)
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+TCS
+</td>
+<td style="text-align:left;">
+30%
+</td>
+<td style="text-align:left;">
+14%
+</td>
+<td style="text-align:left;">
+4.2%
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+HDFC Bank
+</td>
+<td style="text-align:left;">
+25%
+</td>
+<td style="text-align:left;">
+12%
+</td>
+<td style="text-align:left;">
+3%
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Reliance
+</td>
+<td style="text-align:left;">
+20%
+</td>
+<td style="text-align:left;">
+11%
+</td>
+<td style="text-align:left;">
+2.2%
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Asian Paints
+</td>
+<td style="text-align:left;">
+15%
+</td>
+<td style="text-align:left;">
+13%
+</td>
+<td style="text-align:left;">
+1.95%
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+ITC
+</td>
+<td style="text-align:left;">
+10%
+</td>
+<td style="text-align:left;">
+9%
+</td>
+<td style="text-align:left;">
+0.9%
+</td>
+</tr>
+</tbody>
+</table>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="unit5.html#cb2-1" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;</span><span class="sc">\n</span><span class="st">Portfolio Expected Return:&quot;</span>, <span class="fu">round</span>(port_return <span class="sc">*</span> <span class="dv">100</span>, <span class="dv">2</span>), <span class="st">&quot;%</span><span class="sc">\n</span><span class="st">&quot;</span>)</span></code></pre></div>
+<pre><code>## 
+## Portfolio Expected Return: 12.25 %</code></pre>
+</div>
+<div id="portfolio-risk-two-asset-portfolio" class="section level3 hasAnchor" number="5.2.2">
+<h3><span class="header-section-number">5.2.2</span> 5.2.2 Portfolio Risk (Two-Asset Portfolio)<a href="unit5.html#portfolio-risk-two-asset-portfolio" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Portfolio risk is <strong>NOT</strong> simply the weighted average of individual standard deviations — this is the critical insight of portfolio theory. Portfolio risk depends on:</p>
+<ol style="list-style-type: decimal">
+<li>The individual risks (standard deviations) of each security</li>
+<li>The <strong>correlation coefficient</strong> between securities (ρ)</li>
+</ol>
+<p>For a <strong>two-asset portfolio</strong>:</p>
+<p><span class="math display">\[\boxed{\sigma_p^2 = w_1^2 \sigma_1^2 + w_2^2 \sigma_2^2 + 2 w_1 w_2 \rho_{12} \sigma_1 \sigma_2}\]</span></p>
+<p><span class="math display">\[\sigma_p = \sqrt{w_1^2 \sigma_1^2 + w_2^2 \sigma_2^2 + 2 w_1 w_2 \rho_{12} \sigma_1 \sigma_2}\]</span></p>
+<p>Where:
+- <span class="math inline">\(w_1, w_2\)</span> = Portfolio weights
+- <span class="math inline">\(\sigma_1, \sigma_2\)</span> = Standard deviations of individual assets
+- <span class="math inline">\(\rho_{12}\)</span> = Correlation coefficient between assets 1 and 2
+- <span class="math inline">\(Cov_{12} = \rho_{12} \sigma_1 \sigma_2\)</span></p>
+<p><strong>The role of correlation (ρ):</strong></p>
+<table>
+<colgroup>
+<col width="25%" />
+<col width="74%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>ρ Value</th>
+<th>Effect on Portfolio Risk</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>ρ = +1</td>
+<td>No diversification benefit; <span class="math inline">\(\sigma_p\)</span> = weighted avg of <span class="math inline">\(\sigma_1, \sigma_2\)</span></td>
+</tr>
+<tr class="even">
+<td>0 &lt; ρ &lt; +1</td>
+<td>Partial diversification benefit</td>
+</tr>
+<tr class="odd">
+<td>ρ = 0</td>
+<td>Significant diversification benefit</td>
+</tr>
+<tr class="even">
+<td>-1 &lt; ρ &lt; 0</td>
+<td>Maximum diversification benefit</td>
+</tr>
+<tr class="odd">
+<td>ρ = -1</td>
+<td>Perfect hedge; risk can be reduced to zero</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Example 5.2:</strong> Two-asset portfolio — HDFC Bank (Asset 1) and ITC (Asset 2):
+- <span class="math inline">\(w_1 = 0.60\)</span>, <span class="math inline">\(\sigma_1 = 18\%\)</span> (HDFC Bank)
+- <span class="math inline">\(w_2 = 0.40\)</span>, <span class="math inline">\(\sigma_2 = 14\%\)</span> (ITC)
+- <span class="math inline">\(\rho_{12} = 0.35\)</span> (moderate positive correlation)</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="unit5.html#cb4-1" tabindex="-1"></a>w1 <span class="ot">&lt;-</span> <span class="fl">0.60</span>; w2 <span class="ot">&lt;-</span> <span class="fl">0.40</span></span>
+<span id="cb4-2"><a href="unit5.html#cb4-2" tabindex="-1"></a>s1 <span class="ot">&lt;-</span> <span class="fl">0.18</span>; s2 <span class="ot">&lt;-</span> <span class="fl">0.14</span></span>
+<span id="cb4-3"><a href="unit5.html#cb4-3" tabindex="-1"></a>rho <span class="ot">&lt;-</span> <span class="fl">0.35</span></span>
+<span id="cb4-4"><a href="unit5.html#cb4-4" tabindex="-1"></a></span>
+<span id="cb4-5"><a href="unit5.html#cb4-5" tabindex="-1"></a>var_p <span class="ot">&lt;-</span> w1<span class="sc">^</span><span class="dv">2</span> <span class="sc">*</span> s1<span class="sc">^</span><span class="dv">2</span> <span class="sc">+</span> w2<span class="sc">^</span><span class="dv">2</span> <span class="sc">*</span> s2<span class="sc">^</span><span class="dv">2</span> <span class="sc">+</span> <span class="dv">2</span> <span class="sc">*</span> w1 <span class="sc">*</span> w2 <span class="sc">*</span> rho <span class="sc">*</span> s1 <span class="sc">*</span> s2</span>
+<span id="cb4-6"><a href="unit5.html#cb4-6" tabindex="-1"></a>sd_p <span class="ot">&lt;-</span> <span class="fu">sqrt</span>(var_p)</span>
+<span id="cb4-7"><a href="unit5.html#cb4-7" tabindex="-1"></a></span>
+<span id="cb4-8"><a href="unit5.html#cb4-8" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;Portfolio Variance:&quot;</span>, <span class="fu">round</span>(var_p <span class="sc">*</span> <span class="dv">100</span>, <span class="dv">4</span>), <span class="st">&quot;%²</span><span class="sc">\n</span><span class="st">&quot;</span>)</span></code></pre></div>
+<pre><code>## Portfolio Variance: 1.9034 %²</code></pre>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="unit5.html#cb6-1" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;Portfolio Std Deviation:&quot;</span>, <span class="fu">round</span>(sd_p <span class="sc">*</span> <span class="dv">100</span>, <span class="dv">2</span>), <span class="st">&quot;%</span><span class="sc">\n</span><span class="st">&quot;</span>)</span></code></pre></div>
+<pre><code>## Portfolio Std Deviation: 13.8 %</code></pre>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="unit5.html#cb8-1" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;Weighted Avg Std Dev (no diversification):&quot;</span>,</span>
+<span id="cb8-2"><a href="unit5.html#cb8-2" tabindex="-1"></a>    <span class="fu">round</span>((w1<span class="sc">*</span>s1 <span class="sc">+</span> w2<span class="sc">*</span>s2)<span class="sc">*</span><span class="dv">100</span>, <span class="dv">2</span>), <span class="st">&quot;%</span><span class="sc">\n</span><span class="st">&quot;</span>)</span></code></pre></div>
+<pre><code>## Weighted Avg Std Dev (no diversification): 16.4 %</code></pre>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="unit5.html#cb10-1" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;Diversification Benefit:&quot;</span>, <span class="fu">round</span>((w1<span class="sc">*</span>s1 <span class="sc">+</span> w2<span class="sc">*</span>s2 <span class="sc">-</span> sd_p)<span class="sc">*</span><span class="dv">100</span>, <span class="dv">2</span>), <span class="st">&quot;percentage points</span><span class="sc">\n</span><span class="st">&quot;</span>)</span></code></pre></div>
+<pre><code>## Diversification Benefit: 2.6 percentage points</code></pre>
+</div>
+<div id="three-asset-portfolio-risk" class="section level3 hasAnchor" number="5.2.3">
+<h3><span class="header-section-number">5.2.3</span> 5.2.3 Three-Asset Portfolio Risk<a href="unit5.html#three-asset-portfolio-risk" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>For an <strong>n-asset portfolio</strong>, the variance is:</p>
+<p><span class="math display">\[\sigma_p^2 = \sum_{i=1}^{n} w_i^2 \sigma_i^2 + \sum_{i=1}^{n} \sum_{j \neq i}^{n} w_i w_j Cov_{ij}\]</span></p>
+<p>This can be computed efficiently using <strong>matrix algebra</strong>:</p>
+<p><span class="math display">\[\sigma_p^2 = \mathbf{w}^T \mathbf{\Sigma} \mathbf{w}\]</span></p>
+<p>Where <strong>w</strong> is the weight vector and <strong>Σ</strong> is the covariance matrix.</p>
+<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="unit5.html#cb12-1" tabindex="-1"></a><span class="co"># Three-asset portfolio: TCS, HDFC Bank, ITC</span></span>
+<span id="cb12-2"><a href="unit5.html#cb12-2" tabindex="-1"></a>weights_3 <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fl">0.40</span>, <span class="fl">0.35</span>, <span class="fl">0.25</span>)</span>
+<span id="cb12-3"><a href="unit5.html#cb12-3" tabindex="-1"></a>returns_3 <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fl">0.14</span>, <span class="fl">0.12</span>, <span class="fl">0.09</span>)</span>
+<span id="cb12-4"><a href="unit5.html#cb12-4" tabindex="-1"></a></span>
+<span id="cb12-5"><a href="unit5.html#cb12-5" tabindex="-1"></a><span class="co"># Covariance matrix (annualised, approximate)</span></span>
+<span id="cb12-6"><a href="unit5.html#cb12-6" tabindex="-1"></a>cov_matrix <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="fu">c</span>(</span>
+<span id="cb12-7"><a href="unit5.html#cb12-7" tabindex="-1"></a>  <span class="fl">0.0400</span>, <span class="fl">0.0126</span>, <span class="fl">0.0056</span>,   <span class="co"># TCS</span></span>
+<span id="cb12-8"><a href="unit5.html#cb12-8" tabindex="-1"></a>  <span class="fl">0.0126</span>, <span class="fl">0.0324</span>, <span class="fl">0.0072</span>,   <span class="co"># HDFC Bank</span></span>
+<span id="cb12-9"><a href="unit5.html#cb12-9" tabindex="-1"></a>  <span class="fl">0.0056</span>, <span class="fl">0.0072</span>, <span class="fl">0.0196</span>    <span class="co"># ITC</span></span>
+<span id="cb12-10"><a href="unit5.html#cb12-10" tabindex="-1"></a>), <span class="at">nrow =</span> <span class="dv">3</span>)</span>
+<span id="cb12-11"><a href="unit5.html#cb12-11" tabindex="-1"></a></span>
+<span id="cb12-12"><a href="unit5.html#cb12-12" tabindex="-1"></a>port_ret_3 <span class="ot">&lt;-</span> <span class="fu">sum</span>(weights_3 <span class="sc">*</span> returns_3)</span>
+<span id="cb12-13"><a href="unit5.html#cb12-13" tabindex="-1"></a>port_var_3 <span class="ot">&lt;-</span> <span class="fu">t</span>(weights_3) <span class="sc">%*%</span> cov_matrix <span class="sc">%*%</span> weights_3</span>
+<span id="cb12-14"><a href="unit5.html#cb12-14" tabindex="-1"></a>port_sd_3 <span class="ot">&lt;-</span> <span class="fu">sqrt</span>(port_var_3)</span>
+<span id="cb12-15"><a href="unit5.html#cb12-15" tabindex="-1"></a></span>
+<span id="cb12-16"><a href="unit5.html#cb12-16" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;3-Asset Portfolio:</span><span class="sc">\n</span><span class="st">&quot;</span>)</span></code></pre></div>
+<pre><code>## 3-Asset Portfolio:</code></pre>
+<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="unit5.html#cb14-1" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;Expected Return:&quot;</span>, <span class="fu">round</span>(port_ret_3 <span class="sc">*</span> <span class="dv">100</span>, <span class="dv">2</span>), <span class="st">&quot;%</span><span class="sc">\n</span><span class="st">&quot;</span>)</span></code></pre></div>
+<pre><code>## Expected Return: 12.05 %</code></pre>
+<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="unit5.html#cb16-1" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;Portfolio Variance:&quot;</span>, <span class="fu">round</span>(port_var_3 <span class="sc">*</span> <span class="dv">100</span>, <span class="dv">4</span>), <span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span>)</span></code></pre></div>
+<pre><code>## Portfolio Variance: 1.7502</code></pre>
+<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb18-1"><a href="unit5.html#cb18-1" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;Portfolio Std Deviation:&quot;</span>, <span class="fu">round</span>(port_sd_3 <span class="sc">*</span> <span class="dv">100</span>, <span class="dv">2</span>), <span class="st">&quot;%</span><span class="sc">\n</span><span class="st">&quot;</span>)</span></code></pre></div>
+<pre><code>## Portfolio Std Deviation: 13.23 %</code></pre>
+<hr />
+</div>
+</div>
+<div id="markowitz" class="section level2 hasAnchor" number="5.3">
+<h2><span class="header-section-number">5.3</span> 5.3 Modern Portfolio Theory — Markowitz Model<a href="unit5.html#markowitz" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="background" class="section level3 hasAnchor" number="5.3.1">
+<h3><span class="header-section-number">5.3.1</span> 5.3.1 Background<a href="unit5.html#background" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p><strong>Harry Markowitz</strong> published his seminal paper <em>“Portfolio Selection”</em> in the <strong>Journal of Finance (1952)</strong>, which earned him the <strong>Nobel Prize in Economics in 1990</strong>. The Markowitz model — also called <strong>Mean-Variance Analysis</strong> — provided the first rigorous mathematical framework for portfolio construction.</p>
+<p><strong>Core Proposition:</strong>
+&gt; An investor should choose portfolios that offer the <strong>maximum expected return for a given level of risk</strong>, or equivalently, the <strong>minimum risk for a given expected return</strong>. These optimal portfolios form the <strong>Efficient Frontier</strong>.</p>
+</div>
+<div id="assumptions-of-the-markowitz-model" class="section level3 hasAnchor" number="5.3.2">
+<h3><span class="header-section-number">5.3.2</span> 5.3.2 Assumptions of the Markowitz Model<a href="unit5.html#assumptions-of-the-markowitz-model" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<ol style="list-style-type: decimal">
+<li>Investors are <strong>rational</strong> and <strong>risk-averse</strong></li>
+<li>Decision-making is based on <strong>expected return</strong> (mean) and <strong>risk</strong> (variance/SD)</li>
+<li>Investors prefer <strong>higher return</strong> for the same risk and <strong>lower risk</strong> for the same return</li>
+<li>Returns follow a <strong>normal distribution</strong></li>
+<li>Markets are <strong>perfectly efficient</strong> and liquid</li>
+<li>There are <strong>no taxes or transaction costs</strong> (simplified assumption)</li>
+<li><strong>Single-period</strong> investment horizon</li>
+</ol>
+</div>
+<div id="the-efficient-frontier" class="section level3 hasAnchor" number="5.3.3">
+<h3><span class="header-section-number">5.3.3</span> 5.3.3 The Efficient Frontier<a href="unit5.html#the-efficient-frontier" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>The <strong>Efficient Frontier</strong> is the set of all portfolios that offer:
+- Maximum return for a given level of risk, OR
+- Minimum risk for a given level of return</p>
+<p>Portfolios below the Efficient Frontier are <strong>inefficient</strong> (dominated portfolios). No rational investor should hold them.</p>
+<div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb20-1"><a href="unit5.html#cb20-1" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">100</span>)</span>
+<span id="cb20-2"><a href="unit5.html#cb20-2" tabindex="-1"></a>n_portfolios <span class="ot">&lt;-</span> <span class="dv">5000</span></span>
+<span id="cb20-3"><a href="unit5.html#cb20-3" tabindex="-1"></a></span>
+<span id="cb20-4"><a href="unit5.html#cb20-4" tabindex="-1"></a><span class="co"># Simulate random portfolios with 5 Indian stocks</span></span>
+<span id="cb20-5"><a href="unit5.html#cb20-5" tabindex="-1"></a><span class="co"># Expected returns: TCS, HDFC Bank, Reliance, Asian Paints, ITC</span></span>
+<span id="cb20-6"><a href="unit5.html#cb20-6" tabindex="-1"></a>mean_returns <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fl">0.14</span>, <span class="fl">0.12</span>, <span class="fl">0.11</span>, <span class="fl">0.13</span>, <span class="fl">0.09</span>)</span>
+<span id="cb20-7"><a href="unit5.html#cb20-7" tabindex="-1"></a></span>
+<span id="cb20-8"><a href="unit5.html#cb20-8" tabindex="-1"></a><span class="co"># Approximate covariance matrix</span></span>
+<span id="cb20-9"><a href="unit5.html#cb20-9" tabindex="-1"></a>sigma <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="fu">c</span>(</span>
+<span id="cb20-10"><a href="unit5.html#cb20-10" tabindex="-1"></a>  <span class="fl">0.040</span>, <span class="fl">0.013</span>, <span class="fl">0.010</span>, <span class="fl">0.015</span>, <span class="fl">0.006</span>,</span>
+<span id="cb20-11"><a href="unit5.html#cb20-11" tabindex="-1"></a>  <span class="fl">0.013</span>, <span class="fl">0.032</span>, <span class="fl">0.011</span>, <span class="fl">0.012</span>, <span class="fl">0.007</span>,</span>
+<span id="cb20-12"><a href="unit5.html#cb20-12" tabindex="-1"></a>  <span class="fl">0.010</span>, <span class="fl">0.011</span>, <span class="fl">0.035</span>, <span class="fl">0.010</span>, <span class="fl">0.009</span>,</span>
+<span id="cb20-13"><a href="unit5.html#cb20-13" tabindex="-1"></a>  <span class="fl">0.015</span>, <span class="fl">0.012</span>, <span class="fl">0.010</span>, <span class="fl">0.038</span>, <span class="fl">0.008</span>,</span>
+<span id="cb20-14"><a href="unit5.html#cb20-14" tabindex="-1"></a>  <span class="fl">0.006</span>, <span class="fl">0.007</span>, <span class="fl">0.009</span>, <span class="fl">0.008</span>, <span class="fl">0.020</span></span>
+<span id="cb20-15"><a href="unit5.html#cb20-15" tabindex="-1"></a>), <span class="at">nrow =</span> <span class="dv">5</span>)</span>
+<span id="cb20-16"><a href="unit5.html#cb20-16" tabindex="-1"></a></span>
+<span id="cb20-17"><a href="unit5.html#cb20-17" tabindex="-1"></a>port_returns <span class="ot">&lt;-</span> <span class="fu">numeric</span>(n_portfolios)</span>
+<span id="cb20-18"><a href="unit5.html#cb20-18" tabindex="-1"></a>port_risks <span class="ot">&lt;-</span> <span class="fu">numeric</span>(n_portfolios)</span>
+<span id="cb20-19"><a href="unit5.html#cb20-19" tabindex="-1"></a></span>
+<span id="cb20-20"><a href="unit5.html#cb20-20" tabindex="-1"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span>n_portfolios) {</span>
+<span id="cb20-21"><a href="unit5.html#cb20-21" tabindex="-1"></a>  <span class="co"># Random weights</span></span>
+<span id="cb20-22"><a href="unit5.html#cb20-22" tabindex="-1"></a>  w <span class="ot">&lt;-</span> <span class="fu">runif</span>(<span class="dv">5</span>)</span>
+<span id="cb20-23"><a href="unit5.html#cb20-23" tabindex="-1"></a>  w <span class="ot">&lt;-</span> w <span class="sc">/</span> <span class="fu">sum</span>(w)</span>
+<span id="cb20-24"><a href="unit5.html#cb20-24" tabindex="-1"></a>  port_returns[i] <span class="ot">&lt;-</span> <span class="fu">sum</span>(w <span class="sc">*</span> mean_returns)</span>
+<span id="cb20-25"><a href="unit5.html#cb20-25" tabindex="-1"></a>  port_risks[i] <span class="ot">&lt;-</span> <span class="fu">sqrt</span>(<span class="fu">t</span>(w) <span class="sc">%*%</span> sigma <span class="sc">%*%</span> w)</span>
+<span id="cb20-26"><a href="unit5.html#cb20-26" tabindex="-1"></a>}</span>
+<span id="cb20-27"><a href="unit5.html#cb20-27" tabindex="-1"></a></span>
+<span id="cb20-28"><a href="unit5.html#cb20-28" tabindex="-1"></a>sim_df <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">Risk =</span> port_risks <span class="sc">*</span> <span class="dv">100</span>, <span class="at">Return =</span> port_returns <span class="sc">*</span> <span class="dv">100</span>)</span>
+<span id="cb20-29"><a href="unit5.html#cb20-29" tabindex="-1"></a></span>
+<span id="cb20-30"><a href="unit5.html#cb20-30" tabindex="-1"></a><span class="co"># Find efficient frontier approximation</span></span>
+<span id="cb20-31"><a href="unit5.html#cb20-31" tabindex="-1"></a>efficient <span class="ot">&lt;-</span> sim_df <span class="sc">%&gt;%</span></span>
+<span id="cb20-32"><a href="unit5.html#cb20-32" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">Risk_bin =</span> <span class="fu">cut</span>(Risk, <span class="at">breaks =</span> <span class="dv">50</span>)) <span class="sc">%&gt;%</span></span>
+<span id="cb20-33"><a href="unit5.html#cb20-33" tabindex="-1"></a>  <span class="fu">group_by</span>(Risk_bin) <span class="sc">%&gt;%</span></span>
+<span id="cb20-34"><a href="unit5.html#cb20-34" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">Max_Return =</span> <span class="fu">max</span>(Return), <span class="at">Avg_Risk =</span> <span class="fu">mean</span>(Risk)) <span class="sc">%&gt;%</span></span>
+<span id="cb20-35"><a href="unit5.html#cb20-35" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">is.na</span>(Risk_bin)) <span class="sc">%&gt;%</span></span>
+<span id="cb20-36"><a href="unit5.html#cb20-36" tabindex="-1"></a>  <span class="fu">arrange</span>(Avg_Risk)</span>
+<span id="cb20-37"><a href="unit5.html#cb20-37" tabindex="-1"></a></span>
+<span id="cb20-38"><a href="unit5.html#cb20-38" tabindex="-1"></a><span class="fu">ggplot</span>(sim_df, <span class="fu">aes</span>(<span class="at">x =</span> Risk, <span class="at">y =</span> Return)) <span class="sc">+</span></span>
+<span id="cb20-39"><a href="unit5.html#cb20-39" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">alpha =</span> <span class="fl">0.15</span>, <span class="at">size =</span> <span class="fl">0.8</span>, <span class="at">color =</span> <span class="st">&quot;#bdc3c7&quot;</span>) <span class="sc">+</span></span>
+<span id="cb20-40"><a href="unit5.html#cb20-40" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="at">data =</span> efficient, <span class="fu">aes</span>(<span class="at">x =</span> Avg_Risk, <span class="at">y =</span> Max_Return),</span>
+<span id="cb20-41"><a href="unit5.html#cb20-41" tabindex="-1"></a>            <span class="at">color =</span> <span class="st">&quot;#c0392b&quot;</span>, <span class="at">size =</span> <span class="fl">1.8</span>) <span class="sc">+</span></span>
+<span id="cb20-42"><a href="unit5.html#cb20-42" tabindex="-1"></a>  <span class="fu">annotate</span>(<span class="st">&quot;text&quot;</span>, <span class="at">x =</span> <span class="fu">min</span>(efficient<span class="sc">$</span>Avg_Risk) <span class="sc">+</span> <span class="fl">0.5</span>,</span>
+<span id="cb20-43"><a href="unit5.html#cb20-43" tabindex="-1"></a>           <span class="at">y =</span> efficient<span class="sc">$</span>Max_Return[<span class="fu">which.min</span>(efficient<span class="sc">$</span>Avg_Risk)],</span>
+<span id="cb20-44"><a href="unit5.html#cb20-44" tabindex="-1"></a>           <span class="at">label =</span> <span class="st">&quot;MVP</span><span class="sc">\n</span><span class="st">(Min Variance</span><span class="sc">\n</span><span class="st">Portfolio)&quot;</span>,</span>
+<span id="cb20-45"><a href="unit5.html#cb20-45" tabindex="-1"></a>           <span class="at">color =</span> <span class="st">&quot;#c0392b&quot;</span>, <span class="at">size =</span> <span class="fl">3.5</span>, <span class="at">fontface =</span> <span class="st">&quot;bold&quot;</span>) <span class="sc">+</span></span>
+<span id="cb20-46"><a href="unit5.html#cb20-46" tabindex="-1"></a>  <span class="fu">annotate</span>(<span class="st">&quot;text&quot;</span>, <span class="at">x =</span> <span class="fu">max</span>(efficient<span class="sc">$</span>Avg_Risk) <span class="sc">-</span> <span class="fl">0.5</span>,</span>
+<span id="cb20-47"><a href="unit5.html#cb20-47" tabindex="-1"></a>           <span class="at">y =</span> <span class="fu">max</span>(efficient<span class="sc">$</span>Max_Return),</span>
+<span id="cb20-48"><a href="unit5.html#cb20-48" tabindex="-1"></a>           <span class="at">label =</span> <span class="st">&quot;Maximum</span><span class="sc">\n</span><span class="st">Return</span><span class="sc">\n</span><span class="st">Portfolio&quot;</span>,</span>
+<span id="cb20-49"><a href="unit5.html#cb20-49" tabindex="-1"></a>           <span class="at">color =</span> <span class="st">&quot;#27ae60&quot;</span>, <span class="at">size =</span> <span class="fl">3.5</span>, <span class="at">fontface =</span> <span class="st">&quot;bold&quot;</span>) <span class="sc">+</span></span>
+<span id="cb20-50"><a href="unit5.html#cb20-50" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">&quot;Efficient Frontier: 5-Stock Indian Portfolio&quot;</span>,</span>
+<span id="cb20-51"><a href="unit5.html#cb20-51" tabindex="-1"></a>       <span class="at">subtitle =</span> <span class="st">&quot;5,000 Random Portfolios | Red line = Efficient Frontier&quot;</span>,</span>
+<span id="cb20-52"><a href="unit5.html#cb20-52" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">&quot;Portfolio Risk (Std Deviation, %)&quot;</span>,</span>
+<span id="cb20-53"><a href="unit5.html#cb20-53" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">&quot;Expected Portfolio Return (%)&quot;</span>) <span class="sc">+</span></span>
+<span id="cb20-54"><a href="unit5.html#cb20-54" tabindex="-1"></a>  <span class="fu">theme_minimal</span>(<span class="at">base_size =</span> <span class="dv">13</span>) <span class="sc">+</span></span>
+<span id="cb20-55"><a href="unit5.html#cb20-55" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">plot.title =</span> <span class="fu">element_text</span>(<span class="at">face =</span> <span class="st">&quot;bold&quot;</span>, <span class="at">color =</span> <span class="st">&quot;#2c3e50&quot;</span>))</span></code></pre></div>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:efficient-frontier"></span>
+<img src="bookdownproj_files/figure-html/efficient-frontier-1.png" alt="Figure 5.1: Efficient Frontier — Indian Stock Portfolio" width="95%" />
+<p class="caption">
+Figure 5.1: Figure 5.1: Efficient Frontier — Indian Stock Portfolio
+</p>
+</div>
+<p><em>Source: Compiled using simulated data based on NSE historical returns and covariance estimates.</em></p>
+<p><strong>Key Points on the Efficient Frontier:</strong></p>
+<ol style="list-style-type: decimal">
+<li><strong>Minimum Variance Portfolio (MVP)</strong> — Leftmost point; lowest possible risk for any expected return level</li>
+<li><strong>Maximum Return Portfolio</strong> — Highest point; single asset with highest individual return</li>
+<li><strong>The efficient set</strong> — All portfolios on the upper portion of the frontier from MVP onwards</li>
+<li><strong>Dominated portfolios</strong> — All points below and to the right of the frontier (same risk, lower return)</li>
+</ol>
+</div>
+<div id="capital-market-line-cml" class="section level3 hasAnchor" number="5.3.4">
+<h3><span class="header-section-number">5.3.4</span> 5.3.4 Capital Market Line (CML)<a href="unit5.html#capital-market-line-cml" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>When a <strong>risk-free asset</strong> (T-Bills, PPF, G-Secs) is introduced, investors can combine it with the <strong>Market Portfolio</strong> (Nifty 50 index fund) to achieve any desired point on the <strong>Capital Market Line (CML)</strong>:</p>
+<p><span class="math display">\[\boxed{E(R_p) = R_f + \left[\frac{E(R_m) - R_f}{\sigma_m}\right] \sigma_p}\]</span></p>
+<p>The slope of CML is the <strong>Sharpe Ratio</strong> of the market portfolio — the maximum risk-adjusted return available in the market.</p>
+<hr />
+</div>
+</div>
+<div id="portfolio-selection" class="section level2 hasAnchor" number="5.4">
+<h2><span class="header-section-number">5.4</span> 5.4 Portfolio Selection<a href="unit5.html#portfolio-selection" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="selection-criteria" class="section level3 hasAnchor" number="5.4.1">
+<h3><span class="header-section-number">5.4.1</span> 5.4.1 Selection Criteria<a href="unit5.html#selection-criteria" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Given the Efficient Frontier, portfolio selection depends on the <strong>investor’s risk preference</strong> (indifference curve):</p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:portfolio-selection-risk-profile"></span>
+<img src="bookdownproj_files/figure-html/portfolio-selection-risk-profile-1.png" alt="Figure 5.2: Portfolio Selection Based on Investor Risk Profile" width="95%" />
+<p class="caption">
+Figure 5.2: Figure 5.2: Portfolio Selection Based on Investor Risk Profile
+</p>
+</div>
+<p><em>Figure 5.2: Portfolio Selection Based on Risk Profile</em></p>
+</div>
+<div id="practical-portfolio-construction-indian-example" class="section level3 hasAnchor" number="5.4.2">
+<h3><span class="header-section-number">5.4.2</span> 5.4.2 Practical Portfolio Construction — Indian Example<a href="unit5.html#practical-portfolio-construction-indian-example" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p><strong>Investor Profile:</strong> 35-year-old IT professional, monthly income ₹1.2 lakh, risk appetite — moderate-aggressive, investment horizon — 15 years, monthly investable surplus — ₹30,000.</p>
+<table class="table table-striped table-hover" style="margin-left: auto; margin-right: auto;border-bottom: 0;">
+<caption>
+<span id="tab:indian-portfolio">Table 5.3: </span><span id="tab:indian-portfolio">Table 5.4: </span>Table 5.2: Model Portfolio — Moderate-Aggressive Indian Investor
+</caption>
+<thead>
+<tr>
+<th style="text-align:left;font-weight: bold;color: white !important;background-color: rgba(44, 62, 80, 1) !important;">
+Asset Class
+</th>
+<th style="text-align:right;font-weight: bold;color: white !important;background-color: rgba(44, 62, 80, 1) !important;">
+Monthly SIP (₹)
+</th>
+<th style="text-align:right;font-weight: bold;color: white !important;background-color: rgba(44, 62, 80, 1) !important;">
+Allocation (%)
+</th>
+<th style="text-align:right;font-weight: bold;color: white !important;background-color: rgba(44, 62, 80, 1) !important;">
+Expected Return (%)
+</th>
+<th style="text-align:left;font-weight: bold;color: white !important;background-color: rgba(44, 62, 80, 1) !important;">
+Risk Level
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+Large Cap Equity MF (Index)
+</td>
+<td style="text-align:right;">
+10000
+</td>
+<td style="text-align:right;">
+33.3
+</td>
+<td style="text-align:right;">
+12.0
+</td>
+<td style="text-align:left;">
+Moderate
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Mid Cap Equity MF
+</td>
+<td style="text-align:right;">
+6000
+</td>
+<td style="text-align:right;">
+20.0
+</td>
+<td style="text-align:right;">
+14.0
+</td>
+<td style="text-align:left;">
+Moderate-High
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Small Cap Equity MF
+</td>
+<td style="text-align:right;">
+4000
+</td>
+<td style="text-align:right;">
+13.3
+</td>
+<td style="text-align:right;">
+16.0
+</td>
+<td style="text-align:left;">
+High
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+ELSS (Tax Saving)
+</td>
+<td style="text-align:right;">
+4000
+</td>
+<td style="text-align:right;">
+13.3
+</td>
+<td style="text-align:right;">
+14.0
+</td>
+<td style="text-align:left;">
+Moderate-High
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Debt Fund (Short Duration)
+</td>
+<td style="text-align:right;">
+3000
+</td>
+<td style="text-align:right;">
+10.0
+</td>
+<td style="text-align:right;">
+7.5
+</td>
+<td style="text-align:left;">
+Low
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Gold (SGB/ETF)
+</td>
+<td style="text-align:right;">
+2000
+</td>
+<td style="text-align:right;">
+6.7
+</td>
+<td style="text-align:right;">
+9.5
+</td>
+<td style="text-align:left;">
+Moderate
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+International Fund
+</td>
+<td style="text-align:right;">
+1000
+</td>
+<td style="text-align:right;">
+3.3
+</td>
+<td style="text-align:right;">
+10.0
+</td>
+<td style="text-align:left;">
+Moderate-High
+</td>
+</tr>
+</tbody>
+<tfoot>
+<tr>
+<td style="padding: 0; " colspan="100%">
+<span style="font-style: italic;">Note: </span>
+</td>
+</tr>
+<tr>
+<td style="padding: 0; " colspan="100%">
+<sup></sup> Total Monthly Investment: ₹30,000 | Weighted Expected Return: 12.5 % p.a.
+</td>
+</tr>
+</tfoot>
+</table>
+<p><em>Source: Compiled from AMFI, NSE, and historical fund performance data (2014–2024).</em></p>
+<hr />
+</div>
+</div>
+<div id="portfolio-revision" class="section level2 hasAnchor" number="5.5">
+<h2><span class="header-section-number">5.5</span> 5.5 Portfolio Revision<a href="unit5.html#portfolio-revision" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="meaning-and-need" class="section level3 hasAnchor" number="5.5.1">
+<h3><span class="header-section-number">5.5.1</span> 5.5.1 Meaning and Need<a href="unit5.html#meaning-and-need" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p><strong>Portfolio revision</strong> is the process of reviewing and modifying the existing portfolio to realign it with the investor’s objectives, risk profile, and changed market conditions.</p>
+<p><strong>Reasons for Portfolio Revision:</strong></p>
+<ol style="list-style-type: decimal">
+<li><strong>Life Stage Change</strong> — Marriage, childbirth, approaching retirement shift risk appetite</li>
+<li><strong>Market Conditions</strong> — Bull market → equity overweight; bear market → shift to debt</li>
+<li><strong>Rebalancing</strong> — Original allocations drift due to differential returns</li>
+<li><strong>New Investment Opportunities</strong> — New sectors (EVs, AI, green energy) emerge</li>
+<li><strong>Change in Tax Laws</strong> — Budget changes affect tax efficiency of holdings</li>
+<li><strong>Underperformance</strong> — Funds consistently underperforming benchmark warrant replacement</li>
+<li><strong>Income Change</strong> — Salary increment allows higher SIP; job loss requires reduction</li>
+</ol>
+</div>
+<div id="constraints-on-portfolio-revision" class="section level3 hasAnchor" number="5.5.2">
+<h3><span class="header-section-number">5.5.2</span> 5.5.2 Constraints on Portfolio Revision<a href="unit5.html#constraints-on-portfolio-revision" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p><strong>1. Transaction Costs</strong>
+Every buy/sell transaction involves:
+- Brokerage (typically 0.01%–0.5%)
+- Securities Transaction Tax (STT): 0.1% on delivery equity trades
+- Stamp duty, SEBI charges, exchange charges
+- For debt funds: exit loads if redeemed before minimum period</p>
+<p><strong>2. Tax Implications</strong></p>
+<table>
+<colgroup>
+<col width="29%" />
+<col width="43%" />
+<col width="27%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Asset Type</th>
+<th>Holding Period</th>
+<th>Tax Rate</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Equity shares / equity MF</td>
+<td>&lt; 1 year (STCG)</td>
+<td>20% (post Budget 2024)</td>
+</tr>
+<tr class="even">
+<td>Equity shares / equity MF</td>
+<td>&gt; 1 year (LTCG)</td>
+<td>12.5% (above ₹1.25 lakh)</td>
+</tr>
+<tr class="odd">
+<td>Debt funds</td>
+<td>Any period (post Apr 2023)</td>
+<td>As per income tax slab</td>
+</tr>
+<tr class="even">
+<td>Gold / Silver</td>
+<td>&lt; 3 years</td>
+<td>Slab rate</td>
+</tr>
+<tr class="odd">
+<td>Gold / Silver</td>
+<td>&gt; 3 years</td>
+<td>20% with indexation</td>
+</tr>
+</tbody>
+</table>
+<p><em>Source: Union Budget 2024-25; Income Tax Act provisions.</em></p>
+<p><strong>3. Statutory Restrictions</strong>
+- <strong>ELSS</strong>: 3-year lock-in prevents revision
+- <strong>PPF</strong>: 15-year lock-in; partial withdrawal only after year 7
+- <strong>EPFO</strong>: Cannot be liquidated till resignation/retirement
+- <strong>SCSS/SSY</strong>: Fixed tenure; premature closure penalties</p>
+<p><strong>4. Investor Constraints</strong>
+- <strong>Liquidity needs</strong>: Emergency fund must remain accessible
+- <strong>Knowledge gap</strong>: Complex restructuring may require financial advisor
+- <strong>Emotional bias</strong>: Behavioural tendencies (disposition effect, loss aversion)</p>
+</div>
+<div id="portfolio-rebalancing-strategies" class="section level3 hasAnchor" number="5.5.3">
+<h3><span class="header-section-number">5.5.3</span> 5.5.3 Portfolio Rebalancing Strategies<a href="unit5.html#portfolio-rebalancing-strategies" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p><strong>A. Calendar Rebalancing</strong> — Review and rebalance at fixed intervals (annual, semi-annual)</p>
+<p><strong>B. Threshold Rebalancing</strong> — Rebalance when any asset deviates by more than ±5% from target</p>
+<p><strong>C. Dynamic Asset Allocation</strong> — Systematically reduce equity as markets become expensive (P/E based); increase when cheap</p>
+<p><em>Example — Asset Allocation Rebalancing:</em></p>
+<div class="sourceCode" id="cb21"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb21-1"><a href="unit5.html#cb21-1" tabindex="-1"></a><span class="co"># Original target allocation</span></span>
+<span id="cb21-2"><a href="unit5.html#cb21-2" tabindex="-1"></a>target <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="at">Equity =</span> <span class="fl">0.60</span>, <span class="at">Debt =</span> <span class="fl">0.30</span>, <span class="at">Gold =</span> <span class="fl">0.10</span>)</span>
+<span id="cb21-3"><a href="unit5.html#cb21-3" tabindex="-1"></a></span>
+<span id="cb21-4"><a href="unit5.html#cb21-4" tabindex="-1"></a><span class="co"># After 2 years, due to equity bull run</span></span>
+<span id="cb21-5"><a href="unit5.html#cb21-5" tabindex="-1"></a>current_values <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="at">Equity =</span> <span class="dv">750000</span>, <span class="at">Debt =</span> <span class="dv">340000</span>, <span class="at">Gold =</span> <span class="dv">110000</span>)</span>
+<span id="cb21-6"><a href="unit5.html#cb21-6" tabindex="-1"></a>total_value <span class="ot">&lt;-</span> <span class="fu">sum</span>(current_values)</span>
+<span id="cb21-7"><a href="unit5.html#cb21-7" tabindex="-1"></a>current_alloc <span class="ot">&lt;-</span> current_values <span class="sc">/</span> total_value</span>
+<span id="cb21-8"><a href="unit5.html#cb21-8" tabindex="-1"></a></span>
+<span id="cb21-9"><a href="unit5.html#cb21-9" tabindex="-1"></a><span class="co"># Rebalancing calculation</span></span>
+<span id="cb21-10"><a href="unit5.html#cb21-10" tabindex="-1"></a>target_values <span class="ot">&lt;-</span> target <span class="sc">*</span> total_value</span>
+<span id="cb21-11"><a href="unit5.html#cb21-11" tabindex="-1"></a>rebalancing_action <span class="ot">&lt;-</span> target_values <span class="sc">-</span> current_values</span>
+<span id="cb21-12"><a href="unit5.html#cb21-12" tabindex="-1"></a></span>
+<span id="cb21-13"><a href="unit5.html#cb21-13" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;Total Portfolio Value: ₹&quot;</span>, <span class="fu">format</span>(total_value, <span class="at">big.mark=</span><span class="st">&quot;,&quot;</span>), <span class="st">&quot;</span><span class="sc">\n\n</span><span class="st">&quot;</span>)</span></code></pre></div>
+<pre><code>## Total Portfolio Value: ₹ 1,200,000</code></pre>
+<div class="sourceCode" id="cb23"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb23-1"><a href="unit5.html#cb23-1" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;Current Allocation:</span><span class="sc">\n</span><span class="st">&quot;</span>)</span></code></pre></div>
+<pre><code>## Current Allocation:</code></pre>
+<div class="sourceCode" id="cb25"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb25-1"><a href="unit5.html#cb25-1" tabindex="-1"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">3</span>) <span class="fu">cat</span>(<span class="fu">names</span>(current_alloc)[i], <span class="st">&quot;:&quot;</span>,</span>
+<span id="cb25-2"><a href="unit5.html#cb25-2" tabindex="-1"></a>                    <span class="fu">round</span>(current_alloc[i]<span class="sc">*</span><span class="dv">100</span>, <span class="dv">1</span>), <span class="st">&quot;% (Target:&quot;</span>, target[i]<span class="sc">*</span><span class="dv">100</span>, <span class="st">&quot;%)</span><span class="sc">\n</span><span class="st">&quot;</span>)</span></code></pre></div>
+<pre><code>## Equity : 62.5 % (Target: 60 %)
+## Debt : 28.3 % (Target: 30 %)
+## Gold : 9.2 % (Target: 10 %)</code></pre>
+<div class="sourceCode" id="cb27"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb27-1"><a href="unit5.html#cb27-1" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;</span><span class="sc">\n</span><span class="st">Rebalancing Actions:</span><span class="sc">\n</span><span class="st">&quot;</span>)</span></code></pre></div>
+<pre><code>## 
+## Rebalancing Actions:</code></pre>
+<div class="sourceCode" id="cb29"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb29-1"><a href="unit5.html#cb29-1" tabindex="-1"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">3</span>) {</span>
+<span id="cb29-2"><a href="unit5.html#cb29-2" tabindex="-1"></a>  action <span class="ot">&lt;-</span> <span class="cf">if</span> (rebalancing_action[i] <span class="sc">&gt;</span> <span class="dv">0</span>) <span class="st">&quot;BUY&quot;</span> <span class="cf">else</span> <span class="st">&quot;SELL&quot;</span></span>
+<span id="cb29-3"><a href="unit5.html#cb29-3" tabindex="-1"></a>  <span class="fu">cat</span>(<span class="fu">names</span>(rebalancing_action)[i], <span class="st">&quot;:&quot;</span>, action, <span class="st">&quot;₹&quot;</span>, <span class="fu">format</span>(<span class="fu">abs</span>(<span class="fu">round</span>(rebalancing_action[i])), <span class="at">big.mark=</span><span class="st">&quot;,&quot;</span>), <span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span>)</span>
+<span id="cb29-4"><a href="unit5.html#cb29-4" tabindex="-1"></a>}</span></code></pre></div>
+<pre><code>## Equity : SELL ₹ 30,000 
+## Debt : BUY ₹ 20,000 
+## Gold : BUY ₹ 10,000</code></pre>
+<hr />
+</div>
+</div>
+<div id="portfolio-evaluation" class="section level2 hasAnchor" number="5.6">
+<h2><span class="header-section-number">5.6</span> 5.6 Portfolio Evaluation<a href="unit5.html#portfolio-evaluation" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Portfolio evaluation measures <strong>how well the portfolio manager performed</strong> relative to the risk taken. Three classical measures are used:</p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:portfolio-evaluation-measures"></span>
+<img src="bookdownproj_files/figure-html/portfolio-evaluation-measures-1.png" alt="Figure 5.3: Portfolio Evaluation Measures" width="95%" />
+<p class="caption">
+Figure 5.3: Figure 5.3: Portfolio Evaluation Measures
+</p>
+</div>
+<p><em>Figure 5.3: Portfolio Evaluation Measures</em></p>
+<hr />
+</div>
+<div id="sharpe-ratio" class="section level2 hasAnchor" number="5.7">
+<h2><span class="header-section-number">5.7</span> 5.7 Sharpe Ratio<a href="unit5.html#sharpe-ratio" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="formula-and-meaning" class="section level3 hasAnchor" number="5.7.1">
+<h3><span class="header-section-number">5.7.1</span> 5.7.1 Formula and Meaning<a href="unit5.html#formula-and-meaning" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>The <strong>Sharpe Ratio</strong>, developed by <strong>William F. Sharpe</strong> (1966), measures the <strong>excess return per unit of total risk</strong> (standard deviation). It answers: “How much return am I earning for every percentage point of risk I’m taking?”</p>
+<p><span class="math display">\[\boxed{Sharpe\ Ratio = \frac{E(R_p) - R_f}{\sigma_p}}\]</span></p>
+<p>Where:
+- <span class="math inline">\(E(R_p)\)</span> = Portfolio return (annualised)
+- <span class="math inline">\(R_f\)</span> = Risk-free rate (91-day T-bill ≈ 6.8% in India, 2024)
+- <span class="math inline">\(\sigma_p\)</span> = Standard deviation of portfolio returns</p>
+<p><strong>Interpretation:</strong>
+- <strong>Higher Sharpe Ratio = Better risk-adjusted performance</strong>
+- Sharpe &gt; 1: Good
+- Sharpe &gt; 2: Excellent
+- Sharpe &lt; 0: Portfolio underperformed risk-free asset</p>
+</div>
+<div id="sharpe-ratio-worked-example" class="section level3 hasAnchor" number="5.7.2">
+<h3><span class="header-section-number">5.7.2</span> 5.7.2 Sharpe Ratio — Worked Example<a href="unit5.html#sharpe-ratio-worked-example" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p><strong>Example 5.3:</strong> Evaluate three mutual funds using Sharpe Ratio. <span class="math inline">\(R_f\)</span> = 6.5%.</p>
+<div class="sourceCode" id="cb31"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb31-1"><a href="unit5.html#cb31-1" tabindex="-1"></a>funds <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;Mirae Asset Large Cap&quot;</span>, <span class="st">&quot;HDFC Mid-Cap Opp.&quot;</span>, <span class="st">&quot;Axis Bluechip&quot;</span>)</span>
+<span id="cb31-2"><a href="unit5.html#cb31-2" tabindex="-1"></a>port_returns <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fl">14.2</span>, <span class="fl">18.5</span>, <span class="fl">12.8</span>)   <span class="co"># Annual returns (%)</span></span>
+<span id="cb31-3"><a href="unit5.html#cb31-3" tabindex="-1"></a>port_sds <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fl">15.2</span>, <span class="fl">21.8</span>, <span class="fl">14.1</span>)       <span class="co"># Annual Std Dev (%)</span></span>
+<span id="cb31-4"><a href="unit5.html#cb31-4" tabindex="-1"></a>rf <span class="ot">&lt;-</span> <span class="fl">6.5</span>                               <span class="co"># Risk-free rate (%)</span></span>
+<span id="cb31-5"><a href="unit5.html#cb31-5" tabindex="-1"></a></span>
+<span id="cb31-6"><a href="unit5.html#cb31-6" tabindex="-1"></a>sharpe_ratios <span class="ot">&lt;-</span> (port_returns <span class="sc">-</span> rf) <span class="sc">/</span> port_sds</span>
+<span id="cb31-7"><a href="unit5.html#cb31-7" tabindex="-1"></a></span>
+<span id="cb31-8"><a href="unit5.html#cb31-8" tabindex="-1"></a>sharpe_df <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb31-9"><a href="unit5.html#cb31-9" tabindex="-1"></a>  <span class="at">Fund =</span> funds,</span>
+<span id="cb31-10"><a href="unit5.html#cb31-10" tabindex="-1"></a>  <span class="at">Return =</span> <span class="fu">paste0</span>(port_returns, <span class="st">&quot;%&quot;</span>),</span>
+<span id="cb31-11"><a href="unit5.html#cb31-11" tabindex="-1"></a>  <span class="at">Std_Dev =</span> <span class="fu">paste0</span>(port_sds, <span class="st">&quot;%&quot;</span>),</span>
+<span id="cb31-12"><a href="unit5.html#cb31-12" tabindex="-1"></a>  <span class="at">Excess_Return =</span> <span class="fu">paste0</span>(<span class="fu">round</span>(port_returns <span class="sc">-</span> rf, <span class="dv">1</span>), <span class="st">&quot;%&quot;</span>),</span>
+<span id="cb31-13"><a href="unit5.html#cb31-13" tabindex="-1"></a>  <span class="at">Sharpe_Ratio =</span> <span class="fu">round</span>(sharpe_ratios, <span class="dv">3</span>),</span>
+<span id="cb31-14"><a href="unit5.html#cb31-14" tabindex="-1"></a>  <span class="at">Rank =</span> <span class="fu">rank</span>(<span class="sc">-</span>sharpe_ratios)</span>
+<span id="cb31-15"><a href="unit5.html#cb31-15" tabindex="-1"></a>)</span>
+<span id="cb31-16"><a href="unit5.html#cb31-16" tabindex="-1"></a></span>
+<span id="cb31-17"><a href="unit5.html#cb31-17" tabindex="-1"></a><span class="fu">kable</span>(sharpe_df,</span>
+<span id="cb31-18"><a href="unit5.html#cb31-18" tabindex="-1"></a>      <span class="at">caption =</span> <span class="st">&quot;Table 5.3: Sharpe Ratio Comparison — Indian Mutual Funds&quot;</span>,</span>
+<span id="cb31-19"><a href="unit5.html#cb31-19" tabindex="-1"></a>      <span class="at">col.names =</span> <span class="fu">c</span>(<span class="st">&quot;Fund&quot;</span>, <span class="st">&quot;Return&quot;</span>, <span class="st">&quot;Std Dev&quot;</span>, <span class="st">&quot;Excess Return&quot;</span>, <span class="st">&quot;Sharpe Ratio&quot;</span>, <span class="st">&quot;Rank&quot;</span>),</span>
+<span id="cb31-20"><a href="unit5.html#cb31-20" tabindex="-1"></a>      <span class="at">booktabs =</span> <span class="cn">TRUE</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb31-21"><a href="unit5.html#cb31-21" tabindex="-1"></a>  <span class="fu">kable_styling</span>(<span class="at">bootstrap_options =</span> <span class="fu">c</span>(<span class="st">&quot;striped&quot;</span>, <span class="st">&quot;hover&quot;</span>), <span class="at">full_width =</span> <span class="cn">TRUE</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb31-22"><a href="unit5.html#cb31-22" tabindex="-1"></a>  <span class="fu">row_spec</span>(<span class="dv">0</span>, <span class="at">bold =</span> <span class="cn">TRUE</span>, <span class="at">color =</span> <span class="st">&quot;white&quot;</span>, <span class="at">background =</span> <span class="st">&quot;#2c3e50&quot;</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb31-23"><a href="unit5.html#cb31-23" tabindex="-1"></a>  <span class="fu">row_spec</span>(<span class="fu">which.max</span>(sharpe_ratios), <span class="at">bold =</span> <span class="cn">TRUE</span>, <span class="at">background =</span> <span class="st">&quot;#eafaf1&quot;</span>)</span></code></pre></div>
+<table class="table table-striped table-hover" style="margin-left: auto; margin-right: auto;">
+<caption>
+<span id="tab:sharpe-calculation">Table 5.5: </span><span id="tab:sharpe-calculation">Table 5.6: </span>Table 5.3: Sharpe Ratio Comparison — Indian Mutual Funds
+</caption>
+<thead>
+<tr>
+<th style="text-align:left;font-weight: bold;color: white !important;background-color: rgba(44, 62, 80, 1) !important;">
+Fund
+</th>
+<th style="text-align:left;font-weight: bold;color: white !important;background-color: rgba(44, 62, 80, 1) !important;">
+Return
+</th>
+<th style="text-align:left;font-weight: bold;color: white !important;background-color: rgba(44, 62, 80, 1) !important;">
+Std Dev
+</th>
+<th style="text-align:left;font-weight: bold;color: white !important;background-color: rgba(44, 62, 80, 1) !important;">
+Excess Return
+</th>
+<th style="text-align:right;font-weight: bold;color: white !important;background-color: rgba(44, 62, 80, 1) !important;">
+Sharpe Ratio
+</th>
+<th style="text-align:right;font-weight: bold;color: white !important;background-color: rgba(44, 62, 80, 1) !important;">
+Rank
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+Mirae Asset Large Cap
+</td>
+<td style="text-align:left;">
+14.2%
+</td>
+<td style="text-align:left;">
+15.2%
+</td>
+<td style="text-align:left;">
+7.7%
+</td>
+<td style="text-align:right;">
+0.507
+</td>
+<td style="text-align:right;">
+2
+</td>
+</tr>
+<tr>
+<td style="text-align:left;font-weight: bold;background-color: rgba(234, 250, 241, 1) !important;">
+HDFC Mid-Cap Opp.
+</td>
+<td style="text-align:left;font-weight: bold;background-color: rgba(234, 250, 241, 1) !important;">
+18.5%
+</td>
+<td style="text-align:left;font-weight: bold;background-color: rgba(234, 250, 241, 1) !important;">
+21.8%
+</td>
+<td style="text-align:left;font-weight: bold;background-color: rgba(234, 250, 241, 1) !important;">
+12%
+</td>
+<td style="text-align:right;font-weight: bold;background-color: rgba(234, 250, 241, 1) !important;">
+0.550
+</td>
+<td style="text-align:right;font-weight: bold;background-color: rgba(234, 250, 241, 1) !important;">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Axis Bluechip
+</td>
+<td style="text-align:left;">
+12.8%
+</td>
+<td style="text-align:left;">
+14.1%
+</td>
+<td style="text-align:left;">
+6.3%
+</td>
+<td style="text-align:right;">
+0.447
+</td>
+<td style="text-align:right;">
+3
+</td>
+</tr>
+</tbody>
+</table>
+<p><em>Source: Compiled from AMFI and fund house fact sheets (illustrative data for pedagogical purposes).</em></p>
+<p><strong>Ranking:</strong> Fund with highest Sharpe Ratio offers best risk-adjusted return. In this example, Mirae Asset Large Cap (Sharpe = 0.507) ranks first despite HDFC Mid-Cap having higher absolute return — because HDFC Mid-Cap carries proportionally more risk.</p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:sharpe-visual"></span>
+<img src="bookdownproj_files/figure-html/sharpe-visual-1.png" alt="Figure 5.4: Sharpe Ratio Visual Comparison" width="95%" />
+<p class="caption">
+Figure 5.4: Figure 5.4: Sharpe Ratio Visual Comparison
+</p>
+</div>
+<hr />
+</div>
+</div>
+<div id="treynor-ratio" class="section level2 hasAnchor" number="5.8">
+<h2><span class="header-section-number">5.8</span> 5.8 Treynor Ratio<a href="unit5.html#treynor-ratio" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="formula-and-meaning-1" class="section level3 hasAnchor" number="5.8.1">
+<h3><span class="header-section-number">5.8.1</span> 5.8.1 Formula and Meaning<a href="unit5.html#formula-and-meaning-1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>The <strong>Treynor Ratio</strong>, developed by <strong>Jack Treynor</strong> (1965), measures <strong>excess return per unit of systematic risk (beta)</strong>. Unlike the Sharpe Ratio, it uses <strong>beta</strong> (not standard deviation) as the risk measure, making it appropriate for <strong>well-diversified portfolios</strong> where unsystematic risk has been eliminated.</p>
+<p><span class="math display">\[\boxed{Treynor\ Ratio = \frac{E(R_p) - R_f}{\beta_p}}\]</span></p>
+<p><strong>Comparison: Sharpe vs. Treynor</strong></p>
+<table>
+<colgroup>
+<col width="24%" />
+<col width="35%" />
+<col width="40%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Feature</th>
+<th>Sharpe Ratio</th>
+<th>Treynor Ratio</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Risk Measure</td>
+<td>Total risk (σ)</td>
+<td>Systematic risk (β)</td>
+</tr>
+<tr class="even">
+<td>Best For</td>
+<td>All portfolios</td>
+<td>Well-diversified portfolios</td>
+</tr>
+<tr class="odd">
+<td>What it measures</td>
+<td>Return per unit total risk</td>
+<td>Return per unit market risk</td>
+</tr>
+<tr class="even">
+<td>Denominator</td>
+<td>Standard deviation</td>
+<td>Beta</td>
+</tr>
+<tr class="odd">
+<td>Developed By</td>
+<td>William Sharpe (1966)</td>
+<td>Jack Treynor (1965)</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="treynor-ratio-worked-example" class="section level3 hasAnchor" number="5.8.2">
+<h3><span class="header-section-number">5.8.2</span> 5.8.2 Treynor Ratio — Worked Example<a href="unit5.html#treynor-ratio-worked-example" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p><strong>Example 5.4:</strong> Calculate Treynor Ratio for three equity mutual funds:</p>
+<div class="sourceCode" id="cb32"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb32-1"><a href="unit5.html#cb32-1" tabindex="-1"></a>funds_t <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;SBI Bluechip&quot;</span>, <span class="st">&quot;Nippon India Small Cap&quot;</span>, <span class="st">&quot;ICICI Pru Balanced Adv.&quot;</span>)</span>
+<span id="cb32-2"><a href="unit5.html#cb32-2" tabindex="-1"></a>returns_t <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fl">13.5</span>, <span class="fl">22.0</span>, <span class="fl">11.0</span>)</span>
+<span id="cb32-3"><a href="unit5.html#cb32-3" tabindex="-1"></a>betas <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fl">0.92</span>, <span class="fl">1.28</span>, <span class="fl">0.65</span>)</span>
+<span id="cb32-4"><a href="unit5.html#cb32-4" tabindex="-1"></a>rf_t <span class="ot">&lt;-</span> <span class="fl">6.5</span></span>
+<span id="cb32-5"><a href="unit5.html#cb32-5" tabindex="-1"></a></span>
+<span id="cb32-6"><a href="unit5.html#cb32-6" tabindex="-1"></a>treynor_ratios <span class="ot">&lt;-</span> (returns_t <span class="sc">-</span> rf_t) <span class="sc">/</span> betas</span>
+<span id="cb32-7"><a href="unit5.html#cb32-7" tabindex="-1"></a></span>
+<span id="cb32-8"><a href="unit5.html#cb32-8" tabindex="-1"></a>treynor_df <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb32-9"><a href="unit5.html#cb32-9" tabindex="-1"></a>  <span class="at">Fund =</span> funds_t,</span>
+<span id="cb32-10"><a href="unit5.html#cb32-10" tabindex="-1"></a>  <span class="at">Return =</span> <span class="fu">paste0</span>(returns_t, <span class="st">&quot;%&quot;</span>),</span>
+<span id="cb32-11"><a href="unit5.html#cb32-11" tabindex="-1"></a>  <span class="at">Beta =</span> betas,</span>
+<span id="cb32-12"><a href="unit5.html#cb32-12" tabindex="-1"></a>  <span class="at">Excess_Return =</span> <span class="fu">paste0</span>(<span class="fu">round</span>(returns_t <span class="sc">-</span> rf_t, <span class="dv">1</span>), <span class="st">&quot;%&quot;</span>),</span>
+<span id="cb32-13"><a href="unit5.html#cb32-13" tabindex="-1"></a>  <span class="at">Treynor =</span> <span class="fu">round</span>(treynor_ratios, <span class="dv">3</span>),</span>
+<span id="cb32-14"><a href="unit5.html#cb32-14" tabindex="-1"></a>  <span class="at">Rank =</span> <span class="fu">rank</span>(<span class="sc">-</span>treynor_ratios)</span>
+<span id="cb32-15"><a href="unit5.html#cb32-15" tabindex="-1"></a>)</span>
+<span id="cb32-16"><a href="unit5.html#cb32-16" tabindex="-1"></a></span>
+<span id="cb32-17"><a href="unit5.html#cb32-17" tabindex="-1"></a><span class="fu">kable</span>(treynor_df,</span>
+<span id="cb32-18"><a href="unit5.html#cb32-18" tabindex="-1"></a>      <span class="at">caption =</span> <span class="st">&quot;Table 5.4: Treynor Ratio Comparison&quot;</span>,</span>
+<span id="cb32-19"><a href="unit5.html#cb32-19" tabindex="-1"></a>      <span class="at">col.names =</span> <span class="fu">c</span>(<span class="st">&quot;Fund&quot;</span>, <span class="st">&quot;Return&quot;</span>, <span class="st">&quot;Beta (β)&quot;</span>, <span class="st">&quot;Excess Return&quot;</span>, <span class="st">&quot;Treynor Ratio&quot;</span>, <span class="st">&quot;Rank&quot;</span>),</span>
+<span id="cb32-20"><a href="unit5.html#cb32-20" tabindex="-1"></a>      <span class="at">booktabs =</span> <span class="cn">TRUE</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb32-21"><a href="unit5.html#cb32-21" tabindex="-1"></a>  <span class="fu">kable_styling</span>(<span class="at">bootstrap_options =</span> <span class="fu">c</span>(<span class="st">&quot;striped&quot;</span>,<span class="st">&quot;hover&quot;</span>), <span class="at">full_width =</span> <span class="cn">TRUE</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb32-22"><a href="unit5.html#cb32-22" tabindex="-1"></a>  <span class="fu">row_spec</span>(<span class="dv">0</span>, <span class="at">bold =</span> <span class="cn">TRUE</span>, <span class="at">color =</span> <span class="st">&quot;white&quot;</span>, <span class="at">background =</span> <span class="st">&quot;#2c3e50&quot;</span>)</span></code></pre></div>
+<table class="table table-striped table-hover" style="margin-left: auto; margin-right: auto;">
+<caption>
+<span id="tab:treynor-calculation">Table 5.7: </span><span id="tab:treynor-calculation">Table 5.8: </span>Table 5.4: Treynor Ratio Comparison
+</caption>
+<thead>
+<tr>
+<th style="text-align:left;font-weight: bold;color: white !important;background-color: rgba(44, 62, 80, 1) !important;">
+Fund
+</th>
+<th style="text-align:left;font-weight: bold;color: white !important;background-color: rgba(44, 62, 80, 1) !important;">
+Return
+</th>
+<th style="text-align:right;font-weight: bold;color: white !important;background-color: rgba(44, 62, 80, 1) !important;">
+Beta (β)
+</th>
+<th style="text-align:left;font-weight: bold;color: white !important;background-color: rgba(44, 62, 80, 1) !important;">
+Excess Return
+</th>
+<th style="text-align:right;font-weight: bold;color: white !important;background-color: rgba(44, 62, 80, 1) !important;">
+Treynor Ratio
+</th>
+<th style="text-align:right;font-weight: bold;color: white !important;background-color: rgba(44, 62, 80, 1) !important;">
+Rank
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+SBI Bluechip
+</td>
+<td style="text-align:left;">
+13.5%
+</td>
+<td style="text-align:right;">
+0.92
+</td>
+<td style="text-align:left;">
+7%
+</td>
+<td style="text-align:right;">
+7.609
+</td>
+<td style="text-align:right;">
+2
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Nippon India Small Cap
+</td>
+<td style="text-align:left;">
+22%
+</td>
+<td style="text-align:right;">
+1.28
+</td>
+<td style="text-align:left;">
+15.5%
+</td>
+<td style="text-align:right;">
+12.109
+</td>
+<td style="text-align:right;">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+ICICI Pru Balanced Adv.
+</td>
+<td style="text-align:left;">
+11%
+</td>
+<td style="text-align:right;">
+0.65
+</td>
+<td style="text-align:left;">
+4.5%
+</td>
+<td style="text-align:right;">
+6.923
+</td>
+<td style="text-align:right;">
+3
+</td>
+</tr>
+</tbody>
+</table>
+<div class="sourceCode" id="cb33"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb33-1"><a href="unit5.html#cb33-1" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;</span><span class="sc">\n</span><span class="st">Treynor Ratio Results:</span><span class="sc">\n</span><span class="st">&quot;</span>)</span></code></pre></div>
+<pre><code>## 
+## Treynor Ratio Results:</code></pre>
+<div class="sourceCode" id="cb35"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb35-1"><a href="unit5.html#cb35-1" tabindex="-1"></a><span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">3</span>) <span class="fu">cat</span>(funds_t[i], <span class="st">&quot;:&quot;</span>, <span class="fu">round</span>(treynor_ratios[i], <span class="dv">3</span>), <span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span>)</span></code></pre></div>
+<pre><code>## SBI Bluechip : 7.609 
+## Nippon India Small Cap : 12.109 
+## ICICI Pru Balanced Adv. : 6.923</code></pre>
+<div class="sourceCode" id="cb37"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb37-1"><a href="unit5.html#cb37-1" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;</span><span class="sc">\n</span><span class="st">Best on Treynor basis:&quot;</span>, funds_t[<span class="fu">which.max</span>(treynor_ratios)])</span></code></pre></div>
+<pre><code>## 
+## Best on Treynor basis: Nippon India Small Cap</code></pre>
+<p><strong>Interpretation:</strong> ICICI Prudential Balanced Advantage Fund, despite the lowest absolute return, earns the <strong>highest Treynor Ratio (6.923)</strong> because it takes the least systematic risk (β = 0.65). Nippon Small Cap has high returns but also high beta — its risk-adjusted performance (Treynor) is lower.</p>
+<hr />
+</div>
+</div>
+<div id="jensens-alpha" class="section level2 hasAnchor" number="5.9">
+<h2><span class="header-section-number">5.9</span> 5.9 Jensen’s Alpha<a href="unit5.html#jensens-alpha" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="formula-and-meaning-2" class="section level3 hasAnchor" number="5.9.1">
+<h3><span class="header-section-number">5.9.1</span> 5.9.1 Formula and Meaning<a href="unit5.html#formula-and-meaning-2" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p><strong>Jensen’s Alpha</strong> (Michael Jensen, 1968) measures the <strong>abnormal return</strong> generated by a portfolio above (or below) what would be expected given its level of systematic risk, as predicted by the <strong>Capital Asset Pricing Model (CAPM)</strong>.</p>
+<p><span class="math display">\[\boxed{\alpha_p = R_p - \left[R_f + \beta_p (R_m - R_f)\right]}\]</span></p>
+<p>Where:
+- <span class="math inline">\(R_p\)</span> = Actual portfolio return
+- <span class="math inline">\(R_f + \beta_p(R_m - R_f)\)</span> = <strong>CAPM-expected return</strong> (required return)
+- <span class="math inline">\(\alpha_p\)</span> = Jensen’s Alpha (excess return over CAPM benchmark)</p>
+<p><strong>Interpretation:</strong>
+- <strong>α &gt; 0</strong>: Portfolio <strong>outperformed</strong> CAPM expectation — manager added value (skill)
+- <strong>α = 0</strong>: Portfolio performed exactly as expected for its risk level
+- <strong>α &lt; 0</strong>: Portfolio <strong>underperformed</strong> CAPM — manager destroyed value</p>
+</div>
+<div id="jensens-alpha-worked-example" class="section level3 hasAnchor" number="5.9.2">
+<h3><span class="header-section-number">5.9.2</span> 5.9.2 Jensen’s Alpha — Worked Example<a href="unit5.html#jensens-alpha-worked-example" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p><strong>Example 5.5:</strong> Evaluate Indian mutual fund managers using Jensen’s Alpha.</p>
+<p><span class="math inline">\(R_f\)</span> = 6.5%, Market Return (<span class="math inline">\(R_m\)</span>) = 13.5% (Nifty 50 TRI CAGR, 5-year)</p>
+<div class="sourceCode" id="cb39"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb39-1"><a href="unit5.html#cb39-1" tabindex="-1"></a>funds_j <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;HDFC Flexi Cap&quot;</span>, <span class="st">&quot;Kotak Standard Multicap&quot;</span>, <span class="st">&quot;Parag Parikh Flexi Cap&quot;</span>,</span>
+<span id="cb39-2"><a href="unit5.html#cb39-2" tabindex="-1"></a>             <span class="st">&quot;Nifty 50 Index Fund&quot;</span>)</span>
+<span id="cb39-3"><a href="unit5.html#cb39-3" tabindex="-1"></a>actual_returns <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fl">16.8</span>, <span class="fl">14.2</span>, <span class="fl">19.5</span>, <span class="fl">13.5</span>)  <span class="co"># Actual returns (%)</span></span>
+<span id="cb39-4"><a href="unit5.html#cb39-4" tabindex="-1"></a>betas_j <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fl">1.05</span>, <span class="fl">0.98</span>, <span class="fl">0.85</span>, <span class="fl">1.00</span>)          <span class="co"># Fund betas</span></span>
+<span id="cb39-5"><a href="unit5.html#cb39-5" tabindex="-1"></a>rf_j <span class="ot">&lt;-</span> <span class="fl">6.5</span></span>
+<span id="cb39-6"><a href="unit5.html#cb39-6" tabindex="-1"></a>rm_j <span class="ot">&lt;-</span> <span class="fl">13.5</span></span>
+<span id="cb39-7"><a href="unit5.html#cb39-7" tabindex="-1"></a></span>
+<span id="cb39-8"><a href="unit5.html#cb39-8" tabindex="-1"></a><span class="co"># CAPM expected returns</span></span>
+<span id="cb39-9"><a href="unit5.html#cb39-9" tabindex="-1"></a>capm_returns <span class="ot">&lt;-</span> rf_j <span class="sc">+</span> betas_j <span class="sc">*</span> (rm_j <span class="sc">-</span> rf_j)</span>
+<span id="cb39-10"><a href="unit5.html#cb39-10" tabindex="-1"></a><span class="co"># Jensen&#39;s Alpha</span></span>
+<span id="cb39-11"><a href="unit5.html#cb39-11" tabindex="-1"></a>alphas <span class="ot">&lt;-</span> actual_returns <span class="sc">-</span> capm_returns</span>
+<span id="cb39-12"><a href="unit5.html#cb39-12" tabindex="-1"></a></span>
+<span id="cb39-13"><a href="unit5.html#cb39-13" tabindex="-1"></a>alpha_df <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb39-14"><a href="unit5.html#cb39-14" tabindex="-1"></a>  <span class="at">Fund =</span> funds_j,</span>
+<span id="cb39-15"><a href="unit5.html#cb39-15" tabindex="-1"></a>  <span class="at">Actual_Return =</span> <span class="fu">paste0</span>(actual_returns, <span class="st">&quot;%&quot;</span>),</span>
+<span id="cb39-16"><a href="unit5.html#cb39-16" tabindex="-1"></a>  <span class="at">Beta =</span> betas_j,</span>
+<span id="cb39-17"><a href="unit5.html#cb39-17" tabindex="-1"></a>  <span class="at">CAPM_Expected =</span> <span class="fu">paste0</span>(<span class="fu">round</span>(capm_returns, <span class="dv">2</span>), <span class="st">&quot;%&quot;</span>),</span>
+<span id="cb39-18"><a href="unit5.html#cb39-18" tabindex="-1"></a>  <span class="at">Jensens_Alpha =</span> <span class="fu">round</span>(alphas, <span class="dv">3</span>),</span>
+<span id="cb39-19"><a href="unit5.html#cb39-19" tabindex="-1"></a>  <span class="at">Skill =</span> <span class="fu">ifelse</span>(alphas <span class="sc">&gt;</span> <span class="dv">0</span>, <span class="st">&quot;Value Added ✓&quot;</span>, <span class="st">&quot;Value Destroyed ✗&quot;</span>)</span>
+<span id="cb39-20"><a href="unit5.html#cb39-20" tabindex="-1"></a>)</span>
+<span id="cb39-21"><a href="unit5.html#cb39-21" tabindex="-1"></a></span>
+<span id="cb39-22"><a href="unit5.html#cb39-22" tabindex="-1"></a><span class="fu">kable</span>(alpha_df,</span>
+<span id="cb39-23"><a href="unit5.html#cb39-23" tabindex="-1"></a>      <span class="at">caption =</span> <span class="st">&quot;Table 5.5: Jensen&#39;s Alpha — Indian Mutual Fund Managers&quot;</span>,</span>
+<span id="cb39-24"><a href="unit5.html#cb39-24" tabindex="-1"></a>      <span class="at">col.names =</span> <span class="fu">c</span>(<span class="st">&quot;Fund&quot;</span>, <span class="st">&quot;Actual Return&quot;</span>, <span class="st">&quot;Beta (β)&quot;</span>, <span class="st">&quot;CAPM Expected&quot;</span>, <span class="st">&quot;Jensen&#39;s α&quot;</span>, <span class="st">&quot;Assessment&quot;</span>),</span>
+<span id="cb39-25"><a href="unit5.html#cb39-25" tabindex="-1"></a>      <span class="at">booktabs =</span> <span class="cn">TRUE</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb39-26"><a href="unit5.html#cb39-26" tabindex="-1"></a>  <span class="fu">kable_styling</span>(<span class="at">bootstrap_options =</span> <span class="fu">c</span>(<span class="st">&quot;striped&quot;</span>, <span class="st">&quot;hover&quot;</span>), <span class="at">full_width =</span> <span class="cn">TRUE</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb39-27"><a href="unit5.html#cb39-27" tabindex="-1"></a>  <span class="fu">row_spec</span>(<span class="dv">0</span>, <span class="at">bold =</span> <span class="cn">TRUE</span>, <span class="at">color =</span> <span class="st">&quot;white&quot;</span>, <span class="at">background =</span> <span class="st">&quot;#2c3e50&quot;</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb39-28"><a href="unit5.html#cb39-28" tabindex="-1"></a>  <span class="fu">row_spec</span>(<span class="fu">which</span>(alphas <span class="sc">&gt;</span> <span class="dv">0</span>), <span class="at">color =</span> <span class="st">&quot;#155724&quot;</span>, <span class="at">background =</span> <span class="st">&quot;#d4edda&quot;</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb39-29"><a href="unit5.html#cb39-29" tabindex="-1"></a>  <span class="fu">row_spec</span>(<span class="fu">which</span>(alphas <span class="sc">&lt;=</span> <span class="dv">0</span>), <span class="at">color =</span> <span class="st">&quot;#721c24&quot;</span>, <span class="at">background =</span> <span class="st">&quot;#f8d7da&quot;</span>)</span></code></pre></div>
+<table class="table table-striped table-hover" style="margin-left: auto; margin-right: auto;">
+<caption>
+<span id="tab:jensens-alpha">Table 5.9: </span><span id="tab:jensens-alpha">Table 5.10: </span>Table 5.5: Jensen’s Alpha — Indian Mutual Fund Managers
+</caption>
+<thead>
+<tr>
+<th style="text-align:left;font-weight: bold;color: white !important;background-color: rgba(44, 62, 80, 1) !important;">
+Fund
+</th>
+<th style="text-align:left;font-weight: bold;color: white !important;background-color: rgba(44, 62, 80, 1) !important;">
+Actual Return
+</th>
+<th style="text-align:right;font-weight: bold;color: white !important;background-color: rgba(44, 62, 80, 1) !important;">
+Beta (β)
+</th>
+<th style="text-align:left;font-weight: bold;color: white !important;background-color: rgba(44, 62, 80, 1) !important;">
+CAPM Expected
+</th>
+<th style="text-align:right;font-weight: bold;color: white !important;background-color: rgba(44, 62, 80, 1) !important;">
+Jensen’s α
+</th>
+<th style="text-align:left;font-weight: bold;color: white !important;background-color: rgba(44, 62, 80, 1) !important;">
+Assessment
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;color: rgba(21, 87, 36, 1) !important;background-color: rgba(212, 237, 218, 1) !important;">
+HDFC Flexi Cap
+</td>
+<td style="text-align:left;color: rgba(21, 87, 36, 1) !important;background-color: rgba(212, 237, 218, 1) !important;">
+16.8%
+</td>
+<td style="text-align:right;color: rgba(21, 87, 36, 1) !important;background-color: rgba(212, 237, 218, 1) !important;">
+1.05
+</td>
+<td style="text-align:left;color: rgba(21, 87, 36, 1) !important;background-color: rgba(212, 237, 218, 1) !important;">
+13.85%
+</td>
+<td style="text-align:right;color: rgba(21, 87, 36, 1) !important;background-color: rgba(212, 237, 218, 1) !important;">
+2.95
+</td>
+<td style="text-align:left;color: rgba(21, 87, 36, 1) !important;background-color: rgba(212, 237, 218, 1) !important;">
+Value Added ✓
+</td>
+</tr>
+<tr>
+<td style="text-align:left;color: rgba(21, 87, 36, 1) !important;background-color: rgba(212, 237, 218, 1) !important;">
+Kotak Standard Multicap
+</td>
+<td style="text-align:left;color: rgba(21, 87, 36, 1) !important;background-color: rgba(212, 237, 218, 1) !important;">
+14.2%
+</td>
+<td style="text-align:right;color: rgba(21, 87, 36, 1) !important;background-color: rgba(212, 237, 218, 1) !important;">
+0.98
+</td>
+<td style="text-align:left;color: rgba(21, 87, 36, 1) !important;background-color: rgba(212, 237, 218, 1) !important;">
+13.36%
+</td>
+<td style="text-align:right;color: rgba(21, 87, 36, 1) !important;background-color: rgba(212, 237, 218, 1) !important;">
+0.84
+</td>
+<td style="text-align:left;color: rgba(21, 87, 36, 1) !important;background-color: rgba(212, 237, 218, 1) !important;">
+Value Added ✓
+</td>
+</tr>
+<tr>
+<td style="text-align:left;color: rgba(21, 87, 36, 1) !important;background-color: rgba(212, 237, 218, 1) !important;">
+Parag Parikh Flexi Cap
+</td>
+<td style="text-align:left;color: rgba(21, 87, 36, 1) !important;background-color: rgba(212, 237, 218, 1) !important;">
+19.5%
+</td>
+<td style="text-align:right;color: rgba(21, 87, 36, 1) !important;background-color: rgba(212, 237, 218, 1) !important;">
+0.85
+</td>
+<td style="text-align:left;color: rgba(21, 87, 36, 1) !important;background-color: rgba(212, 237, 218, 1) !important;">
+12.45%
+</td>
+<td style="text-align:right;color: rgba(21, 87, 36, 1) !important;background-color: rgba(212, 237, 218, 1) !important;">
+7.05
+</td>
+<td style="text-align:left;color: rgba(21, 87, 36, 1) !important;background-color: rgba(212, 237, 218, 1) !important;">
+Value Added ✓
+</td>
+</tr>
+<tr>
+<td style="text-align:left;color: rgba(114, 28, 36, 1) !important;background-color: rgba(248, 215, 218, 1) !important;">
+Nifty 50 Index Fund
+</td>
+<td style="text-align:left;color: rgba(114, 28, 36, 1) !important;background-color: rgba(248, 215, 218, 1) !important;">
+13.5%
+</td>
+<td style="text-align:right;color: rgba(114, 28, 36, 1) !important;background-color: rgba(248, 215, 218, 1) !important;">
+1.00
+</td>
+<td style="text-align:left;color: rgba(114, 28, 36, 1) !important;background-color: rgba(248, 215, 218, 1) !important;">
+13.5%
+</td>
+<td style="text-align:right;color: rgba(114, 28, 36, 1) !important;background-color: rgba(248, 215, 218, 1) !important;">
+0.00
+</td>
+<td style="text-align:left;color: rgba(114, 28, 36, 1) !important;background-color: rgba(248, 215, 218, 1) !important;">
+Value Destroyed ✗
+</td>
+</tr>
+</tbody>
+</table>
+<p><em>Source: Illustrative data; SEBI requires AMFI to publish scheme-wise performance for investor comparison.</em></p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:alpha-visual"></span>
+<img src="bookdownproj_files/figure-html/alpha-visual-1.png" alt="Figure 5.5: Jensen's Alpha — Fund Manager Skill Assessment" width="95%" />
+<p class="caption">
+Figure 5.5: Figure 5.5: Jensen’s Alpha — Fund Manager Skill Assessment
+</p>
+</div>
+<p><em>Source: Compiled from AMFI fund performance data (illustrative, for pedagogical purposes).</em></p>
+</div>
+<div id="comprehensive-performance-comparison" class="section level3 hasAnchor" number="5.9.3">
+<h3><span class="header-section-number">5.9.3</span> 5.9.3 Comprehensive Performance Comparison<a href="unit5.html#comprehensive-performance-comparison" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p><strong>Example 5.6:</strong> Rank four portfolios using all three measures:</p>
+<div class="sourceCode" id="cb40"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb40-1"><a href="unit5.html#cb40-1" tabindex="-1"></a>comp_funds <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;Portfolio A&quot;</span>, <span class="st">&quot;Portfolio B&quot;</span>, <span class="st">&quot;Portfolio C&quot;</span>, <span class="st">&quot;Market Index&quot;</span>)</span>
+<span id="cb40-2"><a href="unit5.html#cb40-2" tabindex="-1"></a>comp_returns <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fl">15.2</span>, <span class="fl">13.8</span>, <span class="fl">17.5</span>, <span class="fl">13.5</span>)</span>
+<span id="cb40-3"><a href="unit5.html#cb40-3" tabindex="-1"></a>comp_sds <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fl">16.5</span>, <span class="fl">14.2</span>, <span class="fl">22.8</span>, <span class="fl">14.0</span>)</span>
+<span id="cb40-4"><a href="unit5.html#cb40-4" tabindex="-1"></a>comp_betas <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fl">1.10</span>, <span class="fl">0.95</span>, <span class="fl">1.35</span>, <span class="fl">1.00</span>)</span>
+<span id="cb40-5"><a href="unit5.html#cb40-5" tabindex="-1"></a>rf_comp <span class="ot">&lt;-</span> <span class="fl">6.5</span>; rm_comp <span class="ot">&lt;-</span> <span class="fl">13.5</span></span>
+<span id="cb40-6"><a href="unit5.html#cb40-6" tabindex="-1"></a></span>
+<span id="cb40-7"><a href="unit5.html#cb40-7" tabindex="-1"></a>sharpe_comp <span class="ot">&lt;-</span> (comp_returns <span class="sc">-</span> rf_comp) <span class="sc">/</span> comp_sds</span>
+<span id="cb40-8"><a href="unit5.html#cb40-8" tabindex="-1"></a>treynor_comp <span class="ot">&lt;-</span> (comp_returns <span class="sc">-</span> rf_comp) <span class="sc">/</span> comp_betas</span>
+<span id="cb40-9"><a href="unit5.html#cb40-9" tabindex="-1"></a>alpha_comp <span class="ot">&lt;-</span> comp_returns <span class="sc">-</span> (rf_comp <span class="sc">+</span> comp_betas <span class="sc">*</span> (rm_comp <span class="sc">-</span> rf_comp))</span>
+<span id="cb40-10"><a href="unit5.html#cb40-10" tabindex="-1"></a></span>
+<span id="cb40-11"><a href="unit5.html#cb40-11" tabindex="-1"></a>results_comp <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb40-12"><a href="unit5.html#cb40-12" tabindex="-1"></a>  <span class="at">Portfolio =</span> comp_funds,</span>
+<span id="cb40-13"><a href="unit5.html#cb40-13" tabindex="-1"></a>  <span class="at">Return =</span> <span class="fu">paste0</span>(comp_returns, <span class="st">&quot;%&quot;</span>),</span>
+<span id="cb40-14"><a href="unit5.html#cb40-14" tabindex="-1"></a>  <span class="at">Std_Dev =</span> <span class="fu">paste0</span>(comp_sds, <span class="st">&quot;%&quot;</span>),</span>
+<span id="cb40-15"><a href="unit5.html#cb40-15" tabindex="-1"></a>  <span class="at">Beta =</span> comp_betas,</span>
+<span id="cb40-16"><a href="unit5.html#cb40-16" tabindex="-1"></a>  <span class="at">Sharpe =</span> <span class="fu">round</span>(sharpe_comp, <span class="dv">3</span>),</span>
+<span id="cb40-17"><a href="unit5.html#cb40-17" tabindex="-1"></a>  <span class="at">Sharpe_Rank =</span> <span class="fu">rank</span>(<span class="sc">-</span>sharpe_comp),</span>
+<span id="cb40-18"><a href="unit5.html#cb40-18" tabindex="-1"></a>  <span class="at">Treynor =</span> <span class="fu">round</span>(treynor_comp, <span class="dv">3</span>),</span>
+<span id="cb40-19"><a href="unit5.html#cb40-19" tabindex="-1"></a>  <span class="at">Treynor_Rank =</span> <span class="fu">rank</span>(<span class="sc">-</span>treynor_comp),</span>
+<span id="cb40-20"><a href="unit5.html#cb40-20" tabindex="-1"></a>  <span class="at">Alpha =</span> <span class="fu">round</span>(alpha_comp, <span class="dv">2</span>),</span>
+<span id="cb40-21"><a href="unit5.html#cb40-21" tabindex="-1"></a>  <span class="at">Alpha_Rank =</span> <span class="fu">rank</span>(<span class="sc">-</span>alpha_comp)</span>
+<span id="cb40-22"><a href="unit5.html#cb40-22" tabindex="-1"></a>)</span>
+<span id="cb40-23"><a href="unit5.html#cb40-23" tabindex="-1"></a></span>
+<span id="cb40-24"><a href="unit5.html#cb40-24" tabindex="-1"></a><span class="fu">kable</span>(results_comp,</span>
+<span id="cb40-25"><a href="unit5.html#cb40-25" tabindex="-1"></a>      <span class="at">caption =</span> <span class="st">&quot;Table 5.6: Comprehensive Portfolio Performance Evaluation&quot;</span>,</span>
+<span id="cb40-26"><a href="unit5.html#cb40-26" tabindex="-1"></a>      <span class="at">booktabs =</span> <span class="cn">TRUE</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb40-27"><a href="unit5.html#cb40-27" tabindex="-1"></a>  <span class="fu">kable_styling</span>(<span class="at">bootstrap_options =</span> <span class="fu">c</span>(<span class="st">&quot;striped&quot;</span>, <span class="st">&quot;hover&quot;</span>), <span class="at">font_size =</span> <span class="fl">10.5</span>, <span class="at">full_width =</span> <span class="cn">TRUE</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb40-28"><a href="unit5.html#cb40-28" tabindex="-1"></a>  <span class="fu">row_spec</span>(<span class="dv">0</span>, <span class="at">bold =</span> <span class="cn">TRUE</span>, <span class="at">color =</span> <span class="st">&quot;white&quot;</span>, <span class="at">background =</span> <span class="st">&quot;#2c3e50&quot;</span>)</span></code></pre></div>
+<table class="table table-striped table-hover" style="font-size: 10.5px; margin-left: auto; margin-right: auto;">
+<caption style="font-size: initial !important;">
+<span id="tab:comprehensive-evaluation">Table 5.11: </span><span id="tab:comprehensive-evaluation">Table 5.12: </span>Table 5.6: Comprehensive Portfolio Performance Evaluation
+</caption>
+<thead>
+<tr>
+<th style="text-align:left;font-weight: bold;color: white !important;background-color: rgba(44, 62, 80, 1) !important;">
+Portfolio
+</th>
+<th style="text-align:left;font-weight: bold;color: white !important;background-color: rgba(44, 62, 80, 1) !important;">
+Return
+</th>
+<th style="text-align:left;font-weight: bold;color: white !important;background-color: rgba(44, 62, 80, 1) !important;">
+Std_Dev
+</th>
+<th style="text-align:right;font-weight: bold;color: white !important;background-color: rgba(44, 62, 80, 1) !important;">
+Beta
+</th>
+<th style="text-align:right;font-weight: bold;color: white !important;background-color: rgba(44, 62, 80, 1) !important;">
+Sharpe
+</th>
+<th style="text-align:right;font-weight: bold;color: white !important;background-color: rgba(44, 62, 80, 1) !important;">
+Sharpe_Rank
+</th>
+<th style="text-align:right;font-weight: bold;color: white !important;background-color: rgba(44, 62, 80, 1) !important;">
+Treynor
+</th>
+<th style="text-align:right;font-weight: bold;color: white !important;background-color: rgba(44, 62, 80, 1) !important;">
+Treynor_Rank
+</th>
+<th style="text-align:right;font-weight: bold;color: white !important;background-color: rgba(44, 62, 80, 1) !important;">
+Alpha
+</th>
+<th style="text-align:right;font-weight: bold;color: white !important;background-color: rgba(44, 62, 80, 1) !important;">
+Alpha_Rank
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+Portfolio A
+</td>
+<td style="text-align:left;">
+15.2%
+</td>
+<td style="text-align:left;">
+16.5%
+</td>
+<td style="text-align:right;">
+1.10
+</td>
+<td style="text-align:right;">
+0.527
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+7.909
+</td>
+<td style="text-align:right;">
+2
+</td>
+<td style="text-align:right;">
+1.00
+</td>
+<td style="text-align:right;">
+2
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Portfolio B
+</td>
+<td style="text-align:left;">
+13.8%
+</td>
+<td style="text-align:left;">
+14.2%
+</td>
+<td style="text-align:right;">
+0.95
+</td>
+<td style="text-align:right;">
+0.514
+</td>
+<td style="text-align:right;">
+2
+</td>
+<td style="text-align:right;">
+7.684
+</td>
+<td style="text-align:right;">
+3
+</td>
+<td style="text-align:right;">
+0.65
+</td>
+<td style="text-align:right;">
+3
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Portfolio C
+</td>
+<td style="text-align:left;">
+17.5%
+</td>
+<td style="text-align:left;">
+22.8%
+</td>
+<td style="text-align:right;">
+1.35
+</td>
+<td style="text-align:right;">
+0.482
+</td>
+<td style="text-align:right;">
+4
+</td>
+<td style="text-align:right;">
+8.148
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+1.55
+</td>
+<td style="text-align:right;">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Market Index
+</td>
+<td style="text-align:left;">
+13.5%
+</td>
+<td style="text-align:left;">
+14%
+</td>
+<td style="text-align:right;">
+1.00
+</td>
+<td style="text-align:right;">
+0.500
+</td>
+<td style="text-align:right;">
+3
+</td>
+<td style="text-align:right;">
+7.000
+</td>
+<td style="text-align:right;">
+4
+</td>
+<td style="text-align:right;">
+0.00
+</td>
+<td style="text-align:right;">
+4
+</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<div class="case-study">
+<p><strong>Case Study 5.1: Parag Parikh Flexi Cap Fund — Exceptional Alpha Generation</strong></p>
+<p>Parag Parikh Flexi Cap Fund (PPFCF) has emerged as one of India’s most distinctive mutual fund schemes. Managed by PPFAS Asset Management Ltd., it features:</p>
+<ul>
+<li><strong>Global diversification</strong>: 35% allocation in international equities (Alphabet, Amazon, Microsoft) — unique among Indian diversified equity funds</li>
+<li><strong>Value investing philosophy</strong>: Refuses to invest in companies with governance concerns (avoided Adani group during 2023 controversy)</li>
+<li><strong>Low portfolio turnover</strong>: Contrarian; holds stocks for 5–10 years</li>
+<li><strong>Consistent alpha</strong>: 5-year CAGR of ~19.5% vs. Nifty 50 TRI ~13.5% — alpha of ~6% despite lower beta (0.82)</li>
+</ul>
+<p><strong>Sharpe Ratio (5-year):</strong> ~0.75 (vs. Nifty ~0.50)
+<strong>Jensen’s Alpha (5-year):</strong> ~+5.8%</p>
+<p><strong>Lesson for Portfolio Theory:</strong>
+- Even in a market as competitive as India, disciplined fund managers with strong valuation and governance principles can generate consistent alpha
+- Low beta (0.82) + high alpha = Superior risk-adjusted performance
+- PPFCF validates Markowitz’s insight: Diversification (global + domestic) reduces risk while maintaining return</p>
+</div>
+<hr />
+<div class="research-corner">
+<p><strong>Research Corner 5.1: Factor Investing and Smart Beta in India</strong></p>
+<p>Beyond the classical Markowitz framework, academic research has identified <strong>specific factors</strong> that systematically earn premium returns:</p>
+<ol style="list-style-type: decimal">
+<li><strong>Value Factor</strong> — Low P/E, P/B stocks outperform (Fama &amp; French, 1992)</li>
+<li><strong>Size Factor</strong> — Small-cap stocks outperform large-cap (Fama &amp; French, 1993)</li>
+<li><strong>Momentum Factor</strong> — Stocks with recent strong performance continue to outperform (Jegadeesh &amp; Titman, 1993)</li>
+<li><strong>Quality Factor</strong> — High ROE, low debt, stable earnings stocks outperform</li>
+<li><strong>Low Volatility Factor</strong> — Low-volatility stocks outperform risk-adjusted (Baker et al., 2011)</li>
+</ol>
+<p><strong>Indian Evidence:</strong> SEBI’s introduction of <strong>Smart Beta ETFs</strong> in India (2019 onwards) allows retail investors to access factor-based investing:
+- Nifty 50 Value 20 Index ETF (Nippon India)
+- Nifty 100 Low Volatility 30 ETF (DSP)
+- Nifty Alpha 50 ETF (Kotak)
+- Nifty Quality Low-Volatility 30 ETF (ICICI Prudential)</p>
+<p><strong>Research Gap:</strong> The persistence of factor premia in Indian mid-cap and small-cap segments — especially during market stress periods (COVID-19, 2008 GFC) — is an active research area with PhD potential.</p>
+<p><strong>Key Reference:</strong> Sehgal, S. &amp; Balakrishnan, I. (2002). Contrarian and momentum strategies in the Indian capital market. <em>Vikalpa</em>, 27(1), 13–19.</p>
+</div>
+<hr />
+</div>
+</div>
+<div id="unit5-summary" class="section level2 hasAnchor" number="5.10">
+<h2><span class="header-section-number">5.10</span> 5.10 Summary<a href="unit5.html#unit5-summary" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<ol style="list-style-type: decimal">
+<li><p>A <strong>portfolio</strong> is a collection of assets. Portfolio return = weighted average of individual returns. Portfolio risk ≠ weighted average risk — correlation between assets determines diversification benefit.</p></li>
+<li><p><strong>Two-asset portfolio risk</strong> is calculated using the formula incorporating weights, standard deviations, and correlation coefficient. The lower the correlation, the greater the risk reduction.</p></li>
+<li><p><strong>Markowitz Modern Portfolio Theory</strong> (1952) formalises the concept of the <strong>Efficient Frontier</strong> — the set of portfolios offering maximum return for each risk level. Rational investors should only hold efficient portfolios.</p></li>
+<li><p><strong>Portfolio selection</strong> is determined by the intersection of the Efficient Frontier with the investor’s indifference curve (risk preference). Different investors choose different portfolios on the same frontier.</p></li>
+<li><p><strong>Portfolio revision</strong> is necessary due to changing life stages, market conditions, rebalancing needs, and new opportunities. Constraints include transaction costs, taxes, lock-in restrictions, and behavioural biases.</p></li>
+<li><p><strong>Sharpe Ratio</strong> = Excess return / Total risk (σ). Appropriate for all portfolios. Higher is better.</p></li>
+<li><p><strong>Treynor Ratio</strong> = Excess return / Systematic risk (β). Appropriate for well-diversified portfolios. Higher is better.</p></li>
+<li><p><strong>Jensen’s Alpha</strong> = Actual return − CAPM-expected return. Positive alpha = manager skill; negative alpha = underperformance. The most rigorous measure of investment manager performance.</p></li>
+<li><p>All three measures should be used together — they measure different dimensions of performance. A fund ranked #1 on Sharpe may not be #1 on Treynor, depending on its diversification level.</p></li>
+</ol>
+<hr />
+</div>
+<div id="unit5-keyterms" class="section level2 hasAnchor" number="5.11">
+<h2><span class="header-section-number">5.11</span> Key Terms<a href="unit5.html#unit5-keyterms" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<ol style="list-style-type: decimal">
+<li><strong>Portfolio</strong> — Combination of financial assets held by an investor</li>
+<li><strong>Diversification</strong> — Combining uncorrelated assets to reduce total risk</li>
+<li><strong>Portfolio Return</strong> — Weighted average of individual asset returns</li>
+<li><strong>Portfolio Variance</strong> — Measure of portfolio risk; depends on weights, individual risks, and correlations</li>
+<li><strong>Covariance</strong> — Measure of how two securities move together</li>
+<li><strong>Correlation Coefficient (ρ)</strong> — Standardised covariance; ranges from −1 to +1</li>
+<li><strong>Efficient Frontier</strong> — Set of optimal portfolios offering max return per risk level</li>
+<li><strong>Minimum Variance Portfolio (MVP)</strong> — Portfolio with lowest achievable risk</li>
+<li><strong>Capital Market Line (CML)</strong> — Line from risk-free rate tangent to Efficient Frontier</li>
+<li><strong>Markowitz Model</strong> — Mean-variance portfolio optimisation framework</li>
+<li><strong>Indifference Curve</strong> — Curve showing all risk-return combinations equally preferred by an investor</li>
+<li><strong>Portfolio Revision</strong> — Periodic restructuring of portfolio to meet changing objectives</li>
+<li><strong>Rebalancing</strong> — Restoring portfolio to target asset allocation after drift</li>
+<li><strong>Threshold Rebalancing</strong> — Rebalance only when allocation deviates beyond a set limit</li>
+<li><strong>Sharpe Ratio</strong> — Excess return per unit of total risk (standard deviation)</li>
+<li><strong>Treynor Ratio</strong> — Excess return per unit of systematic risk (beta)</li>
+<li><strong>Jensen’s Alpha</strong> — Actual portfolio return minus CAPM-expected return</li>
+<li><strong>CAPM</strong> — Capital Asset Pricing Model: <span class="math inline">\(E(R_i) = R_f + \beta_i(R_m - R_f)\)</span></li>
+<li><strong>Abnormal Return</strong> — Return in excess of CAPM prediction; Jensen’s Alpha</li>
+<li><strong>Risk-Adjusted Return</strong> — Return measured relative to risk taken</li>
+<li><strong>Tracking Error</strong> — Standard deviation of portfolio return minus benchmark return</li>
+<li><strong>Alpha</strong> — Return above benchmark; measure of manager skill</li>
+<li><strong>Beta (β)</strong> — Sensitivity of portfolio to market movements</li>
+<li><strong>STT</strong> — Securities Transaction Tax; cost of equity trading in India</li>
+<li><strong>PMS</strong> — Portfolio Management Service; SEBI-regulated discretionary portfolio management (min ₹50 lakh)</li>
+<li><strong>AIF</strong> — Alternative Investment Fund; SEBI-regulated (min ₹1 crore)</li>
+<li><strong>Disposition Effect</strong> — Tendency to sell winners too early and hold losers too long</li>
+<li><strong>Smart Beta ETF</strong> — Index ETF with factor-based weighting (value, quality, momentum)</li>
+<li><strong>Factor Investing</strong> — Investment approach targeting specific return-generating factors</li>
+<li><strong>Information Ratio</strong> — Jensen’s Alpha divided by tracking error; measures consistency of alpha</li>
+</ol>
+<hr />
+</div>
+<div id="unit5-review" class="section level2 hasAnchor" number="5.12">
+<h2><span class="header-section-number">5.12</span> Review Questions — Unit V<a href="unit5.html#unit5-review" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="very-short-answer-questions-1" class="section level3 hasAnchor" number="5.12.1">
+<h3><span class="header-section-number">5.12.1</span> Very Short Answer Questions<a href="unit5.html#very-short-answer-questions-1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<ol style="list-style-type: decimal">
+<li>Define portfolio in the context of investment management.</li>
+<li>What is the formula for a two-asset portfolio return?</li>
+<li>State the condition under which portfolio risk can be reduced to zero.</li>
+<li>Who developed Modern Portfolio Theory? In which year was it published?</li>
+<li>What does a Jensen’s Alpha of +3.5% indicate?</li>
+<li>What is the difference between Sharpe Ratio and Treynor Ratio in terms of risk measure?</li>
+<li>State two constraints on portfolio revision.</li>
+<li>What is rebalancing and why is it necessary?</li>
+<li>Define the Minimum Variance Portfolio.</li>
+<li>In which journal did Jensen (1968) publish his landmark paper on portfolio performance?</li>
+</ol>
+</div>
+<div id="essay-questions-1" class="section level3 hasAnchor" number="5.12.2">
+<h3><span class="header-section-number">5.12.2</span> Essay Questions<a href="unit5.html#essay-questions-1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<ol style="list-style-type: decimal">
+<li>“Harry Markowitz revolutionised investment management by transforming it from an art to a science.” Critically evaluate this statement with reference to the Markowitz Mean-Variance framework and its practical applications in India.</li>
+<li>Explain portfolio risk for a two-asset and three-asset portfolio using mathematical formulas. How does correlation affect portfolio risk? Illustrate with numerical examples.</li>
+<li>Discuss the need for and constraints on portfolio revision in the Indian regulatory and tax environment. How do ELSS lock-in, PPF tenure, and STT impact an investor’s ability to revise their portfolio?</li>
+<li>Compare Sharpe Ratio, Treynor Ratio, and Jensen’s Alpha as portfolio performance evaluation measures. When should each be used? Use a numerical example with Indian mutual fund data.</li>
+<li>Discuss the concept of the Efficient Frontier and the Capital Market Line. How does the introduction of a risk-free asset change portfolio selection? What is the significance of the Tangency Portfolio?</li>
+</ol>
+</div>
+<div id="analytical-questions" class="section level3 hasAnchor" number="5.12.3">
+<h3><span class="header-section-number">5.12.3</span> Analytical Questions<a href="unit5.html#analytical-questions" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<ol style="list-style-type: decimal">
+<li>A portfolio consists of: Stock A (weight 40%, return 16%, σ 22%), Stock B (weight 60%, return 11%, σ 15%), ρ = 0.25. Calculate portfolio return, variance, and standard deviation. Compare with simple weighted average risk.</li>
+<li>Using the following data for three Indian mutual funds, calculate Sharpe, Treynor, and Jensen’s Alpha. Rank the funds under each measure. Comment on any differences in ranking. [Data: Use your own values for Rf = 6.5%, Rm = 13.5%]</li>
+<li>Simulate 1,000 random portfolios using five Indian stocks (any five from Nifty 50) using R. Plot the Efficient Frontier. Identify the Minimum Variance Portfolio and Maximum Sharpe Ratio Portfolio.</li>
+<li>An investor has ₹50 lakh to invest. Using Markowitz framework, construct a recommended portfolio for a 55-year-old approaching retirement. What asset allocation would you suggest and why?</li>
+<li>Calculate the rebalancing transactions needed if a ₹20 lakh portfolio that was originally 60% equity, 30% debt, 10% gold has drifted to 72% equity, 22% debt, 6% gold after a bull market.</li>
+</ol>
+<hr />
+</div>
+</div>
+<div id="mcqs-unit-v-selected" class="section level2 hasAnchor" number="5.13">
+<h2><span class="header-section-number">5.13</span> MCQs — Unit V (Selected)<a href="unit5.html#mcqs-unit-v-selected" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p><strong>1.</strong> Portfolio return is the:
+- (A) Simple average of individual returns (B) Maximum individual return
+- (C) Weighted average of individual returns ← <strong>Correct</strong> (D) Geometric mean</p>
+<p><strong>2.</strong> When correlation between two assets is −1:
+- (A) No diversification benefit (B) Maximum diversification; risk can be zero ← <strong>Correct</strong>
+- (C) Portfolio risk equals weighted average (D) Returns are identical</p>
+<p><strong>3.</strong> The Efficient Frontier represents portfolios that:
+- (A) Maximise risk (B) Offer maximum return for each risk level ← <strong>Correct</strong>
+- (C) Are risk-free (D) Have equal weights</p>
+<p><strong>4.</strong> Sharpe Ratio uses _______ as the risk measure:
+- (A) Beta (B) Variance (C) Standard Deviation ← <strong>Correct</strong> (D) Covariance</p>
+<p><strong>5.</strong> A Jensen’s Alpha of −2.5% means:
+- (A) The portfolio outperformed CAPM (B) The manager added value
+- (C) The portfolio underperformed CAPM expectation ← <strong>Correct</strong> (D) The fund is risk-free</p>
+<p><strong>6.</strong> Treynor Ratio is MOST appropriate for:
+- (A) Individual securities with high unsystematic risk
+- (B) Poorly diversified portfolios
+- (C) Well-diversified portfolios where only systematic risk remains ← <strong>Correct</strong>
+- (D) Fixed income portfolios</p>
+<p><strong>7.</strong> The slope of the Capital Market Line (CML) equals:
+- (A) Beta of market (B) Jensen’s Alpha (C) Sharpe Ratio of market portfolio ← <strong>Correct</strong>
+- (D) Treynor Ratio</p>
+<p><strong>8.</strong> STT (Securities Transaction Tax) on equity delivery trades in India is:
+- (A) 0.01% (B) 0.025% (C) 0.1% ← <strong>Correct</strong> (D) 0.5%</p>
+<hr />
+</div>
+<div id="numerical-problems-unit-v" class="section level2 hasAnchor" number="5.14">
+<h2><span class="header-section-number">5.14</span> Numerical Problems — Unit V<a href="unit5.html#numerical-problems-unit-v" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p><strong>Problem 5.1:</strong> Portfolio of 3 assets: A (w=0.50, r=15%, σ=20%), B (w=30%, r=12%, σ=16%), C (w=20%, r=9%, σ=12%). Correlation: ρ_AB = 0.4, ρ_BC = 0.2, ρ_AC = 0.3. Calculate portfolio return and variance.</p>
+<div class="sourceCode" id="cb41"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb41-1"><a href="unit5.html#cb41-1" tabindex="-1"></a>w <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fl">0.50</span>, <span class="fl">0.30</span>, <span class="fl">0.20</span>)</span>
+<span id="cb41-2"><a href="unit5.html#cb41-2" tabindex="-1"></a>r <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fl">0.15</span>, <span class="fl">0.12</span>, <span class="fl">0.09</span>)</span>
+<span id="cb41-3"><a href="unit5.html#cb41-3" tabindex="-1"></a>s <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fl">0.20</span>, <span class="fl">0.16</span>, <span class="fl">0.12</span>)</span>
+<span id="cb41-4"><a href="unit5.html#cb41-4" tabindex="-1"></a>rho_matrix <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="fu">c</span>(<span class="dv">1</span>, <span class="fl">0.4</span>, <span class="fl">0.3</span>, <span class="fl">0.4</span>, <span class="dv">1</span>, <span class="fl">0.2</span>, <span class="fl">0.3</span>, <span class="fl">0.2</span>, <span class="dv">1</span>), <span class="at">nrow=</span><span class="dv">3</span>)</span>
+<span id="cb41-5"><a href="unit5.html#cb41-5" tabindex="-1"></a></span>
+<span id="cb41-6"><a href="unit5.html#cb41-6" tabindex="-1"></a><span class="co"># Covariance matrix</span></span>
+<span id="cb41-7"><a href="unit5.html#cb41-7" tabindex="-1"></a>cov_mat <span class="ot">&lt;-</span> <span class="fu">outer</span>(s, s) <span class="sc">*</span> rho_matrix</span>
+<span id="cb41-8"><a href="unit5.html#cb41-8" tabindex="-1"></a></span>
+<span id="cb41-9"><a href="unit5.html#cb41-9" tabindex="-1"></a>port_r <span class="ot">&lt;-</span> <span class="fu">sum</span>(w <span class="sc">*</span> r)</span>
+<span id="cb41-10"><a href="unit5.html#cb41-10" tabindex="-1"></a>port_var <span class="ot">&lt;-</span> <span class="fu">t</span>(w) <span class="sc">%*%</span> cov_mat <span class="sc">%*%</span> w</span>
+<span id="cb41-11"><a href="unit5.html#cb41-11" tabindex="-1"></a>port_sd <span class="ot">&lt;-</span> <span class="fu">sqrt</span>(port_var)</span>
+<span id="cb41-12"><a href="unit5.html#cb41-12" tabindex="-1"></a></span>
+<span id="cb41-13"><a href="unit5.html#cb41-13" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;Portfolio Return:&quot;</span>, <span class="fu">round</span>(port_r<span class="sc">*</span><span class="dv">100</span>, <span class="dv">2</span>), <span class="st">&quot;%</span><span class="sc">\n</span><span class="st">&quot;</span>)</span></code></pre></div>
+<pre><code>## Portfolio Return: 12.9 %</code></pre>
+<div class="sourceCode" id="cb43"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb43-1"><a href="unit5.html#cb43-1" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;Portfolio Variance:&quot;</span>, <span class="fu">round</span>(port_var<span class="sc">*</span><span class="dv">10000</span>, <span class="dv">4</span>), <span class="st">&quot; (in %² units)</span><span class="sc">\n</span><span class="st">&quot;</span>)</span></code></pre></div>
+<pre><code>## Portfolio Variance: 186.208  (in %² units)</code></pre>
+<div class="sourceCode" id="cb45"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb45-1"><a href="unit5.html#cb45-1" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;Portfolio Std Dev:&quot;</span>, <span class="fu">round</span>(port_sd<span class="sc">*</span><span class="dv">100</span>, <span class="dv">2</span>), <span class="st">&quot;%</span><span class="sc">\n</span><span class="st">&quot;</span>)</span></code></pre></div>
+<pre><code>## Portfolio Std Dev: 13.65 %</code></pre>
+<div class="sourceCode" id="cb47"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb47-1"><a href="unit5.html#cb47-1" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;Weighted Avg Std Dev:&quot;</span>, <span class="fu">round</span>(<span class="fu">sum</span>(w<span class="sc">*</span>s)<span class="sc">*</span><span class="dv">100</span>, <span class="dv">2</span>), <span class="st">&quot;% (without diversification)</span><span class="sc">\n</span><span class="st">&quot;</span>)</span></code></pre></div>
+<pre><code>## Weighted Avg Std Dev: 17.2 % (without diversification)</code></pre>
+<div class="sourceCode" id="cb49"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb49-1"><a href="unit5.html#cb49-1" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;Diversification Gain:&quot;</span>, <span class="fu">round</span>((<span class="fu">sum</span>(w<span class="sc">*</span>s) <span class="sc">-</span> port_sd)<span class="sc">*</span><span class="dv">100</span>, <span class="dv">2</span>), <span class="st">&quot;percentage points</span><span class="sc">\n</span><span class="st">&quot;</span>)</span></code></pre></div>
+<pre><code>## Diversification Gain: 3.55 percentage points</code></pre>
+<p><strong>Problem 5.2:</strong> Calculate all three performance ratios for:
+- Portfolio: Return = 17%, β = 1.15, σ = 19.5%
+- <span class="math inline">\(R_f\)</span> = 6.5%, <span class="math inline">\(R_m\)</span> = 13.5%</p>
+<div class="sourceCode" id="cb51"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb51-1"><a href="unit5.html#cb51-1" tabindex="-1"></a>rp <span class="ot">&lt;-</span> <span class="dv">17</span>; beta <span class="ot">&lt;-</span> <span class="fl">1.15</span>; sigma <span class="ot">&lt;-</span> <span class="fl">19.5</span>; rf <span class="ot">&lt;-</span> <span class="fl">6.5</span>; rm <span class="ot">&lt;-</span> <span class="fl">13.5</span></span>
+<span id="cb51-2"><a href="unit5.html#cb51-2" tabindex="-1"></a></span>
+<span id="cb51-3"><a href="unit5.html#cb51-3" tabindex="-1"></a>sharpe <span class="ot">&lt;-</span> (rp <span class="sc">-</span> rf) <span class="sc">/</span> sigma</span>
+<span id="cb51-4"><a href="unit5.html#cb51-4" tabindex="-1"></a>treynor <span class="ot">&lt;-</span> (rp <span class="sc">-</span> rf) <span class="sc">/</span> beta</span>
+<span id="cb51-5"><a href="unit5.html#cb51-5" tabindex="-1"></a>capm_r <span class="ot">&lt;-</span> rf <span class="sc">+</span> beta <span class="sc">*</span> (rm <span class="sc">-</span> rf)</span>
+<span id="cb51-6"><a href="unit5.html#cb51-6" tabindex="-1"></a>alpha <span class="ot">&lt;-</span> rp <span class="sc">-</span> capm_r</span>
+<span id="cb51-7"><a href="unit5.html#cb51-7" tabindex="-1"></a></span>
+<span id="cb51-8"><a href="unit5.html#cb51-8" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;Sharpe Ratio:   &quot;</span>, <span class="fu">round</span>(sharpe, <span class="dv">3</span>), <span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span>)</span></code></pre></div>
+<pre><code>## Sharpe Ratio:    0.538</code></pre>
+<div class="sourceCode" id="cb53"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb53-1"><a href="unit5.html#cb53-1" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;Treynor Ratio:  &quot;</span>, <span class="fu">round</span>(treynor, <span class="dv">3</span>), <span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span>)</span></code></pre></div>
+<pre><code>## Treynor Ratio:   9.13</code></pre>
+<div class="sourceCode" id="cb55"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb55-1"><a href="unit5.html#cb55-1" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;CAPM Expected:  &quot;</span>, <span class="fu">round</span>(capm_r, <span class="dv">2</span>), <span class="st">&quot;%</span><span class="sc">\n</span><span class="st">&quot;</span>)</span></code></pre></div>
+<pre><code>## CAPM Expected:   14.55 %</code></pre>
+<div class="sourceCode" id="cb57"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb57-1"><a href="unit5.html#cb57-1" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;Jensen&#39;s Alpha: &quot;</span>, <span class="fu">round</span>(alpha, <span class="dv">2</span>), <span class="st">&quot;%</span><span class="sc">\n</span><span class="st">&quot;</span>)</span></code></pre></div>
+<pre><code>## Jensen&#39;s Alpha:  2.45 %</code></pre>
+<div class="sourceCode" id="cb59"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb59-1"><a href="unit5.html#cb59-1" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;Assessment:&quot;</span>, <span class="fu">ifelse</span>(alpha <span class="sc">&gt;</span> <span class="dv">0</span>, <span class="st">&quot;OUTPERFORMED — Manager added value!&quot;</span>, <span class="st">&quot;Underperformed CAPM&quot;</span>))</span></code></pre></div>
+<pre><code>## Assessment: OUTPERFORMED — Manager added value!</code></pre>
+<p><em>End of Unit V</em></p>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="unit4.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="trading-view-practicals.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+  "sharing": {
+    "github": false,
+    "facebook": true,
+    "twitter": true,
+    "linkedin": false,
+    "weibo": false,
+    "instapaper": false,
+    "vk": false,
+    "whatsapp": false,
+    "all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+  },
+  "fontsettings": {
+    "theme": "white",
+    "family": "sans",
+    "size": 2
+  },
+  "edit": {
+    "link": "https://github.com/learnwithrk/Portfolio-Management/edit/main/05-ch.Rmd",
+    "text": "Edit"
+  },
+  "history": {
+    "link": null,
+    "text": null
+  },
+  "view": {
+    "link": "https://github.com/learnwithrk/Portfolio-Management/blob/main/05-ch.Rmd",
+    "text": null
+  },
+  "download": null,
+  "search": {
+    "engine": "fuse",
+    "options": null
+  },
+  "toc": {
+    "collapse": "subsection"
+  }
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

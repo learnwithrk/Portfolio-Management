@@ -1,2 +1,942 @@
-# Module V
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(
+  echo = TRUE,
+  warning = FALSE,
+  message = FALSE,
+  fig.align = "center",
+  out.width = "95%"
+)
 
+required_packages <- c("bookdown", "knitr", "kableExtra", "ggplot2", "dplyr")
+missing_packages <- required_packages[
+  !vapply(required_packages, requireNamespace, logical(1), quietly = TRUE)
+]
+if (length(missing_packages) > 0) {
+  stop("Please install these packages before knitting: ",
+       paste(missing_packages, collapse = ", "))
+}
+library(knitr)
+library(kableExtra)
+library(ggplot2)
+library(dplyr)
+```
+
+# Portfolio Selection and Revision {#unit5}
+
+---
+
+::: {.learning-objectives}
+**Learning Objectives**
+
+After completing this unit, students will be able to:
+
+1. Explain the concept of a portfolio and the principle of portfolio diversification
+2. Calculate portfolio return and portfolio risk (variance and standard deviation)
+3. Describe Markowitz Modern Portfolio Theory and construct the Efficient Frontier
+4. Apply portfolio selection criteria using the mean-variance framework
+5. Discuss the need for and constraints on portfolio revision
+6. Evaluate portfolio performance using Sharpe Ratio, Treynor Ratio, and Jensen's Alpha
+7. Interpret performance measures in the context of Indian mutual funds and benchmark indices
+:::
+
+---
+
+## 5.1 Portfolio Analysis — Introduction {#portfolio-analysis}
+
+### 5.1.1 What is a Portfolio?
+
+A **portfolio** is a collection of financial investments — stocks, bonds, mutual fund units, ETFs, real estate, gold — held by an individual or institutional investor. The fundamental insight of portfolio theory is that:
+
+> *"The whole is different from — and often better than — the sum of its parts."*
+
+Combining assets that respond differently to market events can **reduce total risk** without proportionally reducing expected return. This is the mathematical basis of **diversification**.
+
+**Portfolio vs. Individual Security:**
+
+| Aspect | Individual Security | Portfolio |
+|--------|--------------------|----|
+| Risk | Full company/sector risk | Risk is averaged and reduced |
+| Return | Dependent on single security | Weighted average of all holdings |
+| Volatility | Higher | Lower (due to diversification) |
+| Suitability | Experts / Speculators | All investors |
+| Monitoring | Single security | Multiple holdings |
+
+### 5.1.2 Portfolio in the Indian Context
+
+Indian investors increasingly hold portfolios through:
+- **Direct equity** (Demat accounts on NSE/BSE — 160 million+ demat accounts in 2024)
+- **Mutual funds** (8.7 crore SIP accounts in 2024)
+- **Portfolio Management Services (PMS)** — minimum ₹50 lakh, SEBI-regulated
+- **Alternative Investment Funds (AIFs)** — minimum ₹1 crore, for HNIs
+- **National Pension System (NPS)** — pension portfolio managed by PFRDA
+
+---
+
+## 5.2 Return and Risk of a Portfolio {#portfolio-risk-return}
+
+### 5.2.1 Portfolio Return
+
+The **expected return of a portfolio** is the **weighted average** of the expected returns of its constituent securities:
+
+$$\boxed{E(R_p) = \sum_{i=1}^{n} w_i \cdot E(R_i)}$$
+
+Where:
+- $w_i$ = Weight of security $i$ in portfolio (proportion of total investment)
+- $E(R_i)$ = Expected return of security $i$
+- $\sum w_i = 1$ (weights must sum to 1)
+
+**Example 5.1:** A portfolio consists of:
+
+| Stock | Weight | Expected Return |
+|-------|--------|----------------|
+| TCS | 30% | 14% |
+| HDFC Bank | 25% | 12% |
+| Reliance Industries | 20% | 11% |
+| Asian Paints | 15% | 13% |
+| ITC | 10% | 9% |
+
+```{r portfolio-return-calc, echo=TRUE}
+stocks <- c("TCS", "HDFC Bank", "Reliance", "Asian Paints", "ITC")
+weights <- c(0.30, 0.25, 0.20, 0.15, 0.10)
+exp_returns <- c(0.14, 0.12, 0.11, 0.13, 0.09)
+
+port_return <- sum(weights * exp_returns)
+
+result_df <- data.frame(Stock = stocks,
+                         Weight = paste0(weights*100, "%"),
+                         Exp_Return = paste0(exp_returns*100, "%"),
+                         Contribution = paste0(round(weights*exp_returns*100, 3), "%"))
+
+kable(result_df,
+      caption = "Table 5.1: Portfolio Return Calculation",
+      col.names = c("Stock", "Weight (w)", "Expected Return", "Contribution (w × r)"),
+      booktabs = TRUE) %>%
+  kable_styling(bootstrap_options = c("striped", "hover"), full_width = FALSE) %>%
+  row_spec(0, bold = TRUE, color = "white", background = "#2c3e50")
+
+cat("\nPortfolio Expected Return:", round(port_return * 100, 2), "%\n")
+```
+
+### 5.2.2 Portfolio Risk (Two-Asset Portfolio)
+
+Portfolio risk is **NOT** simply the weighted average of individual standard deviations — this is the critical insight of portfolio theory. Portfolio risk depends on:
+
+1. The individual risks (standard deviations) of each security
+2. The **correlation coefficient** between securities (ρ)
+
+For a **two-asset portfolio**:
+
+$$\boxed{\sigma_p^2 = w_1^2 \sigma_1^2 + w_2^2 \sigma_2^2 + 2 w_1 w_2 \rho_{12} \sigma_1 \sigma_2}$$
+
+$$\sigma_p = \sqrt{w_1^2 \sigma_1^2 + w_2^2 \sigma_2^2 + 2 w_1 w_2 \rho_{12} \sigma_1 \sigma_2}$$
+
+Where:
+- $w_1, w_2$ = Portfolio weights
+- $\sigma_1, \sigma_2$ = Standard deviations of individual assets
+- $\rho_{12}$ = Correlation coefficient between assets 1 and 2
+- $Cov_{12} = \rho_{12} \sigma_1 \sigma_2$
+
+**The role of correlation (ρ):**
+
+| ρ Value | Effect on Portfolio Risk |
+|---------|--------------------------|
+| ρ = +1 | No diversification benefit; $\sigma_p$ = weighted avg of $\sigma_1, \sigma_2$ |
+| 0 < ρ < +1 | Partial diversification benefit |
+| ρ = 0 | Significant diversification benefit |
+| -1 < ρ < 0 | Maximum diversification benefit |
+| ρ = -1 | Perfect hedge; risk can be reduced to zero |
+
+**Example 5.2:** Two-asset portfolio — HDFC Bank (Asset 1) and ITC (Asset 2):
+- $w_1 = 0.60$, $\sigma_1 = 18\%$ (HDFC Bank)
+- $w_2 = 0.40$, $\sigma_2 = 14\%$ (ITC)
+- $\rho_{12} = 0.35$ (moderate positive correlation)
+
+```{r two-asset-risk, echo=TRUE}
+w1 <- 0.60; w2 <- 0.40
+s1 <- 0.18; s2 <- 0.14
+rho <- 0.35
+
+var_p <- w1^2 * s1^2 + w2^2 * s2^2 + 2 * w1 * w2 * rho * s1 * s2
+sd_p <- sqrt(var_p)
+
+cat("Portfolio Variance:", round(var_p * 100, 4), "%²\n")
+cat("Portfolio Std Deviation:", round(sd_p * 100, 2), "%\n")
+cat("Weighted Avg Std Dev (no diversification):",
+    round((w1*s1 + w2*s2)*100, 2), "%\n")
+cat("Diversification Benefit:", round((w1*s1 + w2*s2 - sd_p)*100, 2), "percentage points\n")
+```
+
+### 5.2.3 Three-Asset Portfolio Risk
+
+For an **n-asset portfolio**, the variance is:
+
+$$\sigma_p^2 = \sum_{i=1}^{n} w_i^2 \sigma_i^2 + \sum_{i=1}^{n} \sum_{j \neq i}^{n} w_i w_j Cov_{ij}$$
+
+This can be computed efficiently using **matrix algebra**:
+
+$$\sigma_p^2 = \mathbf{w}^T \mathbf{\Sigma} \mathbf{w}$$
+
+Where **w** is the weight vector and **Σ** is the covariance matrix.
+
+```{r three-asset-portfolio, echo=TRUE}
+# Three-asset portfolio: TCS, HDFC Bank, ITC
+weights_3 <- c(0.40, 0.35, 0.25)
+returns_3 <- c(0.14, 0.12, 0.09)
+
+# Covariance matrix (annualised, approximate)
+cov_matrix <- matrix(c(
+  0.0400, 0.0126, 0.0056,   # TCS
+  0.0126, 0.0324, 0.0072,   # HDFC Bank
+  0.0056, 0.0072, 0.0196    # ITC
+), nrow = 3)
+
+port_ret_3 <- sum(weights_3 * returns_3)
+port_var_3 <- t(weights_3) %*% cov_matrix %*% weights_3
+port_sd_3 <- sqrt(port_var_3)
+
+cat("3-Asset Portfolio:\n")
+cat("Expected Return:", round(port_ret_3 * 100, 2), "%\n")
+cat("Portfolio Variance:", round(port_var_3 * 100, 4), "\n")
+cat("Portfolio Std Deviation:", round(port_sd_3 * 100, 2), "%\n")
+```
+
+---
+
+## 5.3 Modern Portfolio Theory — Markowitz Model {#markowitz}
+
+### 5.3.1 Background
+
+**Harry Markowitz** published his seminal paper *"Portfolio Selection"* in the **Journal of Finance (1952)**, which earned him the **Nobel Prize in Economics in 1990**. The Markowitz model — also called **Mean-Variance Analysis** — provided the first rigorous mathematical framework for portfolio construction.
+
+**Core Proposition:**
+> An investor should choose portfolios that offer the **maximum expected return for a given level of risk**, or equivalently, the **minimum risk for a given expected return**. These optimal portfolios form the **Efficient Frontier**.
+
+### 5.3.2 Assumptions of the Markowitz Model
+
+1. Investors are **rational** and **risk-averse**
+2. Decision-making is based on **expected return** (mean) and **risk** (variance/SD)
+3. Investors prefer **higher return** for the same risk and **lower risk** for the same return
+4. Returns follow a **normal distribution**
+5. Markets are **perfectly efficient** and liquid
+6. There are **no taxes or transaction costs** (simplified assumption)
+7. **Single-period** investment horizon
+
+### 5.3.3 The Efficient Frontier
+
+The **Efficient Frontier** is the set of all portfolios that offer:
+- Maximum return for a given level of risk, OR
+- Minimum risk for a given level of return
+
+Portfolios below the Efficient Frontier are **inefficient** (dominated portfolios). No rational investor should hold them.
+
+```{r efficient-frontier, echo=TRUE, fig.cap="Figure 5.1: Efficient Frontier — Indian Stock Portfolio"}
+set.seed(100)
+n_portfolios <- 5000
+
+# Simulate random portfolios with 5 Indian stocks
+# Expected returns: TCS, HDFC Bank, Reliance, Asian Paints, ITC
+mean_returns <- c(0.14, 0.12, 0.11, 0.13, 0.09)
+
+# Approximate covariance matrix
+sigma <- matrix(c(
+  0.040, 0.013, 0.010, 0.015, 0.006,
+  0.013, 0.032, 0.011, 0.012, 0.007,
+  0.010, 0.011, 0.035, 0.010, 0.009,
+  0.015, 0.012, 0.010, 0.038, 0.008,
+  0.006, 0.007, 0.009, 0.008, 0.020
+), nrow = 5)
+
+port_returns <- numeric(n_portfolios)
+port_risks <- numeric(n_portfolios)
+
+for (i in 1:n_portfolios) {
+  # Random weights
+  w <- runif(5)
+  w <- w / sum(w)
+  port_returns[i] <- sum(w * mean_returns)
+  port_risks[i] <- sqrt(t(w) %*% sigma %*% w)
+}
+
+sim_df <- data.frame(Risk = port_risks * 100, Return = port_returns * 100)
+
+# Find efficient frontier approximation
+efficient <- sim_df %>%
+  mutate(Risk_bin = cut(Risk, breaks = 50)) %>%
+  group_by(Risk_bin) %>%
+  summarise(Max_Return = max(Return), Avg_Risk = mean(Risk)) %>%
+  filter(!is.na(Risk_bin)) %>%
+  arrange(Avg_Risk)
+
+ggplot(sim_df, aes(x = Risk, y = Return)) +
+  geom_point(alpha = 0.15, size = 0.8, color = "#bdc3c7") +
+  geom_line(data = efficient, aes(x = Avg_Risk, y = Max_Return),
+            color = "#c0392b", size = 1.8) +
+  annotate("text", x = min(efficient$Avg_Risk) + 0.5,
+           y = efficient$Max_Return[which.min(efficient$Avg_Risk)],
+           label = "MVP\n(Min Variance\nPortfolio)",
+           color = "#c0392b", size = 3.5, fontface = "bold") +
+  annotate("text", x = max(efficient$Avg_Risk) - 0.5,
+           y = max(efficient$Max_Return),
+           label = "Maximum\nReturn\nPortfolio",
+           color = "#27ae60", size = 3.5, fontface = "bold") +
+  labs(title = "Efficient Frontier: 5-Stock Indian Portfolio",
+       subtitle = "5,000 Random Portfolios | Red line = Efficient Frontier",
+       x = "Portfolio Risk (Std Deviation, %)",
+       y = "Expected Portfolio Return (%)") +
+  theme_minimal(base_size = 13) +
+  theme(plot.title = element_text(face = "bold", color = "#2c3e50"))
+```
+
+*Source: Compiled using simulated data based on NSE historical returns and covariance estimates.*
+
+**Key Points on the Efficient Frontier:**
+
+1. **Minimum Variance Portfolio (MVP)** — Leftmost point; lowest possible risk for any expected return level
+2. **Maximum Return Portfolio** — Highest point; single asset with highest individual return
+3. **The efficient set** — All portfolios on the upper portion of the frontier from MVP onwards
+4. **Dominated portfolios** — All points below and to the right of the frontier (same risk, lower return)
+
+### 5.3.4 Capital Market Line (CML)
+
+When a **risk-free asset** (T-Bills, PPF, G-Secs) is introduced, investors can combine it with the **Market Portfolio** (Nifty 50 index fund) to achieve any desired point on the **Capital Market Line (CML)**:
+
+$$\boxed{E(R_p) = R_f + \left[\frac{E(R_m) - R_f}{\sigma_m}\right] \sigma_p}$$
+
+The slope of CML is the **Sharpe Ratio** of the market portfolio — the maximum risk-adjusted return available in the market.
+
+---
+
+## 5.4 Portfolio Selection {#portfolio-selection}
+
+### 5.4.1 Selection Criteria
+
+Given the Efficient Frontier, portfolio selection depends on the **investor's risk preference** (indifference curve):
+
+```{r portfolio-selection-risk-profile, echo=FALSE, fig.cap="Figure 5.2: Portfolio Selection Based on Investor Risk Profile", fig.width=10, fig.height=6}
+par(mar=c(0,0,1,0))
+plot.new(); plot.window(xlim=c(0,10), ylim=c(0,10))
+box <- function(x1,y1,x2,y2,label,bg=NA,cex=0.9) {
+  rect(x1,y1,x2,y2,border="grey30",col=bg,lwd=1.5)
+  text((x1+x2)/2,(y1+y2)/2,label,cex=cex,font=2)
+}
+box(3.6,8.2,6.4,9.4,"Investor Risk Profile", "#eeeeee")
+box(3.6,6.7,6.4,7.7,"Risk Appetite", "#eeeeee")
+arrows(5,8.2,5,7.7,length=.08)
+box(.4,4.4,3.2,5.8,"Risk Averse\nConservative Portfolio\nLower Risk, Lower Return", "#dddddd")
+box(3.6,4.4,6.4,5.8,"Moderate Risk\nBalanced Portfolio\nEfficient Frontier Mid-Point", "#dddddd")
+box(6.8,4.4,9.6,5.8,"Risk Tolerant\nAggressive Portfolio\nHigher Risk, Higher Return", "#dddddd")
+for(x in c(3.6,5,6.4)) arrows(5,6.7,x,5.8,length=.08)
+box(.4,2.0,3.2,3.2,"60% Debt + 40% Equity\nFD + Gilt + Large Cap", "#eeeeee")
+box(3.6,2.0,6.4,3.2,"60% Equity + 40% Debt\nLarge + Mid Cap + Debt", "#eeeeee")
+box(6.8,2.0,9.6,3.2,"80%+ Equity + Alternative\nMid + Small Cap + Sectoral", "#eeeeee")
+for(x in c(1.8,5,8.2)) arrows(x,4.4,x,3.2,length=.08)
+text(5,.65,"Portfolio choice should match risk capacity, risk tolerance and investment horizon.",
+     cex=.95,font=3)
+```
+
+
+
+*Figure 5.2: Portfolio Selection Based on Risk Profile*
+
+### 5.4.2 Practical Portfolio Construction — Indian Example
+
+**Investor Profile:** 35-year-old IT professional, monthly income ₹1.2 lakh, risk appetite — moderate-aggressive, investment horizon — 15 years, monthly investable surplus — ₹30,000.
+
+```{r indian-portfolio, echo=FALSE}
+portfolio_plan <- data.frame(
+  Asset_Class = c("Large Cap Equity MF (Index)", "Mid Cap Equity MF",
+                   "Small Cap Equity MF", "ELSS (Tax Saving)",
+                   "Debt Fund (Short Duration)", "Gold (SGB/ETF)",
+                   "International Fund"),
+  Monthly_SIP = c(10000, 6000, 4000, 4000, 3000, 2000, 1000),
+  Allocation_Pct = c(33.3, 20.0, 13.3, 13.3, 10.0, 6.7, 3.3),
+  Expected_Return = c(12.0, 14.0, 16.0, 14.0, 7.5, 9.5, 10.0),
+  Risk_Level = c("Moderate", "Moderate-High", "High", "Moderate-High",
+                  "Low", "Moderate", "Moderate-High")
+)
+
+weighted_return <- sum(portfolio_plan$Allocation_Pct/100 * portfolio_plan$Expected_Return)
+
+kable(portfolio_plan,
+      caption = "Table 5.2: Model Portfolio — Moderate-Aggressive Indian Investor",
+      col.names = c("Asset Class", "Monthly SIP (₹)", "Allocation (%)",
+                    "Expected Return (%)", "Risk Level"),
+      booktabs = TRUE) %>%
+  kable_styling(bootstrap_options = c("striped", "hover"), full_width = TRUE) %>%
+  row_spec(0, bold = TRUE, color = "white", background = "#2c3e50") %>%
+  footnote(general = paste("Total Monthly Investment: ₹30,000 | Weighted Expected Return:",
+                            round(weighted_return, 2), "% p.a."))
+```
+
+*Source: Compiled from AMFI, NSE, and historical fund performance data (2014–2024).*
+
+---
+
+## 5.5 Portfolio Revision {#portfolio-revision}
+
+### 5.5.1 Meaning and Need
+
+**Portfolio revision** is the process of reviewing and modifying the existing portfolio to realign it with the investor's objectives, risk profile, and changed market conditions.
+
+**Reasons for Portfolio Revision:**
+
+1. **Life Stage Change** — Marriage, childbirth, approaching retirement shift risk appetite
+2. **Market Conditions** — Bull market → equity overweight; bear market → shift to debt
+3. **Rebalancing** — Original allocations drift due to differential returns
+4. **New Investment Opportunities** — New sectors (EVs, AI, green energy) emerge
+5. **Change in Tax Laws** — Budget changes affect tax efficiency of holdings
+6. **Underperformance** — Funds consistently underperforming benchmark warrant replacement
+7. **Income Change** — Salary increment allows higher SIP; job loss requires reduction
+
+### 5.5.2 Constraints on Portfolio Revision
+
+**1. Transaction Costs**
+Every buy/sell transaction involves:
+- Brokerage (typically 0.01%–0.5%)
+- Securities Transaction Tax (STT): 0.1% on delivery equity trades
+- Stamp duty, SEBI charges, exchange charges
+- For debt funds: exit loads if redeemed before minimum period
+
+**2. Tax Implications**
+
+| Asset Type | Holding Period | Tax Rate |
+|-----------|----------------|----------|
+| Equity shares / equity MF | < 1 year (STCG) | 20% (post Budget 2024) |
+| Equity shares / equity MF | > 1 year (LTCG) | 12.5% (above ₹1.25 lakh) |
+| Debt funds | Any period (post Apr 2023) | As per income tax slab |
+| Gold / Silver | < 3 years | Slab rate |
+| Gold / Silver | > 3 years | 20% with indexation |
+
+*Source: Union Budget 2024-25; Income Tax Act provisions.*
+
+**3. Statutory Restrictions**
+- **ELSS**: 3-year lock-in prevents revision
+- **PPF**: 15-year lock-in; partial withdrawal only after year 7
+- **EPFO**: Cannot be liquidated till resignation/retirement
+- **SCSS/SSY**: Fixed tenure; premature closure penalties
+
+**4. Investor Constraints**
+- **Liquidity needs**: Emergency fund must remain accessible
+- **Knowledge gap**: Complex restructuring may require financial advisor
+- **Emotional bias**: Behavioural tendencies (disposition effect, loss aversion)
+
+### 5.5.3 Portfolio Rebalancing Strategies
+
+**A. Calendar Rebalancing** — Review and rebalance at fixed intervals (annual, semi-annual)
+
+**B. Threshold Rebalancing** — Rebalance when any asset deviates by more than ±5% from target
+
+**C. Dynamic Asset Allocation** — Systematically reduce equity as markets become expensive (P/E based); increase when cheap
+
+*Example — Asset Allocation Rebalancing:*
+
+```{r rebalancing-example, echo=TRUE}
+# Original target allocation
+target <- c(Equity = 0.60, Debt = 0.30, Gold = 0.10)
+
+# After 2 years, due to equity bull run
+current_values <- c(Equity = 750000, Debt = 340000, Gold = 110000)
+total_value <- sum(current_values)
+current_alloc <- current_values / total_value
+
+# Rebalancing calculation
+target_values <- target * total_value
+rebalancing_action <- target_values - current_values
+
+cat("Total Portfolio Value: ₹", format(total_value, big.mark=","), "\n\n")
+cat("Current Allocation:\n")
+for (i in 1:3) cat(names(current_alloc)[i], ":",
+                    round(current_alloc[i]*100, 1), "% (Target:", target[i]*100, "%)\n")
+cat("\nRebalancing Actions:\n")
+for (i in 1:3) {
+  action <- if (rebalancing_action[i] > 0) "BUY" else "SELL"
+  cat(names(rebalancing_action)[i], ":", action, "₹", format(abs(round(rebalancing_action[i])), big.mark=","), "\n")
+}
+```
+
+---
+
+## 5.6 Portfolio Evaluation {#portfolio-evaluation}
+
+Portfolio evaluation measures **how well the portfolio manager performed** relative to the risk taken. Three classical measures are used:
+
+```{r portfolio-evaluation-measures, echo=FALSE, fig.cap="Figure 5.3: Portfolio Evaluation Measures", fig.width=10, fig.height=5.5}
+par(mar=c(0,0,1,0))
+plot.new(); plot.window(xlim=c(0,12), ylim=c(0,8))
+box <- function(x1,y1,x2,y2,label,bg=NA) {
+  rect(x1,y1,x2,y2,border="grey30",col=bg,lwd=1.5)
+  text((x1+x2)/2,(y1+y2)/2,label,cex=.9,font=2)
+}
+box(4.2,5.7,7.8,7.1,"Portfolio Performance\nEvaluation", "#eeeeee")
+box(.6,3.5,3.7,4.9,"Sharpe Ratio\nTotal Risk Adjusted", "#dddddd")
+box(4.0,3.5,8.0,4.9,"Treynor Ratio\nSystematic Risk Adjusted", "#dddddd")
+box(8.3,3.5,11.4,4.9,"Jensen's Alpha\nAbnormal Return", "#dddddd")
+box(.6,1.2,3.7,2.5,"Risk measure:\nStandard Deviation (σ)", "#eeeeee")
+box(4.0,1.2,8.0,2.5,"Risk measure:\nBeta (β)", "#eeeeee")
+box(8.3,1.2,11.4,2.5,"Benchmark:\nCAPM Expected Return", "#eeeeee")
+arrows(4.8,5.7,2.2,4.9,length=.08); arrows(5.5,5.7,6,4.9,length=.08); arrows(7.2,5.7,9.8,4.9,length=.08)
+arrows(2.2,3.5,2.2,2.5,length=.08); arrows(6,3.5,6,2.5,length=.08); arrows(9.8,3.5,9.8,2.5,length=.08)
+text(6,.45,"Use the measure that matches the portfolio's diversification and performance objective.",
+     cex=.95,font=3)
+```
+
+
+
+*Figure 5.3: Portfolio Evaluation Measures*
+
+---
+
+## 5.7 Sharpe Ratio {#sharpe-ratio}
+
+### 5.7.1 Formula and Meaning
+
+The **Sharpe Ratio**, developed by **William F. Sharpe** (1966), measures the **excess return per unit of total risk** (standard deviation). It answers: "How much return am I earning for every percentage point of risk I'm taking?"
+
+$$\boxed{Sharpe\ Ratio = \frac{E(R_p) - R_f}{\sigma_p}}$$
+
+Where:
+- $E(R_p)$ = Portfolio return (annualised)
+- $R_f$ = Risk-free rate (91-day T-bill ≈ 6.8% in India, 2024)
+- $\sigma_p$ = Standard deviation of portfolio returns
+
+**Interpretation:**
+- **Higher Sharpe Ratio = Better risk-adjusted performance**
+- Sharpe > 1: Good
+- Sharpe > 2: Excellent
+- Sharpe < 0: Portfolio underperformed risk-free asset
+
+### 5.7.2 Sharpe Ratio — Worked Example
+
+**Example 5.3:** Evaluate three mutual funds using Sharpe Ratio. $R_f$ = 6.5%.
+
+```{r sharpe-calculation, echo=TRUE}
+funds <- c("Mirae Asset Large Cap", "HDFC Mid-Cap Opp.", "Axis Bluechip")
+port_returns <- c(14.2, 18.5, 12.8)   # Annual returns (%)
+port_sds <- c(15.2, 21.8, 14.1)       # Annual Std Dev (%)
+rf <- 6.5                               # Risk-free rate (%)
+
+sharpe_ratios <- (port_returns - rf) / port_sds
+
+sharpe_df <- data.frame(
+  Fund = funds,
+  Return = paste0(port_returns, "%"),
+  Std_Dev = paste0(port_sds, "%"),
+  Excess_Return = paste0(round(port_returns - rf, 1), "%"),
+  Sharpe_Ratio = round(sharpe_ratios, 3),
+  Rank = rank(-sharpe_ratios)
+)
+
+kable(sharpe_df,
+      caption = "Table 5.3: Sharpe Ratio Comparison — Indian Mutual Funds",
+      col.names = c("Fund", "Return", "Std Dev", "Excess Return", "Sharpe Ratio", "Rank"),
+      booktabs = TRUE) %>%
+  kable_styling(bootstrap_options = c("striped", "hover"), full_width = TRUE) %>%
+  row_spec(0, bold = TRUE, color = "white", background = "#2c3e50") %>%
+  row_spec(which.max(sharpe_ratios), bold = TRUE, background = "#eafaf1")
+```
+
+*Source: Compiled from AMFI and fund house fact sheets (illustrative data for pedagogical purposes).*
+
+**Ranking:** Fund with highest Sharpe Ratio offers best risk-adjusted return. In this example, Mirae Asset Large Cap (Sharpe = 0.507) ranks first despite HDFC Mid-Cap having higher absolute return — because HDFC Mid-Cap carries proportionally more risk.
+
+```{r sharpe-visual, echo=FALSE, fig.cap="Figure 5.4: Sharpe Ratio Visual Comparison"}
+sharpe_plot_df <- data.frame(Fund = funds, Sharpe = sharpe_ratios)
+
+ggplot(sharpe_plot_df, aes(x = reorder(Fund, Sharpe), y = Sharpe, fill = Sharpe)) +
+  geom_col(alpha = 0.85) +
+  geom_text(aes(label = round(Sharpe, 3)), hjust = -0.2, size = 4, fontface = "bold") +
+  scale_fill_gradient(low = "#f39c12", high = "#27ae60") +
+  coord_flip() +
+  labs(title = "Sharpe Ratio Comparison — Indian Mutual Funds",
+       x = "", y = "Sharpe Ratio", fill = "Sharpe") +
+  theme_minimal(base_size = 13) +
+  theme(legend.position = "none")
+```
+
+---
+
+## 5.8 Treynor Ratio {#treynor-ratio}
+
+### 5.8.1 Formula and Meaning
+
+The **Treynor Ratio**, developed by **Jack Treynor** (1965), measures **excess return per unit of systematic risk (beta)**. Unlike the Sharpe Ratio, it uses **beta** (not standard deviation) as the risk measure, making it appropriate for **well-diversified portfolios** where unsystematic risk has been eliminated.
+
+$$\boxed{Treynor\ Ratio = \frac{E(R_p) - R_f}{\beta_p}}$$
+
+**Comparison: Sharpe vs. Treynor**
+
+| Feature | Sharpe Ratio | Treynor Ratio |
+|---------|-------------|---------------|
+| Risk Measure | Total risk (σ) | Systematic risk (β) |
+| Best For | All portfolios | Well-diversified portfolios |
+| What it measures | Return per unit total risk | Return per unit market risk |
+| Denominator | Standard deviation | Beta |
+| Developed By | William Sharpe (1966) | Jack Treynor (1965) |
+
+### 5.8.2 Treynor Ratio — Worked Example
+
+**Example 5.4:** Calculate Treynor Ratio for three equity mutual funds:
+
+```{r treynor-calculation, echo=TRUE}
+funds_t <- c("SBI Bluechip", "Nippon India Small Cap", "ICICI Pru Balanced Adv.")
+returns_t <- c(13.5, 22.0, 11.0)
+betas <- c(0.92, 1.28, 0.65)
+rf_t <- 6.5
+
+treynor_ratios <- (returns_t - rf_t) / betas
+
+treynor_df <- data.frame(
+  Fund = funds_t,
+  Return = paste0(returns_t, "%"),
+  Beta = betas,
+  Excess_Return = paste0(round(returns_t - rf_t, 1), "%"),
+  Treynor = round(treynor_ratios, 3),
+  Rank = rank(-treynor_ratios)
+)
+
+kable(treynor_df,
+      caption = "Table 5.4: Treynor Ratio Comparison",
+      col.names = c("Fund", "Return", "Beta (β)", "Excess Return", "Treynor Ratio", "Rank"),
+      booktabs = TRUE) %>%
+  kable_styling(bootstrap_options = c("striped","hover"), full_width = TRUE) %>%
+  row_spec(0, bold = TRUE, color = "white", background = "#2c3e50")
+
+cat("\nTreynor Ratio Results:\n")
+for(i in 1:3) cat(funds_t[i], ":", round(treynor_ratios[i], 3), "\n")
+cat("\nBest on Treynor basis:", funds_t[which.max(treynor_ratios)])
+```
+
+**Interpretation:** ICICI Prudential Balanced Advantage Fund, despite the lowest absolute return, earns the **highest Treynor Ratio (6.923)** because it takes the least systematic risk (β = 0.65). Nippon Small Cap has high returns but also high beta — its risk-adjusted performance (Treynor) is lower.
+
+---
+
+## 5.9 Jensen's Alpha {#jensens-alpha}
+
+### 5.9.1 Formula and Meaning
+
+**Jensen's Alpha** (Michael Jensen, 1968) measures the **abnormal return** generated by a portfolio above (or below) what would be expected given its level of systematic risk, as predicted by the **Capital Asset Pricing Model (CAPM)**.
+
+$$\boxed{\alpha_p = R_p - \left[R_f + \beta_p (R_m - R_f)\right]}$$
+
+Where:
+- $R_p$ = Actual portfolio return
+- $R_f + \beta_p(R_m - R_f)$ = **CAPM-expected return** (required return)
+- $\alpha_p$ = Jensen's Alpha (excess return over CAPM benchmark)
+
+**Interpretation:**
+- **α > 0**: Portfolio **outperformed** CAPM expectation — manager added value (skill)
+- **α = 0**: Portfolio performed exactly as expected for its risk level
+- **α < 0**: Portfolio **underperformed** CAPM — manager destroyed value
+
+### 5.9.2 Jensen's Alpha — Worked Example
+
+**Example 5.5:** Evaluate Indian mutual fund managers using Jensen's Alpha.
+
+$R_f$ = 6.5%, Market Return ($R_m$) = 13.5% (Nifty 50 TRI CAGR, 5-year)
+
+```{r jensens-alpha, echo=TRUE}
+funds_j <- c("HDFC Flexi Cap", "Kotak Standard Multicap", "Parag Parikh Flexi Cap",
+             "Nifty 50 Index Fund")
+actual_returns <- c(16.8, 14.2, 19.5, 13.5)  # Actual returns (%)
+betas_j <- c(1.05, 0.98, 0.85, 1.00)          # Fund betas
+rf_j <- 6.5
+rm_j <- 13.5
+
+# CAPM expected returns
+capm_returns <- rf_j + betas_j * (rm_j - rf_j)
+# Jensen's Alpha
+alphas <- actual_returns - capm_returns
+
+alpha_df <- data.frame(
+  Fund = funds_j,
+  Actual_Return = paste0(actual_returns, "%"),
+  Beta = betas_j,
+  CAPM_Expected = paste0(round(capm_returns, 2), "%"),
+  Jensens_Alpha = round(alphas, 3),
+  Skill = ifelse(alphas > 0, "Value Added ✓", "Value Destroyed ✗")
+)
+
+kable(alpha_df,
+      caption = "Table 5.5: Jensen's Alpha — Indian Mutual Fund Managers",
+      col.names = c("Fund", "Actual Return", "Beta (β)", "CAPM Expected", "Jensen's α", "Assessment"),
+      booktabs = TRUE) %>%
+  kable_styling(bootstrap_options = c("striped", "hover"), full_width = TRUE) %>%
+  row_spec(0, bold = TRUE, color = "white", background = "#2c3e50") %>%
+  row_spec(which(alphas > 0), color = "#155724", background = "#d4edda") %>%
+  row_spec(which(alphas <= 0), color = "#721c24", background = "#f8d7da")
+```
+
+*Source: Illustrative data; SEBI requires AMFI to publish scheme-wise performance for investor comparison.*
+
+```{r alpha-visual, echo=FALSE, fig.cap="Figure 5.5: Jensen's Alpha — Fund Manager Skill Assessment"}
+alpha_plot <- data.frame(Fund = funds_j, Alpha = alphas)
+
+ggplot(alpha_plot, aes(x = reorder(Fund, Alpha), y = Alpha,
+                        fill = ifelse(Alpha > 0, "Positive", "Negative"))) +
+  geom_col(alpha = 0.85) +
+  geom_hline(yintercept = 0, size = 1, color = "#2c3e50") +
+  geom_text(aes(label = paste0(round(Alpha, 2), "%"),
+                hjust = ifelse(Alpha > 0, -0.15, 1.15)), size = 4, fontface = "bold") +
+  scale_fill_manual(values = c("Positive" = "#27ae60", "Negative" = "#c0392b"),
+                    guide = "none") +
+  coord_flip() +
+  labs(title = "Jensen's Alpha — Mutual Fund Manager Assessment",
+       subtitle = "Positive alpha = Manager added value beyond CAPM-expected return",
+       x = "", y = "Jensen's Alpha (%)") +
+  theme_minimal(base_size = 13)
+```
+
+*Source: Compiled from AMFI fund performance data (illustrative, for pedagogical purposes).*
+
+### 5.9.3 Comprehensive Performance Comparison
+
+**Example 5.6:** Rank four portfolios using all three measures:
+
+```{r comprehensive-evaluation, echo=TRUE}
+comp_funds <- c("Portfolio A", "Portfolio B", "Portfolio C", "Market Index")
+comp_returns <- c(15.2, 13.8, 17.5, 13.5)
+comp_sds <- c(16.5, 14.2, 22.8, 14.0)
+comp_betas <- c(1.10, 0.95, 1.35, 1.00)
+rf_comp <- 6.5; rm_comp <- 13.5
+
+sharpe_comp <- (comp_returns - rf_comp) / comp_sds
+treynor_comp <- (comp_returns - rf_comp) / comp_betas
+alpha_comp <- comp_returns - (rf_comp + comp_betas * (rm_comp - rf_comp))
+
+results_comp <- data.frame(
+  Portfolio = comp_funds,
+  Return = paste0(comp_returns, "%"),
+  Std_Dev = paste0(comp_sds, "%"),
+  Beta = comp_betas,
+  Sharpe = round(sharpe_comp, 3),
+  Sharpe_Rank = rank(-sharpe_comp),
+  Treynor = round(treynor_comp, 3),
+  Treynor_Rank = rank(-treynor_comp),
+  Alpha = round(alpha_comp, 2),
+  Alpha_Rank = rank(-alpha_comp)
+)
+
+kable(results_comp,
+      caption = "Table 5.6: Comprehensive Portfolio Performance Evaluation",
+      booktabs = TRUE) %>%
+  kable_styling(bootstrap_options = c("striped", "hover"), font_size = 10.5, full_width = TRUE) %>%
+  row_spec(0, bold = TRUE, color = "white", background = "#2c3e50")
+```
+
+---
+
+::: {.case-study}
+**Case Study 5.1: Parag Parikh Flexi Cap Fund — Exceptional Alpha Generation**
+
+Parag Parikh Flexi Cap Fund (PPFCF) has emerged as one of India's most distinctive mutual fund schemes. Managed by PPFAS Asset Management Ltd., it features:
+
+- **Global diversification**: 35% allocation in international equities (Alphabet, Amazon, Microsoft) — unique among Indian diversified equity funds
+- **Value investing philosophy**: Refuses to invest in companies with governance concerns (avoided Adani group during 2023 controversy)
+- **Low portfolio turnover**: Contrarian; holds stocks for 5–10 years
+- **Consistent alpha**: 5-year CAGR of ~19.5% vs. Nifty 50 TRI ~13.5% — alpha of ~6% despite lower beta (0.82)
+
+**Sharpe Ratio (5-year):** ~0.75 (vs. Nifty ~0.50)
+**Jensen's Alpha (5-year):** ~+5.8%
+
+**Lesson for Portfolio Theory:**
+- Even in a market as competitive as India, disciplined fund managers with strong valuation and governance principles can generate consistent alpha
+- Low beta (0.82) + high alpha = Superior risk-adjusted performance
+- PPFCF validates Markowitz's insight: Diversification (global + domestic) reduces risk while maintaining return
+:::
+
+---
+
+::: {.research-corner}
+**Research Corner 5.1: Factor Investing and Smart Beta in India**
+
+Beyond the classical Markowitz framework, academic research has identified **specific factors** that systematically earn premium returns:
+
+1. **Value Factor** — Low P/E, P/B stocks outperform (Fama & French, 1992)
+2. **Size Factor** — Small-cap stocks outperform large-cap (Fama & French, 1993)
+3. **Momentum Factor** — Stocks with recent strong performance continue to outperform (Jegadeesh & Titman, 1993)
+4. **Quality Factor** — High ROE, low debt, stable earnings stocks outperform
+5. **Low Volatility Factor** — Low-volatility stocks outperform risk-adjusted (Baker et al., 2011)
+
+**Indian Evidence:** SEBI's introduction of **Smart Beta ETFs** in India (2019 onwards) allows retail investors to access factor-based investing:
+- Nifty 50 Value 20 Index ETF (Nippon India)
+- Nifty 100 Low Volatility 30 ETF (DSP)
+- Nifty Alpha 50 ETF (Kotak)
+- Nifty Quality Low-Volatility 30 ETF (ICICI Prudential)
+
+**Research Gap:** The persistence of factor premia in Indian mid-cap and small-cap segments — especially during market stress periods (COVID-19, 2008 GFC) — is an active research area with PhD potential.
+
+**Key Reference:** Sehgal, S. & Balakrishnan, I. (2002). Contrarian and momentum strategies in the Indian capital market. *Vikalpa*, 27(1), 13–19.
+:::
+
+---
+
+## 5.10 Summary {#unit5-summary}
+
+1. A **portfolio** is a collection of assets. Portfolio return = weighted average of individual returns. Portfolio risk ≠ weighted average risk — correlation between assets determines diversification benefit.
+
+2. **Two-asset portfolio risk** is calculated using the formula incorporating weights, standard deviations, and correlation coefficient. The lower the correlation, the greater the risk reduction.
+
+3. **Markowitz Modern Portfolio Theory** (1952) formalises the concept of the **Efficient Frontier** — the set of portfolios offering maximum return for each risk level. Rational investors should only hold efficient portfolios.
+
+4. **Portfolio selection** is determined by the intersection of the Efficient Frontier with the investor's indifference curve (risk preference). Different investors choose different portfolios on the same frontier.
+
+5. **Portfolio revision** is necessary due to changing life stages, market conditions, rebalancing needs, and new opportunities. Constraints include transaction costs, taxes, lock-in restrictions, and behavioural biases.
+
+6. **Sharpe Ratio** = Excess return / Total risk (σ). Appropriate for all portfolios. Higher is better.
+
+7. **Treynor Ratio** = Excess return / Systematic risk (β). Appropriate for well-diversified portfolios. Higher is better.
+
+8. **Jensen's Alpha** = Actual return − CAPM-expected return. Positive alpha = manager skill; negative alpha = underperformance. The most rigorous measure of investment manager performance.
+
+9. All three measures should be used together — they measure different dimensions of performance. A fund ranked #1 on Sharpe may not be #1 on Treynor, depending on its diversification level.
+
+---
+
+## Key Terms {#unit5-keyterms}
+
+1. **Portfolio** — Combination of financial assets held by an investor
+2. **Diversification** — Combining uncorrelated assets to reduce total risk
+3. **Portfolio Return** — Weighted average of individual asset returns
+4. **Portfolio Variance** — Measure of portfolio risk; depends on weights, individual risks, and correlations
+5. **Covariance** — Measure of how two securities move together
+6. **Correlation Coefficient (ρ)** — Standardised covariance; ranges from −1 to +1
+7. **Efficient Frontier** — Set of optimal portfolios offering max return per risk level
+8. **Minimum Variance Portfolio (MVP)** — Portfolio with lowest achievable risk
+9. **Capital Market Line (CML)** — Line from risk-free rate tangent to Efficient Frontier
+10. **Markowitz Model** — Mean-variance portfolio optimisation framework
+11. **Indifference Curve** — Curve showing all risk-return combinations equally preferred by an investor
+12. **Portfolio Revision** — Periodic restructuring of portfolio to meet changing objectives
+13. **Rebalancing** — Restoring portfolio to target asset allocation after drift
+14. **Threshold Rebalancing** — Rebalance only when allocation deviates beyond a set limit
+15. **Sharpe Ratio** — Excess return per unit of total risk (standard deviation)
+16. **Treynor Ratio** — Excess return per unit of systematic risk (beta)
+17. **Jensen's Alpha** — Actual portfolio return minus CAPM-expected return
+18. **CAPM** — Capital Asset Pricing Model: $E(R_i) = R_f + \beta_i(R_m - R_f)$
+19. **Abnormal Return** — Return in excess of CAPM prediction; Jensen's Alpha
+20. **Risk-Adjusted Return** — Return measured relative to risk taken
+21. **Tracking Error** — Standard deviation of portfolio return minus benchmark return
+22. **Alpha** — Return above benchmark; measure of manager skill
+23. **Beta (β)** — Sensitivity of portfolio to market movements
+24. **STT** — Securities Transaction Tax; cost of equity trading in India
+25. **PMS** — Portfolio Management Service; SEBI-regulated discretionary portfolio management (min ₹50 lakh)
+26. **AIF** — Alternative Investment Fund; SEBI-regulated (min ₹1 crore)
+27. **Disposition Effect** — Tendency to sell winners too early and hold losers too long
+28. **Smart Beta ETF** — Index ETF with factor-based weighting (value, quality, momentum)
+29. **Factor Investing** — Investment approach targeting specific return-generating factors
+30. **Information Ratio** — Jensen's Alpha divided by tracking error; measures consistency of alpha
+
+---
+
+## Review Questions — Unit V {#unit5-review}
+
+### Very Short Answer Questions
+
+1. Define portfolio in the context of investment management.
+2. What is the formula for a two-asset portfolio return?
+3. State the condition under which portfolio risk can be reduced to zero.
+4. Who developed Modern Portfolio Theory? In which year was it published?
+5. What does a Jensen's Alpha of +3.5% indicate?
+6. What is the difference between Sharpe Ratio and Treynor Ratio in terms of risk measure?
+7. State two constraints on portfolio revision.
+8. What is rebalancing and why is it necessary?
+9. Define the Minimum Variance Portfolio.
+10. In which journal did Jensen (1968) publish his landmark paper on portfolio performance?
+
+### Essay Questions
+
+1. "Harry Markowitz revolutionised investment management by transforming it from an art to a science." Critically evaluate this statement with reference to the Markowitz Mean-Variance framework and its practical applications in India.
+2. Explain portfolio risk for a two-asset and three-asset portfolio using mathematical formulas. How does correlation affect portfolio risk? Illustrate with numerical examples.
+3. Discuss the need for and constraints on portfolio revision in the Indian regulatory and tax environment. How do ELSS lock-in, PPF tenure, and STT impact an investor's ability to revise their portfolio?
+4. Compare Sharpe Ratio, Treynor Ratio, and Jensen's Alpha as portfolio performance evaluation measures. When should each be used? Use a numerical example with Indian mutual fund data.
+5. Discuss the concept of the Efficient Frontier and the Capital Market Line. How does the introduction of a risk-free asset change portfolio selection? What is the significance of the Tangency Portfolio?
+
+### Analytical Questions
+
+1. A portfolio consists of: Stock A (weight 40%, return 16%, σ 22%), Stock B (weight 60%, return 11%, σ 15%), ρ = 0.25. Calculate portfolio return, variance, and standard deviation. Compare with simple weighted average risk.
+2. Using the following data for three Indian mutual funds, calculate Sharpe, Treynor, and Jensen's Alpha. Rank the funds under each measure. Comment on any differences in ranking. [Data: Use your own values for Rf = 6.5%, Rm = 13.5%]
+3. Simulate 1,000 random portfolios using five Indian stocks (any five from Nifty 50) using R. Plot the Efficient Frontier. Identify the Minimum Variance Portfolio and Maximum Sharpe Ratio Portfolio.
+4. An investor has ₹50 lakh to invest. Using Markowitz framework, construct a recommended portfolio for a 55-year-old approaching retirement. What asset allocation would you suggest and why?
+5. Calculate the rebalancing transactions needed if a ₹20 lakh portfolio that was originally 60% equity, 30% debt, 10% gold has drifted to 72% equity, 22% debt, 6% gold after a bull market.
+
+---
+
+## MCQs — Unit V (Selected)
+
+**1.** Portfolio return is the:
+- (A) Simple average of individual returns  (B) Maximum individual return
+- (C) Weighted average of individual returns ← **Correct**  (D) Geometric mean
+
+**2.** When correlation between two assets is −1:
+- (A) No diversification benefit  (B) Maximum diversification; risk can be zero ← **Correct**
+- (C) Portfolio risk equals weighted average  (D) Returns are identical
+
+**3.** The Efficient Frontier represents portfolios that:
+- (A) Maximise risk  (B) Offer maximum return for each risk level ← **Correct**
+- (C) Are risk-free  (D) Have equal weights
+
+**4.** Sharpe Ratio uses _______ as the risk measure:
+- (A) Beta  (B) Variance  (C) Standard Deviation ← **Correct**  (D) Covariance
+
+**5.** A Jensen's Alpha of −2.5% means:
+- (A) The portfolio outperformed CAPM  (B) The manager added value
+- (C) The portfolio underperformed CAPM expectation ← **Correct**  (D) The fund is risk-free
+
+**6.** Treynor Ratio is MOST appropriate for:
+- (A) Individual securities with high unsystematic risk
+- (B) Poorly diversified portfolios
+- (C) Well-diversified portfolios where only systematic risk remains ← **Correct**
+- (D) Fixed income portfolios
+
+**7.** The slope of the Capital Market Line (CML) equals:
+- (A) Beta of market  (B) Jensen's Alpha  (C) Sharpe Ratio of market portfolio ← **Correct**
+- (D) Treynor Ratio
+
+**8.** STT (Securities Transaction Tax) on equity delivery trades in India is:
+- (A) 0.01%  (B) 0.025%  (C) 0.1% ← **Correct**  (D) 0.5%
+
+---
+
+## Numerical Problems — Unit V
+
+**Problem 5.1:** Portfolio of 3 assets: A (w=0.50, r=15%, σ=20%), B (w=30%, r=12%, σ=16%), C (w=20%, r=9%, σ=12%). Correlation: ρ_AB = 0.4, ρ_BC = 0.2, ρ_AC = 0.3. Calculate portfolio return and variance.
+
+```{r portfolio-full-problem, echo=TRUE}
+w <- c(0.50, 0.30, 0.20)
+r <- c(0.15, 0.12, 0.09)
+s <- c(0.20, 0.16, 0.12)
+rho_matrix <- matrix(c(1, 0.4, 0.3, 0.4, 1, 0.2, 0.3, 0.2, 1), nrow=3)
+
+# Covariance matrix
+cov_mat <- outer(s, s) * rho_matrix
+
+port_r <- sum(w * r)
+port_var <- t(w) %*% cov_mat %*% w
+port_sd <- sqrt(port_var)
+
+cat("Portfolio Return:", round(port_r*100, 2), "%\n")
+cat("Portfolio Variance:", round(port_var*10000, 4), " (in %² units)\n")
+cat("Portfolio Std Dev:", round(port_sd*100, 2), "%\n")
+cat("Weighted Avg Std Dev:", round(sum(w*s)*100, 2), "% (without diversification)\n")
+cat("Diversification Gain:", round((sum(w*s) - port_sd)*100, 2), "percentage points\n")
+```
+
+**Problem 5.2:** Calculate all three performance ratios for:
+- Portfolio: Return = 17%, β = 1.15, σ = 19.5%
+- $R_f$ = 6.5%, $R_m$ = 13.5%
+
+```{r all-ratios-problem, echo=TRUE}
+rp <- 17; beta <- 1.15; sigma <- 19.5; rf <- 6.5; rm <- 13.5
+
+sharpe <- (rp - rf) / sigma
+treynor <- (rp - rf) / beta
+capm_r <- rf + beta * (rm - rf)
+alpha <- rp - capm_r
+
+cat("Sharpe Ratio:   ", round(sharpe, 3), "\n")
+cat("Treynor Ratio:  ", round(treynor, 3), "\n")
+cat("CAPM Expected:  ", round(capm_r, 2), "%\n")
+cat("Jensen's Alpha: ", round(alpha, 2), "%\n")
+cat("Assessment:", ifelse(alpha > 0, "OUTPERFORMED — Manager added value!", "Underperformed CAPM"))
+```
+
+*End of Unit V*
