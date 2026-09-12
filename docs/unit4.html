@@ -1,0 +1,1689 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 4 Technical Analysis | PORTFOLIO MANAGEMENT</title>
+  <meta name="description" content="Chapter 4 Technical Analysis | PORTFOLIO MANAGEMENT" />
+  <meta name="generator" content="bookdown 0.45 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter 4 Technical Analysis | PORTFOLIO MANAGEMENT" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 4 Technical Analysis | PORTFOLIO MANAGEMENT" />
+  
+  
+  
+
+<meta name="author" content="RAJAKRISHNAN MANIVEL" />
+
+
+<meta name="date" content="2026-09-12" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="unit3.html"/>
+<link rel="next" href="module-v.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+<script src="libs/kePrint-0.0.1/kePrint.js"></script>
+<link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
+<link href="libs/bsTable-3.3.7/bootstrapTable.min.css" rel="stylesheet" />
+<script src="libs/bsTable-3.3.7/bootstrapTable.js"></script>
+
+
+<style type="text/css">
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">PORTFOLIO</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Fundamentals of Investment</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#investment-meaning"><i class="fa fa-check"></i><b>1.1</b> Investment — Meaning, Nature, and Characteristics</a>
+<ul>
+<li class="chapter" data-level="1.1.1" data-path="index.html"><a href="index.html#meaning-of-investment"><i class="fa fa-check"></i><b>1.1.1</b> Meaning of Investment</a></li>
+<li class="chapter" data-level="1.1.2" data-path="index.html"><a href="index.html#investment-vs.-speculation-vs.-gambling"><i class="fa fa-check"></i><b>1.1.2</b> Investment vs. Speculation vs. Gambling</a></li>
+<li class="chapter" data-level="1.1.3" data-path="index.html"><a href="index.html#characteristics-of-investment"><i class="fa fa-check"></i><b>1.1.3</b> Characteristics of Investment</a></li>
+</ul></li>
+<li class="chapter" data-level="1.2" data-path="index.html"><a href="index.html#classification"><i class="fa fa-check"></i><b>1.2</b> Classification of Investments</a>
+<ul>
+<li class="chapter" data-level="1.2.1" data-path="index.html"><a href="index.html#financial-investments"><i class="fa fa-check"></i><b>1.2.1</b> Financial Investments</a></li>
+<li class="chapter" data-level="1.2.2" data-path="index.html"><a href="index.html#physical-real-investments"><i class="fa fa-check"></i><b>1.2.2</b> Physical / Real Investments</a></li>
+<li class="chapter" data-level="1.2.3" data-path="index.html"><a href="index.html#hybrid-investments"><i class="fa fa-check"></i><b>1.2.3</b> Hybrid Investments</a></li>
+</ul></li>
+<li class="chapter" data-level="1.3" data-path="index.html"><a href="index.html#need-investment"><i class="fa fa-check"></i><b>1.3</b> Need for Investment</a>
+<ul>
+<li class="chapter" data-level="1.3.1" data-path="index.html"><a href="index.html#wealth-creation"><i class="fa fa-check"></i><b>1.3.1</b> Wealth Creation</a></li>
+<li class="chapter" data-level="1.3.2" data-path="index.html"><a href="index.html#inflation-protection"><i class="fa fa-check"></i><b>1.3.2</b> Inflation Protection</a></li>
+<li class="chapter" data-level="1.3.3" data-path="index.html"><a href="index.html#retirement-planning"><i class="fa fa-check"></i><b>1.3.3</b> Retirement Planning</a></li>
+<li class="chapter" data-level="1.3.4" data-path="index.html"><a href="index.html#tax-planning"><i class="fa fa-check"></i><b>1.3.4</b> Tax Planning</a></li>
+</ul></li>
+<li class="chapter" data-level="1.4" data-path="index.html"><a href="index.html#investment-avenues"><i class="fa fa-check"></i><b>1.4</b> Investment Avenues</a>
+<ul>
+<li class="chapter" data-level="1.4.1" data-path="index.html"><a href="index.html#government-securities-g-secs-and-t-bills"><i class="fa fa-check"></i><b>1.4.1</b> Government Securities (G-Secs and T-Bills)</a></li>
+<li class="chapter" data-level="1.4.2" data-path="index.html"><a href="index.html#insurance-policies-as-investment-instruments"><i class="fa fa-check"></i><b>1.4.2</b> Insurance Policies as Investment Instruments</a></li>
+<li class="chapter" data-level="1.4.3" data-path="index.html"><a href="index.html#bank-deposits"><i class="fa fa-check"></i><b>1.4.3</b> Bank Deposits</a></li>
+<li class="chapter" data-level="1.4.4" data-path="index.html"><a href="index.html#provident-fund-schemes"><i class="fa fa-check"></i><b>1.4.4</b> Provident Fund Schemes</a></li>
+<li class="chapter" data-level="1.4.5" data-path="index.html"><a href="index.html#post-office-schemes"><i class="fa fa-check"></i><b>1.4.5</b> Post Office Schemes</a></li>
+<li class="chapter" data-level="1.4.6" data-path="index.html"><a href="index.html#real-estate-investment"><i class="fa fa-check"></i><b>1.4.6</b> Real Estate Investment</a></li>
+<li class="chapter" data-level="1.4.7" data-path="index.html"><a href="index.html#gold-as-an-investment"><i class="fa fa-check"></i><b>1.4.7</b> Gold as an Investment</a></li>
+<li class="chapter" data-level="1.4.8" data-path="index.html"><a href="index.html#silver-as-an-investment"><i class="fa fa-check"></i><b>1.4.8</b> Silver as an Investment</a></li>
+</ul></li>
+<li class="chapter" data-level="1.5" data-path="index.html"><a href="index.html#arthashastra"><i class="fa fa-check"></i><b>1.5</b> Core Investment Lessons in Arthashastra</a>
+<ul>
+<li class="chapter" data-level="1.5.1" data-path="index.html"><a href="index.html#introduction-to-kautilyas-economic-thought"><i class="fa fa-check"></i><b>1.5.1</b> Introduction to Kautilya’s Economic Thought</a></li>
+<li class="chapter" data-level="1.5.2" data-path="index.html"><a href="index.html#kautilyas-wealth-principles-and-modern-investment"><i class="fa fa-check"></i><b>1.5.2</b> Kautilya’s Wealth Principles and Modern Investment</a></li>
+<li class="chapter" data-level="1.5.3" data-path="index.html"><a href="index.html#comparative-table-arthashastra-vs.-modern-portfolio-management"><i class="fa fa-check"></i><b>1.5.3</b> Comparative Table: Arthashastra vs. Modern Portfolio Management</a></li>
+</ul></li>
+<li class="chapter" data-level="1.6" data-path="index.html"><a href="index.html#Module1-summary"><i class="fa fa-check"></i><b>1.6</b> Summary</a></li>
+<li class="chapter" data-level="1.7" data-path="index.html"><a href="index.html#Module1-keyterms"><i class="fa fa-check"></i><b>1.7</b> Key Terms</a></li>
+<li class="chapter" data-level="1.8" data-path="index.html"><a href="index.html#Module1-review"><i class="fa fa-check"></i><b>1.8</b> Review Questions</a>
+<ul>
+<li class="chapter" data-level="1.8.1" data-path="index.html"><a href="index.html#very-short-answer-questions-2-marks-each"><i class="fa fa-check"></i><b>1.8.1</b> Very Short Answer Questions (2 marks each)</a></li>
+<li class="chapter" data-level="1.8.2" data-path="index.html"><a href="index.html#short-answer-questions-5-marks-each"><i class="fa fa-check"></i><b>1.8.2</b> Short Answer Questions (5 marks each)</a></li>
+<li class="chapter" data-level="1.8.3" data-path="index.html"><a href="index.html#essay-questions-10-marks-each"><i class="fa fa-check"></i><b>1.8.3</b> Essay Questions (10 marks each)</a></li>
+<li class="chapter" data-level="1.8.4" data-path="index.html"><a href="index.html#analytical-questions-15-marks-each"><i class="fa fa-check"></i><b>1.8.4</b> Analytical Questions (15 marks each)</a></li>
+<li class="chapter" data-level="1.8.5" data-path="index.html"><a href="index.html#case-study-questions-20-marks-each"><i class="fa fa-check"></i><b>1.8.5</b> Case Study Questions (20 marks each)</a></li>
+</ul></li>
+<li class="chapter" data-level="1.9" data-path="index.html"><a href="index.html#Module1-mcqs"><i class="fa fa-check"></i><b>1.9</b> MCQs — Module I</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="unit2.html"><a href="unit2.html"><i class="fa fa-check"></i><b>2</b> Financial Investments</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="unit2.html"><a href="unit2.html#shares-meaning"><i class="fa fa-check"></i><b>2.1</b> Shares — Meaning and Features</a>
+<ul>
+<li class="chapter" data-level="2.1.1" data-path="unit2.html"><a href="unit2.html#what-is-a-share"><i class="fa fa-check"></i><b>2.1.1</b> What is a Share?</a></li>
+<li class="chapter" data-level="2.1.2" data-path="unit2.html"><a href="unit2.html#rights-of-shareholders"><i class="fa fa-check"></i><b>2.1.2</b> Rights of Shareholders</a></li>
+</ul></li>
+<li class="chapter" data-level="2.2" data-path="unit2.html"><a href="unit2.html#equity-shares"><i class="fa fa-check"></i><b>2.2</b> Equity Shares</a>
+<ul>
+<li class="chapter" data-level="2.2.1" data-path="unit2.html"><a href="unit2.html#meaning-and-features"><i class="fa fa-check"></i><b>2.2.1</b> Meaning and Features</a></li>
+<li class="chapter" data-level="2.2.2" data-path="unit2.html"><a href="unit2.html#types-of-equity-shares"><i class="fa fa-check"></i><b>2.2.2</b> Types of Equity Shares</a></li>
+</ul></li>
+<li class="chapter" data-level="2.3" data-path="unit2.html"><a href="unit2.html#preference-shares"><i class="fa fa-check"></i><b>2.3</b> Preference Shares</a>
+<ul>
+<li class="chapter" data-level="2.3.1" data-path="unit2.html"><a href="unit2.html#meaning-and-features-1"><i class="fa fa-check"></i><b>2.3.1</b> Meaning and Features</a></li>
+<li class="chapter" data-level="2.3.2" data-path="unit2.html"><a href="unit2.html#types-of-preference-shares"><i class="fa fa-check"></i><b>2.3.2</b> Types of Preference Shares</a></li>
+</ul></li>
+<li class="chapter" data-level="2.4" data-path="unit2.html"><a href="unit2.html#debentures"><i class="fa fa-check"></i><b>2.4</b> Debentures</a>
+<ul>
+<li class="chapter" data-level="2.4.1" data-path="unit2.html"><a href="unit2.html#meaning"><i class="fa fa-check"></i><b>2.4.1</b> Meaning</a></li>
+<li class="chapter" data-level="2.4.2" data-path="unit2.html"><a href="unit2.html#types-of-debentures"><i class="fa fa-check"></i><b>2.4.2</b> Types of Debentures</a></li>
+</ul></li>
+<li class="chapter" data-level="2.5" data-path="unit2.html"><a href="unit2.html#mutual-funds"><i class="fa fa-check"></i><b>2.5</b> Mutual Funds</a>
+<ul>
+<li class="chapter" data-level="2.5.1" data-path="unit2.html"><a href="unit2.html#meaning-and-structure"><i class="fa fa-check"></i><b>2.5.1</b> Meaning and Structure</a></li>
+</ul></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">PORTFOLIO MANAGEMENT</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="unit4" class="section level1 hasAnchor" number="4">
+<h1><span class="header-section-number">Chapter 4</span> Technical Analysis<a href="unit4.html#unit4" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<hr />
+<div class="learning-objectives">
+<p><strong>Learning Objectives</strong></p>
+<p>After completing this unit, students will be able to:</p>
+<ol style="list-style-type: decimal">
+<li>Explain the philosophical foundations and assumptions of technical analysis</li>
+<li>Describe the Dow Theory and its six tenets with Indian market illustrations</li>
+<li>Identify and interpret different types of price trends and chart patterns</li>
+<li>Calculate and interpret Simple Moving Average (SMA) and Exponential Moving Average (EMA)</li>
+<li>Compute and explain MACD, Pivot Points, and VWAP with worked examples</li>
+<li>Evaluate modern AI-powered technical analysis tools used in Indian markets</li>
+<li>Critically assess the strengths and limitations of technical analysis</li>
+</ol>
+</div>
+<hr />
+<div id="ta-intro" class="section level2 hasAnchor" number="4.1">
+<h2><span class="header-section-number">4.1</span> Introduction to Technical Analysis<a href="unit4.html#ta-intro" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="meaning-and-philosophy" class="section level3 hasAnchor" number="4.1.1">
+<h3><span class="header-section-number">4.1.1</span> Meaning and Philosophy<a href="unit4.html#meaning-and-philosophy" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p><strong>Technical Analysis</strong> is the study of <strong>historical price and volume data</strong> of a security to forecast its future price movements. Unlike fundamental analysis, which examines the intrinsic value of a company, technical analysis is concerned exclusively with:</p>
+<ul>
+<li><strong>What</strong> has happened to price and volume in the past</li>
+<li><strong>When</strong> to buy or sell based on chart patterns and indicators</li>
+<li><strong>How</strong> market psychology drives price action</li>
+</ul>
+<p>The discipline is rooted in three core assumptions:</p>
+<blockquote>
+<p><strong>Assumption 1: Market discounts everything</strong>
+All known information — fundamental, economic, psychological — is already reflected in the current market price. Hence, price is the only variable that needs analysis.</p>
+</blockquote>
+<blockquote>
+<p><strong>Assumption 2: Prices move in trends</strong>
+Once a trend is established, it is more likely to continue than to reverse. The role of the technician is to identify trends early and trade in their direction.</p>
+</blockquote>
+<blockquote>
+<p><strong>Assumption 3: History repeats itself</strong>
+Market participants respond to similar situations in similar ways. Chart patterns that worked in the past tend to work again because human emotions — fear and greed — do not change.</p>
+</blockquote>
+</div>
+<div id="technical-vs.-fundamental-analysis" class="section level3 hasAnchor" number="4.1.2">
+<h3><span class="header-section-number">4.1.2</span> Technical vs. Fundamental Analysis<a href="unit4.html#technical-vs.-fundamental-analysis" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<table class="table table-striped table-hover" style="font-size: 11px; margin-left: auto; margin-right: auto;">
+<caption style="font-size: initial !important;">
+<span id="tab:ta-vs-fa">Table 4.1: </span><span id="tab:ta-vs-fa">Table 4.2: </span>Table 4.1: Technical Analysis vs. Fundamental Analysis
+</caption>
+<thead>
+<tr>
+<th style="text-align:left;font-weight: bold;color: white !important;background-color: rgba(44, 62, 80, 1) !important;">
+Dimension
+</th>
+<th style="text-align:left;font-weight: bold;color: white !important;background-color: rgba(44, 62, 80, 1) !important;">
+Technical Analysis
+</th>
+<th style="text-align:left;font-weight: bold;color: white !important;background-color: rgba(44, 62, 80, 1) !important;">
+Fundamental Analysis
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+Focus
+</td>
+<td style="text-align:left;">
+Price and volume
+</td>
+<td style="text-align:left;">
+Intrinsic value of business
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Data Used
+</td>
+<td style="text-align:left;">
+Historical market data (OHLCV)
+</td>
+<td style="text-align:left;">
+Financial statements, economy data
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Time Horizon
+</td>
+<td style="text-align:left;">
+Short to medium term (hours to months)
+</td>
+<td style="text-align:left;">
+Long term (1–5+ years)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Primary Tool
+</td>
+<td style="text-align:left;">
+Charts and indicators
+</td>
+<td style="text-align:left;">
+Ratio analysis and valuation models
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Objective
+</td>
+<td style="text-align:left;">
+Timing the market — WHEN to buy/sell
+</td>
+<td style="text-align:left;">
+Stock selection — WHAT to buy
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Best Suited For
+</td>
+<td style="text-align:left;">
+Traders, speculators, day traders
+</td>
+<td style="text-align:left;">
+Investors, fund managers, analysts
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Core Belief
+</td>
+<td style="text-align:left;">
+Market behaviour reflects all information
+</td>
+<td style="text-align:left;">
+Market eventually reflects true value
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Indian Users
+</td>
+<td style="text-align:left;">
+Retail traders, F&amp;O participants
+</td>
+<td style="text-align:left;">
+Mutual funds, FIIs, HNIs
+</td>
+</tr>
+</tbody>
+</table>
+<p><em>Source: Compiled by the author.</em></p>
+<hr />
+</div>
+</div>
+<div id="dow-theory" class="section level2 hasAnchor" number="4.2">
+<h2><span class="header-section-number">4.2</span> Dow Theory<a href="unit4.html#dow-theory" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="origins-and-significance" class="section level3 hasAnchor" number="4.2.1">
+<h3><span class="header-section-number">4.2.1</span> Origins and Significance<a href="unit4.html#origins-and-significance" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>The <strong>Dow Theory</strong> is the oldest and most respected framework in technical analysis, developed by <strong>Charles Henry Dow</strong> (co-founder of Dow Jones &amp; Company and The Wall Street Journal) in a series of editorials published between 1900 and 1902. After Dow’s death, his collaborator <strong>William Peter Hamilton</strong> and later <strong>Robert Rhea</strong> (1932) formalised the theory.</p>
+<p>In India, the Dow Theory remains foundational — the price action of <strong>Nifty 50</strong> and <strong>Sensex</strong> is routinely interpreted through the Dow Theory lens by market analysts on CNBC-TV18, Bloomberg Quint, and Moneycontrol.</p>
+</div>
+<div id="the-six-tenets-of-dow-theory" class="section level3 hasAnchor" number="4.2.2">
+<h3><span class="header-section-number">4.2.2</span> The Six Tenets of Dow Theory<a href="unit4.html#the-six-tenets-of-dow-theory" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p><strong>Tenet 1: The Averages Discount Everything</strong></p>
+<p>The market price of every security reflects all known information — earnings, dividends, geopolitical events, and future expectations. This aligns with the semi-strong form of the Efficient Market Hypothesis (EMH). Investors cannot consistently earn excess returns using publicly available information.</p>
+<p><em>Indian Application:</em> When RBI announces a surprise repo rate cut, Nifty 50 moves immediately — the announcement is “discounted” by the market within minutes. Sensex and Nifty 50 both need to confirm a signal for it to be valid.</p>
+<p><strong>Tenet 2: The Market Has Three Trends</strong></p>
+<div class="figure"><span style="display:block;" id="fig:dow-three-trends"></span>
+<img src="bookdownproj_files/figure-html/dow-three-trends-1.png" alt="Figure 4.1: Three Trends in Dow Theory" width="864" />
+<p class="caption">
+Figure 4.1: Figure 4.1: Three Trends in Dow Theory
+</p>
+</div>
+<p><em>Figure 4.1: Three Trends in Dow Theory</em></p>
+<table>
+<colgroup>
+<col width="15%" />
+<col width="21%" />
+<col width="28%" />
+<col width="34%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Trend</th>
+<th>Duration</th>
+<th>Description</th>
+<th>Indian Example</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Primary</strong></td>
+<td>1–3 years</td>
+<td>Major bull or bear market</td>
+<td>Bull market 2020–2024 (Nifty 11,000 → 26,000)</td>
+</tr>
+<tr class="even">
+<td><strong>Secondary</strong></td>
+<td>3 weeks – 3 months</td>
+<td>Counter-trend correction within primary</td>
+<td>Nifty correction Oct 2021 (−12%) within bull market</td>
+</tr>
+<tr class="odd">
+<td><strong>Minor</strong></td>
+<td>Days – 3 weeks</td>
+<td>Day-to-day fluctuations</td>
+<td>Daily ±1% moves on Nifty</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Tenet 3: Primary Trends Have Three Phases</strong></p>
+<p><em>Bull Market Phases:</em>
+1. <strong>Accumulation Phase</strong> — Smart money buys while public sentiment is pessimistic (post COVID lows, March 2020 — Nifty at 7,511)
+2. <strong>Public Participation Phase</strong> — Trend becomes apparent; retail investors enter; volumes rise
+3. <strong>Excess / Distribution Phase</strong> — Euphoria; overvaluation; smart money sells (Nifty all-time highs, mid-2024)</p>
+<p><em>Bear Market Phases:</em>
+1. <strong>Distribution</strong> — Informed investors sell to optimistic public
+2. <strong>Panic Phase</strong> — Rapid selling; prices collapse; margin calls triggered
+3. <strong>Discouragement Phase</strong> — Prices stagnate; investors give up; economy recovers silently</p>
+<p><strong>Tenet 4: The Averages Must Confirm Each Other</strong></p>
+<p>In the original US context, both the <strong>Dow Jones Industrial Average (DJIA)</strong> and the <strong>Dow Jones Transportation Average (DJTA)</strong> must confirm a trend signal.</p>
+<p>In India, this is applied as: <strong>Nifty 50 and Nifty Bank</strong> (or Sensex and BSE Bankex) must move in the same direction to confirm a breakout or breakdown.</p>
+<p><strong>Tenet 5: Volume Must Confirm the Trend</strong></p>
+<ul>
+<li>In a <strong>bull trend</strong>: Volume should expand on up-moves and contract on corrections</li>
+<li>In a <strong>bear trend</strong>: Volume should expand on down-moves and contract on rallies</li>
+<li>Divergence between price and volume is a <strong>warning signal</strong> of trend exhaustion</li>
+</ul>
+<p><strong>Tenet 6: A Trend is Assumed to Continue Until a Definitive Reversal Occurs</strong></p>
+<p>This is the most actionable tenet — don’t fight the trend. A bull market should be assumed to continue until the market makes a <strong>lower low and lower high</strong> (in price), signalling reversal.</p>
+<p><em>“The trend is your friend — until the bend at the end.”</em> — Technical Analysis maxim</p>
+<hr />
+</div>
+</div>
+<div id="trend-analysis" class="section level2 hasAnchor" number="4.3">
+<h2><span class="header-section-number">4.3</span> Trend Analysis<a href="unit4.html#trend-analysis" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="meaning-of-trend" class="section level3 hasAnchor" number="4.3.1">
+<h3><span class="header-section-number">4.3.1</span> Meaning of Trend<a href="unit4.html#meaning-of-trend" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>A <strong>trend</strong> is the general direction of a market or a security’s price over time. Trends are the foundation of technical trading — “trade with the trend, not against it.”</p>
+<div class="figure"><span style="display:block;" id="fig:trend-types-diagram"></span>
+<img src="bookdownproj_files/figure-html/trend-types-diagram-1.png" alt="Figure 4.2: Types of Market Trends and Trading Strategies" width="864" />
+<p class="caption">
+Figure 4.2: Figure 4.2: Types of Market Trends and Trading Strategies
+</p>
+</div>
+<p><em>Figure 4.2: Types of Market Trends and Trading Strategies</em></p>
+</div>
+<div id="uptrend" class="section level3 hasAnchor" number="4.3.2">
+<h3><span class="header-section-number">4.3.2</span> Uptrend<a href="unit4.html#uptrend" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>An <strong>uptrend</strong> is characterised by a series of <strong>Higher Highs (HH)</strong> and <strong>Higher Lows (HL)</strong>. Each rally takes prices to a new peak, and each correction finds support above the previous low.</p>
+<p><strong>Characteristics:</strong>
+- Buying pressure exceeds selling pressure
+- Volume typically higher on up-days
+- 50-day SMA above 200-day SMA (Golden Cross)
+- RSI typically between 50–80</p>
+<p><em>Indian Example:</em> Nifty 50 from April 2020 (7,511) to September 2024 (26,000+) — a classic primary uptrend with multiple secondary corrections of 8–15%.</p>
+</div>
+<div id="downtrend" class="section level3 hasAnchor" number="4.3.3">
+<h3><span class="header-section-number">4.3.3</span> Downtrend<a href="unit4.html#downtrend" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>A <strong>downtrend</strong> is characterised by <strong>Lower Highs (LH)</strong> and <strong>Lower Lows (LL)</strong>. Each rally fails to reach the previous high, and each decline goes below the previous low.</p>
+<p><em>Indian Example:</em> Nifty IT Index (NIFTY IT) from January 2022 to June 2022 — fell from 39,000 to 24,500 (−37%) as US Fed rate hikes triggered fear of US recession and reduced discretionary IT spending.</p>
+</div>
+<div id="sideways-ranging-trend" class="section level3 hasAnchor" number="4.3.4">
+<h3><span class="header-section-number">4.3.4</span> Sideways / Ranging Trend<a href="unit4.html#sideways-ranging-trend" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>In a <strong>sideways trend</strong>, prices oscillate between a defined <strong>support</strong> (floor) and <strong>resistance</strong> (ceiling) level without making new highs or lows.</p>
+<p><strong>Support:</strong> Price level where demand is strong enough to stop decline (e.g., Nifty 50’s repeated support at 17,000–17,500 in 2022–23).
+<strong>Resistance:</strong> Price level where supply is strong enough to stop advance (e.g., Nifty’s resistance at 18,600 for several months in 2022).</p>
+<div class="sourceCode" id="cb83"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb83-1"><a href="unit4.html#cb83-1" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">42</span>)</span>
+<span id="cb83-2"><a href="unit4.html#cb83-2" tabindex="-1"></a>n <span class="ot">&lt;-</span> <span class="dv">150</span></span>
+<span id="cb83-3"><a href="unit4.html#cb83-3" tabindex="-1"></a>t <span class="ot">&lt;-</span> <span class="dv">1</span><span class="sc">:</span>n</span>
+<span id="cb83-4"><a href="unit4.html#cb83-4" tabindex="-1"></a></span>
+<span id="cb83-5"><a href="unit4.html#cb83-5" tabindex="-1"></a><span class="co"># Create synthetic trend data</span></span>
+<span id="cb83-6"><a href="unit4.html#cb83-6" tabindex="-1"></a>uptrend <span class="ot">&lt;-</span> <span class="dv">17000</span> <span class="sc">+</span> <span class="dv">40</span> <span class="sc">*</span> t[<span class="dv">1</span><span class="sc">:</span><span class="dv">50</span>] <span class="sc">+</span> <span class="fu">rnorm</span>(<span class="dv">50</span>, <span class="dv">0</span>, <span class="dv">120</span>)</span>
+<span id="cb83-7"><a href="unit4.html#cb83-7" tabindex="-1"></a>downtrend <span class="ot">&lt;-</span> <span class="fu">max</span>(uptrend) <span class="sc">-</span> <span class="dv">30</span> <span class="sc">*</span> (<span class="dv">1</span><span class="sc">:</span><span class="dv">50</span>) <span class="sc">+</span> <span class="fu">rnorm</span>(<span class="dv">50</span>, <span class="dv">0</span>, <span class="dv">100</span>)</span>
+<span id="cb83-8"><a href="unit4.html#cb83-8" tabindex="-1"></a>sideways <span class="ot">&lt;-</span> <span class="fu">mean</span>(<span class="fu">c</span>(downtrend[<span class="dv">45</span><span class="sc">:</span><span class="dv">50</span>])) <span class="sc">+</span> <span class="fu">rnorm</span>(<span class="dv">50</span>, <span class="dv">0</span>, <span class="dv">150</span>)</span>
+<span id="cb83-9"><a href="unit4.html#cb83-9" tabindex="-1"></a></span>
+<span id="cb83-10"><a href="unit4.html#cb83-10" tabindex="-1"></a>price_series <span class="ot">&lt;-</span> <span class="fu">c</span>(uptrend, downtrend, sideways)</span>
+<span id="cb83-11"><a href="unit4.html#cb83-11" tabindex="-1"></a>time_series <span class="ot">&lt;-</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">150</span></span>
+<span id="cb83-12"><a href="unit4.html#cb83-12" tabindex="-1"></a></span>
+<span id="cb83-13"><a href="unit4.html#cb83-13" tabindex="-1"></a>trend_df <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb83-14"><a href="unit4.html#cb83-14" tabindex="-1"></a>  <span class="at">Day =</span> time_series,</span>
+<span id="cb83-15"><a href="unit4.html#cb83-15" tabindex="-1"></a>  <span class="at">Price =</span> price_series,</span>
+<span id="cb83-16"><a href="unit4.html#cb83-16" tabindex="-1"></a>  <span class="at">Phase =</span> <span class="fu">c</span>(<span class="fu">rep</span>(<span class="st">&quot;Uptrend&quot;</span>, <span class="dv">50</span>), <span class="fu">rep</span>(<span class="st">&quot;Downtrend&quot;</span>, <span class="dv">50</span>), <span class="fu">rep</span>(<span class="st">&quot;Sideways&quot;</span>, <span class="dv">50</span>))</span>
+<span id="cb83-17"><a href="unit4.html#cb83-17" tabindex="-1"></a>)</span>
+<span id="cb83-18"><a href="unit4.html#cb83-18" tabindex="-1"></a></span>
+<span id="cb83-19"><a href="unit4.html#cb83-19" tabindex="-1"></a><span class="fu">ggplot</span>(trend_df, <span class="fu">aes</span>(<span class="at">x =</span> Day, <span class="at">y =</span> Price, <span class="at">color =</span> Phase)) <span class="sc">+</span></span>
+<span id="cb83-20"><a href="unit4.html#cb83-20" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="at">size =</span> <span class="fl">1.1</span>, <span class="fu">aes</span>(<span class="at">group =</span> <span class="dv">1</span>), <span class="at">color =</span> <span class="st">&quot;#2c3e50&quot;</span>) <span class="sc">+</span></span>
+<span id="cb83-21"><a href="unit4.html#cb83-21" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="fu">aes</span>(<span class="at">group =</span> Phase, <span class="at">color =</span> Phase), <span class="at">method =</span> <span class="st">&quot;lm&quot;</span>, <span class="at">se =</span> <span class="cn">FALSE</span>,</span>
+<span id="cb83-22"><a href="unit4.html#cb83-22" tabindex="-1"></a>              <span class="at">linetype =</span> <span class="st">&quot;dashed&quot;</span>, <span class="at">size =</span> <span class="fl">1.2</span>) <span class="sc">+</span></span>
+<span id="cb83-23"><a href="unit4.html#cb83-23" tabindex="-1"></a>  <span class="fu">scale_color_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">&quot;Uptrend&quot;</span> <span class="ot">=</span> <span class="st">&quot;#27ae60&quot;</span>,</span>
+<span id="cb83-24"><a href="unit4.html#cb83-24" tabindex="-1"></a>                                 <span class="st">&quot;Downtrend&quot;</span> <span class="ot">=</span> <span class="st">&quot;#c0392b&quot;</span>,</span>
+<span id="cb83-25"><a href="unit4.html#cb83-25" tabindex="-1"></a>                                 <span class="st">&quot;Sideways&quot;</span> <span class="ot">=</span> <span class="st">&quot;#f39c12&quot;</span>)) <span class="sc">+</span></span>
+<span id="cb83-26"><a href="unit4.html#cb83-26" tabindex="-1"></a>  <span class="fu">annotate</span>(<span class="st">&quot;text&quot;</span>, <span class="at">x =</span> <span class="dv">25</span>, <span class="at">y =</span> <span class="fu">min</span>(price_series) <span class="sc">+</span> <span class="dv">500</span>, <span class="at">label =</span> <span class="st">&quot;UPTREND&quot;</span>,</span>
+<span id="cb83-27"><a href="unit4.html#cb83-27" tabindex="-1"></a>           <span class="at">color =</span> <span class="st">&quot;#27ae60&quot;</span>, <span class="at">fontface =</span> <span class="st">&quot;bold&quot;</span>, <span class="at">size =</span> <span class="dv">4</span>) <span class="sc">+</span></span>
+<span id="cb83-28"><a href="unit4.html#cb83-28" tabindex="-1"></a>  <span class="fu">annotate</span>(<span class="st">&quot;text&quot;</span>, <span class="at">x =</span> <span class="dv">75</span>, <span class="at">y =</span> <span class="fu">max</span>(price_series) <span class="sc">-</span> <span class="dv">800</span>, <span class="at">label =</span> <span class="st">&quot;DOWNTREND&quot;</span>,</span>
+<span id="cb83-29"><a href="unit4.html#cb83-29" tabindex="-1"></a>           <span class="at">color =</span> <span class="st">&quot;#c0392b&quot;</span>, <span class="at">fontface =</span> <span class="st">&quot;bold&quot;</span>, <span class="at">size =</span> <span class="dv">4</span>) <span class="sc">+</span></span>
+<span id="cb83-30"><a href="unit4.html#cb83-30" tabindex="-1"></a>  <span class="fu">annotate</span>(<span class="st">&quot;text&quot;</span>, <span class="at">x =</span> <span class="dv">125</span>, <span class="at">y =</span> <span class="fu">mean</span>(sideways) <span class="sc">+</span> <span class="dv">400</span>, <span class="at">label =</span> <span class="st">&quot;SIDEWAYS&quot;</span>,</span>
+<span id="cb83-31"><a href="unit4.html#cb83-31" tabindex="-1"></a>           <span class="at">color =</span> <span class="st">&quot;#f39c12&quot;</span>, <span class="at">fontface =</span> <span class="st">&quot;bold&quot;</span>, <span class="at">size =</span> <span class="dv">4</span>) <span class="sc">+</span></span>
+<span id="cb83-32"><a href="unit4.html#cb83-32" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">&quot;Market Trend Phases: Uptrend → Downtrend → Sideways&quot;</span>,</span>
+<span id="cb83-33"><a href="unit4.html#cb83-33" tabindex="-1"></a>       <span class="at">subtitle =</span> <span class="st">&quot;Illustrative price action (based on Nifty 50 structural patterns)&quot;</span>,</span>
+<span id="cb83-34"><a href="unit4.html#cb83-34" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">&quot;Trading Days&quot;</span>, <span class="at">y =</span> <span class="st">&quot;Index Level&quot;</span>, <span class="at">color =</span> <span class="st">&quot;Trend Phase&quot;</span>) <span class="sc">+</span></span>
+<span id="cb83-35"><a href="unit4.html#cb83-35" tabindex="-1"></a>  <span class="fu">theme_minimal</span>(<span class="at">base_size =</span> <span class="dv">13</span>) <span class="sc">+</span></span>
+<span id="cb83-36"><a href="unit4.html#cb83-36" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">&quot;bottom&quot;</span>)</span></code></pre></div>
+<div class="figure"><span style="display:block;" id="fig:trend-simulation"></span>
+<img src="bookdownproj_files/figure-html/trend-simulation-1.png" alt="Figure 4.3: Simulated Nifty 50 Trend Illustration (Uptrend, Downtrend, Sideways)" width="672" />
+<p class="caption">
+Figure 4.3: Figure 4.3: Simulated Nifty 50 Trend Illustration (Uptrend, Downtrend, Sideways)
+</p>
+</div>
+<hr />
+</div>
+</div>
+<div id="moving-averages" class="section level2 hasAnchor" number="4.4">
+<h2><span class="header-section-number">4.4</span> Moving Averages<a href="unit4.html#moving-averages" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="meaning-and-purpose" class="section level3 hasAnchor" number="4.4.1">
+<h3><span class="header-section-number">4.4.1</span> Meaning and Purpose<a href="unit4.html#meaning-and-purpose" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>A <strong>Moving Average (MA)</strong> is a trend-following indicator that smooths out price fluctuations by calculating the average price over a specified number of periods. It filters out the “noise” in daily price movements, making the underlying trend more visible.</p>
+<p>Moving averages are <strong>lagging indicators</strong> — they confirm a trend after it has started, not before.</p>
+</div>
+<div id="simple-moving-average-sma" class="section level3 hasAnchor" number="4.4.2">
+<h3><span class="header-section-number">4.4.2</span> Simple Moving Average (SMA)<a href="unit4.html#simple-moving-average-sma" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p><span class="math display">\[\boxed{SMA_n = \frac{P_1 + P_2 + P_3 + \cdots + P_n}{n}}\]</span></p>
+<p>Where <span class="math inline">\(P_t\)</span> is the closing price at time <span class="math inline">\(t\)</span> and <span class="math inline">\(n\)</span> is the number of periods.</p>
+<p><strong>Example 4.1:</strong> Calculate 5-day SMA for Reliance Industries:</p>
+<div class="sourceCode" id="cb84"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb84-1"><a href="unit4.html#cb84-1" tabindex="-1"></a><span class="co"># Reliance Industries closing prices (hypothetical)</span></span>
+<span id="cb84-2"><a href="unit4.html#cb84-2" tabindex="-1"></a>prices_ril <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">2980</span>, <span class="dv">3010</span>, <span class="dv">2995</span>, <span class="dv">3030</span>, <span class="dv">3050</span>, <span class="dv">3025</span>, <span class="dv">3060</span>, <span class="dv">3080</span>, <span class="dv">3070</span>, <span class="dv">3100</span>)</span>
+<span id="cb84-3"><a href="unit4.html#cb84-3" tabindex="-1"></a>days <span class="ot">&lt;-</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">10</span></span>
+<span id="cb84-4"><a href="unit4.html#cb84-4" tabindex="-1"></a></span>
+<span id="cb84-5"><a href="unit4.html#cb84-5" tabindex="-1"></a><span class="co"># 5-day SMA</span></span>
+<span id="cb84-6"><a href="unit4.html#cb84-6" tabindex="-1"></a>sma_5 <span class="ot">&lt;-</span> <span class="fu">as.numeric</span>(stats<span class="sc">::</span><span class="fu">filter</span>(prices_ril, <span class="fu">rep</span>(<span class="dv">1</span><span class="sc">/</span><span class="dv">5</span>, <span class="dv">5</span>), <span class="at">sides =</span> <span class="dv">1</span>))</span>
+<span id="cb84-7"><a href="unit4.html#cb84-7" tabindex="-1"></a><span class="co"># 10-day SMA (only available from day 10)</span></span>
+<span id="cb84-8"><a href="unit4.html#cb84-8" tabindex="-1"></a>sma_10 <span class="ot">&lt;-</span> <span class="fu">mean</span>(prices_ril)</span>
+<span id="cb84-9"><a href="unit4.html#cb84-9" tabindex="-1"></a></span>
+<span id="cb84-10"><a href="unit4.html#cb84-10" tabindex="-1"></a>sma_df <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb84-11"><a href="unit4.html#cb84-11" tabindex="-1"></a>  <span class="at">Day =</span> days,</span>
+<span id="cb84-12"><a href="unit4.html#cb84-12" tabindex="-1"></a>  <span class="at">Price =</span> prices_ril,</span>
+<span id="cb84-13"><a href="unit4.html#cb84-13" tabindex="-1"></a>  <span class="at">SMA_5 =</span> <span class="fu">round</span>(sma_5, <span class="dv">2</span>)</span>
+<span id="cb84-14"><a href="unit4.html#cb84-14" tabindex="-1"></a>)</span>
+<span id="cb84-15"><a href="unit4.html#cb84-15" tabindex="-1"></a></span>
+<span id="cb84-16"><a href="unit4.html#cb84-16" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;5-Day Simple Moving Average — Reliance Industries:</span><span class="sc">\n</span><span class="st">&quot;</span>)</span></code></pre></div>
+<pre><code>## 5-Day Simple Moving Average — Reliance Industries:</code></pre>
+<div class="sourceCode" id="cb86"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb86-1"><a href="unit4.html#cb86-1" tabindex="-1"></a><span class="fu">print</span>(sma_df)</span></code></pre></div>
+<pre><code>##    Day Price SMA_5
+## 1    1  2980    NA
+## 2    2  3010    NA
+## 3    3  2995    NA
+## 4    4  3030    NA
+## 5    5  3050  3013
+## 6    6  3025  3022
+## 7    7  3060  3032
+## 8    8  3080  3049
+## 9    9  3070  3057
+## 10  10  3100  3067</code></pre>
+<div class="sourceCode" id="cb88"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb88-1"><a href="unit4.html#cb88-1" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;</span><span class="sc">\n</span><span class="st">10-Day SMA:&quot;</span>, <span class="fu">round</span>(sma_10, <span class="dv">2</span>))</span></code></pre></div>
+<pre><code>## 
+## 10-Day SMA: 3040</code></pre>
+<p><strong>SMA Crossover Strategy:</strong></p>
+<p>The most widely used SMA-based trading signal:
+- <strong>Golden Cross</strong>: 50-day SMA crosses <strong>above</strong> 200-day SMA → <strong>Bullish signal</strong> (Buy)
+- <strong>Death Cross</strong>: 50-day SMA crosses <strong>below</strong> 200-day SMA → <strong>Bearish signal</strong> (Sell)</p>
+<p><em>Indian Example:</em> Nifty 50 generated a Golden Cross in June 2020 (post-COVID recovery), confirming the bull market that ran until 2024.</p>
+</div>
+<div id="exponential-moving-average-ema" class="section level3 hasAnchor" number="4.4.3">
+<h3><span class="header-section-number">4.4.3</span> Exponential Moving Average (EMA)<a href="unit4.html#exponential-moving-average-ema" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>The EMA gives <strong>greater weight to recent prices</strong>, making it more responsive to new information than SMA.</p>
+<p><span class="math display">\[\boxed{EMA_t = \left(\frac{2}{n+1}\right) \times (P_t - EMA_{t-1}) + EMA_{t-1}}\]</span></p>
+<p>The multiplier <span class="math inline">\(k = \frac{2}{n+1}\)</span> is called the <strong>smoothing factor</strong>.</p>
+<p>For a 12-day EMA: <span class="math inline">\(k = \frac{2}{12+1} = 0.1538\)</span>
+For a 26-day EMA: <span class="math inline">\(k = \frac{2}{26+1} = 0.0741\)</span></p>
+<div class="sourceCode" id="cb90"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb90-1"><a href="unit4.html#cb90-1" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">123</span>)</span>
+<span id="cb90-2"><a href="unit4.html#cb90-2" tabindex="-1"></a>n_days <span class="ot">&lt;-</span> <span class="dv">100</span></span>
+<span id="cb90-3"><a href="unit4.html#cb90-3" tabindex="-1"></a>price_data <span class="ot">&lt;-</span> <span class="dv">3000</span> <span class="sc">+</span> <span class="fu">cumsum</span>(<span class="fu">rnorm</span>(n_days, <span class="dv">2</span>, <span class="dv">25</span>))</span>
+<span id="cb90-4"><a href="unit4.html#cb90-4" tabindex="-1"></a></span>
+<span id="cb90-5"><a href="unit4.html#cb90-5" tabindex="-1"></a><span class="co"># Calculate SMA (20-day)</span></span>
+<span id="cb90-6"><a href="unit4.html#cb90-6" tabindex="-1"></a>sma_20 <span class="ot">&lt;-</span> <span class="fu">as.numeric</span>(stats<span class="sc">::</span><span class="fu">filter</span>(price_data, <span class="fu">rep</span>(<span class="dv">1</span><span class="sc">/</span><span class="dv">20</span>, <span class="dv">20</span>), <span class="at">sides =</span> <span class="dv">1</span>))</span>
+<span id="cb90-7"><a href="unit4.html#cb90-7" tabindex="-1"></a></span>
+<span id="cb90-8"><a href="unit4.html#cb90-8" tabindex="-1"></a><span class="co"># Calculate EMA (20-day)</span></span>
+<span id="cb90-9"><a href="unit4.html#cb90-9" tabindex="-1"></a>k <span class="ot">&lt;-</span> <span class="dv">2</span> <span class="sc">/</span> (<span class="dv">20</span> <span class="sc">+</span> <span class="dv">1</span>)</span>
+<span id="cb90-10"><a href="unit4.html#cb90-10" tabindex="-1"></a>ema_20 <span class="ot">&lt;-</span> <span class="fu">numeric</span>(n_days)</span>
+<span id="cb90-11"><a href="unit4.html#cb90-11" tabindex="-1"></a>ema_20[<span class="dv">1</span>] <span class="ot">&lt;-</span> price_data[<span class="dv">1</span>]</span>
+<span id="cb90-12"><a href="unit4.html#cb90-12" tabindex="-1"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">2</span><span class="sc">:</span>n_days) {</span>
+<span id="cb90-13"><a href="unit4.html#cb90-13" tabindex="-1"></a>  ema_20[i] <span class="ot">&lt;-</span> k <span class="sc">*</span> price_data[i] <span class="sc">+</span> (<span class="dv">1</span> <span class="sc">-</span> k) <span class="sc">*</span> ema_20[i<span class="dv">-1</span>]</span>
+<span id="cb90-14"><a href="unit4.html#cb90-14" tabindex="-1"></a>}</span>
+<span id="cb90-15"><a href="unit4.html#cb90-15" tabindex="-1"></a>ema_20[<span class="dv">1</span><span class="sc">:</span><span class="dv">19</span>] <span class="ot">&lt;-</span> <span class="cn">NA</span></span>
+<span id="cb90-16"><a href="unit4.html#cb90-16" tabindex="-1"></a></span>
+<span id="cb90-17"><a href="unit4.html#cb90-17" tabindex="-1"></a>plot_df <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb90-18"><a href="unit4.html#cb90-18" tabindex="-1"></a>  <span class="at">Day =</span> <span class="dv">1</span><span class="sc">:</span>n_days,</span>
+<span id="cb90-19"><a href="unit4.html#cb90-19" tabindex="-1"></a>  <span class="at">Price =</span> price_data,</span>
+<span id="cb90-20"><a href="unit4.html#cb90-20" tabindex="-1"></a>  <span class="at">SMA_20 =</span> <span class="fu">as.numeric</span>(sma_20),</span>
+<span id="cb90-21"><a href="unit4.html#cb90-21" tabindex="-1"></a>  <span class="at">EMA_20 =</span> ema_20</span>
+<span id="cb90-22"><a href="unit4.html#cb90-22" tabindex="-1"></a>)</span>
+<span id="cb90-23"><a href="unit4.html#cb90-23" tabindex="-1"></a></span>
+<span id="cb90-24"><a href="unit4.html#cb90-24" tabindex="-1"></a><span class="fu">ggplot</span>(plot_df, <span class="fu">aes</span>(<span class="at">x =</span> Day)) <span class="sc">+</span></span>
+<span id="cb90-25"><a href="unit4.html#cb90-25" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="fu">aes</span>(<span class="at">y =</span> Price, <span class="at">color =</span> <span class="st">&quot;Price&quot;</span>), <span class="at">alpha =</span> <span class="fl">0.5</span>, <span class="at">size =</span> <span class="fl">0.8</span>) <span class="sc">+</span></span>
+<span id="cb90-26"><a href="unit4.html#cb90-26" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="fu">aes</span>(<span class="at">y =</span> SMA_20, <span class="at">color =</span> <span class="st">&quot;20-day SMA&quot;</span>), <span class="at">size =</span> <span class="fl">1.3</span>, <span class="at">na.rm =</span> <span class="cn">TRUE</span>) <span class="sc">+</span></span>
+<span id="cb90-27"><a href="unit4.html#cb90-27" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="fu">aes</span>(<span class="at">y =</span> EMA_20, <span class="at">color =</span> <span class="st">&quot;20-day EMA&quot;</span>), <span class="at">size =</span> <span class="fl">1.3</span>, <span class="at">na.rm =</span> <span class="cn">TRUE</span>) <span class="sc">+</span></span>
+<span id="cb90-28"><a href="unit4.html#cb90-28" tabindex="-1"></a>  <span class="fu">scale_color_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">&quot;Price&quot;</span> <span class="ot">=</span> <span class="st">&quot;#bdc3c7&quot;</span>,</span>
+<span id="cb90-29"><a href="unit4.html#cb90-29" tabindex="-1"></a>                                 <span class="st">&quot;20-day SMA&quot;</span> <span class="ot">=</span> <span class="st">&quot;#2980b9&quot;</span>,</span>
+<span id="cb90-30"><a href="unit4.html#cb90-30" tabindex="-1"></a>                                 <span class="st">&quot;20-day EMA&quot;</span> <span class="ot">=</span> <span class="st">&quot;#e74c3c&quot;</span>)) <span class="sc">+</span></span>
+<span id="cb90-31"><a href="unit4.html#cb90-31" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">&quot;SMA vs EMA: EMA is More Responsive to Recent Price Changes&quot;</span>,</span>
+<span id="cb90-32"><a href="unit4.html#cb90-32" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">&quot;Trading Day&quot;</span>, <span class="at">y =</span> <span class="st">&quot;Price (₹)&quot;</span>, <span class="at">color =</span> <span class="st">&quot;Series&quot;</span>) <span class="sc">+</span></span>
+<span id="cb90-33"><a href="unit4.html#cb90-33" tabindex="-1"></a>  <span class="fu">theme_minimal</span>(<span class="at">base_size =</span> <span class="dv">13</span>) <span class="sc">+</span></span>
+<span id="cb90-34"><a href="unit4.html#cb90-34" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">&quot;bottom&quot;</span>)</span></code></pre></div>
+<div class="figure"><span style="display:block;" id="fig:ema-vs-sma"></span>
+<img src="bookdownproj_files/figure-html/ema-vs-sma-1.png" alt="Figure 4.4: SMA vs EMA Comparison on Simulated Stock Data" width="672" />
+<p class="caption">
+Figure 4.4: Figure 4.4: SMA vs EMA Comparison on Simulated Stock Data
+</p>
+</div>
+<p><strong>SMA vs EMA — Key Differences:</strong></p>
+<table>
+<colgroup>
+<col width="47%" />
+<col width="26%" />
+<col width="26%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Feature</th>
+<th>SMA</th>
+<th>EMA</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Weighting</td>
+<td>Equal weight to all periods</td>
+<td>Higher weight to recent prices</td>
+</tr>
+<tr class="even">
+<td>Responsiveness</td>
+<td>Slower to react</td>
+<td>Faster to react</td>
+</tr>
+<tr class="odd">
+<td>Lag</td>
+<td>Higher lag</td>
+<td>Lower lag</td>
+</tr>
+<tr class="even">
+<td>False signals</td>
+<td>Fewer</td>
+<td>More</td>
+</tr>
+<tr class="odd">
+<td>Best use</td>
+<td>Identifying major trend</td>
+<td>Entry/exit timing</td>
+</tr>
+<tr class="even">
+<td>Preferred periods</td>
+<td>50-day, 200-day</td>
+<td>12-day, 26-day (for MACD)</td>
+</tr>
+</tbody>
+</table>
+<hr />
+</div>
+</div>
+<div id="macd" class="section level2 hasAnchor" number="4.5">
+<h2><span class="header-section-number">4.5</span> MACD — Moving Average Convergence and Divergence<a href="unit4.html#macd" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="meaning-and-components" class="section level3 hasAnchor" number="4.5.1">
+<h3><span class="header-section-number">4.5.1</span> Meaning and Components<a href="unit4.html#meaning-and-components" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p><strong>MACD</strong> is one of the most popular <strong>momentum indicators</strong> in technical analysis, developed by <strong>Gerald Appel</strong> in the late 1970s. It measures the relationship between two EMAs, revealing changes in momentum, direction, and strength of a trend.</p>
+<p><strong>Three Components of MACD:</strong></p>
+<p><span class="math display">\[\boxed{MACD \text{ Line} = EMA_{12} - EMA_{26}}\]</span>
+<span class="math display">\[\boxed{\text{Signal Line} = EMA_9 \text{ of MACD Line}}\]</span>
+<span class="math display">\[\boxed{\text{MACD Histogram} = \text{MACD Line} - \text{Signal Line}}\]</span></p>
+<div class="figure"><span style="display:block;" id="fig:macd-components-diagram"></span>
+<img src="bookdownproj_files/figure-html/macd-components-diagram-1.png" alt="Figure 4.5: MACD Components and Signal Generation" width="864" />
+<p class="caption">
+Figure 4.5: Figure 4.5: MACD Components and Signal Generation
+</p>
+</div>
+<p><em>Figure 4.5: MACD Components and Signal Generation</em></p>
+</div>
+<div id="macd-calculation-worked-example" class="section level3 hasAnchor" number="4.5.2">
+<h3><span class="header-section-number">4.5.2</span> MACD Calculation — Worked Example<a href="unit4.html#macd-calculation-worked-example" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p><strong>Example 4.2:</strong> Calculate MACD for HDFC Bank with 20 days of closing price data.</p>
+<div class="sourceCode" id="cb91"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb91-1"><a href="unit4.html#cb91-1" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">42</span>)</span>
+<span id="cb91-2"><a href="unit4.html#cb91-2" tabindex="-1"></a>n <span class="ot">&lt;-</span> <span class="dv">120</span></span>
+<span id="cb91-3"><a href="unit4.html#cb91-3" tabindex="-1"></a><span class="co"># Simulate HDFC Bank price data</span></span>
+<span id="cb91-4"><a href="unit4.html#cb91-4" tabindex="-1"></a>hdfc_prices <span class="ot">&lt;-</span> <span class="dv">1500</span> <span class="sc">+</span> <span class="fu">cumsum</span>(<span class="fu">rnorm</span>(n, <span class="fl">0.8</span>, <span class="dv">18</span>))</span>
+<span id="cb91-5"><a href="unit4.html#cb91-5" tabindex="-1"></a></span>
+<span id="cb91-6"><a href="unit4.html#cb91-6" tabindex="-1"></a><span class="co"># EMA function</span></span>
+<span id="cb91-7"><a href="unit4.html#cb91-7" tabindex="-1"></a>calc_ema <span class="ot">&lt;-</span> <span class="cf">function</span>(prices, period) {</span>
+<span id="cb91-8"><a href="unit4.html#cb91-8" tabindex="-1"></a>  k <span class="ot">&lt;-</span> <span class="dv">2</span> <span class="sc">/</span> (period <span class="sc">+</span> <span class="dv">1</span>)</span>
+<span id="cb91-9"><a href="unit4.html#cb91-9" tabindex="-1"></a>  ema <span class="ot">&lt;-</span> <span class="fu">numeric</span>(<span class="fu">length</span>(prices))</span>
+<span id="cb91-10"><a href="unit4.html#cb91-10" tabindex="-1"></a>  ema[period] <span class="ot">&lt;-</span> <span class="fu">mean</span>(prices[<span class="dv">1</span><span class="sc">:</span>period])  <span class="co"># Seed with SMA</span></span>
+<span id="cb91-11"><a href="unit4.html#cb91-11" tabindex="-1"></a>  <span class="cf">for</span> (i <span class="cf">in</span> (period<span class="sc">+</span><span class="dv">1</span>)<span class="sc">:</span><span class="fu">length</span>(prices)) {</span>
+<span id="cb91-12"><a href="unit4.html#cb91-12" tabindex="-1"></a>    ema[i] <span class="ot">&lt;-</span> k <span class="sc">*</span> prices[i] <span class="sc">+</span> (<span class="dv">1</span><span class="sc">-</span>k) <span class="sc">*</span> ema[i<span class="dv">-1</span>]</span>
+<span id="cb91-13"><a href="unit4.html#cb91-13" tabindex="-1"></a>  }</span>
+<span id="cb91-14"><a href="unit4.html#cb91-14" tabindex="-1"></a>  ema[ema <span class="sc">==</span> <span class="dv">0</span>] <span class="ot">&lt;-</span> <span class="cn">NA</span></span>
+<span id="cb91-15"><a href="unit4.html#cb91-15" tabindex="-1"></a>  <span class="fu">return</span>(ema)</span>
+<span id="cb91-16"><a href="unit4.html#cb91-16" tabindex="-1"></a>}</span>
+<span id="cb91-17"><a href="unit4.html#cb91-17" tabindex="-1"></a></span>
+<span id="cb91-18"><a href="unit4.html#cb91-18" tabindex="-1"></a>ema12 <span class="ot">&lt;-</span> <span class="fu">calc_ema</span>(hdfc_prices, <span class="dv">12</span>)</span>
+<span id="cb91-19"><a href="unit4.html#cb91-19" tabindex="-1"></a>ema26 <span class="ot">&lt;-</span> <span class="fu">calc_ema</span>(hdfc_prices, <span class="dv">26</span>)</span>
+<span id="cb91-20"><a href="unit4.html#cb91-20" tabindex="-1"></a>macd_line <span class="ot">&lt;-</span> ema12 <span class="sc">-</span> ema26</span>
+<span id="cb91-21"><a href="unit4.html#cb91-21" tabindex="-1"></a>macd_line[<span class="fu">is.na</span>(ema26)] <span class="ot">&lt;-</span> <span class="cn">NA</span></span>
+<span id="cb91-22"><a href="unit4.html#cb91-22" tabindex="-1"></a></span>
+<span id="cb91-23"><a href="unit4.html#cb91-23" tabindex="-1"></a><span class="co"># Signal line: 9-day EMA of MACD line</span></span>
+<span id="cb91-24"><a href="unit4.html#cb91-24" tabindex="-1"></a>signal_line <span class="ot">&lt;-</span> <span class="fu">calc_ema</span>(<span class="fu">na.omit</span>(macd_line), <span class="dv">9</span>)</span>
+<span id="cb91-25"><a href="unit4.html#cb91-25" tabindex="-1"></a>full_signal <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fu">rep</span>(<span class="cn">NA</span>, <span class="fu">sum</span>(<span class="fu">is.na</span>(macd_line))), signal_line)</span>
+<span id="cb91-26"><a href="unit4.html#cb91-26" tabindex="-1"></a><span class="cf">if</span>(<span class="fu">length</span>(full_signal) <span class="sc">&lt;</span> n) full_signal <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fu">rep</span>(<span class="cn">NA</span>, n <span class="sc">-</span> <span class="fu">length</span>(full_signal)), full_signal)</span>
+<span id="cb91-27"><a href="unit4.html#cb91-27" tabindex="-1"></a></span>
+<span id="cb91-28"><a href="unit4.html#cb91-28" tabindex="-1"></a>histogram <span class="ot">&lt;-</span> macd_line <span class="sc">-</span> full_signal</span>
+<span id="cb91-29"><a href="unit4.html#cb91-29" tabindex="-1"></a></span>
+<span id="cb91-30"><a href="unit4.html#cb91-30" tabindex="-1"></a>macd_df <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb91-31"><a href="unit4.html#cb91-31" tabindex="-1"></a>  <span class="at">Day =</span> <span class="dv">1</span><span class="sc">:</span>n,</span>
+<span id="cb91-32"><a href="unit4.html#cb91-32" tabindex="-1"></a>  <span class="at">Price =</span> hdfc_prices,</span>
+<span id="cb91-33"><a href="unit4.html#cb91-33" tabindex="-1"></a>  <span class="at">MACD =</span> macd_line,</span>
+<span id="cb91-34"><a href="unit4.html#cb91-34" tabindex="-1"></a>  <span class="at">Signal =</span> full_signal,</span>
+<span id="cb91-35"><a href="unit4.html#cb91-35" tabindex="-1"></a>  <span class="at">Histogram =</span> histogram</span>
+<span id="cb91-36"><a href="unit4.html#cb91-36" tabindex="-1"></a>)</span>
+<span id="cb91-37"><a href="unit4.html#cb91-37" tabindex="-1"></a></span>
+<span id="cb91-38"><a href="unit4.html#cb91-38" tabindex="-1"></a><span class="co"># Plot 1: Price</span></span>
+<span id="cb91-39"><a href="unit4.html#cb91-39" tabindex="-1"></a>p1 <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(macd_df, <span class="fu">aes</span>(<span class="at">x =</span> Day, <span class="at">y =</span> Price)) <span class="sc">+</span></span>
+<span id="cb91-40"><a href="unit4.html#cb91-40" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="at">color =</span> <span class="st">&quot;#2c3e50&quot;</span>, <span class="at">size =</span> <span class="dv">1</span>) <span class="sc">+</span></span>
+<span id="cb91-41"><a href="unit4.html#cb91-41" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">&quot;HDFC Bank Price&quot;</span>, <span class="at">y =</span> <span class="st">&quot;Price (₹)&quot;</span>, <span class="at">x =</span> <span class="st">&quot;&quot;</span>) <span class="sc">+</span></span>
+<span id="cb91-42"><a href="unit4.html#cb91-42" tabindex="-1"></a>  <span class="fu">theme_minimal</span>(<span class="at">base_size =</span> <span class="dv">10</span>)</span>
+<span id="cb91-43"><a href="unit4.html#cb91-43" tabindex="-1"></a></span>
+<span id="cb91-44"><a href="unit4.html#cb91-44" tabindex="-1"></a><span class="co"># Plot 2: MACD</span></span>
+<span id="cb91-45"><a href="unit4.html#cb91-45" tabindex="-1"></a>p2 <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(macd_df, <span class="fu">aes</span>(<span class="at">x =</span> Day)) <span class="sc">+</span></span>
+<span id="cb91-46"><a href="unit4.html#cb91-46" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="fu">aes</span>(<span class="at">y =</span> MACD, <span class="at">color =</span> <span class="st">&quot;MACD Line&quot;</span>), <span class="at">size =</span> <span class="dv">1</span>, <span class="at">na.rm =</span> <span class="cn">TRUE</span>) <span class="sc">+</span></span>
+<span id="cb91-47"><a href="unit4.html#cb91-47" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="fu">aes</span>(<span class="at">y =</span> Signal, <span class="at">color =</span> <span class="st">&quot;Signal Line&quot;</span>), <span class="at">size =</span> <span class="dv">1</span>, <span class="at">na.rm =</span> <span class="cn">TRUE</span>) <span class="sc">+</span></span>
+<span id="cb91-48"><a href="unit4.html#cb91-48" tabindex="-1"></a>  <span class="fu">geom_col</span>(<span class="fu">aes</span>(<span class="at">y =</span> Histogram,</span>
+<span id="cb91-49"><a href="unit4.html#cb91-49" tabindex="-1"></a>               <span class="at">fill =</span> <span class="fu">ifelse</span>(Histogram <span class="sc">&gt;</span> <span class="dv">0</span>, <span class="st">&quot;Positive&quot;</span>, <span class="st">&quot;Negative&quot;</span>)),</span>
+<span id="cb91-50"><a href="unit4.html#cb91-50" tabindex="-1"></a>           <span class="at">alpha =</span> <span class="fl">0.6</span>, <span class="at">na.rm =</span> <span class="cn">TRUE</span>) <span class="sc">+</span></span>
+<span id="cb91-51"><a href="unit4.html#cb91-51" tabindex="-1"></a>  <span class="fu">scale_color_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">&quot;MACD Line&quot;</span> <span class="ot">=</span> <span class="st">&quot;#2980b9&quot;</span>, <span class="st">&quot;Signal Line&quot;</span> <span class="ot">=</span> <span class="st">&quot;#e74c3c&quot;</span>)) <span class="sc">+</span></span>
+<span id="cb91-52"><a href="unit4.html#cb91-52" tabindex="-1"></a>  <span class="fu">scale_fill_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">&quot;Positive&quot;</span> <span class="ot">=</span> <span class="st">&quot;#27ae60&quot;</span>, <span class="st">&quot;Negative&quot;</span> <span class="ot">=</span> <span class="st">&quot;#c0392b&quot;</span>),</span>
+<span id="cb91-53"><a href="unit4.html#cb91-53" tabindex="-1"></a>                    <span class="at">guide =</span> <span class="st">&quot;none&quot;</span>) <span class="sc">+</span></span>
+<span id="cb91-54"><a href="unit4.html#cb91-54" tabindex="-1"></a>  <span class="fu">geom_hline</span>(<span class="at">yintercept =</span> <span class="dv">0</span>, <span class="at">linetype =</span> <span class="st">&quot;dashed&quot;</span>) <span class="sc">+</span></span>
+<span id="cb91-55"><a href="unit4.html#cb91-55" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">y =</span> <span class="st">&quot;MACD&quot;</span>, <span class="at">x =</span> <span class="st">&quot;Trading Day&quot;</span>, <span class="at">color =</span> <span class="st">&quot;&quot;</span>) <span class="sc">+</span></span>
+<span id="cb91-56"><a href="unit4.html#cb91-56" tabindex="-1"></a>  <span class="fu">theme_minimal</span>(<span class="at">base_size =</span> <span class="dv">10</span>) <span class="sc">+</span></span>
+<span id="cb91-57"><a href="unit4.html#cb91-57" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">&quot;bottom&quot;</span>)</span>
+<span id="cb91-58"><a href="unit4.html#cb91-58" tabindex="-1"></a></span>
+<span id="cb91-59"><a href="unit4.html#cb91-59" tabindex="-1"></a>gridExtra<span class="sc">::</span><span class="fu">grid.arrange</span>(p1, p2, <span class="at">ncol =</span> <span class="dv">1</span>, <span class="at">heights =</span> <span class="fu">c</span>(<span class="fl">1.5</span>, <span class="dv">1</span>))</span></code></pre></div>
+<div class="figure"><span style="display:block;" id="fig:macd-calculation"></span>
+<img src="bookdownproj_files/figure-html/macd-calculation-1.png" alt="Figure 4.6: MACD Indicator — HDFC Bank (Simulated)" width="672" />
+<p class="caption">
+Figure 4.6: Figure 4.6: MACD Indicator — HDFC Bank (Simulated)
+</p>
+</div>
+</div>
+<div id="macd-trading-signals" class="section level3 hasAnchor" number="4.5.3">
+<h3><span class="header-section-number">4.5.3</span> MACD Trading Signals<a href="unit4.html#macd-trading-signals" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<table>
+<colgroup>
+<col width="27%" />
+<col width="44%" />
+<col width="27%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Signal</th>
+<th>Description</th>
+<th>Action</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Bullish Crossover</strong></td>
+<td>MACD Line crosses above Signal Line</td>
+<td>BUY</td>
+</tr>
+<tr class="even">
+<td><strong>Bearish Crossover</strong></td>
+<td>MACD Line crosses below Signal Line</td>
+<td>SELL</td>
+</tr>
+<tr class="odd">
+<td><strong>Bullish Divergence</strong></td>
+<td>Price makes new low; MACD makes higher low</td>
+<td>BUY (reversal warning)</td>
+</tr>
+<tr class="even">
+<td><strong>Bearish Divergence</strong></td>
+<td>Price makes new high; MACD makes lower high</td>
+<td>SELL (reversal warning)</td>
+</tr>
+<tr class="odd">
+<td><strong>Zero Line Cross Up</strong></td>
+<td>MACD Line crosses above zero</td>
+<td>Trend turned bullish</td>
+</tr>
+<tr class="even">
+<td><strong>Zero Line Cross Down</strong></td>
+<td>MACD Line crosses below zero</td>
+<td>Trend turned bearish</td>
+</tr>
+<tr class="odd">
+<td><strong>Histogram Expanding</strong></td>
+<td>Bars growing; momentum strengthening</td>
+<td>Continue in trend direction</td>
+</tr>
+<tr class="even">
+<td><strong>Histogram Shrinking</strong></td>
+<td>Bars declining; momentum weakening</td>
+<td>Prepare for reversal</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Limitation of MACD:</strong> MACD is a <strong>lagging indicator</strong> and performs best in <strong>trending markets</strong>. In sideways (ranging) markets, it generates multiple false signals. Indian day traders often combine MACD with RSI and volume analysis to filter signals.</p>
+<hr />
+</div>
+</div>
+<div id="pivot-points" class="section level2 hasAnchor" number="4.6">
+<h2><span class="header-section-number">4.6</span> Pivot Points<a href="unit4.html#pivot-points" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="meaning-1" class="section level3 hasAnchor" number="4.6.1">
+<h3><span class="header-section-number">4.6.1</span> Meaning<a href="unit4.html#meaning-1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p><strong>Pivot Points</strong> are pre-calculated support and resistance levels derived from the <strong>previous day’s High (H), Low (L), and Close (C)</strong> prices. They are the most widely used tool by intraday traders on NSE and BSE.</p>
+</div>
+<div id="calculation" class="section level3 hasAnchor" number="4.6.2">
+<h3><span class="header-section-number">4.6.2</span> Calculation<a href="unit4.html#calculation" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p><span class="math display">\[\boxed{Pivot Point (PP) = \frac{High + Low + Close}{3}}\]</span></p>
+<p><span class="math display">\[\text{Resistance 1 (R1)} = (2 \times PP) - Low\]</span>
+<span class="math display">\[\text{Resistance 2 (R2)} = PP + (High - Low)\]</span>
+<span class="math display">\[\text{Resistance 3 (R3)} = High + 2 \times (PP - Low)\]</span>
+<span class="math display">\[\text{Support 1 (S1)} = (2 \times PP) - High\]</span>
+<span class="math display">\[\text{Support 2 (S2)} = PP - (High - Low)\]</span>
+<span class="math display">\[\text{Support 3 (S3)} = Low - 2 \times (High - PP)\]</span></p>
+</div>
+<div id="worked-example" class="section level3 hasAnchor" number="4.6.3">
+<h3><span class="header-section-number">4.6.3</span> Worked Example<a href="unit4.html#worked-example" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p><strong>Example 4.3:</strong> Calculate Pivot Points for Nifty 50 given: Previous Day H = 24,850, L = 24,520, C = 24,710.</p>
+<div class="sourceCode" id="cb92"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb92-1"><a href="unit4.html#cb92-1" tabindex="-1"></a>H <span class="ot">&lt;-</span> <span class="dv">24850</span>; L <span class="ot">&lt;-</span> <span class="dv">24520</span>; C <span class="ot">&lt;-</span> <span class="dv">24710</span></span>
+<span id="cb92-2"><a href="unit4.html#cb92-2" tabindex="-1"></a></span>
+<span id="cb92-3"><a href="unit4.html#cb92-3" tabindex="-1"></a>PP <span class="ot">&lt;-</span> (H <span class="sc">+</span> L <span class="sc">+</span> C) <span class="sc">/</span> <span class="dv">3</span></span>
+<span id="cb92-4"><a href="unit4.html#cb92-4" tabindex="-1"></a>R1 <span class="ot">&lt;-</span> (<span class="dv">2</span> <span class="sc">*</span> PP) <span class="sc">-</span> L</span>
+<span id="cb92-5"><a href="unit4.html#cb92-5" tabindex="-1"></a>R2 <span class="ot">&lt;-</span> PP <span class="sc">+</span> (H <span class="sc">-</span> L)</span>
+<span id="cb92-6"><a href="unit4.html#cb92-6" tabindex="-1"></a>R3 <span class="ot">&lt;-</span> H <span class="sc">+</span> <span class="dv">2</span> <span class="sc">*</span> (PP <span class="sc">-</span> L)</span>
+<span id="cb92-7"><a href="unit4.html#cb92-7" tabindex="-1"></a>S1 <span class="ot">&lt;-</span> (<span class="dv">2</span> <span class="sc">*</span> PP) <span class="sc">-</span> H</span>
+<span id="cb92-8"><a href="unit4.html#cb92-8" tabindex="-1"></a>S2 <span class="ot">&lt;-</span> PP <span class="sc">-</span> (H <span class="sc">-</span> L)</span>
+<span id="cb92-9"><a href="unit4.html#cb92-9" tabindex="-1"></a>S3 <span class="ot">&lt;-</span> L <span class="sc">-</span> <span class="dv">2</span> <span class="sc">*</span> (H <span class="sc">-</span> PP)</span>
+<span id="cb92-10"><a href="unit4.html#cb92-10" tabindex="-1"></a></span>
+<span id="cb92-11"><a href="unit4.html#cb92-11" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;=== Nifty 50 Pivot Points ===</span><span class="sc">\n</span><span class="st">&quot;</span>)</span></code></pre></div>
+<pre><code>## === Nifty 50 Pivot Points ===</code></pre>
+<div class="sourceCode" id="cb94"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb94-1"><a href="unit4.html#cb94-1" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;Resistance 3 (R3):&quot;</span>, <span class="fu">round</span>(R3, <span class="dv">2</span>), <span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span>)</span></code></pre></div>
+<pre><code>## Resistance 3 (R3): 25196.67</code></pre>
+<div class="sourceCode" id="cb96"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb96-1"><a href="unit4.html#cb96-1" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;Resistance 2 (R2):&quot;</span>, <span class="fu">round</span>(R2, <span class="dv">2</span>), <span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span>)</span></code></pre></div>
+<pre><code>## Resistance 2 (R2): 25023.33</code></pre>
+<div class="sourceCode" id="cb98"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb98-1"><a href="unit4.html#cb98-1" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;Resistance 1 (R1):&quot;</span>, <span class="fu">round</span>(R1, <span class="dv">2</span>), <span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span>)</span></code></pre></div>
+<pre><code>## Resistance 1 (R1): 24866.67</code></pre>
+<div class="sourceCode" id="cb100"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb100-1"><a href="unit4.html#cb100-1" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;Pivot Point  (PP):&quot;</span>, <span class="fu">round</span>(PP, <span class="dv">2</span>), <span class="st">&quot;← Key level</span><span class="sc">\n</span><span class="st">&quot;</span>)</span></code></pre></div>
+<pre><code>## Pivot Point  (PP): 24693.33 ← Key level</code></pre>
+<div class="sourceCode" id="cb102"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb102-1"><a href="unit4.html#cb102-1" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;Support 1    (S1):&quot;</span>, <span class="fu">round</span>(S1, <span class="dv">2</span>), <span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span>)</span></code></pre></div>
+<pre><code>## Support 1    (S1): 24536.67</code></pre>
+<div class="sourceCode" id="cb104"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb104-1"><a href="unit4.html#cb104-1" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;Support 2    (S2):&quot;</span>, <span class="fu">round</span>(S2, <span class="dv">2</span>), <span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span>)</span></code></pre></div>
+<pre><code>## Support 2    (S2): 24363.33</code></pre>
+<div class="sourceCode" id="cb106"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb106-1"><a href="unit4.html#cb106-1" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;Support 3    (S3):&quot;</span>, <span class="fu">round</span>(S3, <span class="dv">2</span>), <span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span>)</span></code></pre></div>
+<pre><code>## Support 3    (S3): 24206.67</code></pre>
+<p><strong>How Traders Use Pivot Points:</strong></p>
+<ul>
+<li><strong>Price above PP</strong> → Bullish bias for the day; buy near PP, target R1/R2</li>
+<li><strong>Price below PP</strong> → Bearish bias; sell near PP, target S1/S2</li>
+<li><strong>Price at R1/R2/R3</strong> → Watch for reversal or breakout</li>
+<li><strong>Price at S1/S2/S3</strong> → Watch for bounce or breakdown</li>
+<li><strong>Pivot Point = first target</strong> for both bulls and bears</li>
+</ul>
+<p><em>Nifty 50 Pivot Points</em> are published every morning by brokers like Zerodha, Upstox, and Sharekhan, and displayed on platforms like Chartink and TradingView before market open at 9:15 AM IST.</p>
+<hr />
+</div>
+</div>
+<div id="vwap" class="section level2 hasAnchor" number="4.7">
+<h2><span class="header-section-number">4.7</span> Volume Weighted Average Price (VWAP)<a href="unit4.html#vwap" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="meaning-and-importance-1" class="section level3 hasAnchor" number="4.7.1">
+<h3><span class="header-section-number">4.7.1</span> Meaning and Importance<a href="unit4.html#meaning-and-importance-1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p><strong>VWAP</strong> is the average price at which a security has traded throughout the day, <strong>weighted by volume</strong>. It gives more significance to price levels where large volumes were traded, making it a superior measure of intraday fair value compared to a simple average.</p>
+<p><span class="math display">\[\boxed{VWAP = \frac{\sum_{t=1}^{n} (P_t \times V_t)}{\sum_{t=1}^{n} V_t}}\]</span></p>
+<p>Where <span class="math inline">\(P_t\)</span> = Typical price at time <span class="math inline">\(t\)</span> = <span class="math inline">\(\frac{High_t + Low_t + Close_t}{3}\)</span> and <span class="math inline">\(V_t\)</span> = Volume at time <span class="math inline">\(t\)</span>.</p>
+</div>
+<div id="vwap-calculation-worked-example" class="section level3 hasAnchor" number="4.7.2">
+<h3><span class="header-section-number">4.7.2</span> VWAP Calculation — Worked Example<a href="unit4.html#vwap-calculation-worked-example" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p><strong>Example 4.4:</strong> Calculate VWAP for Tata Motors (NSE) for first 6 intraday intervals.</p>
+<div class="sourceCode" id="cb108"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb108-1"><a href="unit4.html#cb108-1" tabindex="-1"></a><span class="co"># Tata Motors intraday data</span></span>
+<span id="cb108-2"><a href="unit4.html#cb108-2" tabindex="-1"></a>interval <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;9:15&quot;</span>, <span class="st">&quot;9:30&quot;</span>, <span class="st">&quot;10:00&quot;</span>, <span class="st">&quot;10:30&quot;</span>, <span class="st">&quot;11:00&quot;</span>, <span class="st">&quot;11:30&quot;</span>)</span>
+<span id="cb108-3"><a href="unit4.html#cb108-3" tabindex="-1"></a>high  <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">940</span>, <span class="dv">945</span>, <span class="dv">948</span>, <span class="dv">942</span>, <span class="dv">951</span>, <span class="dv">955</span>)</span>
+<span id="cb108-4"><a href="unit4.html#cb108-4" tabindex="-1"></a>low   <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">935</span>, <span class="dv">938</span>, <span class="dv">941</span>, <span class="dv">936</span>, <span class="dv">944</span>, <span class="dv">948</span>)</span>
+<span id="cb108-5"><a href="unit4.html#cb108-5" tabindex="-1"></a>close <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">938</span>, <span class="dv">942</span>, <span class="dv">944</span>, <span class="dv">939</span>, <span class="dv">948</span>, <span class="dv">952</span>)</span>
+<span id="cb108-6"><a href="unit4.html#cb108-6" tabindex="-1"></a>volume <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">125000</span>, <span class="dv">98000</span>, <span class="dv">112000</span>, <span class="dv">87000</span>, <span class="dv">135000</span>, <span class="dv">102000</span>)</span>
+<span id="cb108-7"><a href="unit4.html#cb108-7" tabindex="-1"></a></span>
+<span id="cb108-8"><a href="unit4.html#cb108-8" tabindex="-1"></a>typical_price <span class="ot">&lt;-</span> (high <span class="sc">+</span> low <span class="sc">+</span> close) <span class="sc">/</span> <span class="dv">3</span></span>
+<span id="cb108-9"><a href="unit4.html#cb108-9" tabindex="-1"></a>pv <span class="ot">&lt;-</span> typical_price <span class="sc">*</span> volume</span>
+<span id="cb108-10"><a href="unit4.html#cb108-10" tabindex="-1"></a></span>
+<span id="cb108-11"><a href="unit4.html#cb108-11" tabindex="-1"></a>cumulative_pv <span class="ot">&lt;-</span> <span class="fu">cumsum</span>(pv)</span>
+<span id="cb108-12"><a href="unit4.html#cb108-12" tabindex="-1"></a>cumulative_vol <span class="ot">&lt;-</span> <span class="fu">cumsum</span>(volume)</span>
+<span id="cb108-13"><a href="unit4.html#cb108-13" tabindex="-1"></a>vwap <span class="ot">&lt;-</span> cumulative_pv <span class="sc">/</span> cumulative_vol</span>
+<span id="cb108-14"><a href="unit4.html#cb108-14" tabindex="-1"></a></span>
+<span id="cb108-15"><a href="unit4.html#cb108-15" tabindex="-1"></a>vwap_df <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb108-16"><a href="unit4.html#cb108-16" tabindex="-1"></a>  <span class="at">Interval =</span> interval,</span>
+<span id="cb108-17"><a href="unit4.html#cb108-17" tabindex="-1"></a>  <span class="at">High =</span> high, <span class="at">Low =</span> low, <span class="at">Close =</span> close,</span>
+<span id="cb108-18"><a href="unit4.html#cb108-18" tabindex="-1"></a>  <span class="at">Typical_Price =</span> <span class="fu">round</span>(typical_price, <span class="dv">2</span>),</span>
+<span id="cb108-19"><a href="unit4.html#cb108-19" tabindex="-1"></a>  <span class="at">Volume =</span> <span class="fu">format</span>(volume, <span class="at">big.mark =</span> <span class="st">&quot;,&quot;</span>),</span>
+<span id="cb108-20"><a href="unit4.html#cb108-20" tabindex="-1"></a>  <span class="at">Cumulative_PV =</span> <span class="fu">format</span>(<span class="fu">round</span>(cumulative_pv), <span class="at">big.mark =</span> <span class="st">&quot;,&quot;</span>),</span>
+<span id="cb108-21"><a href="unit4.html#cb108-21" tabindex="-1"></a>  <span class="at">VWAP =</span> <span class="fu">round</span>(vwap, <span class="dv">2</span>)</span>
+<span id="cb108-22"><a href="unit4.html#cb108-22" tabindex="-1"></a>)</span>
+<span id="cb108-23"><a href="unit4.html#cb108-23" tabindex="-1"></a></span>
+<span id="cb108-24"><a href="unit4.html#cb108-24" tabindex="-1"></a><span class="fu">kable</span>(vwap_df,</span>
+<span id="cb108-25"><a href="unit4.html#cb108-25" tabindex="-1"></a>      <span class="at">caption =</span> <span class="st">&quot;Table 4.2: VWAP Calculation — Tata Motors Intraday&quot;</span>,</span>
+<span id="cb108-26"><a href="unit4.html#cb108-26" tabindex="-1"></a>      <span class="at">col.names =</span> <span class="fu">c</span>(<span class="st">&quot;Interval&quot;</span>, <span class="st">&quot;High&quot;</span>, <span class="st">&quot;Low&quot;</span>, <span class="st">&quot;Close&quot;</span>, <span class="st">&quot;Typical Price&quot;</span>,</span>
+<span id="cb108-27"><a href="unit4.html#cb108-27" tabindex="-1"></a>                    <span class="st">&quot;Volume&quot;</span>, <span class="st">&quot;Cumulative PV&quot;</span>, <span class="st">&quot;VWAP&quot;</span>),</span>
+<span id="cb108-28"><a href="unit4.html#cb108-28" tabindex="-1"></a>      <span class="at">booktabs =</span> <span class="cn">TRUE</span>) <span class="sc">|&gt;</span></span>
+<span id="cb108-29"><a href="unit4.html#cb108-29" tabindex="-1"></a>  <span class="fu">kable_styling</span>(<span class="at">bootstrap_options =</span> <span class="fu">c</span>(<span class="st">&quot;striped&quot;</span>, <span class="st">&quot;hover&quot;</span>), <span class="at">font_size =</span> <span class="dv">11</span>, <span class="at">full_width =</span> <span class="cn">TRUE</span>) <span class="sc">|&gt;</span></span>
+<span id="cb108-30"><a href="unit4.html#cb108-30" tabindex="-1"></a>  <span class="fu">row_spec</span>(<span class="dv">0</span>, <span class="at">bold =</span> <span class="cn">TRUE</span>, <span class="at">color =</span> <span class="st">&quot;white&quot;</span>, <span class="at">background =</span> <span class="st">&quot;#2c3e50&quot;</span>) <span class="sc">|&gt;</span></span>
+<span id="cb108-31"><a href="unit4.html#cb108-31" tabindex="-1"></a>  <span class="fu">row_spec</span>(<span class="fu">nrow</span>(vwap_df), <span class="at">bold =</span> <span class="cn">TRUE</span>, <span class="at">background =</span> <span class="st">&quot;#eaf4fb&quot;</span>)</span></code></pre></div>
+<table class="table table-striped table-hover" style="font-size: 11px; margin-left: auto; margin-right: auto;">
+<caption style="font-size: initial !important;">
+<span id="tab:vwap-calculation">Table 4.3: </span><span id="tab:vwap-calculation">Table 4.4: </span>Table 4.2: VWAP Calculation — Tata Motors Intraday
+</caption>
+<thead>
+<tr>
+<th style="text-align:left;font-weight: bold;color: white !important;background-color: rgba(44, 62, 80, 1) !important;">
+Interval
+</th>
+<th style="text-align:right;font-weight: bold;color: white !important;background-color: rgba(44, 62, 80, 1) !important;">
+High
+</th>
+<th style="text-align:right;font-weight: bold;color: white !important;background-color: rgba(44, 62, 80, 1) !important;">
+Low
+</th>
+<th style="text-align:right;font-weight: bold;color: white !important;background-color: rgba(44, 62, 80, 1) !important;">
+Close
+</th>
+<th style="text-align:right;font-weight: bold;color: white !important;background-color: rgba(44, 62, 80, 1) !important;">
+Typical Price
+</th>
+<th style="text-align:left;font-weight: bold;color: white !important;background-color: rgba(44, 62, 80, 1) !important;">
+Volume
+</th>
+<th style="text-align:left;font-weight: bold;color: white !important;background-color: rgba(44, 62, 80, 1) !important;">
+Cumulative PV
+</th>
+<th style="text-align:right;font-weight: bold;color: white !important;background-color: rgba(44, 62, 80, 1) !important;">
+VWAP
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+9:15
+</td>
+<td style="text-align:right;">
+940
+</td>
+<td style="text-align:right;">
+935
+</td>
+<td style="text-align:right;">
+938
+</td>
+<td style="text-align:right;">
+937.67
+</td>
+<td style="text-align:left;">
+125,000
+</td>
+<td style="text-align:left;">
+117,208,333
+</td>
+<td style="text-align:right;">
+937.67
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+9:30
+</td>
+<td style="text-align:right;">
+945
+</td>
+<td style="text-align:right;">
+938
+</td>
+<td style="text-align:right;">
+942
+</td>
+<td style="text-align:right;">
+941.67
+</td>
+<td style="text-align:left;">
+98,000
+</td>
+<td style="text-align:left;">
+209,491,667
+</td>
+<td style="text-align:right;">
+939.42
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+10:00
+</td>
+<td style="text-align:right;">
+948
+</td>
+<td style="text-align:right;">
+941
+</td>
+<td style="text-align:right;">
+944
+</td>
+<td style="text-align:right;">
+944.33
+</td>
+<td style="text-align:left;">
+112,000
+</td>
+<td style="text-align:left;">
+315,257,000
+</td>
+<td style="text-align:right;">
+941.07
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+10:30
+</td>
+<td style="text-align:right;">
+942
+</td>
+<td style="text-align:right;">
+936
+</td>
+<td style="text-align:right;">
+939
+</td>
+<td style="text-align:right;">
+939.00
+</td>
+<td style="text-align:left;">
+87,000
+</td>
+<td style="text-align:left;">
+396,950,000
+</td>
+<td style="text-align:right;">
+940.64
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+11:00
+</td>
+<td style="text-align:right;">
+951
+</td>
+<td style="text-align:right;">
+944
+</td>
+<td style="text-align:right;">
+948
+</td>
+<td style="text-align:right;">
+947.67
+</td>
+<td style="text-align:left;">
+135,000
+</td>
+<td style="text-align:left;">
+524,885,000
+</td>
+<td style="text-align:right;">
+942.34
+</td>
+</tr>
+<tr>
+<td style="text-align:left;font-weight: bold;background-color: rgba(234, 244, 251, 1) !important;">
+11:30
+</td>
+<td style="text-align:right;font-weight: bold;background-color: rgba(234, 244, 251, 1) !important;">
+955
+</td>
+<td style="text-align:right;font-weight: bold;background-color: rgba(234, 244, 251, 1) !important;">
+948
+</td>
+<td style="text-align:right;font-weight: bold;background-color: rgba(234, 244, 251, 1) !important;">
+952
+</td>
+<td style="text-align:right;font-weight: bold;background-color: rgba(234, 244, 251, 1) !important;">
+951.67
+</td>
+<td style="text-align:left;font-weight: bold;background-color: rgba(234, 244, 251, 1) !important;">
+102,000
+</td>
+<td style="text-align:left;font-weight: bold;background-color: rgba(234, 244, 251, 1) !important;">
+621,955,000
+</td>
+<td style="text-align:right;font-weight: bold;background-color: rgba(234, 244, 251, 1) !important;">
+943.79
+</td>
+</tr>
+</tbody>
+</table>
+<p><em>Source: Illustrative data for pedagogical purposes.</em></p>
+</div>
+<div id="vwap-trading-strategies" class="section level3 hasAnchor" number="4.7.3">
+<h3><span class="header-section-number">4.7.3</span> VWAP Trading Strategies<a href="unit4.html#vwap-trading-strategies" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p><strong>Institutional Use:</strong>
+- Large fund managers (FIIs, DIIs) use VWAP as a <strong>benchmark</strong>: buying below VWAP is considered a “good fill”; buying above VWAP is expensive. NSE SEBI disclosures show institutional block deals are often executed at VWAP.</p>
+<p><strong>Retail Trading Signals:</strong>
+- <strong>Price crosses above VWAP</strong> → Intraday bullish; buy with stop below VWAP
+- <strong>Price crosses below VWAP</strong> → Intraday bearish; sell/short with stop above VWAP
+- <strong>Price hugs VWAP</strong> → No clear trend; avoid directional trades</p>
+<p><strong>VWAP Band Strategy:</strong>
+Some traders add standard deviation bands around VWAP (±1σ, ±2σ) — similar to Bollinger Bands — to identify overbought/oversold intraday conditions.</p>
+<hr />
+</div>
+</div>
+<div id="ai-tools" class="section level2 hasAnchor" number="4.8">
+<h2><span class="header-section-number">4.8</span> AI Tools in Technical Analysis<a href="unit4.html#ai-tools" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="the-ai-revolution-in-technical-analysis" class="section level3 hasAnchor" number="4.8.1">
+<h3><span class="header-section-number">4.8.1</span> The AI Revolution in Technical Analysis<a href="unit4.html#the-ai-revolution-in-technical-analysis" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Artificial Intelligence has transformed technical analysis from a manual charting exercise into a <strong>data-driven, algorithmic discipline</strong>. Indian retail traders and institutional investors are increasingly integrating AI tools into their analysis workflow.</p>
+<div class="figure"><span style="display:block;" id="fig:ai-tools-ecosystem"></span>
+<img src="bookdownproj_files/figure-html/ai-tools-ecosystem-1.png" alt="Figure 4.7: AI Tools Ecosystem in Technical Analysis" width="864" />
+<p class="caption">
+Figure 4.7: Figure 4.7: AI Tools Ecosystem in Technical Analysis
+</p>
+</div>
+<p><em>Figure 4.7: AI Tools Ecosystem in Technical Analysis</em></p>
+</div>
+<div id="platform-by-platform-analysis" class="section level3 hasAnchor" number="4.8.2">
+<h3><span class="header-section-number">4.8.2</span> Platform-by-Platform Analysis<a href="unit4.html#platform-by-platform-analysis" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p><strong>A. TradingView (with AI Features)</strong></p>
+<p>TradingView is the world’s most popular charting platform with <strong>50+ million users</strong> globally, including over <strong>5 million Indian users</strong> (2024). Key AI features:</p>
+<ul>
+<li><strong>Smart Patterns</strong>: Automatically detects 100+ chart patterns (Head &amp; Shoulders, Double Top, Cup &amp; Handle) on any timeframe</li>
+<li><strong>Pine Script</strong>: Proprietary programming language for custom AI-powered indicators</li>
+<li><strong>AI Chart Analysis</strong> (Beta, 2024): Natural language description of the current chart structure — e.g., “Nifty Bank is in a bullish flag consolidation above the 20-day EMA with declining volume — potential breakout target 53,000”</li>
+<li><strong>Screener</strong>: Multi-condition AI screener with real-time NSE/BSE data</li>
+</ul>
+<p><em>Strengths:</em> Professional charting, community indicators, real-time global data
+<em>Limitations:</em> Premium plans needed for advanced features; Indian data sometimes delayed on free plan</p>
+<p><strong>B. TrendSpider</strong></p>
+<p>TrendSpider is an <strong>AI-first charting platform</strong> that automates technical analysis:
+- <strong>Automated Trendline Detection</strong>: Draws all significant trendlines without human bias
+- <strong>Multi-timeframe Analysis (MTFA)</strong>: Simultaneously analyses weekly, daily, hourly charts and flags convergence zones
+- <strong>Raindrop Charts</strong>: AI-powered volume-at-price visualisation (unique to TrendSpider)
+- <strong>Strategy Tester</strong>: Backtesting of AI-generated signals</p>
+<p><em>Strengths:</em> Truly automated pattern recognition; saves hours of manual charting
+<em>Limitations:</em> US-centric; Indian NSE/BSE data integration limited; premium pricing</p>
+<p><strong>C. Tickertape (India-specific)</strong></p>
+<p>Tickertape is an <strong>SEBI-registered RA platform</strong> built specifically for Indian investors:
+- <strong>Stock Screener</strong>: 200+ filters combining fundamental + technical criteria
+- <strong>Smallcase Integration</strong>: Theme-based portfolio creation
+- <strong>Scorecard</strong>: AI-generated overall score for each stock (Momentum, Quality, Value)
+- <strong>Portfolio Analyser</strong>: Real-time tracking with XIRR calculation</p>
+<p><em>Strengths:</em> 100% Indian data; integrates FA + TA; free tier available
+<em>Limitations:</em> Advanced charting less sophisticated than TradingView</p>
+<p><strong>D. Screener.in</strong></p>
+<p>The most popular <strong>free fundamental + basic technical</strong> screening platform for Indian investors:
+- 10-year financial data for all NSE/BSE companies
+- Custom query builder (e.g., “Return on equity &gt; 20% AND Debt to equity &lt; 0.5 AND 52-week high breakout”)
+- Export to Excel/Google Sheets for further analysis</p>
+<p><em>Example Query on Screener.in:</em></p>
+<pre><code>Return on equity &gt; 20
+AND Debt to equity &lt; 0.5
+AND Sales growth 5Years &gt; 15
+AND Price to Earning &lt; 30
+AND Current price &gt; 200 Day moving average</code></pre>
+<p><strong>E. StockEdge</strong></p>
+<p>StockEdge (by Elearnmarkets) provides <strong>club-based research</strong> with AI-powered scans:
+- 150+ pre-built technical scans (Bullish Engulfing, Morning Star, MACD Crossover)
+- EOD (End of Day) and intraday scans on all NSE stocks
+- <strong>Edge Reports</strong>: AI-curated research on sectors and stocks
+- <strong>Study Module</strong>: In-app learning resources</p>
+<p><em>Strengths:</em> Best-in-class scanning for Indian markets; club features for idea sharing
+<em>Limitations:</em> Primarily EOD; charting less advanced</p>
+<p><strong>F. Chartink</strong></p>
+<p>Chartink is a free, real-time <strong>NSE/BSE screener</strong> popular among Indian traders:
+- Creates custom intraday and EOD scans
+- MACD, RSI, Bollinger Bands, Supertrend alerts
+- Candlestick pattern recognition (Hammer, Doji, Engulfing)
+- <strong>Free</strong> for basic features — widely used by retail traders</p>
+<p><em>Example Chartink Scan:</em></p>
+<pre><code>[Latest] AND [MACD(26,12,9) &gt; MACD Signal(26,12,9)]
+AND [Daily Volume &gt; Weekly MA Volume(20)]
+AND [Daily Close &gt; Daily SMA(50)]</code></pre>
+<p><strong>G. ChatGPT in Technical Analysis</strong></p>
+<p>ChatGPT (OpenAI) can be used for:
+- <strong>Explaining</strong> chart patterns and indicators in plain language
+- <strong>Writing Pine Script</strong> for custom TradingView indicators
+- <strong>Backtesting code</strong> in Python/R for technical strategies
+- <strong>Interpreting</strong> MACD, RSI, pivot point levels when given data
+- <strong>Generating</strong> trading plan templates and risk management frameworks</p>
+<p><em>Example ChatGPT Prompt for Technical Analysis:</em>
+&gt; “I’m looking at Reliance Industries. The stock has crossed above its 200-day SMA, MACD just gave a bullish crossover on the daily chart, and volumes are 2x the 20-day average. The pivot point for today is ₹3,020 with R1 at ₹3,050. Write a structured intraday trading plan with entry, stop-loss, and two targets.”</p>
+<p><strong>H. Claude AI (Anthropic) in Technical Analysis</strong></p>
+<p>Claude excels at:
+- <strong>Structured analysis</strong> of multiple indicators simultaneously
+- <strong>Writing well-commented R/Python code</strong> for technical analysis (MACD, SMA, Bollinger Bands)
+- <strong>Explaining complex concepts</strong> (Elliott Wave, Ichimoku Cloud) in student-friendly language
+- <strong>Document analysis</strong>: Paste a broker’s technical research report; Claude summarises key signals</p>
+<p><strong>I. Bloomberg Terminal / Bloomberg AI</strong></p>
+<p>Institutional-grade platform used by FIIs, mutual funds, and hedge funds:
+- <strong>BTST (Buy Today Sell Tomorrow)</strong> alerts based on AI signal aggregation
+- <strong>News Sentiment Analysis</strong>: Real-time scoring of news impact on stock price
+- <strong>IB (Implied Volatility)</strong> analysis for F&amp;O traders
+- <strong>DAPI</strong>: Bloomberg’s Data API with AI-enhanced analytics</p>
+<p><em>Access:</em> Terminal costs approximately $25,000/year — accessed by institutional investors, not retail.</p>
+</div>
+<div id="comparison-matrix-of-ai-technical-analysis-tools" class="section level3 hasAnchor" number="4.8.3">
+<h3><span class="header-section-number">4.8.3</span> Comparison Matrix of AI Technical Analysis Tools<a href="unit4.html#comparison-matrix-of-ai-technical-analysis-tools" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<table class="table table-striped table-hover" style="font-size: 10.5px; margin-left: auto; margin-right: auto;">
+<caption style="font-size: initial !important;">
+<span id="tab:ai-tools-comparison">Table 4.5: </span><span id="tab:ai-tools-comparison">Table 4.6: </span>Table 4.3: AI Technical Analysis Tools Comparison (2024)
+</caption>
+<thead>
+<tr>
+<th style="text-align:left;font-weight: bold;color: white !important;background-color: rgba(44, 62, 80, 1) !important;">
+Tool
+</th>
+<th style="text-align:left;font-weight: bold;color: white !important;background-color: rgba(44, 62, 80, 1) !important;">
+Indian Data
+</th>
+<th style="text-align:left;font-weight: bold;color: white !important;background-color: rgba(44, 62, 80, 1) !important;">
+Real-Time
+</th>
+<th style="text-align:left;font-weight: bold;color: white !important;background-color: rgba(44, 62, 80, 1) !important;">
+AI Features
+</th>
+<th style="text-align:left;font-weight: bold;color: white !important;background-color: rgba(44, 62, 80, 1) !important;">
+Cost (approx.)
+</th>
+<th style="text-align:left;font-weight: bold;color: white !important;background-color: rgba(44, 62, 80, 1) !important;">
+Best For
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+TradingView
+</td>
+<td style="text-align:left;">
+Yes
+</td>
+<td style="text-align:left;">
+Yes (premium)
+</td>
+<td style="text-align:left;">
+Moderate
+</td>
+<td style="text-align:left;">
+Free/₹2K-5K/mo
+</td>
+<td style="text-align:left;">
+Charting
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+TrendSpider
+</td>
+<td style="text-align:left;">
+Limited
+</td>
+<td style="text-align:left;">
+Yes
+</td>
+<td style="text-align:left;">
+High
+</td>
+<td style="text-align:left;">
+~₹3K/mo
+</td>
+<td style="text-align:left;">
+Pattern Detection
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Tickertape
+</td>
+<td style="text-align:left;">
+Yes
+</td>
+<td style="text-align:left;">
+Yes
+</td>
+<td style="text-align:left;">
+Moderate
+</td>
+<td style="text-align:left;">
+Free/₹500/mo
+</td>
+<td style="text-align:left;">
+India Screener
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Screener.in
+</td>
+<td style="text-align:left;">
+Yes
+</td>
+<td style="text-align:left;">
+Yes
+</td>
+<td style="text-align:left;">
+Low
+</td>
+<td style="text-align:left;">
+Free/₹2K/yr
+</td>
+<td style="text-align:left;">
+FA+TA India
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+StockEdge
+</td>
+<td style="text-align:left;">
+Yes
+</td>
+<td style="text-align:left;">
+Limited
+</td>
+<td style="text-align:left;">
+Moderate
+</td>
+<td style="text-align:left;">
+Free/₹1K/mo
+</td>
+<td style="text-align:left;">
+Scans + Education
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Chartink
+</td>
+<td style="text-align:left;">
+Yes
+</td>
+<td style="text-align:left;">
+Yes
+</td>
+<td style="text-align:left;">
+Low
+</td>
+<td style="text-align:left;">
+Free
+</td>
+<td style="text-align:left;">
+Free Scans
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+ChatGPT
+</td>
+<td style="text-align:left;">
+No
+</td>
+<td style="text-align:left;">
+No
+</td>
+<td style="text-align:left;">
+High
+</td>
+<td style="text-align:left;">
+Free/₹1.5K/mo
+</td>
+<td style="text-align:left;">
+Code + Explanation
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Claude AI
+</td>
+<td style="text-align:left;">
+No
+</td>
+<td style="text-align:left;">
+No
+</td>
+<td style="text-align:left;">
+High
+</td>
+<td style="text-align:left;">
+Free/₹1.5K/mo
+</td>
+<td style="text-align:left;">
+Analysis + Code
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Bloomberg
+</td>
+<td style="text-align:left;">
+Yes
+</td>
+<td style="text-align:left;">
+Yes
+</td>
+<td style="text-align:left;">
+Very High
+</td>
+<td style="text-align:left;">
+~₹1.5L/yr
+</td>
+<td style="text-align:left;">
+Institutional
+</td>
+</tr>
+</tbody>
+</table>
+<p><em>Source: Compiled by the author from platform documentation and user reviews (2024).</em></p>
+</div>
+<div id="strengths-and-limitations-of-ai-in-technical-analysis" class="section level3 hasAnchor" number="4.8.4">
+<h3><span class="header-section-number">4.8.4</span> Strengths and Limitations of AI in Technical Analysis<a href="unit4.html#strengths-and-limitations-of-ai-in-technical-analysis" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p><strong>Strengths:</strong>
+1. <strong>Speed</strong> — AI screens 2,000+ NSE stocks in seconds for technical setups
+2. <strong>Objectivity</strong> — Eliminates emotional bias in pattern identification
+3. <strong>Backtesting</strong> — AI can test strategies over 10+ years of historical data instantly
+4. <strong>Multi-timeframe</strong> — Simultaneously analyses weekly, daily, and hourly charts
+5. <strong>24/7 Monitoring</strong> — Alerts via SMS/app when conditions are met</p>
+<p><strong>Limitations:</strong>
+1. <strong>Lagging</strong> — Most AI tools use lagging indicators (MA-based); cannot predict reversals
+2. <strong>Overfitting</strong> — AI strategies that perform well in backtests may fail in live markets
+3. <strong>Black Box</strong> — Some AI systems don’t explain the reasoning behind signals
+4. <strong>Data Quality</strong> — Poor data quality (corporate actions, splits) can mislead AI models
+5. <strong>Market Regime Changes</strong> — AI trained on bull market data fails in bear markets
+6. <strong>Regulatory Risk</strong> — SEBI has issued guidelines on algorithmic trading; compliance needed</p>
+<div class="infobox">
+<p><strong>SEBI Alert (2022–2024):</strong> SEBI has warned investors against relying on unregistered “finfluencers” and AI-based trading apps that promise guaranteed returns using technical signals. Always use SEBI-registered Research Analysts for investment advice. Platforms providing buy/sell recommendations must be registered as RAs with SEBI under the Investment Adviser Regulations, 2013.</p>
+</div>
+<hr />
+<div class="research-corner">
+<p><strong>Research Corner 4.1: Machine Learning in Technical Analysis</strong></p>
+<p><strong>Key Academic Finding:</strong> Brock, Lakonishok, and LeBaron (1992) — the landmark study in the <em>Journal of Finance</em> — found that simple moving average and trading range breakout strategies generated statistically significant returns on the Dow Jones Industrial Average from 1897 to 1986. However, subsequent studies in <strong>efficient markets</strong> have debated whether these profits survive transaction costs.</p>
+<p><strong>India-Specific Research:</strong> A study by <strong>Patel et al. (2015)</strong> (<em>Expert Systems with Applications</em>) compared ANN, SVM, Random Forest, and Naive Bayes for predicting Nifty 50 movements — finding Random Forest most accurate at 89.1% on training data, though live performance is typically lower.</p>
+<p><strong>Emerging Research Areas:</strong>
+1. <strong>Transformer models</strong> (like GPT architecture) for time-series price prediction
+2. <strong>Reinforcement learning</strong> for optimal execution (VWAP/TWAP strategies)
+3. <strong>Alternative data</strong> (satellite imagery, social media sentiment, web scraping) for alpha generation
+4. <strong>Explainable AI (XAI)</strong> for regulatory compliance in algorithmic trading</p>
+<p><strong>Research Gap:</strong> Systematic study of the profitability of AI-based technical strategies in Indian small-cap and mid-cap stocks (which are less efficient than large-cap) represents a promising PhD research area.</p>
+</div>
+<hr />
+</div>
+</div>
+<div id="unit4-summary" class="section level2 hasAnchor" number="4.9">
+<h2><span class="header-section-number">4.9</span> Summary<a href="unit4.html#unit4-summary" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<ol style="list-style-type: decimal">
+<li><p><strong>Technical analysis</strong> is the study of historical price and volume data to forecast future price movements, based on three assumptions: market discounts everything, prices move in trends, and history repeats.</p></li>
+<li><p><strong>Dow Theory</strong> — the foundation of technical analysis — identifies three trend types (primary, secondary, minor), three phases of bull/bear markets, and requires both averages to confirm signals.</p></li>
+<li><p><strong>Uptrend</strong> = Higher Highs + Higher Lows; <strong>Downtrend</strong> = Lower Highs + Lower Lows; <strong>Sideways</strong> = Price oscillates between support and resistance.</p></li>
+<li><p><strong>SMA</strong> gives equal weight to all periods; <strong>EMA</strong> gives more weight to recent prices and reacts faster to price changes.</p></li>
+<li><p><strong>MACD</strong> = EMA(12) − EMA(26). The Signal Line is EMA(9) of MACD. Crossovers and divergences are the primary signals.</p></li>
+<li><p><strong>Pivot Points</strong> are pre-calculated support and resistance levels based on the previous day’s H, L, C — the most popular intraday tool for NSE/BSE traders.</p></li>
+<li><p><strong>VWAP</strong> is the volume-weighted average price — the benchmark for institutional execution and a key intraday direction indicator for retail traders.</p></li>
+<li><p><strong>AI tools</strong> — TradingView, TrendSpider, Tickertape, Screener.in, Chartink, StockEdge, ChatGPT, Claude — are transforming technical analysis, but come with limitations of overfitting, data quality, and regulatory compliance.</p></li>
+</ol>
+<hr />
+</div>
+<div id="unit4-keyterms" class="section level2 hasAnchor" number="4.10">
+<h2><span class="header-section-number">4.10</span> Key Terms<a href="unit4.html#unit4-keyterms" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<ol style="list-style-type: decimal">
+<li><strong>Technical Analysis</strong> — Study of price/volume history to forecast future price</li>
+<li><strong>Dow Theory</strong> — Foundational framework of technical analysis by Charles Dow</li>
+<li><strong>Primary Trend</strong> — Major market direction lasting 1–3 years</li>
+<li><strong>Secondary Trend</strong> — Counter-trend correction within primary (3 weeks–3 months)</li>
+<li><strong>Accumulation Phase</strong> — First phase of bull market; smart money buys</li>
+<li><strong>Distribution Phase</strong> — Final phase of bull market; smart money sells</li>
+<li><strong>Golden Cross</strong> — 50-day SMA crosses above 200-day SMA; bullish</li>
+<li><strong>Death Cross</strong> — 50-day SMA crosses below 200-day SMA; bearish</li>
+<li><strong>SMA</strong> — Simple Moving Average; equal-weighted price average</li>
+<li><strong>EMA</strong> — Exponential Moving Average; recent prices weighted more</li>
+<li><strong>Smoothing Factor (k)</strong> — EMA weighting: 2/(n+1)</li>
+<li><strong>MACD Line</strong> — Difference between 12-day and 26-day EMA</li>
+<li><strong>Signal Line</strong> — 9-day EMA of MACD Line</li>
+<li><strong>MACD Histogram</strong> — Difference between MACD Line and Signal Line</li>
+<li><strong>Bullish Divergence</strong> — Price makes new low; MACD does not; reversal signal</li>
+<li><strong>Pivot Point (PP)</strong> — Average of previous day’s H, L, C</li>
+<li><strong>Resistance</strong> — Price ceiling where supply dominates</li>
+<li><strong>Support</strong> — Price floor where demand dominates</li>
+<li><strong>VWAP</strong> — Volume Weighted Average Price; intraday fair value</li>
+<li><strong>Typical Price</strong> — (High + Low + Close) / 3; used in VWAP</li>
+<li><strong>Momentum Indicator</strong> — Measures speed/rate of price change (MACD, RSI)</li>
+<li><strong>Lagging Indicator</strong> — Based on past prices; confirms existing trends</li>
+<li><strong>Backtesting</strong> — Testing a strategy against historical data</li>
+<li><strong>Overfitting</strong> — Strategy over-optimised on historical data; fails in live markets</li>
+<li><strong>Pine Script</strong> — TradingView’s indicator programming language</li>
+<li><strong>Algo Trading</strong> — Automated, computer-executed trading strategies</li>
+<li><strong>SEBI RA</strong> — SEBI-registered Research Analyst; licensed for investment recommendations</li>
+<li><strong>Intraday Trading</strong> — Buy and sell within the same trading session</li>
+<li><strong>Supertrend</strong> — Popular trend-following indicator on Indian platforms</li>
+<li><strong>Elliott Wave</strong> — Advanced pattern theory of 5-wave impulse + 3-wave correction cycles</li>
+</ol>
+<hr />
+</div>
+<div id="mcqs-unit-iv-selected" class="section level2 hasAnchor" number="4.11">
+<h2><span class="header-section-number">4.11</span> MCQs — Unit IV (Selected)<a href="unit4.html#mcqs-unit-iv-selected" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p><strong>1.</strong> Which of the following is a lagging indicator?
+- (A) Moving Average ← <strong>Correct</strong> (B) RSI (C) Volume (D) Open Interest</p>
+<p><em>Answer: A. Moving averages are based on past prices; they confirm trends rather than predict them.</em></p>
+<p><strong>2.</strong> The Dow Theory requires that for a valid breakout signal, the move must be confirmed by:
+- (A) Volume only (B) Both market averages ← <strong>Correct</strong> (C) One average only (D) RSI</p>
+<p><em>Answer: B. Dow Theory states that both averages (e.g., Nifty 50 and Nifty Bank) must confirm each other for a valid signal.</em></p>
+<p><strong>3.</strong> The smoothing factor (k) for a 12-day EMA is:
+- (A) 0.100 (B) 0.154 ← <strong>Correct</strong> (C) 0.200 (D) 0.083</p>
+<p><em>Answer: B. k = 2/(12+1) = 2/13 ≈ 0.1538</em></p>
+<p><strong>4.</strong> MACD Line is calculated as:
+- (A) EMA(26) − EMA(12) (B) EMA(12) − EMA(26) ← <strong>Correct</strong> (C) SMA(12) − SMA(26) (D) EMA(12) + EMA(26)</p>
+<p><strong>5.</strong> VWAP is most useful for:
+- (A) Long-term investors (B) Fundamental analysts (C) Intraday traders ← <strong>Correct</strong> (D) Mutual fund managers</p>
+<p><strong>6.</strong> Pivot Point is calculated using:
+- (A) Previous week’s data (B) Previous day’s High, Low, Close ← <strong>Correct</strong> (C) Current day’s Open (D) 5-day average</p>
+<p><strong>7.</strong> In a Golden Cross:
+- (A) 200-day SMA crosses above 50-day SMA (B) 50-day SMA crosses above 200-day SMA ← <strong>Correct</strong>
+- (C) MACD crosses above zero (D) Volume crosses above average</p>
+<p><strong>8.</strong> Which Indian platform provides real-time FREE NSE scanning with MACD and RSI filters?
+- (A) Bloomberg (B) TrendSpider (C) Chartink ← <strong>Correct</strong> (D) SEBI Portal</p>
+<hr />
+</div>
+<div id="numerical-problems-unit-iv" class="section level2 hasAnchor" number="4.12">
+<h2><span class="header-section-number">4.12</span> Numerical Problems — Unit IV<a href="unit4.html#numerical-problems-unit-iv" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p><strong>Problem 4.1:</strong> Calculate the 5-day EMA for TCS given closing prices: 4100, 4150, 4180, 4160, 4200, 4220, 4210 (start EMA from SMA of first 5 days).</p>
+<div class="sourceCode" id="cb111"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb111-1"><a href="unit4.html#cb111-1" tabindex="-1"></a>prices_tcs <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">4100</span>, <span class="dv">4150</span>, <span class="dv">4180</span>, <span class="dv">4160</span>, <span class="dv">4200</span>, <span class="dv">4220</span>, <span class="dv">4210</span>)</span>
+<span id="cb111-2"><a href="unit4.html#cb111-2" tabindex="-1"></a>period <span class="ot">&lt;-</span> <span class="dv">5</span></span>
+<span id="cb111-3"><a href="unit4.html#cb111-3" tabindex="-1"></a>k <span class="ot">&lt;-</span> <span class="dv">2</span> <span class="sc">/</span> (period <span class="sc">+</span> <span class="dv">1</span>)</span>
+<span id="cb111-4"><a href="unit4.html#cb111-4" tabindex="-1"></a></span>
+<span id="cb111-5"><a href="unit4.html#cb111-5" tabindex="-1"></a>ema_vals <span class="ot">&lt;-</span> <span class="fu">numeric</span>(<span class="fu">length</span>(prices_tcs))</span>
+<span id="cb111-6"><a href="unit4.html#cb111-6" tabindex="-1"></a>ema_vals[period] <span class="ot">&lt;-</span> <span class="fu">mean</span>(prices_tcs[<span class="dv">1</span><span class="sc">:</span>period])  <span class="co"># Seed: SMA of first 5</span></span>
+<span id="cb111-7"><a href="unit4.html#cb111-7" tabindex="-1"></a></span>
+<span id="cb111-8"><a href="unit4.html#cb111-8" tabindex="-1"></a><span class="cf">for</span> (i <span class="cf">in</span> (period<span class="sc">+</span><span class="dv">1</span>)<span class="sc">:</span><span class="fu">length</span>(prices_tcs)) {</span>
+<span id="cb111-9"><a href="unit4.html#cb111-9" tabindex="-1"></a>  ema_vals[i] <span class="ot">&lt;-</span> k <span class="sc">*</span> prices_tcs[i] <span class="sc">+</span> (<span class="dv">1</span><span class="sc">-</span>k) <span class="sc">*</span> ema_vals[i<span class="dv">-1</span>]</span>
+<span id="cb111-10"><a href="unit4.html#cb111-10" tabindex="-1"></a>}</span>
+<span id="cb111-11"><a href="unit4.html#cb111-11" tabindex="-1"></a>ema_vals[ema_vals <span class="sc">==</span> <span class="dv">0</span>] <span class="ot">&lt;-</span> <span class="cn">NA</span></span>
+<span id="cb111-12"><a href="unit4.html#cb111-12" tabindex="-1"></a></span>
+<span id="cb111-13"><a href="unit4.html#cb111-13" tabindex="-1"></a>result_df <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">Day =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">7</span>, <span class="at">Price =</span> prices_tcs,</span>
+<span id="cb111-14"><a href="unit4.html#cb111-14" tabindex="-1"></a>                         <span class="at">EMA_5 =</span> <span class="fu">round</span>(ema_vals, <span class="dv">2</span>))</span>
+<span id="cb111-15"><a href="unit4.html#cb111-15" tabindex="-1"></a><span class="fu">print</span>(result_df)</span></code></pre></div>
+<pre><code>##   Day Price   EMA_5
+## 1   1  4100      NA
+## 2   2  4150      NA
+## 3   3  4180      NA
+## 4   4  4160      NA
+## 5   5  4200 4158.00
+## 6   6  4220 4178.67
+## 7   7  4210 4189.11</code></pre>
+<div class="sourceCode" id="cb113"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb113-1"><a href="unit4.html#cb113-1" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;Smoothing factor k =&quot;</span>, <span class="fu">round</span>(k, <span class="dv">4</span>))</span></code></pre></div>
+<pre><code>## Smoothing factor k = 0.3333</code></pre>
+<p><strong>Problem 4.2:</strong> Calculate Pivot Points for Nifty Bank given Previous H = 52,400, L = 51,800, C = 52,150.</p>
+<div class="sourceCode" id="cb115"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb115-1"><a href="unit4.html#cb115-1" tabindex="-1"></a>H <span class="ot">&lt;-</span> <span class="dv">52400</span>; L <span class="ot">&lt;-</span> <span class="dv">51800</span>; C <span class="ot">&lt;-</span> <span class="dv">52150</span></span>
+<span id="cb115-2"><a href="unit4.html#cb115-2" tabindex="-1"></a>PP <span class="ot">&lt;-</span> (H<span class="sc">+</span>L<span class="sc">+</span>C)<span class="sc">/</span><span class="dv">3</span></span>
+<span id="cb115-3"><a href="unit4.html#cb115-3" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;PP:&quot;</span>, <span class="fu">round</span>(PP,<span class="dv">0</span>), <span class="st">&quot;</span><span class="sc">\n</span><span class="st">R1:&quot;</span>, <span class="fu">round</span>(<span class="dv">2</span><span class="sc">*</span>PP<span class="sc">-</span>L,<span class="dv">0</span>),</span>
+<span id="cb115-4"><a href="unit4.html#cb115-4" tabindex="-1"></a>    <span class="st">&quot;</span><span class="sc">\n</span><span class="st">R2:&quot;</span>, <span class="fu">round</span>(PP<span class="sc">+</span>(H<span class="sc">-</span>L),<span class="dv">0</span>), <span class="st">&quot;</span><span class="sc">\n</span><span class="st">S1:&quot;</span>, <span class="fu">round</span>(<span class="dv">2</span><span class="sc">*</span>PP<span class="sc">-</span>H,<span class="dv">0</span>),</span>
+<span id="cb115-5"><a href="unit4.html#cb115-5" tabindex="-1"></a>    <span class="st">&quot;</span><span class="sc">\n</span><span class="st">S2:&quot;</span>, <span class="fu">round</span>(PP<span class="sc">-</span>(H<span class="sc">-</span>L),<span class="dv">0</span>))</span></code></pre></div>
+<pre><code>## PP: 52117 
+## R1: 52433 
+## R2: 52717 
+## S1: 51833 
+## S2: 51517</code></pre>
+<p><em>End of Unit IV</em></p>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="unit3.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="module-v.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+  "sharing": {
+    "github": false,
+    "facebook": true,
+    "twitter": true,
+    "linkedin": false,
+    "weibo": false,
+    "instapaper": false,
+    "vk": false,
+    "whatsapp": false,
+    "all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+  },
+  "fontsettings": {
+    "theme": "white",
+    "family": "sans",
+    "size": 2
+  },
+  "edit": {
+    "link": "https://github.com/learnwithrk/Portfolio-Management/edit/main/04-ch.Rmd",
+    "text": "Edit"
+  },
+  "history": {
+    "link": null,
+    "text": null
+  },
+  "view": {
+    "link": "https://github.com/learnwithrk/Portfolio-Management/blob/main/04-ch.Rmd",
+    "text": null
+  },
+  "download": null,
+  "search": {
+    "engine": "fuse",
+    "options": null
+  },
+  "toc": {
+    "collapse": "subsection"
+  }
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

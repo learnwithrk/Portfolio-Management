@@ -1,4 +1,4 @@
-#
+# Financial Investments {#unit2}
 
 ---
 
@@ -208,7 +208,7 @@ kable(deb_data,
 
 A **mutual fund** is a professionally managed collective investment vehicle that pools money from many investors and invests in a diversified portfolio of securities. In India, mutual funds are regulated by **SEBI** under the **SEBI (Mutual Funds) Regulations, 1996** (amended multiple times through 2023).
 
-```{mermaid}
+::: {.mermaid}
 flowchart TD
     A[Investors / Unit Holders] -->|Pool Money| B[Asset Management Company - AMC]
     B -->|Invests| C[Diversified Portfolio]
@@ -478,7 +478,7 @@ ggplot(plot_df, aes(x = Year, y = Corpus, color = Plan)) +
 
 SEBI issued a landmark **circular on mutual fund categorisation and rationalisation in October 2017** (effective June 2018), mandating that each AMC can offer only **one scheme per category**. This brought standardisation and comparability to India's mutual fund landscape.
 
-```{mermaid}
+::: {.mermaid}
 flowchart TD
     A[SEBI Categorisation of Mutual Funds] --> B[Equity Schemes]
     A --> C[Debt Schemes]
@@ -689,7 +689,7 @@ SEBI introduced REIT regulations in **2014**, and the **first Indian REIT — Em
 
 **Structure of a REIT:**
 
-```{mermaid}
+::: {.mermaid}
 flowchart LR
     A[Retail & Institutional Investors] -->|Units| B[REIT Trust]
     B -->|Manager| C[Investment Manager]
