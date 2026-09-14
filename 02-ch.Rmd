@@ -1,5 +1,30 @@
 # Financial Investments {#unit2}
 
+```{r u2-setup, include=FALSE}
+# Loads packages needed by this chapter if it is knit on its own (e.g. by
+# clicking "Knit" on this file directly). When the whole book is built with
+# bookdown::render_book()/"Build Book", index.Rmd's setup chunk already loads
+# these first, and these calls here are harmless no-ops.
+knitr::opts_chunk$set(echo = TRUE, warning = FALSE, message = FALSE)
+
+required_packages <- c("knitr", "kableExtra", "magrittr", "ggplot2",
+                        "dplyr", "tidyr", "ggrepel", "gridExtra", "DiagrammeR")
+installed <- rownames(installed.packages())
+for (pkg in required_packages) {
+  if (!(pkg %in% installed)) install.packages(pkg, repos = "https://cloud.r-project.org")
+}
+
+library(knitr)
+library(kableExtra)
+library(magrittr)
+library(ggplot2)
+library(dplyr)
+library(tidyr)
+library(ggrepel)
+library(gridExtra)
+library(DiagrammeR)
+```
+
 ---
 
 ::: {.learning-objectives}
@@ -208,7 +233,8 @@ kable(deb_data,
 
 A **mutual fund** is a professionally managed collective investment vehicle that pools money from many investors and invests in a diversified portfolio of securities. In India, mutual funds are regulated by **SEBI** under the **SEBI (Mutual Funds) Regulations, 1996** (amended multiple times through 2023).
 
-::: {.mermaid}
+```{r mf-structure-diagram, echo=FALSE, fig.cap="Figure 2.1: Three-tier Structure of Indian Mutual Funds"}
+DiagrammeR::mermaid(r"(
 flowchart TD
     A[Investors / Unit Holders] -->|Pool Money| B[Asset Management Company - AMC]
     B -->|Invests| C[Diversified Portfolio]
@@ -223,14 +249,13 @@ flowchart TD
     J[SEBI] -->|Regulates| B
     K[Trustee] -->|Oversees| B
     L[Custodian] -->|Holds Assets| B
-    M[Registrar & Transfer Agent] -->|Handles Units| A
+    M[Registrar and Transfer Agent] -->|Handles Units| A
     style A fill:#2980b9,color:#fff
     style B fill:#2c3e50,color:#fff
     style J fill:#c0392b,color:#fff
     style I fill:#27ae60,color:#fff
+)")
 ```
-
-*Figure 2.1: Three-tier Structure of Indian Mutual Funds*
 
 **Three-Tier Structure:**
 1. **Sponsors** — the parent company that establishes the mutual fund (e.g., HDFC Ltd. → HDFC AMC)
@@ -248,7 +273,7 @@ mf_df <- data.frame(Year = mf_years, AUM = mf_aum)
 
 ggplot(mf_df, aes(x = Year, y = AUM)) +
   geom_col(fill = "#2980b9", alpha = 0.8) +
-  geom_line(aes(group = 1), color = "#c0392b", size = 1.5) +
+  geom_line(aes(group = 1), color = "#c0392b", linewidth = 1.5) +
   geom_point(color = "#c0392b", size = 3) +
   geom_text(aes(label = paste0("₹", AUM, "L Cr")), vjust = -0.5, size = 2.8, color = "#2c3e50") +
   labs(title = "Indian Mutual Fund Industry AUM (2016–2026)",
@@ -457,7 +482,7 @@ plot_df <- data.frame(
 )
 
 ggplot(plot_df, aes(x = Year, y = Corpus, color = Plan)) +
-  geom_line(size = 1.4) +
+  geom_line(linewidth = 1.4) +
   geom_point(size = 2) +
   scale_color_manual(values = c("Regular Plan (TER 1.5%)" = "#c0392b",
                                  "Direct Plan (TER 0.5%)" = "#27ae60")) +
@@ -478,46 +503,46 @@ ggplot(plot_df, aes(x = Year, y = Corpus, color = Plan)) +
 
 SEBI issued a landmark **circular on mutual fund categorisation and rationalisation in October 2017** (effective June 2018), mandating that each AMC can offer only **one scheme per category**. This brought standardisation and comparability to India's mutual fund landscape.
 
-::: {.mermaid}
+```{r mf-categorisation-diagram, echo=FALSE, fig.cap="Figure 2.4: SEBI Categorisation of Mutual Fund Schemes (2017)"}
+DiagrammeR::mermaid(r"(
 flowchart TD
     A[SEBI Categorisation of Mutual Funds] --> B[Equity Schemes]
     A --> C[Debt Schemes]
     A --> D[Hybrid Schemes]
     A --> E[Solution-Oriented Schemes]
     A --> F[Other Schemes]
-    
+
     B --> B1[Multi Cap / Flexi Cap]
     B --> B2[Large Cap / Mid Cap / Small Cap]
     B --> B3[ELSS - Tax Saving]
     B --> B4[Sectoral / Thematic]
     B --> B5[Focused Fund]
-    
+
     C --> C1[Overnight / Liquid]
     C --> C2[Short / Medium Duration]
     C --> C3[Credit Risk Fund]
     C --> C4[Gilt Fund]
     C --> C5[Corporate Bond Fund]
-    
+
     D --> D1[Aggressive Hybrid]
     D --> D2[Balanced Advantage / Dynamic]
     D --> D3[Multi-Asset Allocation]
     D --> D4[Arbitrage Fund]
-    
+
     E --> E1[Retirement Fund]
     E --> E2[Children's Fund]
-    
+
     F --> F1[Index Funds / ETFs]
     F --> F2[FoF - Fund of Funds]
-    
+
     style A fill:#2c3e50,color:#fff
     style B fill:#2980b9,color:#fff
     style C fill:#27ae60,color:#fff
     style D fill:#e67e22,color:#fff
     style E fill:#8e44ad,color:#fff
     style F fill:#c0392b,color:#fff
+)")
 ```
-
-*Figure 2.4: SEBI Categorisation of Mutual Fund Schemes (2017)*
 
 ### Major Categories — Detailed Analysis
 
@@ -588,7 +613,7 @@ sip_data <- data.frame(
 
 p1 <- ggplot(sip_data, aes(x = Year, y = SIP_Monthly_Cr)) +
   geom_col(fill = "#2980b9", alpha = 0.8) +
-  geom_line(aes(group = 1), color = "#c0392b", size = 1.2) +
+  geom_line(aes(group = 1), color = "#c0392b", linewidth = 1.2) +
   labs(title = "Monthly SIP Contribution (₹ Crore)", x = "Year", y = "₹ Crore") +
   scale_x_continuous(breaks = 2016:2026) +
   theme_minimal(base_size = 10) +
@@ -596,7 +621,7 @@ p1 <- ggplot(sip_data, aes(x = Year, y = SIP_Monthly_Cr)) +
 
 p2 <- ggplot(sip_data, aes(x = Year, y = SIP_Folios_Cr)) +
   geom_col(fill = "#27ae60", alpha = 0.8) +
-  geom_line(aes(group = 1), color = "#e67e22", size = 1.2) +
+  geom_line(aes(group = 1), color = "#e67e22", linewidth = 1.2) +
   labs(title = "SIP Folios (Crore)", x = "Year", y = "Crore Folios") +
   scale_x_continuous(breaks = 2016:2026) +
   theme_minimal(base_size = 10) +
@@ -646,7 +671,7 @@ etf_data <- data.frame(
 
 ggplot(etf_data, aes(x = Year, y = ETF_AUM)) +
   geom_col(fill = "#8e44ad", alpha = 0.8) +
-  geom_line(aes(group = 1), color = "#f39c12", size = 1.5) +
+  geom_line(aes(group = 1), color = "#f39c12", linewidth = 1.5) +
   geom_point(color = "#f39c12", size = 3) +
   labs(title = "ETF AUM in India (2016–2026)",
        subtitle = "CAGR ~35% — ETF AUM grew from ₹0.41 to ₹9.50 Lakh Crore",
@@ -689,9 +714,10 @@ SEBI introduced REIT regulations in **2014**, and the **first Indian REIT — Em
 
 **Structure of a REIT:**
 
-::: {.mermaid}
+```{r reit-structure-diagram, echo=FALSE, fig.cap="Figure 2.8: Structure of Indian REITs"}
+DiagrammeR::mermaid(r"(
 flowchart LR
-    A[Retail & Institutional Investors] -->|Units| B[REIT Trust]
+    A[Retail and Institutional Investors] -->|Units| B[REIT Trust]
     B -->|Manager| C[Investment Manager]
     C -->|Acquires / Manages| D[Special Purpose Vehicles - SPVs]
     D -->|Holds| E[Commercial Properties]
@@ -705,9 +731,8 @@ flowchart LR
     style B fill:#2c3e50,color:#fff
     style F fill:#c0392b,color:#fff
     style A fill:#2980b9,color:#fff
+)")
 ```
-
-*Figure 2.8: Structure of Indian REITs*
 
 **Mandatory Requirements under SEBI REIT Regulations:**
 - **Minimum 80% assets** in completed, rent-generating properties
@@ -947,4 +972,3 @@ cat("Capital Gain: ₹", format(gain, big.mark = ","), "\n")
 ```
 
 *End of Unit II*
-

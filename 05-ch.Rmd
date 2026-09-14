@@ -1,27 +1,24 @@
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(
-  echo = TRUE,
-  warning = FALSE,
-  message = FALSE,
-  fig.align = "center",
-  out.width = "95%"
-)
+# Portfolio Selection and Revision {#unit5}
 
-required_packages <- c("bookdown", "knitr", "kableExtra", "ggplot2", "dplyr")
-missing_packages <- required_packages[
-  !vapply(required_packages, requireNamespace, logical(1), quietly = TRUE)
-]
-if (length(missing_packages) > 0) {
-  stop("Please install these packages before knitting: ",
-       paste(missing_packages, collapse = ", "))
+```{r u5-setup, include=FALSE}
+# Loads packages needed by this chapter if it is knit on its own (e.g. by
+# clicking "Knit" on this file directly). When the whole book is built with
+# bookdown::render_book()/"Build Book", index.Rmd's setup chunk already loads
+# these first, and these calls here are harmless no-ops.
+knitr::opts_chunk$set(echo = TRUE, warning = FALSE, message = FALSE)
+
+required_packages <- c("knitr", "kableExtra", "magrittr", "ggplot2", "dplyr")
+installed <- rownames(installed.packages())
+for (pkg in required_packages) {
+  if (!(pkg %in% installed)) install.packages(pkg, repos = "https://cloud.r-project.org")
 }
+
 library(knitr)
 library(kableExtra)
+library(magrittr)
 library(ggplot2)
 library(dplyr)
 ```
-
-# Portfolio Selection and Revision {#unit5}
 
 ---
 
@@ -270,7 +267,7 @@ efficient <- sim_df %>%
 ggplot(sim_df, aes(x = Risk, y = Return)) +
   geom_point(alpha = 0.15, size = 0.8, color = "#bdc3c7") +
   geom_line(data = efficient, aes(x = Avg_Risk, y = Max_Return),
-            color = "#c0392b", size = 1.8) +
+            color = "#c0392b", linewidth = 1.8) +
   annotate("text", x = min(efficient$Avg_Risk) + 0.5,
            y = efficient$Max_Return[which.min(efficient$Avg_Risk)],
            label = "MVP\n(Min Variance\nPortfolio)",
@@ -653,7 +650,7 @@ alpha_df <- data.frame(
   Beta = betas_j,
   CAPM_Expected = paste0(round(capm_returns, 2), "%"),
   Jensens_Alpha = round(alphas, 3),
-  Skill = ifelse(alphas > 0, "Value Added ✓", "Value Destroyed ✗")
+  Skill = ifelse(alphas > 0, "Value Added", "Value Destroyed")
 )
 
 kable(alpha_df,
@@ -674,7 +671,7 @@ alpha_plot <- data.frame(Fund = funds_j, Alpha = alphas)
 ggplot(alpha_plot, aes(x = reorder(Fund, Alpha), y = Alpha,
                         fill = ifelse(Alpha > 0, "Positive", "Negative"))) +
   geom_col(alpha = 0.85) +
-  geom_hline(yintercept = 0, size = 1, color = "#2c3e50") +
+  geom_hline(yintercept = 0, linewidth = 1, color = "#2c3e50") +
   geom_text(aes(label = paste0(round(Alpha, 2), "%"),
                 hjust = ifelse(Alpha > 0, -0.15, 1.15)), size = 4, fontface = "bold") +
   scale_fill_manual(values = c("Positive" = "#27ae60", "Negative" = "#c0392b"),

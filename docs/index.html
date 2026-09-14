@@ -23,7 +23,7 @@
 <meta name="author" content="RAJAKRISHNAN MANIVEL" />
 
 
-<meta name="date" content="2026-09-12" />
+<meta name="date" content="2026-09-14" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -56,6 +56,15 @@
 <link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
 <link href="libs/bsTable-3.3.7/bootstrapTable.min.css" rel="stylesheet" />
 <script src="libs/bsTable-3.3.7/bootstrapTable.js"></script>
+<link href="libs/htmltools-fill-0.5.8.1/fill.css" rel="stylesheet" />
+<script src="libs/htmlwidgets-1.6.4/htmlwidgets.js"></script>
+<script src="libs/d3-3.3.8/d3.min.js"></script>
+<script src="libs/dagre-0.4.0/dagre-d3.min.js"></script>
+<link href="libs/mermaid-0.3.0/dist/mermaid.css" rel="stylesheet" />
+<script src="libs/mermaid-0.3.0/dist/mermaid.slim.min.js"></script>
+<link href="libs/DiagrammeR-styles-0.2/styles.css" rel="stylesheet" />
+<script src="libs/chromatography-0.1/chromatography.js"></script>
+<script src="libs/DiagrammeR-binding-1.0.12/DiagrammeR.js"></script>
 
 
 <style type="text/css">
@@ -220,7 +229,208 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="2.5" data-path="unit2.html"><a href="unit2.html#mutual-funds"><i class="fa fa-check"></i><b>2.5</b> Mutual Funds</a>
 <ul>
 <li class="chapter" data-level="2.5.1" data-path="unit2.html"><a href="unit2.html#meaning-and-structure"><i class="fa fa-check"></i><b>2.5.1</b> Meaning and Structure</a></li>
+<li class="chapter" data-level="2.5.2" data-path="unit2.html"><a href="unit2.html#advantages-of-mutual-funds"><i class="fa fa-check"></i><b>2.5.2</b> Advantages of Mutual Funds</a></li>
+<li class="chapter" data-level="2.5.3" data-path="unit2.html"><a href="unit2.html#risks-in-mutual-fund-investment"><i class="fa fa-check"></i><b>2.5.3</b> Risks in Mutual Fund Investment</a></li>
 </ul></li>
+<li class="chapter" data-level="2.6" data-path="unit2.html"><a href="unit2.html#nav"><i class="fa fa-check"></i><b>2.6</b> Net Asset Value (NAV)</a>
+<ul>
+<li class="chapter" data-level="2.6.1" data-path="unit2.html"><a href="unit2.html#meaning-of-nav"><i class="fa fa-check"></i><b>2.6.1</b> Meaning of NAV</a></li>
+<li class="chapter" data-level="2.6.2" data-path="unit2.html"><a href="unit2.html#nav-calculation-worked-example"><i class="fa fa-check"></i><b>2.6.2</b> NAV Calculation — Worked Example</a></li>
+<li class="chapter" data-level="2.6.3" data-path="unit2.html"><a href="unit2.html#nav-and-returns"><i class="fa fa-check"></i><b>2.6.3</b> NAV and Returns</a></li>
+</ul></li>
+<li class="chapter" data-level="2.7" data-path="unit2.html"><a href="unit2.html#expense-ratio"><i class="fa fa-check"></i><b>2.7</b> Expense Ratio</a>
+<ul>
+<li class="chapter" data-level="2.7.1" data-path="unit2.html"><a href="unit2.html#meaning-and-importance"><i class="fa fa-check"></i><b>2.7.1</b> Meaning and Importance</a></li>
+<li class="chapter" data-level="2.7.2" data-path="unit2.html"><a href="unit2.html#expense-ratio-calculation-worked-example"><i class="fa fa-check"></i><b>2.7.2</b> Expense Ratio Calculation — Worked Example</a></li>
+</ul></li>
+<li class="chapter" data-level="2.8" data-path="unit2.html"><a href="unit2.html#mf-types"><i class="fa fa-check"></i><b>2.8</b> Types of Mutual Funds</a>
+<ul>
+<li class="chapter" data-level="2.8.1" data-path="unit2.html"><a href="unit2.html#sebi-categorisation-of-mutual-fund-schemes-2017"><i class="fa fa-check"></i><b>2.8.1</b> SEBI Categorisation of Mutual Fund Schemes (2017)</a></li>
+<li class="chapter" data-level="2.8.2" data-path="unit2.html"><a href="unit2.html#major-categories-detailed-analysis"><i class="fa fa-check"></i><b>2.8.2</b> Major Categories — Detailed Analysis</a></li>
+</ul></li>
+<li class="chapter" data-level="2.9" data-path="unit2.html"><a href="unit2.html#etfs"><i class="fa fa-check"></i><b>2.9</b> Exchange Traded Funds (ETFs)</a>
+<ul>
+<li class="chapter" data-level="2.9.1" data-path="unit2.html"><a href="unit2.html#meaning-and-structure-1"><i class="fa fa-check"></i><b>2.9.1</b> Meaning and Structure</a></li>
+</ul></li>
+<li class="chapter" data-level="2.10" data-path="unit2.html"><a href="unit2.html#reits"><i class="fa fa-check"></i><b>2.10</b> Real Estate Investment Trusts (REITs)</a>
+<ul>
+<li class="chapter" data-level="2.10.1" data-path="unit2.html"><a href="unit2.html#meaning-and-structure-2"><i class="fa fa-check"></i><b>2.10.1</b> Meaning and Structure</a></li>
+</ul></li>
+<li class="chapter" data-level="2.11" data-path="unit2.html"><a href="unit2.html#invits"><i class="fa fa-check"></i><b>2.11</b> Infrastructure Investment Trusts (InvITs)</a>
+<ul>
+<li class="chapter" data-level="2.11.1" data-path="unit2.html"><a href="unit2.html#meaning-and-structure-3"><i class="fa fa-check"></i><b>2.11.1</b> Meaning and Structure</a></li>
+</ul></li>
+<li class="chapter" data-level="2.12" data-path="unit2.html"><a href="unit2.html#unit2-summary"><i class="fa fa-check"></i><b>2.12</b> Summary</a></li>
+<li class="chapter" data-level="2.13" data-path="unit2.html"><a href="unit2.html#unit2-keyterms"><i class="fa fa-check"></i><b>2.13</b> Key Terms</a></li>
+<li class="chapter" data-level="2.14" data-path="unit2.html"><a href="unit2.html#unit2-review"><i class="fa fa-check"></i><b>2.14</b> Review Questions — Unit II</a>
+<ul>
+<li class="chapter" data-level="2.14.1" data-path="unit2.html"><a href="unit2.html#very-short-answer-questions"><i class="fa fa-check"></i><b>2.14.1</b> Very Short Answer Questions</a></li>
+<li class="chapter" data-level="2.14.2" data-path="unit2.html"><a href="unit2.html#essay-questions"><i class="fa fa-check"></i><b>2.14.2</b> Essay Questions</a></li>
+</ul></li>
+<li class="chapter" data-level="2.15" data-path="unit2.html"><a href="unit2.html#mcqs-unit-ii-selected"><i class="fa fa-check"></i><b>2.15</b> MCQs — Unit II (Selected)</a></li>
+<li class="chapter" data-level="2.16" data-path="unit2.html"><a href="unit2.html#numerical-problems-unit-ii"><i class="fa fa-check"></i><b>2.16</b> Numerical Problems — Unit II</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="unit3.html"><a href="unit3.html"><i class="fa fa-check"></i><b>3</b> Fundamental Analysis</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="unit3.html"><a href="unit3.html#risk-return"><i class="fa fa-check"></i><b>3.1</b> 3.1 Risk and Return — Foundations</a>
+<ul>
+<li class="chapter" data-level="3.1.1" data-path="unit3.html"><a href="unit3.html#the-risk-return-relationship"><i class="fa fa-check"></i><b>3.1.1</b> 3.1.1 The Risk-Return Relationship</a></li>
+<li class="chapter" data-level="3.1.2" data-path="unit3.html"><a href="unit3.html#measuring-return"><i class="fa fa-check"></i><b>3.1.2</b> 3.1.2 Measuring Return</a></li>
+<li class="chapter" data-level="3.1.3" data-path="unit3.html"><a href="unit3.html#types-of-risk"><i class="fa fa-check"></i><b>3.1.3</b> 3.1.3 Types of Risk</a></li>
+</ul></li>
+<li class="chapter" data-level="3.2" data-path="unit3.html"><a href="unit3.html#fundamental-analysis"><i class="fa fa-check"></i><b>3.2</b> 3.2 Fundamental Analysis — Framework</a></li>
+<li class="chapter" data-level="3.3" data-path="unit3.html"><a href="unit3.html#economic-analysis"><i class="fa fa-check"></i><b>3.3</b> 3.3 Economic Analysis</a>
+<ul>
+<li class="chapter" data-level="3.3.1" data-path="unit3.html"><a href="unit3.html#key-macroeconomic-indicators-for-indian-investors"><i class="fa fa-check"></i><b>3.3.1</b> 3.3.1 Key Macroeconomic Indicators for Indian Investors</a></li>
+</ul></li>
+<li class="chapter" data-level="3.4" data-path="unit3.html"><a href="unit3.html#industry-analysis"><i class="fa fa-check"></i><b>3.4</b> 3.4 Industry Analysis</a>
+<ul>
+<li class="chapter" data-level="3.4.1" data-path="unit3.html"><a href="unit3.html#porters-five-forces-model"><i class="fa fa-check"></i><b>3.4.1</b> 3.4.1 Porter’s Five Forces Model</a></li>
+<li class="chapter" data-level="3.4.2" data-path="unit3.html"><a href="unit3.html#industry-life-cycle"><i class="fa fa-check"></i><b>3.4.2</b> 3.4.2 Industry Life Cycle</a></li>
+</ul></li>
+<li class="chapter" data-level="3.5" data-path="unit3.html"><a href="unit3.html#company-analysis"><i class="fa fa-check"></i><b>3.5</b> 3.5 Company Analysis</a>
+<ul>
+<li class="chapter" data-level="3.5.1" data-path="unit3.html"><a href="unit3.html#business-model-analysis"><i class="fa fa-check"></i><b>3.5.1</b> 3.5.1 Business Model Analysis</a></li>
+<li class="chapter" data-level="3.5.2" data-path="unit3.html"><a href="unit3.html#corporate-governance-assessment"><i class="fa fa-check"></i><b>3.5.2</b> 3.5.2 Corporate Governance Assessment</a></li>
+</ul></li>
+<li class="chapter" data-level="3.6" data-path="unit3.html"><a href="unit3.html#financial-ratios"><i class="fa fa-check"></i><b>3.6</b> 3.6 Financial Analysis and Key Ratios</a>
+<ul>
+<li class="chapter" data-level="3.6.1" data-path="unit3.html"><a href="unit3.html#earnings-per-share-eps"><i class="fa fa-check"></i><b>3.6.1</b> 3.6.1 Earnings Per Share (EPS)</a></li>
+<li class="chapter" data-level="3.6.2" data-path="unit3.html"><a href="unit3.html#price-to-earnings-ratio-pe"><i class="fa fa-check"></i><b>3.6.2</b> 3.6.2 Price-to-Earnings Ratio (P/E)</a></li>
+<li class="chapter" data-level="3.6.3" data-path="unit3.html"><a href="unit3.html#peg-ratio-priceearnings-to-growth"><i class="fa fa-check"></i><b>3.6.3</b> 3.6.3 PEG Ratio (Price/Earnings to Growth)</a></li>
+<li class="chapter" data-level="3.6.4" data-path="unit3.html"><a href="unit3.html#return-on-equity-roe"><i class="fa fa-check"></i><b>3.6.4</b> 3.6.4 Return on Equity (ROE)</a></li>
+<li class="chapter" data-level="3.6.5" data-path="unit3.html"><a href="unit3.html#return-on-capital-employed-roce"><i class="fa fa-check"></i><b>3.6.5</b> 3.6.5 Return on Capital Employed (ROCE)</a></li>
+<li class="chapter" data-level="3.6.6" data-path="unit3.html"><a href="unit3.html#dividend-yield"><i class="fa fa-check"></i><b>3.6.6</b> 3.6.6 Dividend Yield</a></li>
+<li class="chapter" data-level="3.6.7" data-path="unit3.html"><a href="unit3.html#debt-to-equity-ratio"><i class="fa fa-check"></i><b>3.6.7</b> 3.6.7 Debt-to-Equity Ratio</a></li>
+<li class="chapter" data-level="3.6.8" data-path="unit3.html"><a href="unit3.html#book-value-per-share"><i class="fa fa-check"></i><b>3.6.8</b> 3.6.8 Book Value Per Share</a></li>
+<li class="chapter" data-level="3.6.9" data-path="unit3.html"><a href="unit3.html#comprehensive-ratio-analysis-reliance-industries-2023-24"><i class="fa fa-check"></i><b>3.6.9</b> 3.6.9 Comprehensive Ratio Analysis — Reliance Industries (2023-24)</a></li>
+</ul></li>
+<li class="chapter" data-level="3.7" data-path="unit3.html"><a href="unit3.html#unit3-summary"><i class="fa fa-check"></i><b>3.7</b> 3.7 Summary</a></li>
+<li class="chapter" data-level="3.8" data-path="unit3.html"><a href="unit3.html#unit3-keyterms"><i class="fa fa-check"></i><b>3.8</b> Key Terms</a></li>
+<li class="chapter" data-level="3.9" data-path="unit3.html"><a href="unit3.html#mcqs-unit-iii-selected"><i class="fa fa-check"></i><b>3.9</b> MCQs — Unit III (Selected)</a></li>
+<li class="chapter" data-level="3.10" data-path="unit3.html"><a href="unit3.html#numerical-problems-unit-iii"><i class="fa fa-check"></i><b>3.10</b> Numerical Problems — Unit III</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="unit4.html"><a href="unit4.html"><i class="fa fa-check"></i><b>4</b> Technical Analysis</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="unit4.html"><a href="unit4.html#ta-intro"><i class="fa fa-check"></i><b>4.1</b> Introduction to Technical Analysis</a>
+<ul>
+<li class="chapter" data-level="4.1.1" data-path="unit4.html"><a href="unit4.html#meaning-and-philosophy"><i class="fa fa-check"></i><b>4.1.1</b> Meaning and Philosophy</a></li>
+<li class="chapter" data-level="4.1.2" data-path="unit4.html"><a href="unit4.html#technical-vs.-fundamental-analysis"><i class="fa fa-check"></i><b>4.1.2</b> Technical vs. Fundamental Analysis</a></li>
+</ul></li>
+<li class="chapter" data-level="4.2" data-path="unit4.html"><a href="unit4.html#dow-theory"><i class="fa fa-check"></i><b>4.2</b> Dow Theory</a>
+<ul>
+<li class="chapter" data-level="4.2.1" data-path="unit4.html"><a href="unit4.html#origins-and-significance"><i class="fa fa-check"></i><b>4.2.1</b> Origins and Significance</a></li>
+<li class="chapter" data-level="4.2.2" data-path="unit4.html"><a href="unit4.html#the-six-tenets-of-dow-theory"><i class="fa fa-check"></i><b>4.2.2</b> The Six Tenets of Dow Theory</a></li>
+</ul></li>
+<li class="chapter" data-level="4.3" data-path="unit4.html"><a href="unit4.html#trend-analysis"><i class="fa fa-check"></i><b>4.3</b> Trend Analysis</a>
+<ul>
+<li class="chapter" data-level="4.3.1" data-path="unit4.html"><a href="unit4.html#meaning-of-trend"><i class="fa fa-check"></i><b>4.3.1</b> Meaning of Trend</a></li>
+<li class="chapter" data-level="4.3.2" data-path="unit4.html"><a href="unit4.html#uptrend"><i class="fa fa-check"></i><b>4.3.2</b> Uptrend</a></li>
+<li class="chapter" data-level="4.3.3" data-path="unit4.html"><a href="unit4.html#downtrend"><i class="fa fa-check"></i><b>4.3.3</b> Downtrend</a></li>
+<li class="chapter" data-level="4.3.4" data-path="unit4.html"><a href="unit4.html#sideways-ranging-trend"><i class="fa fa-check"></i><b>4.3.4</b> Sideways / Ranging Trend</a></li>
+</ul></li>
+<li class="chapter" data-level="4.4" data-path="unit4.html"><a href="unit4.html#moving-averages"><i class="fa fa-check"></i><b>4.4</b> Moving Averages</a>
+<ul>
+<li class="chapter" data-level="4.4.1" data-path="unit4.html"><a href="unit4.html#meaning-and-purpose"><i class="fa fa-check"></i><b>4.4.1</b> Meaning and Purpose</a></li>
+<li class="chapter" data-level="4.4.2" data-path="unit4.html"><a href="unit4.html#simple-moving-average-sma"><i class="fa fa-check"></i><b>4.4.2</b> Simple Moving Average (SMA)</a></li>
+<li class="chapter" data-level="4.4.3" data-path="unit4.html"><a href="unit4.html#exponential-moving-average-ema"><i class="fa fa-check"></i><b>4.4.3</b> Exponential Moving Average (EMA)</a></li>
+</ul></li>
+<li class="chapter" data-level="4.5" data-path="unit4.html"><a href="unit4.html#macd"><i class="fa fa-check"></i><b>4.5</b> MACD — Moving Average Convergence and Divergence</a>
+<ul>
+<li class="chapter" data-level="4.5.1" data-path="unit4.html"><a href="unit4.html#meaning-and-components"><i class="fa fa-check"></i><b>4.5.1</b> Meaning and Components</a></li>
+<li class="chapter" data-level="4.5.2" data-path="unit4.html"><a href="unit4.html#macd-calculation-worked-example"><i class="fa fa-check"></i><b>4.5.2</b> MACD Calculation — Worked Example</a></li>
+<li class="chapter" data-level="4.5.3" data-path="unit4.html"><a href="unit4.html#macd-trading-signals"><i class="fa fa-check"></i><b>4.5.3</b> MACD Trading Signals</a></li>
+</ul></li>
+<li class="chapter" data-level="4.6" data-path="unit4.html"><a href="unit4.html#pivot-points"><i class="fa fa-check"></i><b>4.6</b> Pivot Points</a>
+<ul>
+<li class="chapter" data-level="4.6.1" data-path="unit4.html"><a href="unit4.html#meaning-1"><i class="fa fa-check"></i><b>4.6.1</b> Meaning</a></li>
+<li class="chapter" data-level="4.6.2" data-path="unit4.html"><a href="unit4.html#calculation"><i class="fa fa-check"></i><b>4.6.2</b> Calculation</a></li>
+<li class="chapter" data-level="4.6.3" data-path="unit4.html"><a href="unit4.html#worked-example"><i class="fa fa-check"></i><b>4.6.3</b> Worked Example</a></li>
+</ul></li>
+<li class="chapter" data-level="4.7" data-path="unit4.html"><a href="unit4.html#vwap"><i class="fa fa-check"></i><b>4.7</b> Volume Weighted Average Price (VWAP)</a>
+<ul>
+<li class="chapter" data-level="4.7.1" data-path="unit4.html"><a href="unit4.html#meaning-and-importance-1"><i class="fa fa-check"></i><b>4.7.1</b> Meaning and Importance</a></li>
+<li class="chapter" data-level="4.7.2" data-path="unit4.html"><a href="unit4.html#vwap-calculation-worked-example"><i class="fa fa-check"></i><b>4.7.2</b> VWAP Calculation — Worked Example</a></li>
+<li class="chapter" data-level="4.7.3" data-path="unit4.html"><a href="unit4.html#vwap-trading-strategies"><i class="fa fa-check"></i><b>4.7.3</b> VWAP Trading Strategies</a></li>
+</ul></li>
+<li class="chapter" data-level="4.8" data-path="unit4.html"><a href="unit4.html#ai-tools"><i class="fa fa-check"></i><b>4.8</b> AI Tools in Technical Analysis</a>
+<ul>
+<li class="chapter" data-level="4.8.1" data-path="unit4.html"><a href="unit4.html#the-ai-revolution-in-technical-analysis"><i class="fa fa-check"></i><b>4.8.1</b> The AI Revolution in Technical Analysis</a></li>
+<li class="chapter" data-level="4.8.2" data-path="unit4.html"><a href="unit4.html#platform-by-platform-analysis"><i class="fa fa-check"></i><b>4.8.2</b> Platform-by-Platform Analysis</a></li>
+<li class="chapter" data-level="4.8.3" data-path="unit4.html"><a href="unit4.html#comparison-matrix-of-ai-technical-analysis-tools"><i class="fa fa-check"></i><b>4.8.3</b> Comparison Matrix of AI Technical Analysis Tools</a></li>
+<li class="chapter" data-level="4.8.4" data-path="unit4.html"><a href="unit4.html#strengths-and-limitations-of-ai-in-technical-analysis"><i class="fa fa-check"></i><b>4.8.4</b> Strengths and Limitations of AI in Technical Analysis</a></li>
+</ul></li>
+<li class="chapter" data-level="4.9" data-path="unit4.html"><a href="unit4.html#unit4-summary"><i class="fa fa-check"></i><b>4.9</b> Summary</a></li>
+<li class="chapter" data-level="4.10" data-path="unit4.html"><a href="unit4.html#unit4-keyterms"><i class="fa fa-check"></i><b>4.10</b> Key Terms</a></li>
+<li class="chapter" data-level="4.11" data-path="unit4.html"><a href="unit4.html#mcqs-unit-iv-selected"><i class="fa fa-check"></i><b>4.11</b> MCQs — Unit IV (Selected)</a></li>
+<li class="chapter" data-level="4.12" data-path="unit4.html"><a href="unit4.html#numerical-problems-unit-iv"><i class="fa fa-check"></i><b>4.12</b> Numerical Problems — Unit IV</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="unit5.html"><a href="unit5.html"><i class="fa fa-check"></i><b>5</b> Portfolio Selection and Revision</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="unit5.html"><a href="unit5.html#portfolio-analysis"><i class="fa fa-check"></i><b>5.1</b> 5.1 Portfolio Analysis — Introduction</a>
+<ul>
+<li class="chapter" data-level="5.1.1" data-path="unit5.html"><a href="unit5.html#what-is-a-portfolio"><i class="fa fa-check"></i><b>5.1.1</b> 5.1.1 What is a Portfolio?</a></li>
+<li class="chapter" data-level="5.1.2" data-path="unit5.html"><a href="unit5.html#portfolio-in-the-indian-context"><i class="fa fa-check"></i><b>5.1.2</b> 5.1.2 Portfolio in the Indian Context</a></li>
+</ul></li>
+<li class="chapter" data-level="5.2" data-path="unit5.html"><a href="unit5.html#portfolio-risk-return"><i class="fa fa-check"></i><b>5.2</b> 5.2 Return and Risk of a Portfolio</a>
+<ul>
+<li class="chapter" data-level="5.2.1" data-path="unit5.html"><a href="unit5.html#portfolio-return"><i class="fa fa-check"></i><b>5.2.1</b> 5.2.1 Portfolio Return</a></li>
+<li class="chapter" data-level="5.2.2" data-path="unit5.html"><a href="unit5.html#portfolio-risk-two-asset-portfolio"><i class="fa fa-check"></i><b>5.2.2</b> 5.2.2 Portfolio Risk (Two-Asset Portfolio)</a></li>
+<li class="chapter" data-level="5.2.3" data-path="unit5.html"><a href="unit5.html#three-asset-portfolio-risk"><i class="fa fa-check"></i><b>5.2.3</b> 5.2.3 Three-Asset Portfolio Risk</a></li>
+</ul></li>
+<li class="chapter" data-level="5.3" data-path="unit5.html"><a href="unit5.html#markowitz"><i class="fa fa-check"></i><b>5.3</b> 5.3 Modern Portfolio Theory — Markowitz Model</a>
+<ul>
+<li class="chapter" data-level="5.3.1" data-path="unit5.html"><a href="unit5.html#background"><i class="fa fa-check"></i><b>5.3.1</b> 5.3.1 Background</a></li>
+<li class="chapter" data-level="5.3.2" data-path="unit5.html"><a href="unit5.html#assumptions-of-the-markowitz-model"><i class="fa fa-check"></i><b>5.3.2</b> 5.3.2 Assumptions of the Markowitz Model</a></li>
+<li class="chapter" data-level="5.3.3" data-path="unit5.html"><a href="unit5.html#the-efficient-frontier"><i class="fa fa-check"></i><b>5.3.3</b> 5.3.3 The Efficient Frontier</a></li>
+<li class="chapter" data-level="5.3.4" data-path="unit5.html"><a href="unit5.html#capital-market-line-cml"><i class="fa fa-check"></i><b>5.3.4</b> 5.3.4 Capital Market Line (CML)</a></li>
+</ul></li>
+<li class="chapter" data-level="5.4" data-path="unit5.html"><a href="unit5.html#portfolio-selection"><i class="fa fa-check"></i><b>5.4</b> 5.4 Portfolio Selection</a>
+<ul>
+<li class="chapter" data-level="5.4.1" data-path="unit5.html"><a href="unit5.html#selection-criteria"><i class="fa fa-check"></i><b>5.4.1</b> 5.4.1 Selection Criteria</a></li>
+<li class="chapter" data-level="5.4.2" data-path="unit5.html"><a href="unit5.html#practical-portfolio-construction-indian-example"><i class="fa fa-check"></i><b>5.4.2</b> 5.4.2 Practical Portfolio Construction — Indian Example</a></li>
+</ul></li>
+<li class="chapter" data-level="5.5" data-path="unit5.html"><a href="unit5.html#portfolio-revision"><i class="fa fa-check"></i><b>5.5</b> 5.5 Portfolio Revision</a>
+<ul>
+<li class="chapter" data-level="5.5.1" data-path="unit5.html"><a href="unit5.html#meaning-and-need"><i class="fa fa-check"></i><b>5.5.1</b> 5.5.1 Meaning and Need</a></li>
+<li class="chapter" data-level="5.5.2" data-path="unit5.html"><a href="unit5.html#constraints-on-portfolio-revision"><i class="fa fa-check"></i><b>5.5.2</b> 5.5.2 Constraints on Portfolio Revision</a></li>
+<li class="chapter" data-level="5.5.3" data-path="unit5.html"><a href="unit5.html#portfolio-rebalancing-strategies"><i class="fa fa-check"></i><b>5.5.3</b> 5.5.3 Portfolio Rebalancing Strategies</a></li>
+</ul></li>
+<li class="chapter" data-level="5.6" data-path="unit5.html"><a href="unit5.html#portfolio-evaluation"><i class="fa fa-check"></i><b>5.6</b> 5.6 Portfolio Evaluation</a></li>
+<li class="chapter" data-level="5.7" data-path="unit5.html"><a href="unit5.html#sharpe-ratio"><i class="fa fa-check"></i><b>5.7</b> 5.7 Sharpe Ratio</a>
+<ul>
+<li class="chapter" data-level="5.7.1" data-path="unit5.html"><a href="unit5.html#formula-and-meaning"><i class="fa fa-check"></i><b>5.7.1</b> 5.7.1 Formula and Meaning</a></li>
+<li class="chapter" data-level="5.7.2" data-path="unit5.html"><a href="unit5.html#sharpe-ratio-worked-example"><i class="fa fa-check"></i><b>5.7.2</b> 5.7.2 Sharpe Ratio — Worked Example</a></li>
+</ul></li>
+<li class="chapter" data-level="5.8" data-path="unit5.html"><a href="unit5.html#treynor-ratio"><i class="fa fa-check"></i><b>5.8</b> 5.8 Treynor Ratio</a>
+<ul>
+<li class="chapter" data-level="5.8.1" data-path="unit5.html"><a href="unit5.html#formula-and-meaning-1"><i class="fa fa-check"></i><b>5.8.1</b> 5.8.1 Formula and Meaning</a></li>
+<li class="chapter" data-level="5.8.2" data-path="unit5.html"><a href="unit5.html#treynor-ratio-worked-example"><i class="fa fa-check"></i><b>5.8.2</b> 5.8.2 Treynor Ratio — Worked Example</a></li>
+</ul></li>
+<li class="chapter" data-level="5.9" data-path="unit5.html"><a href="unit5.html#jensens-alpha"><i class="fa fa-check"></i><b>5.9</b> 5.9 Jensen’s Alpha</a>
+<ul>
+<li class="chapter" data-level="5.9.1" data-path="unit5.html"><a href="unit5.html#formula-and-meaning-2"><i class="fa fa-check"></i><b>5.9.1</b> 5.9.1 Formula and Meaning</a></li>
+<li class="chapter" data-level="5.9.2" data-path="unit5.html"><a href="unit5.html#jensens-alpha-worked-example"><i class="fa fa-check"></i><b>5.9.2</b> 5.9.2 Jensen’s Alpha — Worked Example</a></li>
+<li class="chapter" data-level="5.9.3" data-path="unit5.html"><a href="unit5.html#comprehensive-performance-comparison"><i class="fa fa-check"></i><b>5.9.3</b> 5.9.3 Comprehensive Performance Comparison</a></li>
+</ul></li>
+<li class="chapter" data-level="5.10" data-path="unit5.html"><a href="unit5.html#unit5-summary"><i class="fa fa-check"></i><b>5.10</b> 5.10 Summary</a></li>
+<li class="chapter" data-level="5.11" data-path="unit5.html"><a href="unit5.html#unit5-keyterms"><i class="fa fa-check"></i><b>5.11</b> Key Terms</a></li>
+<li class="chapter" data-level="5.12" data-path="unit5.html"><a href="unit5.html#unit5-review"><i class="fa fa-check"></i><b>5.12</b> Review Questions — Unit V</a>
+<ul>
+<li class="chapter" data-level="5.12.1" data-path="unit5.html"><a href="unit5.html#very-short-answer-questions-1"><i class="fa fa-check"></i><b>5.12.1</b> Very Short Answer Questions</a></li>
+<li class="chapter" data-level="5.12.2" data-path="unit5.html"><a href="unit5.html#essay-questions-1"><i class="fa fa-check"></i><b>5.12.2</b> Essay Questions</a></li>
+<li class="chapter" data-level="5.12.3" data-path="unit5.html"><a href="unit5.html#analytical-questions"><i class="fa fa-check"></i><b>5.12.3</b> Analytical Questions</a></li>
+</ul></li>
+<li class="chapter" data-level="5.13" data-path="unit5.html"><a href="unit5.html#mcqs-unit-v-selected"><i class="fa fa-check"></i><b>5.13</b> MCQs — Unit V (Selected)</a></li>
+<li class="chapter" data-level="5.14" data-path="unit5.html"><a href="unit5.html#numerical-problems-unit-v"><i class="fa fa-check"></i><b>5.14</b> Numerical Problems — Unit V</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="trading-view-practicals.html"><a href="trading-view-practicals.html"><i class="fa fa-check"></i><b>6</b> Trading View Practicals</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="trading-view-practicals.html"><a href="trading-view-practicals.html#program-1-sma-trend-identification-dynamic-supportresistance"><i class="fa fa-check"></i><b>6.1</b> Program 1: SMA Trend Identification &amp; Dynamic Support/Resistance</a></li>
+<li class="chapter" data-level="6.2" data-path="trading-view-practicals.html"><a href="trading-view-practicals.html#program2-ema-crossover"><i class="fa fa-check"></i><b>6.2</b> Program 2: EMA Crossover Breakout Strategy</a></li>
+<li class="chapter" data-level="6.3" data-path="trading-view-practicals.html"><a href="trading-view-practicals.html#program3-vwap-intraday"><i class="fa fa-check"></i><b>6.3</b> Program 3: VWAP Intraday Trend Strategy</a></li>
+<li class="chapter" data-level="6.4" data-path="trading-view-practicals.html"><a href="trading-view-practicals.html#program3b-anchored-vwap"><i class="fa fa-check"></i><b>6.4</b> Program 3B: Anchored VWAP for Long-Term Investing</a></li>
+<li class="chapter" data-level="6.5" data-path="trading-view-practicals.html"><a href="trading-view-practicals.html#program4-macd-momentum"><i class="fa fa-check"></i><b>6.5</b> Program 4: MACD Momentum Strategy</a></li>
 </ul></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
@@ -244,7 +454,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="header">
 <h1 class="title">PORTFOLIO MANAGEMENT</h1>
 <p class="author"><em>RAJAKRISHNAN MANIVEL</em></p>
-<p class="date"><em>2026-09-12</em></p>
+<p class="date"><em>2026-09-14</em></p>
 </div>
 <div id="Module1" class="section level1 hasAnchor" number="1">
 <h1><span class="header-section-number">Chapter 1</span> Fundamentals of Investment<a href="index.html#Module1" class="anchor-section" aria-label="Anchor link to header"></a></h1>
@@ -417,6 +627,13 @@ No concern
 <p><strong>4. Safety:</strong> The probability that the invested capital will be returned to the investor. Government securities score highest on safety.</p>
 <p><strong>5. Tax Efficiency:</strong> The ability of an investment to minimise tax liability. Instruments like ELSS, PPF, NPS, and life insurance offer tax benefits under the Income Tax Act, 1961.</p>
 <p><strong>6. Marketability:</strong> Whether the investment can be easily bought and sold in secondary markets. NSE and BSE provide marketability to listed securities.</p>
+<div class="figure"><span style="display:block;" id="fig:investment-decision-diagram"></span>
+<div class="DiagrammeR html-widget html-fill-item" id="htmlwidget-d8cf75d7e03c65aae895" style="width:672px;height:480px;"></div>
+<script type="application/json" data-for="htmlwidget-d8cf75d7e03c65aae895">{"x":{"diagram":"\nflowchart LR\n    A[Investment Decision] --> B[Return]\n    A --> C[Risk]\n    A --> D[Liquidity]\n    A --> E[Safety]\n    A --> F[Tax Efficiency]\n    A --> G[Marketability]\n    B <--> C\n    style A fill:#2c3e50,color:#fff\n    style B fill:#27ae60,color:#fff\n    style C fill:#c0392b,color:#fff\n    style D fill:#2980b9,color:#fff\n    style E fill:#8e44ad,color:#fff\n    style F fill:#f39c12,color:#fff\n    style G fill:#16a085,color:#fff\n"},"evals":[],"jsHooks":[]}</script>
+<p class="caption">
+Figure 1.1: Figure: Six Characteristics of an Investment Decision
+</p>
+</div>
 <hr />
 </div>
 </div>
@@ -482,20 +699,20 @@ No concern
 <div class="figure"><span style="display:block;" id="fig:sip-growth"></span>
 <img src="bookdownproj_files/figure-html/sip-growth-1.png" alt=": SIP Growth in Nifty 50 Index Fund (2016-2026)" width="672" />
 <p class="caption">
-Figure 1.1: : SIP Growth in Nifty 50 Index Fund (2016-2026)
+Figure 1.2: : SIP Growth in Nifty 50 Index Fund (2016-2026)
 </p>
 </div>
 <hr />
-<p><em>Source: Compiled from AMFI and NSE data. Assumed CAGR of 12% based on Nifty 50 historical average (2016–2026).</em></p>
+<p><em>Source: Compiled from AMFI and NSE data. Assumed CAGR of 12% based on Nifty 50 historical average (2016-2026).</em></p>
 <p>At 10 years, a monthly SIP of ₹5,000 would grow the invested corpus of ₹6 lakhs to approximately <strong>₹11.5 lakhs</strong>, representing a wealth gain of <strong>₹5.5 lakhs</strong> — nearly doubling the capital without any active trading.</p>
 </div>
 <div id="inflation-protection" class="section level3 hasAnchor" number="1.3.2">
 <h3><span class="header-section-number">1.3.2</span> Inflation Protection<a href="index.html#inflation-protection" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>India has historically experienced <strong>inflation between 4–7% annually</strong>. Idle money in a savings account earning 3–4% interest effectively loses purchasing power every year.</p>
 <div class="figure"><span style="display:block;" id="fig:inflation-impact"></span>
-<img src="bookdownproj_files/figure-html/inflation-impact-1.png" alt=": Purchasing Power Erosion Due to Inflation (2016–2026)" width="672" />
+<img src="bookdownproj_files/figure-html/inflation-impact-1.png" alt=": Purchasing Power Erosion Due to Inflation (2016-2026)" width="672" />
 <p class="caption">
-Figure 1.2: : Purchasing Power Erosion Due to Inflation (2016–2026)
+Figure 1.3: : Purchasing Power Erosion Due to Inflation (2016-2026)
 </p>
 </div>
 <p><em>Source: Compiled from RBI, SEBI, NSE, BSE, AMFI and Government Reports (Latest Available Data).</em></p>
@@ -938,7 +1155,7 @@ Up to 9.00%
 </tr>
 </tbody>
 </table>
-<p><strong>Fixed Deposit Interest Rates (Select Banks, 2024)“</strong></p>
+<p><strong>Fixed Deposit Interest Rates (Select Banks, 2024)</strong></p>
 <p><em>Source: Compiled from RBI, SEBI, NSE, BSE, AMFI and Government Reports (Latest Available Data).</em></p>
 </div>
 <div id="provident-fund-schemes" class="section level3 hasAnchor" number="1.4.4">
@@ -955,9 +1172,9 @@ Up to 9.00%
 - Interest rate: 7.1% p.a. (Q1 2024–25, compounded annually)
 - Tax: EEE status — most tax-efficient long-term investment</p>
 <div class="figure"><span style="display:block;" id="fig:ppf-growth"></span>
-<img src="bookdownproj_files/figure-html/ppf-growth-1.png" alt=": PPF Corpus Growth (Annual Investment ₹1.5 Lakh at 7.1%)" width="672" />
+<img src="bookdownproj_files/figure-html/ppf-growth-1.png" alt=": PPF Corpus Growth (Annual Investment Rs. 1.5 Lakh at 7.1%)" width="672" />
 <p class="caption">
-Figure 1.3: : PPF Corpus Growth (Annual Investment ₹1.5 Lakh at 7.1%)
+Figure 1.4: : PPF Corpus Growth (Annual Investment Rs. 1.5 Lakh at 7.1%)
 </p>
 </div>
 <p><em>Source: Compiled from RBI, SEBI, NSE, BSE, AMFI and Government Reports (Latest Available Data).</em></p>
@@ -998,7 +1215,7 @@ Post Office Savings Account
 4.0%
 </td>
 <td style="text-align:left;">
-₹500
+Rs. 500
 </td>
 <td style="text-align:left;">
 No fixed tenure
@@ -1015,7 +1232,7 @@ No fixed tenure
 6.7%
 </td>
 <td style="text-align:left;">
-₹100/month
+Rs. 100/month
 </td>
 <td style="text-align:left;">
 5 Years
@@ -1032,7 +1249,7 @@ Post Office Time Deposit (1Y)
 6.9%
 </td>
 <td style="text-align:left;">
-₹1,000
+Rs. 1,000
 </td>
 <td style="text-align:left;">
 1 Year
@@ -1049,7 +1266,7 @@ Post Office Time Deposit (5Y)
 7.5%
 </td>
 <td style="text-align:left;">
-₹1,000
+Rs. 1,000
 </td>
 <td style="text-align:left;">
 5 Years
@@ -1066,7 +1283,7 @@ Monthly Income Scheme (MIS)
 7.4%
 </td>
 <td style="text-align:left;">
-₹1,000
+Rs. 1,000
 </td>
 <td style="text-align:left;">
 5 Years
@@ -1083,7 +1300,7 @@ Senior Citizens Savings Scheme (SCSS)
 8.2%
 </td>
 <td style="text-align:left;">
-₹1,000
+Rs. 1,000
 </td>
 <td style="text-align:left;">
 5 Years
@@ -1100,7 +1317,7 @@ National Savings Certificate (NSC)
 7.7%
 </td>
 <td style="text-align:left;">
-₹1,000
+Rs. 1,000
 </td>
 <td style="text-align:left;">
 5 Years
@@ -1117,7 +1334,7 @@ Kisan Vikas Patra (KVP)
 7.5%
 </td>
 <td style="text-align:left;">
-₹1,000
+Rs. 1,000
 </td>
 <td style="text-align:left;">
 ~115 months
@@ -1134,7 +1351,7 @@ Sukanya Samriddhi Yojana (SSY)
 8.2%
 </td>
 <td style="text-align:left;">
-₹250
+Rs. 250
 </td>
 <td style="text-align:left;">
 21 years / girl 18
@@ -1151,7 +1368,7 @@ Public Provident Fund (PPF)
 7.1%
 </td>
 <td style="text-align:left;">
-₹500
+Rs. 500
 </td>
 <td style="text-align:left;">
 15 Years
@@ -1162,7 +1379,7 @@ Public Provident Fund (PPF)
 </tr>
 </tbody>
 </table>
-<p><strong>Post Office Investment Schemes (Rates as of Q2 2024–25)</strong></p>
+<p><strong>Post Office Investment Schemes (Rates as of Q2 2024-25)</strong></p>
 <p><em>Source: Compiled from RBI, SEBI, NSE, BSE, AMFI and Government Reports (Latest Available Data).</em></p>
 <p><strong>Sukanya Samriddhi Yojana (SSY)</strong> — A flagship scheme under <strong>Beti Bachao Beti Padhao</strong>, offering the highest risk-free return at <strong>8.2% p.a.</strong> (2024–25). Eligible for girls below 10 years of age; matures when the girl turns 21. Tax: EEE status.</p>
 </div>
@@ -1221,11 +1438,11 @@ Public Provident Fund (PPF)
 </table>
 </div>
 <p><em>Source: Compiled from RBI, SEBI, NSE, BSE, AMFI and Government Reports (Latest Available Data).</em></p>
-<p><strong>Indian Real Estate Market Trends (2016–2026):</strong></p>
+<p><strong>Indian Real Estate Market Trends (2016-2026):</strong></p>
 <div class="figure"><span style="display:block;" id="fig:real-estate-trend"></span>
-<img src="bookdownproj_files/figure-html/real-estate-trend-1.png" alt=": Indian Real Estate Price Index and REIT Growth (2016–2026)" width="672" />
+<img src="bookdownproj_files/figure-html/real-estate-trend-1.png" alt=": Indian Real Estate Price Index and REIT Growth (2016-2026)" width="672" />
 <p class="caption">
-Figure 1.4: : Indian Real Estate Price Index and REIT Growth (2016–2026)
+Figure 1.5: : Indian Real Estate Price Index and REIT Growth (2016-2026)
 </p>
 </div>
 <p><em>Source: Compiled from RBI, SEBI, NSE, BSE, AMFI and Government Reports (Latest Available Data).</em></p>
@@ -1266,10 +1483,10 @@ Liquidity
 Physical Gold (Jewellery)
 </td>
 <td style="text-align:left;">
-Capital appreciation (−making charges)
+Capital appreciation (-making charges)
 </td>
 <td style="text-align:left;">
-Making charges 10–20%
+Making charges 10-20%
 </td>
 <td style="text-align:left;">
 STCG / LTCG 20%+indexation
@@ -1286,7 +1503,7 @@ Gold Coins/Bars
 Capital appreciation
 </td>
 <td style="text-align:left;">
-1–3% premium
+1-3% premium
 </td>
 <td style="text-align:left;">
 Same
@@ -1303,7 +1520,7 @@ Gold ETFs
 Tracks gold price (MCX/LBMA)
 </td>
 <td style="text-align:left;">
-0.5–1% expense ratio
+0.5-1% expense ratio
 </td>
 <td style="text-align:left;">
 Same
@@ -1337,7 +1554,7 @@ Gold Mutual Funds
 Tracks gold via ETF
 </td>
 <td style="text-align:left;">
-0.2–0.5% extra
+0.2-0.5% extra
 </td>
 <td style="text-align:left;">
 Same as ETF
@@ -1354,7 +1571,7 @@ Digital Gold
 Tracks gold price
 </td>
 <td style="text-align:left;">
-0.5–1%
+0.5-1%
 </td>
 <td style="text-align:left;">
 Same
@@ -1375,9 +1592,9 @@ High
 - Maturity: 8 years (exit possible after 5th year)
 - <strong>Tax advantage</strong>: LTCG on maturity is completely exempt from tax</p>
 <div class="figure"><span style="display:block;" id="fig:gold-price-trend"></span>
-<img src="bookdownproj_files/figure-html/gold-price-trend-1.png" alt=": Gold Price Trend in India (2016–2026)" width="672" />
+<img src="bookdownproj_files/figure-html/gold-price-trend-1.png" alt=": Gold Price Trend in India (2016-2026)" width="672" />
 <p class="caption">
-Figure 1.5: : Gold Price Trend in India (2016–2026)
+Figure 1.6: : Gold Price Trend in India (2016-2026)
 </p>
 </div>
 <p><em>Source: Compiled from RBI, SEBI, NSE, BSE, AMFI and Government Reports (Latest Available Data).</em></p>
@@ -1390,7 +1607,7 @@ Figure 1.5: : Gold Price Trend in India (2016–2026)
 - Silver ETFs (launched in India in 2022 — Nippon India Silver ETF, ICICI Prudential Silver ETF)
 - Multi-commodity funds
 - MCX silver futures</p>
-<p><strong>Silver vs Gold (2016–2026):</strong></p>
+<p><strong>Silver vs Gold (2016-2026):</strong></p>
 <table class="table table-striped table-hover" style="width: auto !important; margin-left: auto; margin-right: auto;">
 <thead>
 <tr>

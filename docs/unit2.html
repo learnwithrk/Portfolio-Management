@@ -23,7 +23,7 @@
 <meta name="author" content="RAJAKRISHNAN MANIVEL" />
 
 
-<meta name="date" content="2026-09-12" />
+<meta name="date" content="2026-09-14" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -56,6 +56,15 @@
 <link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
 <link href="libs/bsTable-3.3.7/bootstrapTable.min.css" rel="stylesheet" />
 <script src="libs/bsTable-3.3.7/bootstrapTable.js"></script>
+<link href="libs/htmltools-fill-0.5.8.1/fill.css" rel="stylesheet" />
+<script src="libs/htmlwidgets-1.6.4/htmlwidgets.js"></script>
+<script src="libs/d3-3.3.8/d3.min.js"></script>
+<script src="libs/dagre-0.4.0/dagre-d3.min.js"></script>
+<link href="libs/mermaid-0.3.0/dist/mermaid.css" rel="stylesheet" />
+<script src="libs/mermaid-0.3.0/dist/mermaid.slim.min.js"></script>
+<link href="libs/DiagrammeR-styles-0.2/styles.css" rel="stylesheet" />
+<script src="libs/chromatography-0.1/chromatography.js"></script>
+<script src="libs/DiagrammeR-binding-1.0.12/DiagrammeR.js"></script>
 
 
 <style type="text/css">
@@ -220,7 +229,208 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="2.5" data-path="unit2.html"><a href="unit2.html#mutual-funds"><i class="fa fa-check"></i><b>2.5</b> Mutual Funds</a>
 <ul>
 <li class="chapter" data-level="2.5.1" data-path="unit2.html"><a href="unit2.html#meaning-and-structure"><i class="fa fa-check"></i><b>2.5.1</b> Meaning and Structure</a></li>
+<li class="chapter" data-level="2.5.2" data-path="unit2.html"><a href="unit2.html#advantages-of-mutual-funds"><i class="fa fa-check"></i><b>2.5.2</b> Advantages of Mutual Funds</a></li>
+<li class="chapter" data-level="2.5.3" data-path="unit2.html"><a href="unit2.html#risks-in-mutual-fund-investment"><i class="fa fa-check"></i><b>2.5.3</b> Risks in Mutual Fund Investment</a></li>
 </ul></li>
+<li class="chapter" data-level="2.6" data-path="unit2.html"><a href="unit2.html#nav"><i class="fa fa-check"></i><b>2.6</b> Net Asset Value (NAV)</a>
+<ul>
+<li class="chapter" data-level="2.6.1" data-path="unit2.html"><a href="unit2.html#meaning-of-nav"><i class="fa fa-check"></i><b>2.6.1</b> Meaning of NAV</a></li>
+<li class="chapter" data-level="2.6.2" data-path="unit2.html"><a href="unit2.html#nav-calculation-worked-example"><i class="fa fa-check"></i><b>2.6.2</b> NAV Calculation — Worked Example</a></li>
+<li class="chapter" data-level="2.6.3" data-path="unit2.html"><a href="unit2.html#nav-and-returns"><i class="fa fa-check"></i><b>2.6.3</b> NAV and Returns</a></li>
+</ul></li>
+<li class="chapter" data-level="2.7" data-path="unit2.html"><a href="unit2.html#expense-ratio"><i class="fa fa-check"></i><b>2.7</b> Expense Ratio</a>
+<ul>
+<li class="chapter" data-level="2.7.1" data-path="unit2.html"><a href="unit2.html#meaning-and-importance"><i class="fa fa-check"></i><b>2.7.1</b> Meaning and Importance</a></li>
+<li class="chapter" data-level="2.7.2" data-path="unit2.html"><a href="unit2.html#expense-ratio-calculation-worked-example"><i class="fa fa-check"></i><b>2.7.2</b> Expense Ratio Calculation — Worked Example</a></li>
+</ul></li>
+<li class="chapter" data-level="2.8" data-path="unit2.html"><a href="unit2.html#mf-types"><i class="fa fa-check"></i><b>2.8</b> Types of Mutual Funds</a>
+<ul>
+<li class="chapter" data-level="2.8.1" data-path="unit2.html"><a href="unit2.html#sebi-categorisation-of-mutual-fund-schemes-2017"><i class="fa fa-check"></i><b>2.8.1</b> SEBI Categorisation of Mutual Fund Schemes (2017)</a></li>
+<li class="chapter" data-level="2.8.2" data-path="unit2.html"><a href="unit2.html#major-categories-detailed-analysis"><i class="fa fa-check"></i><b>2.8.2</b> Major Categories — Detailed Analysis</a></li>
+</ul></li>
+<li class="chapter" data-level="2.9" data-path="unit2.html"><a href="unit2.html#etfs"><i class="fa fa-check"></i><b>2.9</b> Exchange Traded Funds (ETFs)</a>
+<ul>
+<li class="chapter" data-level="2.9.1" data-path="unit2.html"><a href="unit2.html#meaning-and-structure-1"><i class="fa fa-check"></i><b>2.9.1</b> Meaning and Structure</a></li>
+</ul></li>
+<li class="chapter" data-level="2.10" data-path="unit2.html"><a href="unit2.html#reits"><i class="fa fa-check"></i><b>2.10</b> Real Estate Investment Trusts (REITs)</a>
+<ul>
+<li class="chapter" data-level="2.10.1" data-path="unit2.html"><a href="unit2.html#meaning-and-structure-2"><i class="fa fa-check"></i><b>2.10.1</b> Meaning and Structure</a></li>
+</ul></li>
+<li class="chapter" data-level="2.11" data-path="unit2.html"><a href="unit2.html#invits"><i class="fa fa-check"></i><b>2.11</b> Infrastructure Investment Trusts (InvITs)</a>
+<ul>
+<li class="chapter" data-level="2.11.1" data-path="unit2.html"><a href="unit2.html#meaning-and-structure-3"><i class="fa fa-check"></i><b>2.11.1</b> Meaning and Structure</a></li>
+</ul></li>
+<li class="chapter" data-level="2.12" data-path="unit2.html"><a href="unit2.html#unit2-summary"><i class="fa fa-check"></i><b>2.12</b> Summary</a></li>
+<li class="chapter" data-level="2.13" data-path="unit2.html"><a href="unit2.html#unit2-keyterms"><i class="fa fa-check"></i><b>2.13</b> Key Terms</a></li>
+<li class="chapter" data-level="2.14" data-path="unit2.html"><a href="unit2.html#unit2-review"><i class="fa fa-check"></i><b>2.14</b> Review Questions — Unit II</a>
+<ul>
+<li class="chapter" data-level="2.14.1" data-path="unit2.html"><a href="unit2.html#very-short-answer-questions"><i class="fa fa-check"></i><b>2.14.1</b> Very Short Answer Questions</a></li>
+<li class="chapter" data-level="2.14.2" data-path="unit2.html"><a href="unit2.html#essay-questions"><i class="fa fa-check"></i><b>2.14.2</b> Essay Questions</a></li>
+</ul></li>
+<li class="chapter" data-level="2.15" data-path="unit2.html"><a href="unit2.html#mcqs-unit-ii-selected"><i class="fa fa-check"></i><b>2.15</b> MCQs — Unit II (Selected)</a></li>
+<li class="chapter" data-level="2.16" data-path="unit2.html"><a href="unit2.html#numerical-problems-unit-ii"><i class="fa fa-check"></i><b>2.16</b> Numerical Problems — Unit II</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="unit3.html"><a href="unit3.html"><i class="fa fa-check"></i><b>3</b> Fundamental Analysis</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="unit3.html"><a href="unit3.html#risk-return"><i class="fa fa-check"></i><b>3.1</b> 3.1 Risk and Return — Foundations</a>
+<ul>
+<li class="chapter" data-level="3.1.1" data-path="unit3.html"><a href="unit3.html#the-risk-return-relationship"><i class="fa fa-check"></i><b>3.1.1</b> 3.1.1 The Risk-Return Relationship</a></li>
+<li class="chapter" data-level="3.1.2" data-path="unit3.html"><a href="unit3.html#measuring-return"><i class="fa fa-check"></i><b>3.1.2</b> 3.1.2 Measuring Return</a></li>
+<li class="chapter" data-level="3.1.3" data-path="unit3.html"><a href="unit3.html#types-of-risk"><i class="fa fa-check"></i><b>3.1.3</b> 3.1.3 Types of Risk</a></li>
+</ul></li>
+<li class="chapter" data-level="3.2" data-path="unit3.html"><a href="unit3.html#fundamental-analysis"><i class="fa fa-check"></i><b>3.2</b> 3.2 Fundamental Analysis — Framework</a></li>
+<li class="chapter" data-level="3.3" data-path="unit3.html"><a href="unit3.html#economic-analysis"><i class="fa fa-check"></i><b>3.3</b> 3.3 Economic Analysis</a>
+<ul>
+<li class="chapter" data-level="3.3.1" data-path="unit3.html"><a href="unit3.html#key-macroeconomic-indicators-for-indian-investors"><i class="fa fa-check"></i><b>3.3.1</b> 3.3.1 Key Macroeconomic Indicators for Indian Investors</a></li>
+</ul></li>
+<li class="chapter" data-level="3.4" data-path="unit3.html"><a href="unit3.html#industry-analysis"><i class="fa fa-check"></i><b>3.4</b> 3.4 Industry Analysis</a>
+<ul>
+<li class="chapter" data-level="3.4.1" data-path="unit3.html"><a href="unit3.html#porters-five-forces-model"><i class="fa fa-check"></i><b>3.4.1</b> 3.4.1 Porter’s Five Forces Model</a></li>
+<li class="chapter" data-level="3.4.2" data-path="unit3.html"><a href="unit3.html#industry-life-cycle"><i class="fa fa-check"></i><b>3.4.2</b> 3.4.2 Industry Life Cycle</a></li>
+</ul></li>
+<li class="chapter" data-level="3.5" data-path="unit3.html"><a href="unit3.html#company-analysis"><i class="fa fa-check"></i><b>3.5</b> 3.5 Company Analysis</a>
+<ul>
+<li class="chapter" data-level="3.5.1" data-path="unit3.html"><a href="unit3.html#business-model-analysis"><i class="fa fa-check"></i><b>3.5.1</b> 3.5.1 Business Model Analysis</a></li>
+<li class="chapter" data-level="3.5.2" data-path="unit3.html"><a href="unit3.html#corporate-governance-assessment"><i class="fa fa-check"></i><b>3.5.2</b> 3.5.2 Corporate Governance Assessment</a></li>
+</ul></li>
+<li class="chapter" data-level="3.6" data-path="unit3.html"><a href="unit3.html#financial-ratios"><i class="fa fa-check"></i><b>3.6</b> 3.6 Financial Analysis and Key Ratios</a>
+<ul>
+<li class="chapter" data-level="3.6.1" data-path="unit3.html"><a href="unit3.html#earnings-per-share-eps"><i class="fa fa-check"></i><b>3.6.1</b> 3.6.1 Earnings Per Share (EPS)</a></li>
+<li class="chapter" data-level="3.6.2" data-path="unit3.html"><a href="unit3.html#price-to-earnings-ratio-pe"><i class="fa fa-check"></i><b>3.6.2</b> 3.6.2 Price-to-Earnings Ratio (P/E)</a></li>
+<li class="chapter" data-level="3.6.3" data-path="unit3.html"><a href="unit3.html#peg-ratio-priceearnings-to-growth"><i class="fa fa-check"></i><b>3.6.3</b> 3.6.3 PEG Ratio (Price/Earnings to Growth)</a></li>
+<li class="chapter" data-level="3.6.4" data-path="unit3.html"><a href="unit3.html#return-on-equity-roe"><i class="fa fa-check"></i><b>3.6.4</b> 3.6.4 Return on Equity (ROE)</a></li>
+<li class="chapter" data-level="3.6.5" data-path="unit3.html"><a href="unit3.html#return-on-capital-employed-roce"><i class="fa fa-check"></i><b>3.6.5</b> 3.6.5 Return on Capital Employed (ROCE)</a></li>
+<li class="chapter" data-level="3.6.6" data-path="unit3.html"><a href="unit3.html#dividend-yield"><i class="fa fa-check"></i><b>3.6.6</b> 3.6.6 Dividend Yield</a></li>
+<li class="chapter" data-level="3.6.7" data-path="unit3.html"><a href="unit3.html#debt-to-equity-ratio"><i class="fa fa-check"></i><b>3.6.7</b> 3.6.7 Debt-to-Equity Ratio</a></li>
+<li class="chapter" data-level="3.6.8" data-path="unit3.html"><a href="unit3.html#book-value-per-share"><i class="fa fa-check"></i><b>3.6.8</b> 3.6.8 Book Value Per Share</a></li>
+<li class="chapter" data-level="3.6.9" data-path="unit3.html"><a href="unit3.html#comprehensive-ratio-analysis-reliance-industries-2023-24"><i class="fa fa-check"></i><b>3.6.9</b> 3.6.9 Comprehensive Ratio Analysis — Reliance Industries (2023-24)</a></li>
+</ul></li>
+<li class="chapter" data-level="3.7" data-path="unit3.html"><a href="unit3.html#unit3-summary"><i class="fa fa-check"></i><b>3.7</b> 3.7 Summary</a></li>
+<li class="chapter" data-level="3.8" data-path="unit3.html"><a href="unit3.html#unit3-keyterms"><i class="fa fa-check"></i><b>3.8</b> Key Terms</a></li>
+<li class="chapter" data-level="3.9" data-path="unit3.html"><a href="unit3.html#mcqs-unit-iii-selected"><i class="fa fa-check"></i><b>3.9</b> MCQs — Unit III (Selected)</a></li>
+<li class="chapter" data-level="3.10" data-path="unit3.html"><a href="unit3.html#numerical-problems-unit-iii"><i class="fa fa-check"></i><b>3.10</b> Numerical Problems — Unit III</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="unit4.html"><a href="unit4.html"><i class="fa fa-check"></i><b>4</b> Technical Analysis</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="unit4.html"><a href="unit4.html#ta-intro"><i class="fa fa-check"></i><b>4.1</b> Introduction to Technical Analysis</a>
+<ul>
+<li class="chapter" data-level="4.1.1" data-path="unit4.html"><a href="unit4.html#meaning-and-philosophy"><i class="fa fa-check"></i><b>4.1.1</b> Meaning and Philosophy</a></li>
+<li class="chapter" data-level="4.1.2" data-path="unit4.html"><a href="unit4.html#technical-vs.-fundamental-analysis"><i class="fa fa-check"></i><b>4.1.2</b> Technical vs. Fundamental Analysis</a></li>
+</ul></li>
+<li class="chapter" data-level="4.2" data-path="unit4.html"><a href="unit4.html#dow-theory"><i class="fa fa-check"></i><b>4.2</b> Dow Theory</a>
+<ul>
+<li class="chapter" data-level="4.2.1" data-path="unit4.html"><a href="unit4.html#origins-and-significance"><i class="fa fa-check"></i><b>4.2.1</b> Origins and Significance</a></li>
+<li class="chapter" data-level="4.2.2" data-path="unit4.html"><a href="unit4.html#the-six-tenets-of-dow-theory"><i class="fa fa-check"></i><b>4.2.2</b> The Six Tenets of Dow Theory</a></li>
+</ul></li>
+<li class="chapter" data-level="4.3" data-path="unit4.html"><a href="unit4.html#trend-analysis"><i class="fa fa-check"></i><b>4.3</b> Trend Analysis</a>
+<ul>
+<li class="chapter" data-level="4.3.1" data-path="unit4.html"><a href="unit4.html#meaning-of-trend"><i class="fa fa-check"></i><b>4.3.1</b> Meaning of Trend</a></li>
+<li class="chapter" data-level="4.3.2" data-path="unit4.html"><a href="unit4.html#uptrend"><i class="fa fa-check"></i><b>4.3.2</b> Uptrend</a></li>
+<li class="chapter" data-level="4.3.3" data-path="unit4.html"><a href="unit4.html#downtrend"><i class="fa fa-check"></i><b>4.3.3</b> Downtrend</a></li>
+<li class="chapter" data-level="4.3.4" data-path="unit4.html"><a href="unit4.html#sideways-ranging-trend"><i class="fa fa-check"></i><b>4.3.4</b> Sideways / Ranging Trend</a></li>
+</ul></li>
+<li class="chapter" data-level="4.4" data-path="unit4.html"><a href="unit4.html#moving-averages"><i class="fa fa-check"></i><b>4.4</b> Moving Averages</a>
+<ul>
+<li class="chapter" data-level="4.4.1" data-path="unit4.html"><a href="unit4.html#meaning-and-purpose"><i class="fa fa-check"></i><b>4.4.1</b> Meaning and Purpose</a></li>
+<li class="chapter" data-level="4.4.2" data-path="unit4.html"><a href="unit4.html#simple-moving-average-sma"><i class="fa fa-check"></i><b>4.4.2</b> Simple Moving Average (SMA)</a></li>
+<li class="chapter" data-level="4.4.3" data-path="unit4.html"><a href="unit4.html#exponential-moving-average-ema"><i class="fa fa-check"></i><b>4.4.3</b> Exponential Moving Average (EMA)</a></li>
+</ul></li>
+<li class="chapter" data-level="4.5" data-path="unit4.html"><a href="unit4.html#macd"><i class="fa fa-check"></i><b>4.5</b> MACD — Moving Average Convergence and Divergence</a>
+<ul>
+<li class="chapter" data-level="4.5.1" data-path="unit4.html"><a href="unit4.html#meaning-and-components"><i class="fa fa-check"></i><b>4.5.1</b> Meaning and Components</a></li>
+<li class="chapter" data-level="4.5.2" data-path="unit4.html"><a href="unit4.html#macd-calculation-worked-example"><i class="fa fa-check"></i><b>4.5.2</b> MACD Calculation — Worked Example</a></li>
+<li class="chapter" data-level="4.5.3" data-path="unit4.html"><a href="unit4.html#macd-trading-signals"><i class="fa fa-check"></i><b>4.5.3</b> MACD Trading Signals</a></li>
+</ul></li>
+<li class="chapter" data-level="4.6" data-path="unit4.html"><a href="unit4.html#pivot-points"><i class="fa fa-check"></i><b>4.6</b> Pivot Points</a>
+<ul>
+<li class="chapter" data-level="4.6.1" data-path="unit4.html"><a href="unit4.html#meaning-1"><i class="fa fa-check"></i><b>4.6.1</b> Meaning</a></li>
+<li class="chapter" data-level="4.6.2" data-path="unit4.html"><a href="unit4.html#calculation"><i class="fa fa-check"></i><b>4.6.2</b> Calculation</a></li>
+<li class="chapter" data-level="4.6.3" data-path="unit4.html"><a href="unit4.html#worked-example"><i class="fa fa-check"></i><b>4.6.3</b> Worked Example</a></li>
+</ul></li>
+<li class="chapter" data-level="4.7" data-path="unit4.html"><a href="unit4.html#vwap"><i class="fa fa-check"></i><b>4.7</b> Volume Weighted Average Price (VWAP)</a>
+<ul>
+<li class="chapter" data-level="4.7.1" data-path="unit4.html"><a href="unit4.html#meaning-and-importance-1"><i class="fa fa-check"></i><b>4.7.1</b> Meaning and Importance</a></li>
+<li class="chapter" data-level="4.7.2" data-path="unit4.html"><a href="unit4.html#vwap-calculation-worked-example"><i class="fa fa-check"></i><b>4.7.2</b> VWAP Calculation — Worked Example</a></li>
+<li class="chapter" data-level="4.7.3" data-path="unit4.html"><a href="unit4.html#vwap-trading-strategies"><i class="fa fa-check"></i><b>4.7.3</b> VWAP Trading Strategies</a></li>
+</ul></li>
+<li class="chapter" data-level="4.8" data-path="unit4.html"><a href="unit4.html#ai-tools"><i class="fa fa-check"></i><b>4.8</b> AI Tools in Technical Analysis</a>
+<ul>
+<li class="chapter" data-level="4.8.1" data-path="unit4.html"><a href="unit4.html#the-ai-revolution-in-technical-analysis"><i class="fa fa-check"></i><b>4.8.1</b> The AI Revolution in Technical Analysis</a></li>
+<li class="chapter" data-level="4.8.2" data-path="unit4.html"><a href="unit4.html#platform-by-platform-analysis"><i class="fa fa-check"></i><b>4.8.2</b> Platform-by-Platform Analysis</a></li>
+<li class="chapter" data-level="4.8.3" data-path="unit4.html"><a href="unit4.html#comparison-matrix-of-ai-technical-analysis-tools"><i class="fa fa-check"></i><b>4.8.3</b> Comparison Matrix of AI Technical Analysis Tools</a></li>
+<li class="chapter" data-level="4.8.4" data-path="unit4.html"><a href="unit4.html#strengths-and-limitations-of-ai-in-technical-analysis"><i class="fa fa-check"></i><b>4.8.4</b> Strengths and Limitations of AI in Technical Analysis</a></li>
+</ul></li>
+<li class="chapter" data-level="4.9" data-path="unit4.html"><a href="unit4.html#unit4-summary"><i class="fa fa-check"></i><b>4.9</b> Summary</a></li>
+<li class="chapter" data-level="4.10" data-path="unit4.html"><a href="unit4.html#unit4-keyterms"><i class="fa fa-check"></i><b>4.10</b> Key Terms</a></li>
+<li class="chapter" data-level="4.11" data-path="unit4.html"><a href="unit4.html#mcqs-unit-iv-selected"><i class="fa fa-check"></i><b>4.11</b> MCQs — Unit IV (Selected)</a></li>
+<li class="chapter" data-level="4.12" data-path="unit4.html"><a href="unit4.html#numerical-problems-unit-iv"><i class="fa fa-check"></i><b>4.12</b> Numerical Problems — Unit IV</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="unit5.html"><a href="unit5.html"><i class="fa fa-check"></i><b>5</b> Portfolio Selection and Revision</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="unit5.html"><a href="unit5.html#portfolio-analysis"><i class="fa fa-check"></i><b>5.1</b> 5.1 Portfolio Analysis — Introduction</a>
+<ul>
+<li class="chapter" data-level="5.1.1" data-path="unit5.html"><a href="unit5.html#what-is-a-portfolio"><i class="fa fa-check"></i><b>5.1.1</b> 5.1.1 What is a Portfolio?</a></li>
+<li class="chapter" data-level="5.1.2" data-path="unit5.html"><a href="unit5.html#portfolio-in-the-indian-context"><i class="fa fa-check"></i><b>5.1.2</b> 5.1.2 Portfolio in the Indian Context</a></li>
+</ul></li>
+<li class="chapter" data-level="5.2" data-path="unit5.html"><a href="unit5.html#portfolio-risk-return"><i class="fa fa-check"></i><b>5.2</b> 5.2 Return and Risk of a Portfolio</a>
+<ul>
+<li class="chapter" data-level="5.2.1" data-path="unit5.html"><a href="unit5.html#portfolio-return"><i class="fa fa-check"></i><b>5.2.1</b> 5.2.1 Portfolio Return</a></li>
+<li class="chapter" data-level="5.2.2" data-path="unit5.html"><a href="unit5.html#portfolio-risk-two-asset-portfolio"><i class="fa fa-check"></i><b>5.2.2</b> 5.2.2 Portfolio Risk (Two-Asset Portfolio)</a></li>
+<li class="chapter" data-level="5.2.3" data-path="unit5.html"><a href="unit5.html#three-asset-portfolio-risk"><i class="fa fa-check"></i><b>5.2.3</b> 5.2.3 Three-Asset Portfolio Risk</a></li>
+</ul></li>
+<li class="chapter" data-level="5.3" data-path="unit5.html"><a href="unit5.html#markowitz"><i class="fa fa-check"></i><b>5.3</b> 5.3 Modern Portfolio Theory — Markowitz Model</a>
+<ul>
+<li class="chapter" data-level="5.3.1" data-path="unit5.html"><a href="unit5.html#background"><i class="fa fa-check"></i><b>5.3.1</b> 5.3.1 Background</a></li>
+<li class="chapter" data-level="5.3.2" data-path="unit5.html"><a href="unit5.html#assumptions-of-the-markowitz-model"><i class="fa fa-check"></i><b>5.3.2</b> 5.3.2 Assumptions of the Markowitz Model</a></li>
+<li class="chapter" data-level="5.3.3" data-path="unit5.html"><a href="unit5.html#the-efficient-frontier"><i class="fa fa-check"></i><b>5.3.3</b> 5.3.3 The Efficient Frontier</a></li>
+<li class="chapter" data-level="5.3.4" data-path="unit5.html"><a href="unit5.html#capital-market-line-cml"><i class="fa fa-check"></i><b>5.3.4</b> 5.3.4 Capital Market Line (CML)</a></li>
+</ul></li>
+<li class="chapter" data-level="5.4" data-path="unit5.html"><a href="unit5.html#portfolio-selection"><i class="fa fa-check"></i><b>5.4</b> 5.4 Portfolio Selection</a>
+<ul>
+<li class="chapter" data-level="5.4.1" data-path="unit5.html"><a href="unit5.html#selection-criteria"><i class="fa fa-check"></i><b>5.4.1</b> 5.4.1 Selection Criteria</a></li>
+<li class="chapter" data-level="5.4.2" data-path="unit5.html"><a href="unit5.html#practical-portfolio-construction-indian-example"><i class="fa fa-check"></i><b>5.4.2</b> 5.4.2 Practical Portfolio Construction — Indian Example</a></li>
+</ul></li>
+<li class="chapter" data-level="5.5" data-path="unit5.html"><a href="unit5.html#portfolio-revision"><i class="fa fa-check"></i><b>5.5</b> 5.5 Portfolio Revision</a>
+<ul>
+<li class="chapter" data-level="5.5.1" data-path="unit5.html"><a href="unit5.html#meaning-and-need"><i class="fa fa-check"></i><b>5.5.1</b> 5.5.1 Meaning and Need</a></li>
+<li class="chapter" data-level="5.5.2" data-path="unit5.html"><a href="unit5.html#constraints-on-portfolio-revision"><i class="fa fa-check"></i><b>5.5.2</b> 5.5.2 Constraints on Portfolio Revision</a></li>
+<li class="chapter" data-level="5.5.3" data-path="unit5.html"><a href="unit5.html#portfolio-rebalancing-strategies"><i class="fa fa-check"></i><b>5.5.3</b> 5.5.3 Portfolio Rebalancing Strategies</a></li>
+</ul></li>
+<li class="chapter" data-level="5.6" data-path="unit5.html"><a href="unit5.html#portfolio-evaluation"><i class="fa fa-check"></i><b>5.6</b> 5.6 Portfolio Evaluation</a></li>
+<li class="chapter" data-level="5.7" data-path="unit5.html"><a href="unit5.html#sharpe-ratio"><i class="fa fa-check"></i><b>5.7</b> 5.7 Sharpe Ratio</a>
+<ul>
+<li class="chapter" data-level="5.7.1" data-path="unit5.html"><a href="unit5.html#formula-and-meaning"><i class="fa fa-check"></i><b>5.7.1</b> 5.7.1 Formula and Meaning</a></li>
+<li class="chapter" data-level="5.7.2" data-path="unit5.html"><a href="unit5.html#sharpe-ratio-worked-example"><i class="fa fa-check"></i><b>5.7.2</b> 5.7.2 Sharpe Ratio — Worked Example</a></li>
+</ul></li>
+<li class="chapter" data-level="5.8" data-path="unit5.html"><a href="unit5.html#treynor-ratio"><i class="fa fa-check"></i><b>5.8</b> 5.8 Treynor Ratio</a>
+<ul>
+<li class="chapter" data-level="5.8.1" data-path="unit5.html"><a href="unit5.html#formula-and-meaning-1"><i class="fa fa-check"></i><b>5.8.1</b> 5.8.1 Formula and Meaning</a></li>
+<li class="chapter" data-level="5.8.2" data-path="unit5.html"><a href="unit5.html#treynor-ratio-worked-example"><i class="fa fa-check"></i><b>5.8.2</b> 5.8.2 Treynor Ratio — Worked Example</a></li>
+</ul></li>
+<li class="chapter" data-level="5.9" data-path="unit5.html"><a href="unit5.html#jensens-alpha"><i class="fa fa-check"></i><b>5.9</b> 5.9 Jensen’s Alpha</a>
+<ul>
+<li class="chapter" data-level="5.9.1" data-path="unit5.html"><a href="unit5.html#formula-and-meaning-2"><i class="fa fa-check"></i><b>5.9.1</b> 5.9.1 Formula and Meaning</a></li>
+<li class="chapter" data-level="5.9.2" data-path="unit5.html"><a href="unit5.html#jensens-alpha-worked-example"><i class="fa fa-check"></i><b>5.9.2</b> 5.9.2 Jensen’s Alpha — Worked Example</a></li>
+<li class="chapter" data-level="5.9.3" data-path="unit5.html"><a href="unit5.html#comprehensive-performance-comparison"><i class="fa fa-check"></i><b>5.9.3</b> 5.9.3 Comprehensive Performance Comparison</a></li>
+</ul></li>
+<li class="chapter" data-level="5.10" data-path="unit5.html"><a href="unit5.html#unit5-summary"><i class="fa fa-check"></i><b>5.10</b> 5.10 Summary</a></li>
+<li class="chapter" data-level="5.11" data-path="unit5.html"><a href="unit5.html#unit5-keyterms"><i class="fa fa-check"></i><b>5.11</b> Key Terms</a></li>
+<li class="chapter" data-level="5.12" data-path="unit5.html"><a href="unit5.html#unit5-review"><i class="fa fa-check"></i><b>5.12</b> Review Questions — Unit V</a>
+<ul>
+<li class="chapter" data-level="5.12.1" data-path="unit5.html"><a href="unit5.html#very-short-answer-questions-1"><i class="fa fa-check"></i><b>5.12.1</b> Very Short Answer Questions</a></li>
+<li class="chapter" data-level="5.12.2" data-path="unit5.html"><a href="unit5.html#essay-questions-1"><i class="fa fa-check"></i><b>5.12.2</b> Essay Questions</a></li>
+<li class="chapter" data-level="5.12.3" data-path="unit5.html"><a href="unit5.html#analytical-questions"><i class="fa fa-check"></i><b>5.12.3</b> Analytical Questions</a></li>
+</ul></li>
+<li class="chapter" data-level="5.13" data-path="unit5.html"><a href="unit5.html#mcqs-unit-v-selected"><i class="fa fa-check"></i><b>5.13</b> MCQs — Unit V (Selected)</a></li>
+<li class="chapter" data-level="5.14" data-path="unit5.html"><a href="unit5.html#numerical-problems-unit-v"><i class="fa fa-check"></i><b>5.14</b> Numerical Problems — Unit V</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="trading-view-practicals.html"><a href="trading-view-practicals.html"><i class="fa fa-check"></i><b>6</b> Trading View Practicals</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="trading-view-practicals.html"><a href="trading-view-practicals.html#program-1-sma-trend-identification-dynamic-supportresistance"><i class="fa fa-check"></i><b>6.1</b> Program 1: SMA Trend Identification &amp; Dynamic Support/Resistance</a></li>
+<li class="chapter" data-level="6.2" data-path="trading-view-practicals.html"><a href="trading-view-practicals.html#program2-ema-crossover"><i class="fa fa-check"></i><b>6.2</b> Program 2: EMA Crossover Breakout Strategy</a></li>
+<li class="chapter" data-level="6.3" data-path="trading-view-practicals.html"><a href="trading-view-practicals.html#program3-vwap-intraday"><i class="fa fa-check"></i><b>6.3</b> Program 3: VWAP Intraday Trend Strategy</a></li>
+<li class="chapter" data-level="6.4" data-path="trading-view-practicals.html"><a href="trading-view-practicals.html#program3b-anchored-vwap"><i class="fa fa-check"></i><b>6.4</b> Program 3B: Anchored VWAP for Long-Term Investing</a></li>
+<li class="chapter" data-level="6.5" data-path="trading-view-practicals.html"><a href="trading-view-practicals.html#program4-macd-momentum"><i class="fa fa-check"></i><b>6.5</b> Program 4: MACD Momentum Strategy</a></li>
 </ul></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
@@ -637,115 +847,167 @@ Fixed coupon vs. linked to MIBOR/T-Bill rate
 <div id="meaning-and-structure" class="section level3 hasAnchor" number="2.5.1">
 <h3><span class="header-section-number">2.5.1</span> Meaning and Structure<a href="unit2.html#meaning-and-structure" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>A <strong>mutual fund</strong> is a professionally managed collective investment vehicle that pools money from many investors and invests in a diversified portfolio of securities. In India, mutual funds are regulated by <strong>SEBI</strong> under the <strong>SEBI (Mutual Funds) Regulations, 1996</strong> (amended multiple times through 2023).</p>
-<div class="mermaid">
-<p>flowchart TD
-A[Investors / Unit Holders] –&gt;|Pool Money| B[Asset Management Company - AMC]
-B –&gt;|Invests| C[Diversified Portfolio]
-C –&gt; D<a href="unit2.html#equity-shares">Equity Shares</a>
-C –&gt; E[Government Bonds]
-C –&gt; F[Corporate Debentures]
-C –&gt; G[Money Market Instruments]
-C –&gt; H[Gold / REITs]
-B –&gt; I[Fund Manager]
-I –&gt; B
-B –&gt;|Returns| A
-J[SEBI] –&gt;|Regulates| B
-K[Trustee] –&gt;|Oversees| B
-L[Custodian] –&gt;|Holds Assets| B
-M[Registrar &amp; Transfer Agent] –&gt;|Handles Units| A
-style A fill:#2980b9,color:#fff
-style B fill:#2c3e50,color:#fff
-style J fill:#c0392b,color:#fff
-style I fill:#27ae60,color:#fff</p>
-<pre><code>
-*Figure 2.1: Three-tier Structure of Indian Mutual Funds*
-
-**Three-Tier Structure:**
-1. **Sponsors** — the parent company that establishes the mutual fund (e.g., HDFC Ltd. → HDFC AMC)
-2. **Trustees** — independent board overseeing the AMC, protecting investors&#39; interests
-3. **AMC (Asset Management Company)** — manages investments, employs fund managers
-
-**Key Industry Statistics:**
-
-&lt;div class=&quot;figure&quot;&gt;
-&lt;img src=&quot;bookdownproj_files/figure-html/mf-industry-growth-1.png&quot; alt=&quot;Figure 2.2: Indian Mutual Fund Industry AUM Growth (2016–2026)&quot; width=&quot;672&quot; /&gt;
-&lt;p class=&quot;caption&quot;&gt;(\#fig:mf-industry-growth)Figure 2.2: Indian Mutual Fund Industry AUM Growth (2016–2026)&lt;/p&gt;
-&lt;/div&gt;
-
-*Source: Compiled from RBI, SEBI, NSE, BSE, AMFI and Government Reports (Latest Available Data).*
-
-### Advantages of Mutual Funds
-
-1. **Professional Management** — Experienced fund managers conduct research and manage portfolios
-2. **Diversification** — Even ₹500 SIP invests in 50–100 stocks
-3. **Affordability** — Start SIP with as low as ₹100/month
-4. **Liquidity** — Open-end funds redeemable any business day at NAV
-5. **Transparency** — Daily NAV disclosure; monthly portfolio disclosure
-6. **Regulatory Protection** — SEBI regulations protect investors; AMFI code of conduct
-7. **Tax Efficiency** — ELSS funds offer Section 80C benefits; long-term capital gains taxed at 10% (&gt;₹1 lakh)
-8. **Flexibility** — SIP, SWP, STP options; switch between funds
-9. **Economies of Scale** — Lower transaction costs due to bulk purchases
-10. **Variety** — 40+ AMCs, 1,500+ schemes across all risk profiles
-
-### Risks in Mutual Fund Investment
-
-| Risk Type | Description | Affected Funds |
-|-----------|-------------|----------------|
-| Market Risk | Portfolio value falls with market | Equity funds |
-| Credit Risk | Issuer defaults on bond payment | Debt funds |
-| Interest Rate Risk | Bond prices fall when rates rise | Debt funds |
-| Liquidity Risk | Fund unable to sell assets | Close-end funds |
-| Concentration Risk | Overdependence on few stocks/sectors | Thematic funds |
-| Currency Risk | Loss from foreign exchange movement | International funds |
-| Manager Risk | Fund manager&#39;s incorrect decisions | All actively managed funds |
-| Inflation Risk | Returns don&#39;t beat inflation | Conservative funds |
-
-*Source: Compiled from RBI, SEBI, NSE, BSE, AMFI and Government Reports (Latest Available Data).*
-
----
-
-## Net Asset Value (NAV) {#nav}
-
-### Meaning of NAV
-
-The **Net Asset Value (NAV)** is the per-unit market value of a mutual fund scheme. It represents the price at which investors can buy (subscription) or sell (redemption) units of the fund.
-
-$$\boxed{NAV = \frac{\text{Total Assets} - \text{Total Liabilities}}{\text{Number of Units Outstanding}}}$$
-
-**Components:**
-- **Total Assets** = Market value of securities + Cash and equivalents + Receivables + Accrued income
-- **Total Liabilities** = Payables + Accrued expenses + Management fee payable
-
-### NAV Calculation — Worked Example
-
-**Example 2.1:** Calculate the NAV of &quot;Axis Bluechip Fund&quot; given the following data as on March 31, 2024:
-
-| Component | Amount (₹ Crore) |
-|-----------|-----------------|
-| Equity portfolio market value | 8,450 |
-| Liquid funds / Cash | 320 |
-| Dividend receivable | 48 |
-| Other receivables | 22 |
-| Management fee payable | 15 |
-| Other liabilities | 8 |
-| Number of units | 250 crore |
-
-**Solution:**
-$$\text{Total Assets} = 8,450 + 320 + 48 + 22 = ₹8,840 \text{ Cr}$$
-$$\text{Total Liabilities} = 15 + 8 = ₹23 \text{ Cr}$$
-$$\text{Net Assets} = 8,840 - 23 = ₹8,817 \text{ Cr}$$
-$$NAV = \frac{8,817 \text{ Cr}}{250 \text{ Cr units}} = ₹35.27 \text{ per unit}$$
-
-
-``` r
-# NAV Calculation
-total_assets &lt;- 8450 + 320 + 48 + 22  # in Crore
-total_liabilities &lt;- 15 + 8
-net_assets &lt;- total_assets - total_liabilities
-units_outstanding &lt;- 250  # Crore units
-
-NAV &lt;- net_assets / units_outstanding
-cat(&quot;Total Assets: ₹&quot;, total_assets, &quot;Crore\n&quot;)</code></pre>
+<div class="figure"><span style="display:block;" id="fig:mf-structure-diagram"></span>
+<div class="DiagrammeR html-widget html-fill-item" id="htmlwidget-99b535d33635fe39aca4" style="width:672px;height:480px;"></div>
+<script type="application/json" data-for="htmlwidget-99b535d33635fe39aca4">{"x":{"diagram":"\nflowchart TD\n    A[Investors / Unit Holders] -->|Pool Money| B[Asset Management Company - AMC]\n    B -->|Invests| C[Diversified Portfolio]\n    C --> D[Equity Shares]\n    C --> E[Government Bonds]\n    C --> F[Corporate Debentures]\n    C --> G[Money Market Instruments]\n    C --> H[Gold / REITs]\n    B --> I[Fund Manager]\n    I --> B\n    B -->|Returns| A\n    J[SEBI] -->|Regulates| B\n    K[Trustee] -->|Oversees| B\n    L[Custodian] -->|Holds Assets| B\n    M[Registrar and Transfer Agent] -->|Handles Units| A\n    style A fill:#2980b9,color:#fff\n    style B fill:#2c3e50,color:#fff\n    style J fill:#c0392b,color:#fff\n    style I fill:#27ae60,color:#fff\n"},"evals":[],"jsHooks":[]}</script>
+<p class="caption">
+Figure 2.1: Figure 2.1: Three-tier Structure of Indian Mutual Funds
+</p>
+</div>
+<p><strong>Three-Tier Structure:</strong>
+1. <strong>Sponsors</strong> — the parent company that establishes the mutual fund (e.g., HDFC Ltd. → HDFC AMC)
+2. <strong>Trustees</strong> — independent board overseeing the AMC, protecting investors’ interests
+3. <strong>AMC (Asset Management Company)</strong> — manages investments, employs fund managers</p>
+<p><strong>Key Industry Statistics:</strong></p>
+<div class="figure"><span style="display:block;" id="fig:mf-industry-growth"></span>
+<img src="bookdownproj_files/figure-html/mf-industry-growth-1.png" alt="Figure 2.2: Indian Mutual Fund Industry AUM Growth (2016–2026)" width="672" />
+<p class="caption">
+Figure 2.2: Figure 2.2: Indian Mutual Fund Industry AUM Growth (2016–2026)
+</p>
+</div>
+<p><em>Source: Compiled from RBI, SEBI, NSE, BSE, AMFI and Government Reports (Latest Available Data).</em></p>
+</div>
+<div id="advantages-of-mutual-funds" class="section level3 hasAnchor" number="2.5.2">
+<h3><span class="header-section-number">2.5.2</span> Advantages of Mutual Funds<a href="unit2.html#advantages-of-mutual-funds" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<ol style="list-style-type: decimal">
+<li><strong>Professional Management</strong> — Experienced fund managers conduct research and manage portfolios</li>
+<li><strong>Diversification</strong> — Even ₹500 SIP invests in 50–100 stocks</li>
+<li><strong>Affordability</strong> — Start SIP with as low as ₹100/month</li>
+<li><strong>Liquidity</strong> — Open-end funds redeemable any business day at NAV</li>
+<li><strong>Transparency</strong> — Daily NAV disclosure; monthly portfolio disclosure</li>
+<li><strong>Regulatory Protection</strong> — SEBI regulations protect investors; AMFI code of conduct</li>
+<li><strong>Tax Efficiency</strong> — ELSS funds offer Section 80C benefits; long-term capital gains taxed at 10% (&gt;₹1 lakh)</li>
+<li><strong>Flexibility</strong> — SIP, SWP, STP options; switch between funds</li>
+<li><strong>Economies of Scale</strong> — Lower transaction costs due to bulk purchases</li>
+<li><strong>Variety</strong> — 40+ AMCs, 1,500+ schemes across all risk profiles</li>
+</ol>
+</div>
+<div id="risks-in-mutual-fund-investment" class="section level3 hasAnchor" number="2.5.3">
+<h3><span class="header-section-number">2.5.3</span> Risks in Mutual Fund Investment<a href="unit2.html#risks-in-mutual-fund-investment" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<table>
+<colgroup>
+<col width="27%" />
+<col width="32%" />
+<col width="40%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Risk Type</th>
+<th>Description</th>
+<th>Affected Funds</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Market Risk</td>
+<td>Portfolio value falls with market</td>
+<td>Equity funds</td>
+</tr>
+<tr class="even">
+<td>Credit Risk</td>
+<td>Issuer defaults on bond payment</td>
+<td>Debt funds</td>
+</tr>
+<tr class="odd">
+<td>Interest Rate Risk</td>
+<td>Bond prices fall when rates rise</td>
+<td>Debt funds</td>
+</tr>
+<tr class="even">
+<td>Liquidity Risk</td>
+<td>Fund unable to sell assets</td>
+<td>Close-end funds</td>
+</tr>
+<tr class="odd">
+<td>Concentration Risk</td>
+<td>Overdependence on few stocks/sectors</td>
+<td>Thematic funds</td>
+</tr>
+<tr class="even">
+<td>Currency Risk</td>
+<td>Loss from foreign exchange movement</td>
+<td>International funds</td>
+</tr>
+<tr class="odd">
+<td>Manager Risk</td>
+<td>Fund manager’s incorrect decisions</td>
+<td>All actively managed funds</td>
+</tr>
+<tr class="even">
+<td>Inflation Risk</td>
+<td>Returns don’t beat inflation</td>
+<td>Conservative funds</td>
+</tr>
+</tbody>
+</table>
+<p><em>Source: Compiled from RBI, SEBI, NSE, BSE, AMFI and Government Reports (Latest Available Data).</em></p>
+<hr />
+</div>
+</div>
+<div id="nav" class="section level2 hasAnchor" number="2.6">
+<h2><span class="header-section-number">2.6</span> Net Asset Value (NAV)<a href="unit2.html#nav" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="meaning-of-nav" class="section level3 hasAnchor" number="2.6.1">
+<h3><span class="header-section-number">2.6.1</span> Meaning of NAV<a href="unit2.html#meaning-of-nav" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>The <strong>Net Asset Value (NAV)</strong> is the per-unit market value of a mutual fund scheme. It represents the price at which investors can buy (subscription) or sell (redemption) units of the fund.</p>
+<p><span class="math display">\[\boxed{NAV = \frac{\text{Total Assets} - \text{Total Liabilities}}{\text{Number of Units Outstanding}}}\]</span></p>
+<p><strong>Components:</strong>
+- <strong>Total Assets</strong> = Market value of securities + Cash and equivalents + Receivables + Accrued income
+- <strong>Total Liabilities</strong> = Payables + Accrued expenses + Management fee payable</p>
+</div>
+<div id="nav-calculation-worked-example" class="section level3 hasAnchor" number="2.6.2">
+<h3><span class="header-section-number">2.6.2</span> NAV Calculation — Worked Example<a href="unit2.html#nav-calculation-worked-example" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p><strong>Example 2.1:</strong> Calculate the NAV of “Axis Bluechip Fund” given the following data as on March 31, 2024:</p>
+<table>
+<thead>
+<tr class="header">
+<th>Component</th>
+<th>Amount (₹ Crore)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Equity portfolio market value</td>
+<td>8,450</td>
+</tr>
+<tr class="even">
+<td>Liquid funds / Cash</td>
+<td>320</td>
+</tr>
+<tr class="odd">
+<td>Dividend receivable</td>
+<td>48</td>
+</tr>
+<tr class="even">
+<td>Other receivables</td>
+<td>22</td>
+</tr>
+<tr class="odd">
+<td>Management fee payable</td>
+<td>15</td>
+</tr>
+<tr class="even">
+<td>Other liabilities</td>
+<td>8</td>
+</tr>
+<tr class="odd">
+<td>Number of units</td>
+<td>250 crore</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Solution:</strong>
+<span class="math display">\[\text{Total Assets} = 8,450 + 320 + 48 + 22 = ₹8,840 \text{ Cr}\]</span>
+<span class="math display">\[\text{Total Liabilities} = 15 + 8 = ₹23 \text{ Cr}\]</span>
+<span class="math display">\[\text{Net Assets} = 8,840 - 23 = ₹8,817 \text{ Cr}\]</span>
+<span class="math display">\[NAV = \frac{8,817 \text{ Cr}}{250 \text{ Cr units}} = ₹35.27 \text{ per unit}\]</span></p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="unit2.html#cb1-1" tabindex="-1"></a><span class="co"># NAV Calculation</span></span>
+<span id="cb1-2"><a href="unit2.html#cb1-2" tabindex="-1"></a>total_assets <span class="ot">&lt;-</span> <span class="dv">8450</span> <span class="sc">+</span> <span class="dv">320</span> <span class="sc">+</span> <span class="dv">48</span> <span class="sc">+</span> <span class="dv">22</span>  <span class="co"># in Crore</span></span>
+<span id="cb1-3"><a href="unit2.html#cb1-3" tabindex="-1"></a>total_liabilities <span class="ot">&lt;-</span> <span class="dv">15</span> <span class="sc">+</span> <span class="dv">8</span></span>
+<span id="cb1-4"><a href="unit2.html#cb1-4" tabindex="-1"></a>net_assets <span class="ot">&lt;-</span> total_assets <span class="sc">-</span> total_liabilities</span>
+<span id="cb1-5"><a href="unit2.html#cb1-5" tabindex="-1"></a>units_outstanding <span class="ot">&lt;-</span> <span class="dv">250</span>  <span class="co"># Crore units</span></span>
+<span id="cb1-6"><a href="unit2.html#cb1-6" tabindex="-1"></a></span>
+<span id="cb1-7"><a href="unit2.html#cb1-7" tabindex="-1"></a>NAV <span class="ot">&lt;-</span> net_assets <span class="sc">/</span> units_outstanding</span>
+<span id="cb1-8"><a href="unit2.html#cb1-8" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;Total Assets: ₹&quot;</span>, total_assets, <span class="st">&quot;Crore</span><span class="sc">\n</span><span class="st">&quot;</span>)</span></code></pre></div>
 <pre><code>## Total Assets: ₹ 8840 Crore</code></pre>
 <div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="unit2.html#cb3-1" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;Total Liabilities: ₹&quot;</span>, total_liabilities, <span class="st">&quot;Crore</span><span class="sc">\n</span><span class="st">&quot;</span>)</span></code></pre></div>
 <pre><code>## Total Liabilities: ₹ 23 Crore</code></pre>
@@ -753,8 +1015,9 @@ cat(&quot;Total Assets: ₹&quot;, total_assets, &quot;Crore\n&quot;)</code></pr
 <pre><code>## Net Assets: ₹ 8817 Crore</code></pre>
 <div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="unit2.html#cb7-1" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;NAV per unit: ₹&quot;</span>, <span class="fu">round</span>(NAV, <span class="dv">2</span>), <span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span>)</span></code></pre></div>
 <pre><code>## NAV per unit: ₹ 35.27</code></pre>
-<div id="nav-and-returns" class="section level3 hasAnchor" number="2.5.2">
-<h3><span class="header-section-number">2.5.2</span> NAV and Returns<a href="unit2.html#nav-and-returns" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+</div>
+<div id="nav-and-returns" class="section level3 hasAnchor" number="2.6.3">
+<h3><span class="header-section-number">2.6.3</span> NAV and Returns<a href="unit2.html#nav-and-returns" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p><strong>Absolute Return:</strong>
 <span class="math display">\[\text{Absolute Return (\%)} = \frac{NAV_{current} - NAV_{purchase}}{NAV_{purchase}} \times 100\]</span></p>
 <p><strong>CAGR (for periods &gt; 1 year):</strong>
@@ -773,10 +1036,11 @@ cat(&quot;Total Assets: ₹&quot;, total_assets, &quot;Crore\n&quot;)</code></pr
 <pre><code>## CAGR: 14.01 % per annum</code></pre>
 <hr />
 </div>
-<div id="expense-ratio" class="section level2 hasAnchor" number="2.6">
-<h2><span class="header-section-number">2.6</span> Expense Ratio<a href="unit2.html#expense-ratio" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<div id="meaning-and-importance" class="section level3 hasAnchor" number="2.6.1">
-<h3><span class="header-section-number">2.6.1</span> Meaning and Importance<a href="unit2.html#meaning-and-importance" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+</div>
+<div id="expense-ratio" class="section level2 hasAnchor" number="2.7">
+<h2><span class="header-section-number">2.7</span> Expense Ratio<a href="unit2.html#expense-ratio" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="meaning-and-importance" class="section level3 hasAnchor" number="2.7.1">
+<h3><span class="header-section-number">2.7.1</span> Meaning and Importance<a href="unit2.html#meaning-and-importance" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>The <strong>Expense Ratio (ER)</strong> is the annual cost charged by a mutual fund to manage an investor’s money, expressed as a percentage of the fund’s daily average AUM. It covers:
 - <strong>Fund management fee</strong> (largest component)
 - <strong>Trustee fee</strong>
@@ -908,8 +1172,8 @@ Balance above ₹50,000 Cr
 </table>
 <p><em>Source: Compiled from RBI, SEBI, NSE, BSE, AMFI and Government Reports (Latest Available Data).</em></p>
 </div>
-<div id="expense-ratio-calculation-worked-example" class="section level3 hasAnchor" number="2.6.2">
-<h3><span class="header-section-number">2.6.2</span> Expense Ratio Calculation — Worked Example<a href="unit2.html#expense-ratio-calculation-worked-example" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="expense-ratio-calculation-worked-example" class="section level3 hasAnchor" number="2.7.2">
+<h3><span class="header-section-number">2.7.2</span> Expense Ratio Calculation — Worked Example<a href="unit2.html#expense-ratio-calculation-worked-example" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p><strong>Example 2.3:</strong> A mutual fund has daily average AUM of ₹12,000 Crore. Annual expenses: Management fee ₹108 Cr, Distribution ₹36 Cr, Trustee fee ₹6 Cr, Others ₹10 Cr. Calculate Total Expense Ratio.</p>
 <div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="unit2.html#cb13-1" tabindex="-1"></a>aum <span class="ot">&lt;-</span> <span class="dv">12000</span>  <span class="co"># Crore</span></span>
 <span id="cb13-2"><a href="unit2.html#cb13-2" tabindex="-1"></a>management_fee <span class="ot">&lt;-</span> <span class="dv">108</span></span>
@@ -965,7 +1229,7 @@ SEBI mandated Direct Plans in 2013 — these exclude distributor commissions and
 <span id="cb27-16"><a href="unit2.html#cb27-16" tabindex="-1"></a>)</span>
 <span id="cb27-17"><a href="unit2.html#cb27-17" tabindex="-1"></a></span>
 <span id="cb27-18"><a href="unit2.html#cb27-18" tabindex="-1"></a><span class="fu">ggplot</span>(plot_df, <span class="fu">aes</span>(<span class="at">x =</span> Year, <span class="at">y =</span> Corpus, <span class="at">color =</span> Plan)) <span class="sc">+</span></span>
-<span id="cb27-19"><a href="unit2.html#cb27-19" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="at">size =</span> <span class="fl">1.4</span>) <span class="sc">+</span></span>
+<span id="cb27-19"><a href="unit2.html#cb27-19" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="at">linewidth =</span> <span class="fl">1.4</span>) <span class="sc">+</span></span>
 <span id="cb27-20"><a href="unit2.html#cb27-20" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">size =</span> <span class="dv">2</span>) <span class="sc">+</span></span>
 <span id="cb27-21"><a href="unit2.html#cb27-21" tabindex="-1"></a>  <span class="fu">scale_color_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">&quot;Regular Plan (TER 1.5%)&quot;</span> <span class="ot">=</span> <span class="st">&quot;#c0392b&quot;</span>,</span>
 <span id="cb27-22"><a href="unit2.html#cb27-22" tabindex="-1"></a>                                 <span class="st">&quot;Direct Plan (TER 0.5%)&quot;</span> <span class="ot">=</span> <span class="st">&quot;#27ae60&quot;</span>)) <span class="sc">+</span></span>
@@ -977,192 +1241,216 @@ SEBI mandated Direct Plans in 2013 — these exclude distributor commissions and
 <div class="figure"><span style="display:block;" id="fig:direct-vs-regular"></span>
 <img src="bookdownproj_files/figure-html/direct-vs-regular-1.png" alt="Figure 2.3: Direct Plan vs. Regular Plan Wealth Creation (20-Year SIP ₹10,000/Month)" width="672" />
 <p class="caption">
-Figure 2.1: Figure 2.3: Direct Plan vs. Regular Plan Wealth Creation (20-Year SIP ₹10,000/Month)
+Figure 2.3: Figure 2.3: Direct Plan vs. Regular Plan Wealth Creation (20-Year SIP ₹10,000/Month)
 </p>
 </div>
 <p><em>Source: Compiled from RBI, SEBI, NSE, BSE, AMFI and Government Reports (Latest Available Data).</em></p>
 <hr />
 </div>
 </div>
-<div id="mf-types" class="section level2 hasAnchor" number="2.7">
-<h2><span class="header-section-number">2.7</span> Types of Mutual Funds<a href="unit2.html#mf-types" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<div id="sebi-categorisation-of-mutual-fund-schemes-2017" class="section level3 hasAnchor" number="2.7.1">
-<h3><span class="header-section-number">2.7.1</span> SEBI Categorisation of Mutual Fund Schemes (2017)<a href="unit2.html#sebi-categorisation-of-mutual-fund-schemes-2017" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="mf-types" class="section level2 hasAnchor" number="2.8">
+<h2><span class="header-section-number">2.8</span> Types of Mutual Funds<a href="unit2.html#mf-types" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="sebi-categorisation-of-mutual-fund-schemes-2017" class="section level3 hasAnchor" number="2.8.1">
+<h3><span class="header-section-number">2.8.1</span> SEBI Categorisation of Mutual Fund Schemes (2017)<a href="unit2.html#sebi-categorisation-of-mutual-fund-schemes-2017" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>SEBI issued a landmark <strong>circular on mutual fund categorisation and rationalisation in October 2017</strong> (effective June 2018), mandating that each AMC can offer only <strong>one scheme per category</strong>. This brought standardisation and comparability to India’s mutual fund landscape.</p>
-<div class="mermaid">
-<p>flowchart TD
-A[SEBI Categorisation of Mutual Funds] –&gt; B[Equity Schemes]
-A –&gt; C[Debt Schemes]
-A –&gt; D[Hybrid Schemes]
-A –&gt; E[Solution-Oriented Schemes]
-A –&gt; F[Other Schemes]</p>
-<pre><code>B --&gt; B1[Multi Cap / Flexi Cap]
-B --&gt; B2[Large Cap / Mid Cap / Small Cap]
-B --&gt; B3[ELSS - Tax Saving]
-B --&gt; B4[Sectoral / Thematic]
-B --&gt; B5[Focused Fund]
-
-C --&gt; C1[Overnight / Liquid]
-C --&gt; C2[Short / Medium Duration]
-C --&gt; C3[Credit Risk Fund]
-C --&gt; C4[Gilt Fund]
-C --&gt; C5[Corporate Bond Fund]
-
-D --&gt; D1[Aggressive Hybrid]
-D --&gt; D2[Balanced Advantage / Dynamic]
-D --&gt; D3[Multi-Asset Allocation]
-D --&gt; D4[Arbitrage Fund]
-
-E --&gt; E1[Retirement Fund]
-E --&gt; E2[Children&#39;s Fund]
-
-F --&gt; F1[Index Funds / ETFs]
-F --&gt; F2[FoF - Fund of Funds]
-
-style A fill:#2c3e50,color:#fff
-style B fill:#2980b9,color:#fff
-style C fill:#27ae60,color:#fff
-style D fill:#e67e22,color:#fff
-style E fill:#8e44ad,color:#fff
-style F fill:#c0392b,color:#fff</code></pre>
-<pre><code>
-*Figure 2.4: SEBI Categorisation of Mutual Fund Schemes (2017)*
-
-### Major Categories — Detailed Analysis
-
-**A. Large Cap Funds**
-- Must invest minimum **80% in top 100 companies by market capitalisation** (as defined by AMFI)
+<div class="figure"><span style="display:block;" id="fig:mf-categorisation-diagram"></span>
+<div class="DiagrammeR html-widget html-fill-item" id="htmlwidget-2ace54a19865c08def30" style="width:672px;height:480px;"></div>
+<script type="application/json" data-for="htmlwidget-2ace54a19865c08def30">{"x":{"diagram":"\nflowchart TD\n    A[SEBI Categorisation of Mutual Funds] --> B[Equity Schemes]\n    A --> C[Debt Schemes]\n    A --> D[Hybrid Schemes]\n    A --> E[Solution-Oriented Schemes]\n    A --> F[Other Schemes]\n\n    B --> B1[Multi Cap / Flexi Cap]\n    B --> B2[Large Cap / Mid Cap / Small Cap]\n    B --> B3[ELSS - Tax Saving]\n    B --> B4[Sectoral / Thematic]\n    B --> B5[Focused Fund]\n\n    C --> C1[Overnight / Liquid]\n    C --> C2[Short / Medium Duration]\n    C --> C3[Credit Risk Fund]\n    C --> C4[Gilt Fund]\n    C --> C5[Corporate Bond Fund]\n\n    D --> D1[Aggressive Hybrid]\n    D --> D2[Balanced Advantage / Dynamic]\n    D --> D3[Multi-Asset Allocation]\n    D --> D4[Arbitrage Fund]\n\n    E --> E1[Retirement Fund]\n    E --> E2[Children's Fund]\n\n    F --> F1[Index Funds / ETFs]\n    F --> F2[FoF - Fund of Funds]\n\n    style A fill:#2c3e50,color:#fff\n    style B fill:#2980b9,color:#fff\n    style C fill:#27ae60,color:#fff\n    style D fill:#e67e22,color:#fff\n    style E fill:#8e44ad,color:#fff\n    style F fill:#c0392b,color:#fff\n"},"evals":[],"jsHooks":[]}</script>
+<p class="caption">
+Figure 2.4: Figure 2.4: SEBI Categorisation of Mutual Fund Schemes (2017)
+</p>
+</div>
+</div>
+<div id="major-categories-detailed-analysis" class="section level3 hasAnchor" number="2.8.2">
+<h3><span class="header-section-number">2.8.2</span> Major Categories — Detailed Analysis<a href="unit2.html#major-categories-detailed-analysis" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p><strong>A. Large Cap Funds</strong>
+- Must invest minimum <strong>80% in top 100 companies by market capitalisation</strong> (as defined by AMFI)
 - Lower risk than mid/small cap; benchmark: Nifty 50 / Sensex
 - Suitable for conservative equity investors
-- Examples: Axis Bluechip Fund, Mirae Asset Large Cap Fund, ICICI Prudential Bluechip Fund
-
-**B. Mid Cap Funds**
-- Must invest minimum **65% in 101st–250th companies** by market cap
+- Examples: Axis Bluechip Fund, Mirae Asset Large Cap Fund, ICICI Prudential Bluechip Fund</p>
+<p><strong>B. Mid Cap Funds</strong>
+- Must invest minimum <strong>65% in 101st–250th companies</strong> by market cap
 - Higher growth potential; higher volatility
-- Examples: HDFC Mid-Cap Opportunities Fund, Kotak Emerging Equity Fund
-
-**C. Small Cap Funds**
-- Minimum **65% in 251st company onwards** by market cap
+- Examples: HDFC Mid-Cap Opportunities Fund, Kotak Emerging Equity Fund</p>
+<p><strong>C. Small Cap Funds</strong>
+- Minimum <strong>65% in 251st company onwards</strong> by market cap
 - Highest growth potential and highest risk among equity categories
-- Examples: Nippon India Small Cap Fund, SBI Small Cap Fund
-
-**D. ELSS (Equity Linked Savings Scheme)**
-- Minimum **80% in equity**
-- **3-year lock-in** (shortest among 80C investments)
+- Examples: Nippon India Small Cap Fund, SBI Small Cap Fund</p>
+<p><strong>D. ELSS (Equity Linked Savings Scheme)</strong>
+- Minimum <strong>80% in equity</strong>
+- <strong>3-year lock-in</strong> (shortest among 80C investments)
 - Section 80C benefit up to ₹1.5 lakh
-- Examples: Axis Long Term Equity, Mirae Asset Tax Saver Fund
-
-**E. Liquid Funds**
-- Invest in money market instruments with maturity up to **91 days**
+- Examples: Axis Long Term Equity, Mirae Asset Tax Saver Fund</p>
+<p><strong>E. Liquid Funds</strong>
+- Invest in money market instruments with maturity up to <strong>91 days</strong>
 - Very low risk; returns slightly above savings account (5.5–6.5% p.a.)
-- Suitable for emergency fund management
-
-**F. Gilt Funds**
-- Invest **80% minimum in government securities**
+- Suitable for emergency fund management</p>
+<p><strong>F. Gilt Funds</strong>
+- Invest <strong>80% minimum in government securities</strong>
 - Zero credit risk; high interest rate risk
-- Suitable when interest rates are expected to fall
-
-&lt;div class=&quot;figure&quot;&gt;
-&lt;img src=&quot;bookdownproj_files/figure-html/mf-category-comparison-1.png&quot; alt=&quot;Figure 2.5: Mutual Fund Category Risk-Return Matrix (2016–2026)&quot; width=&quot;672&quot; /&gt;
-&lt;p class=&quot;caption&quot;&gt;(\#fig:mf-category-comparison)Figure 2.5: Mutual Fund Category Risk-Return Matrix (2016–2026)&lt;/p&gt;
-&lt;/div&gt;
-
-*Source: Compiled from RBI, SEBI, NSE, BSE, AMFI and Government Reports (Latest Available Data).*
-
-**SIP Growth in India (2016–2026):**
-
-&lt;div class=&quot;figure&quot;&gt;
-&lt;img src=&quot;bookdownproj_files/figure-html/sip-growth-india-1.png&quot; alt=&quot;Figure 2.6: SIP Monthly Contribution and Folios (2016–2026)&quot; width=&quot;672&quot; /&gt;
-&lt;p class=&quot;caption&quot;&gt;(\#fig:sip-growth-india)Figure 2.6: SIP Monthly Contribution and Folios (2016–2026)&lt;/p&gt;
-&lt;/div&gt;
-
-*Source: Compiled from RBI, SEBI, NSE, BSE, AMFI and Government Reports (Latest Available Data).*
-
----
-
-## Exchange Traded Funds (ETFs) {#etfs}
-
-### Meaning and Structure
-
-An **Exchange Traded Fund (ETF)** is a mutual fund that is **listed and traded on stock exchanges** like shares, while tracking a specific **index, commodity, or basket of assets**. ETFs combine the diversification benefits of mutual funds with the trading flexibility of stocks.
-
-**Key Features of ETFs:**
+- Suitable when interest rates are expected to fall</p>
+<div class="figure"><span style="display:block;" id="fig:mf-category-comparison"></span>
+<img src="bookdownproj_files/figure-html/mf-category-comparison-1.png" alt="Figure 2.5: Mutual Fund Category Risk-Return Matrix (2016–2026)" width="672" />
+<p class="caption">
+Figure 2.5: Figure 2.5: Mutual Fund Category Risk-Return Matrix (2016–2026)
+</p>
+</div>
+<p><em>Source: Compiled from RBI, SEBI, NSE, BSE, AMFI and Government Reports (Latest Available Data).</em></p>
+<p><strong>SIP Growth in India (2016–2026):</strong></p>
+<div class="figure"><span style="display:block;" id="fig:sip-growth-india"></span>
+<img src="bookdownproj_files/figure-html/sip-growth-india-1.png" alt="Figure 2.6: SIP Monthly Contribution and Folios (2016–2026)" width="672" />
+<p class="caption">
+Figure 2.6: Figure 2.6: SIP Monthly Contribution and Folios (2016–2026)
+</p>
+</div>
+<p><em>Source: Compiled from RBI, SEBI, NSE, BSE, AMFI and Government Reports (Latest Available Data).</em></p>
+<hr />
+</div>
+</div>
+<div id="etfs" class="section level2 hasAnchor" number="2.9">
+<h2><span class="header-section-number">2.9</span> Exchange Traded Funds (ETFs)<a href="unit2.html#etfs" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="meaning-and-structure-1" class="section level3 hasAnchor" number="2.9.1">
+<h3><span class="header-section-number">2.9.1</span> Meaning and Structure<a href="unit2.html#meaning-and-structure-1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>An <strong>Exchange Traded Fund (ETF)</strong> is a mutual fund that is <strong>listed and traded on stock exchanges</strong> like shares, while tracking a specific <strong>index, commodity, or basket of assets</strong>. ETFs combine the diversification benefits of mutual funds with the trading flexibility of stocks.</p>
+<p><strong>Key Features of ETFs:</strong>
 - Passively managed (track an index)
 - Lower expense ratio than actively managed funds (0.05%–0.50%)
 - Real-time pricing (unlike NAV-based mutual funds)
 - Can be bought/sold anytime during market hours
 - Minimum investment = 1 unit (at market price)
 - No exit load in most cases
-- Require **demat account** (unlike regular mutual funds)
-
-**ETF vs. Index Fund:**
-
-| Feature | ETF | Index Fund |
-|---------|-----|------------|
-| Trading | Real-time on exchange | End-of-day NAV |
-| Demat | Required | Not required |
-| Minimum Amount | 1 unit | ₹100–₹500 SIP |
-| Expense Ratio | 0.05%–0.25% | 0.15%–0.50% |
-| Tracking Error | Slightly higher | Lower |
-| Liquidity | Higher (intraday) | T+3 redemption |
-
-**ETF Growth in India:**
-
-&lt;div class=&quot;figure&quot;&gt;
-&lt;img src=&quot;bookdownproj_files/figure-html/etf-growth-1.png&quot; alt=&quot;Figure 2.7: ETF AUM Growth in India (2016–2026)&quot; width=&quot;672&quot; /&gt;
-&lt;p class=&quot;caption&quot;&gt;(\#fig:etf-growth)Figure 2.7: ETF AUM Growth in India (2016–2026)&lt;/p&gt;
-&lt;/div&gt;
-
-*Source: Compiled from RBI, SEBI, NSE, BSE, AMFI and Government Reports (Latest Available Data).*
-
-**Popular ETFs in India (2024):**
-
-| ETF Name | Tracks | AUM (₹ Cr) | Expense Ratio |
-|----------|--------|-----------|---------------|
-| Nippon India Nifty 50 BeES | Nifty 50 | ~12,000 | 0.04% |
-| HDFC Nifty 50 ETF | Nifty 50 | ~10,500 | 0.10% |
-| SBI Nifty 50 ETF | Nifty 50 | ~1,10,000+ (EPFO) | 0.07% |
-| Nippon India Junior BeES | Nifty Next 50 | ~3,800 | 0.13% |
-| ICICI Prudential Midcap ETF | Nifty Midcap 150 | ~800 | 0.18% |
-| Nippon India Gold BeES | Gold (MCX) | ~8,500 | 0.82% |
-| Nippon India Silver ETF | Silver (MCX) | ~1,200 | 0.65% |
-| Bharat Bond ETF April 2030 | PSU Bonds Ladder | ~15,000 | 0.0005% |
-
-*Source: Compiled from RBI, SEBI, NSE, BSE, AMFI and Government Reports (Latest Available Data).*
-
-**Special Feature: EPFO and ETFs**
-
-A landmark development in Indian capital markets was the **EPFO&#39;s decision in 2015 to invest 5% (later increased to 15%) of incremental EPF corpus in equity ETFs** tracking Nifty 50 and Sensex. This makes EPFO one of the largest domestic institutional investors through the ETF route, protecting subscribers&#39; retirement savings through passive equity exposure.
-
----
-
-## Real Estate Investment Trusts (REITs) {#reits}
-
-### Meaning and Structure
-
-A **Real Estate Investment Trust (REIT)** is a listed entity that owns, operates, or finances **income-generating real estate** assets. REITs allow retail investors to invest in large commercial properties (office parks, malls, hospitals) with a minimum of ₹10,000–15,000.
-
-SEBI introduced REIT regulations in **2014**, and the **first Indian REIT — Embassy Office Parks REIT — was listed on NSE in April 2019**.
-
-**Structure of a REIT:**
-
-::: {.mermaid}
-flowchart LR
-    A[Retail &amp; Institutional Investors] --&gt;|Units| B[REIT Trust]
-    B --&gt;|Manager| C[Investment Manager]
-    C --&gt;|Acquires / Manages| D[Special Purpose Vehicles - SPVs]
-    D --&gt;|Holds| E[Commercial Properties]
-    E --&gt; E1[Office Parks]
-    E --&gt; E2[Retail Malls]
-    E --&gt; E3[Warehouses]
-    E --&gt; E4[Hospitals]
-    D --&gt;|Income| B
-    B --&gt;|90% Distribution| A
-    F[SEBI] --&gt;|Regulates| B
-    style B fill:#2c3e50,color:#fff
-    style F fill:#c0392b,color:#fff
-    style A fill:#2980b9,color:#fff</code></pre>
-<p><em>Figure 2.8: Structure of Indian REITs</em></p>
+- Require <strong>demat account</strong> (unlike regular mutual funds)</p>
+<p><strong>ETF vs. Index Fund:</strong></p>
+<table>
+<thead>
+<tr class="header">
+<th>Feature</th>
+<th>ETF</th>
+<th>Index Fund</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Trading</td>
+<td>Real-time on exchange</td>
+<td>End-of-day NAV</td>
+</tr>
+<tr class="even">
+<td>Demat</td>
+<td>Required</td>
+<td>Not required</td>
+</tr>
+<tr class="odd">
+<td>Minimum Amount</td>
+<td>1 unit</td>
+<td>₹100–₹500 SIP</td>
+</tr>
+<tr class="even">
+<td>Expense Ratio</td>
+<td>0.05%–0.25%</td>
+<td>0.15%–0.50%</td>
+</tr>
+<tr class="odd">
+<td>Tracking Error</td>
+<td>Slightly higher</td>
+<td>Lower</td>
+</tr>
+<tr class="even">
+<td>Liquidity</td>
+<td>Higher (intraday)</td>
+<td>T+3 redemption</td>
+</tr>
+</tbody>
+</table>
+<p><strong>ETF Growth in India:</strong></p>
+<div class="figure"><span style="display:block;" id="fig:etf-growth"></span>
+<img src="bookdownproj_files/figure-html/etf-growth-1.png" alt="Figure 2.7: ETF AUM Growth in India (2016–2026)" width="672" />
+<p class="caption">
+Figure 2.7: Figure 2.7: ETF AUM Growth in India (2016–2026)
+</p>
+</div>
+<p><em>Source: Compiled from RBI, SEBI, NSE, BSE, AMFI and Government Reports (Latest Available Data).</em></p>
+<p><strong>Popular ETFs in India (2024):</strong></p>
+<table>
+<thead>
+<tr class="header">
+<th>ETF Name</th>
+<th>Tracks</th>
+<th>AUM (₹ Cr)</th>
+<th>Expense Ratio</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Nippon India Nifty 50 BeES</td>
+<td>Nifty 50</td>
+<td>~12,000</td>
+<td>0.04%</td>
+</tr>
+<tr class="even">
+<td>HDFC Nifty 50 ETF</td>
+<td>Nifty 50</td>
+<td>~10,500</td>
+<td>0.10%</td>
+</tr>
+<tr class="odd">
+<td>SBI Nifty 50 ETF</td>
+<td>Nifty 50</td>
+<td>~1,10,000+ (EPFO)</td>
+<td>0.07%</td>
+</tr>
+<tr class="even">
+<td>Nippon India Junior BeES</td>
+<td>Nifty Next 50</td>
+<td>~3,800</td>
+<td>0.13%</td>
+</tr>
+<tr class="odd">
+<td>ICICI Prudential Midcap ETF</td>
+<td>Nifty Midcap 150</td>
+<td>~800</td>
+<td>0.18%</td>
+</tr>
+<tr class="even">
+<td>Nippon India Gold BeES</td>
+<td>Gold (MCX)</td>
+<td>~8,500</td>
+<td>0.82%</td>
+</tr>
+<tr class="odd">
+<td>Nippon India Silver ETF</td>
+<td>Silver (MCX)</td>
+<td>~1,200</td>
+<td>0.65%</td>
+</tr>
+<tr class="even">
+<td>Bharat Bond ETF April 2030</td>
+<td>PSU Bonds Ladder</td>
+<td>~15,000</td>
+<td>0.0005%</td>
+</tr>
+</tbody>
+</table>
+<p><em>Source: Compiled from RBI, SEBI, NSE, BSE, AMFI and Government Reports (Latest Available Data).</em></p>
+<p><strong>Special Feature: EPFO and ETFs</strong></p>
+<p>A landmark development in Indian capital markets was the <strong>EPFO’s decision in 2015 to invest 5% (later increased to 15%) of incremental EPF corpus in equity ETFs</strong> tracking Nifty 50 and Sensex. This makes EPFO one of the largest domestic institutional investors through the ETF route, protecting subscribers’ retirement savings through passive equity exposure.</p>
+<hr />
+</div>
+</div>
+<div id="reits" class="section level2 hasAnchor" number="2.10">
+<h2><span class="header-section-number">2.10</span> Real Estate Investment Trusts (REITs)<a href="unit2.html#reits" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="meaning-and-structure-2" class="section level3 hasAnchor" number="2.10.1">
+<h3><span class="header-section-number">2.10.1</span> Meaning and Structure<a href="unit2.html#meaning-and-structure-2" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>A <strong>Real Estate Investment Trust (REIT)</strong> is a listed entity that owns, operates, or finances <strong>income-generating real estate</strong> assets. REITs allow retail investors to invest in large commercial properties (office parks, malls, hospitals) with a minimum of ₹10,000–15,000.</p>
+<p>SEBI introduced REIT regulations in <strong>2014</strong>, and the <strong>first Indian REIT — Embassy Office Parks REIT — was listed on NSE in April 2019</strong>.</p>
+<p><strong>Structure of a REIT:</strong></p>
+<div class="figure"><span style="display:block;" id="fig:reit-structure-diagram"></span>
+<div class="DiagrammeR html-widget html-fill-item" id="htmlwidget-8a9b1136e1f9a92393ce" style="width:672px;height:480px;"></div>
+<script type="application/json" data-for="htmlwidget-8a9b1136e1f9a92393ce">{"x":{"diagram":"\nflowchart LR\n    A[Retail and Institutional Investors] -->|Units| B[REIT Trust]\n    B -->|Manager| C[Investment Manager]\n    C -->|Acquires / Manages| D[Special Purpose Vehicles - SPVs]\n    D -->|Holds| E[Commercial Properties]\n    E --> E1[Office Parks]\n    E --> E2[Retail Malls]\n    E --> E3[Warehouses]\n    E --> E4[Hospitals]\n    D -->|Income| B\n    B -->|90% Distribution| A\n    F[SEBI] -->|Regulates| B\n    style B fill:#2c3e50,color:#fff\n    style F fill:#c0392b,color:#fff\n    style A fill:#2980b9,color:#fff\n"},"evals":[],"jsHooks":[]}</script>
+<p class="caption">
+Figure 2.8: Figure 2.8: Structure of Indian REITs
+</p>
+</div>
 <p><strong>Mandatory Requirements under SEBI REIT Regulations:</strong>
 - <strong>Minimum 80% assets</strong> in completed, rent-generating properties
 - <strong>Minimum 90% distributable cash</strong> must be distributed to unit holders every 6 months
@@ -1225,10 +1513,12 @@ flowchart LR
 - Portfolio diversification (real estate exposure without physical ownership)
 - <strong>Tax treatment</strong>: REIT distributions partly taxable as business income, partly as dividend</p>
 <hr />
-<div id="invits" class="section level2 hasAnchor" number="2.8">
-<h2><span class="header-section-number">2.8</span> Infrastructure Investment Trusts (InvITs)<a href="unit2.html#invits" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<div id="meaning-and-structure-1" class="section level3 hasAnchor" number="2.8.1">
-<h3><span class="header-section-number">2.8.1</span> Meaning and Structure<a href="unit2.html#meaning-and-structure-1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+</div>
+</div>
+<div id="invits" class="section level2 hasAnchor" number="2.11">
+<h2><span class="header-section-number">2.11</span> Infrastructure Investment Trusts (InvITs)<a href="unit2.html#invits" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="meaning-and-structure-3" class="section level3 hasAnchor" number="2.11.1">
+<h3><span class="header-section-number">2.11.1</span> Meaning and Structure<a href="unit2.html#meaning-and-structure-3" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>An <strong>Infrastructure Investment Trust (InvIT)</strong> is a collective investment vehicle — similar in structure to REITs — that pools investor money to invest in <strong>operational infrastructure projects</strong> such as roads, power transmission lines, gas pipelines, and telecom towers.</p>
 <p>SEBI introduced InvIT regulations in <strong>2014</strong>. India’s first InvIT — <strong>IRB InvIT Fund</strong> — listed in May 2017.</p>
 <p><strong>REIT vs. InvIT:</strong></p>
@@ -1322,7 +1612,7 @@ flowchart LR
 <div class="figure"><span style="display:block;" id="fig:reit-invit-growth"></span>
 <img src="bookdownproj_files/figure-html/reit-invit-growth-1.png" alt="Figure 2.9: REIT and InvIT AUM Growth in India (2017–2026)" width="672" />
 <p class="caption">
-Figure 2.2: Figure 2.9: REIT and InvIT AUM Growth in India (2017–2026)
+Figure 2.9: Figure 2.9: REIT and InvIT AUM Growth in India (2017–2026)
 </p>
 </div>
 <p><em>Source: Compiled from RBI, SEBI, NSE, BSE, AMFI and Government Reports (Latest Available Data).</em></p>
@@ -1340,8 +1630,8 @@ Figure 2.2: Figure 2.9: REIT and InvIT AUM Growth in India (2017–2026)
 <hr />
 </div>
 </div>
-<div id="unit2-summary" class="section level2 hasAnchor" number="2.9">
-<h2><span class="header-section-number">2.9</span> Summary<a href="unit2.html#unit2-summary" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="unit2-summary" class="section level2 hasAnchor" number="2.12">
+<h2><span class="header-section-number">2.12</span> Summary<a href="unit2.html#unit2-summary" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <ol style="list-style-type: decimal">
 <li><p><strong>Shares</strong> are units of company ownership. Equity shareholders are residual claimants with voting rights; preference shareholders have priority in dividend and capital repayment.</p></li>
 <li><p><strong>Debentures</strong> are debt instruments — NCDs, FCDs, and PCDs represent the primary classifications used in Indian markets. CRISIL, ICRA, and CARE ratings guide investor decisions.</p></li>
@@ -1355,8 +1645,8 @@ Figure 2.2: Figure 2.9: REIT and InvIT AUM Growth in India (2017–2026)
 </ol>
 <hr />
 </div>
-<div id="unit2-keyterms" class="section level2 hasAnchor" number="2.10">
-<h2><span class="header-section-number">2.10</span> Key Terms<a href="unit2.html#unit2-keyterms" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="unit2-keyterms" class="section level2 hasAnchor" number="2.13">
+<h2><span class="header-section-number">2.13</span> Key Terms<a href="unit2.html#unit2-keyterms" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <ol style="list-style-type: decimal">
 <li><strong>Share</strong> — Unit of ownership in a company</li>
 <li><strong>Equity Share</strong> — Ordinary share with full ownership rights and residual claims</li>
@@ -1391,10 +1681,10 @@ Figure 2.2: Figure 2.9: REIT and InvIT AUM Growth in India (2017–2026)
 </ol>
 <hr />
 </div>
-<div id="unit2-review" class="section level2 hasAnchor" number="2.11">
-<h2><span class="header-section-number">2.11</span> Review Questions — Unit II<a href="unit2.html#unit2-review" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<div id="very-short-answer-questions" class="section level3 hasAnchor" number="2.11.1">
-<h3><span class="header-section-number">2.11.1</span> Very Short Answer Questions<a href="unit2.html#very-short-answer-questions" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="unit2-review" class="section level2 hasAnchor" number="2.14">
+<h2><span class="header-section-number">2.14</span> Review Questions — Unit II<a href="unit2.html#unit2-review" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="very-short-answer-questions" class="section level3 hasAnchor" number="2.14.1">
+<h3><span class="header-section-number">2.14.1</span> Very Short Answer Questions<a href="unit2.html#very-short-answer-questions" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <ol style="list-style-type: decimal">
 <li>What is the difference between equity share and preference share in one sentence?</li>
 <li>Name four types of preference shares.</li>
@@ -1408,8 +1698,8 @@ Figure 2.2: Figure 2.9: REIT and InvIT AUM Growth in India (2017–2026)
 <li>What is the difference between an NCD and an FCD?</li>
 </ol>
 </div>
-<div id="essay-questions" class="section level3 hasAnchor" number="2.11.2">
-<h3><span class="header-section-number">2.11.2</span> Essay Questions<a href="unit2.html#essay-questions" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="essay-questions" class="section level3 hasAnchor" number="2.14.2">
+<h3><span class="header-section-number">2.14.2</span> Essay Questions<a href="unit2.html#essay-questions" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <ol style="list-style-type: decimal">
 <li>Explain the SEBI categorisation of mutual fund schemes (2017). Why was this circular significant for the Indian mutual fund industry? Discuss with examples.</li>
 <li>“Direct plans in mutual funds are always superior to regular plans for long-term investors.” Do you agree? Justify with numerical illustrations showing the impact of expense ratio over 20 years.</li>
@@ -1420,8 +1710,8 @@ Figure 2.2: Figure 2.9: REIT and InvIT AUM Growth in India (2017–2026)
 <hr />
 </div>
 </div>
-<div id="mcqs-unit-ii-selected" class="section level2 hasAnchor" number="2.12">
-<h2><span class="header-section-number">2.12</span> MCQs — Unit II (Selected)<a href="unit2.html#mcqs-unit-ii-selected" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="mcqs-unit-ii-selected" class="section level2 hasAnchor" number="2.15">
+<h2><span class="header-section-number">2.15</span> MCQs — Unit II (Selected)<a href="unit2.html#mcqs-unit-ii-selected" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p><strong>1.</strong> The SEBI (Mutual Fund) Regulations were first issued in:
 - (A) 1992 (B) 1996 ← <strong>Correct</strong> (C) 2000 (D) 2003</p>
 <p><em>Answer: B. SEBI (Mutual Fund) Regulations were enacted in 1996.</em></p>
@@ -1439,29 +1729,30 @@ Figure 2.2: Figure 2.9: REIT and InvIT AUM Growth in India (2017–2026)
 <p><em>Answer: D. Index funds (and ETFs) are passively managed, tracking a benchmark index.</em></p>
 <hr />
 </div>
-<div id="numerical-problems-unit-ii" class="section level2 hasAnchor" number="2.13">
-<h2><span class="header-section-number">2.13</span> Numerical Problems — Unit II<a href="unit2.html#numerical-problems-unit-ii" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="numerical-problems-unit-ii" class="section level2 hasAnchor" number="2.16">
+<h2><span class="header-section-number">2.16</span> Numerical Problems — Unit II<a href="unit2.html#numerical-problems-unit-ii" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p><strong>Problem 2.1:</strong> A mutual fund has the following: Equity portfolio ₹5,200 Cr, Bonds ₹1,800 Cr, Cash ₹150 Cr, Receivables ₹50 Cr, Total liabilities ₹80 Cr. Number of units: 350 Cr. Calculate NAV.</p>
-<div class="sourceCode" id="cb30"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb30-1"><a href="unit2.html#cb30-1" tabindex="-1"></a>equity <span class="ot">&lt;-</span> <span class="dv">5200</span>; bonds <span class="ot">&lt;-</span> <span class="dv">1800</span>; cash <span class="ot">&lt;-</span> <span class="dv">150</span>; recv <span class="ot">&lt;-</span> <span class="dv">50</span></span>
-<span id="cb30-2"><a href="unit2.html#cb30-2" tabindex="-1"></a>liabilities <span class="ot">&lt;-</span> <span class="dv">80</span>; units <span class="ot">&lt;-</span> <span class="dv">350</span></span>
-<span id="cb30-3"><a href="unit2.html#cb30-3" tabindex="-1"></a></span>
-<span id="cb30-4"><a href="unit2.html#cb30-4" tabindex="-1"></a>total_assets <span class="ot">&lt;-</span> equity <span class="sc">+</span> bonds <span class="sc">+</span> cash <span class="sc">+</span> recv</span>
-<span id="cb30-5"><a href="unit2.html#cb30-5" tabindex="-1"></a>nav <span class="ot">&lt;-</span> (total_assets <span class="sc">-</span> liabilities) <span class="sc">/</span> units</span>
-<span id="cb30-6"><a href="unit2.html#cb30-6" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;NAV =&quot;</span>, <span class="fu">round</span>(nav, <span class="dv">4</span>), <span class="st">&quot;per unit</span><span class="sc">\n</span><span class="st">&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb28"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb28-1"><a href="unit2.html#cb28-1" tabindex="-1"></a>equity <span class="ot">&lt;-</span> <span class="dv">5200</span>; bonds <span class="ot">&lt;-</span> <span class="dv">1800</span>; cash <span class="ot">&lt;-</span> <span class="dv">150</span>; recv <span class="ot">&lt;-</span> <span class="dv">50</span></span>
+<span id="cb28-2"><a href="unit2.html#cb28-2" tabindex="-1"></a>liabilities <span class="ot">&lt;-</span> <span class="dv">80</span>; units <span class="ot">&lt;-</span> <span class="dv">350</span></span>
+<span id="cb28-3"><a href="unit2.html#cb28-3" tabindex="-1"></a></span>
+<span id="cb28-4"><a href="unit2.html#cb28-4" tabindex="-1"></a>total_assets <span class="ot">&lt;-</span> equity <span class="sc">+</span> bonds <span class="sc">+</span> cash <span class="sc">+</span> recv</span>
+<span id="cb28-5"><a href="unit2.html#cb28-5" tabindex="-1"></a>nav <span class="ot">&lt;-</span> (total_assets <span class="sc">-</span> liabilities) <span class="sc">/</span> units</span>
+<span id="cb28-6"><a href="unit2.html#cb28-6" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;NAV =&quot;</span>, <span class="fu">round</span>(nav, <span class="dv">4</span>), <span class="st">&quot;per unit</span><span class="sc">\n</span><span class="st">&quot;</span>)</span></code></pre></div>
 <pre><code>## NAV = 20.3429 per unit</code></pre>
 <p><strong>Problem 2.2:</strong> You invested ₹50,000 in an equity fund at NAV ₹25. After 5 years NAV is ₹56.20. Calculate CAGR.</p>
-<div class="sourceCode" id="cb32"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb32-1"><a href="unit2.html#cb32-1" tabindex="-1"></a>nav_buy <span class="ot">&lt;-</span> <span class="dv">25</span>; nav_sell <span class="ot">&lt;-</span> <span class="fl">56.20</span>; years <span class="ot">&lt;-</span> <span class="dv">5</span></span>
-<span id="cb32-2"><a href="unit2.html#cb32-2" tabindex="-1"></a>cagr <span class="ot">&lt;-</span> (nav_sell<span class="sc">/</span>nav_buy)<span class="sc">^</span>(<span class="dv">1</span><span class="sc">/</span>years) <span class="sc">-</span> <span class="dv">1</span></span>
-<span id="cb32-3"><a href="unit2.html#cb32-3" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;CAGR:&quot;</span>, <span class="fu">round</span>(cagr<span class="sc">*</span><span class="dv">100</span>, <span class="dv">2</span>), <span class="st">&quot;% per annum</span><span class="sc">\n</span><span class="st">&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb30"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb30-1"><a href="unit2.html#cb30-1" tabindex="-1"></a>nav_buy <span class="ot">&lt;-</span> <span class="dv">25</span>; nav_sell <span class="ot">&lt;-</span> <span class="fl">56.20</span>; years <span class="ot">&lt;-</span> <span class="dv">5</span></span>
+<span id="cb30-2"><a href="unit2.html#cb30-2" tabindex="-1"></a>cagr <span class="ot">&lt;-</span> (nav_sell<span class="sc">/</span>nav_buy)<span class="sc">^</span>(<span class="dv">1</span><span class="sc">/</span>years) <span class="sc">-</span> <span class="dv">1</span></span>
+<span id="cb30-3"><a href="unit2.html#cb30-3" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;CAGR:&quot;</span>, <span class="fu">round</span>(cagr<span class="sc">*</span><span class="dv">100</span>, <span class="dv">2</span>), <span class="st">&quot;% per annum</span><span class="sc">\n</span><span class="st">&quot;</span>)</span></code></pre></div>
 <pre><code>## CAGR: 17.59 % per annum</code></pre>
-<div class="sourceCode" id="cb34"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb34-1"><a href="unit2.html#cb34-1" tabindex="-1"></a>units_held <span class="ot">&lt;-</span> <span class="dv">50000</span><span class="sc">/</span>nav_buy</span>
-<span id="cb34-2"><a href="unit2.html#cb34-2" tabindex="-1"></a>gain <span class="ot">&lt;-</span> (nav_sell <span class="sc">-</span> nav_buy) <span class="sc">*</span> units_held</span>
-<span id="cb34-3"><a href="unit2.html#cb34-3" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;Investment value:&quot;</span>, <span class="fu">format</span>(nav_sell <span class="sc">*</span> units_held, <span class="at">big.mark =</span> <span class="st">&quot;,&quot;</span>), <span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb32"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb32-1"><a href="unit2.html#cb32-1" tabindex="-1"></a>units_held <span class="ot">&lt;-</span> <span class="dv">50000</span><span class="sc">/</span>nav_buy</span>
+<span id="cb32-2"><a href="unit2.html#cb32-2" tabindex="-1"></a>gain <span class="ot">&lt;-</span> (nav_sell <span class="sc">-</span> nav_buy) <span class="sc">*</span> units_held</span>
+<span id="cb32-3"><a href="unit2.html#cb32-3" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;Investment value:&quot;</span>, <span class="fu">format</span>(nav_sell <span class="sc">*</span> units_held, <span class="at">big.mark =</span> <span class="st">&quot;,&quot;</span>), <span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span>)</span></code></pre></div>
 <pre><code>## Investment value: 112,400</code></pre>
-<div class="sourceCode" id="cb36"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb36-1"><a href="unit2.html#cb36-1" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;Capital Gain: ₹&quot;</span>, <span class="fu">format</span>(gain, <span class="at">big.mark =</span> <span class="st">&quot;,&quot;</span>), <span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb34"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb34-1"><a href="unit2.html#cb34-1" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;Capital Gain: ₹&quot;</span>, <span class="fu">format</span>(gain, <span class="at">big.mark =</span> <span class="st">&quot;,&quot;</span>), <span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span>)</span></code></pre></div>
 <pre><code>## Capital Gain: ₹ 62,400</code></pre>
 <p><em>End of Unit II</em></p>
 
+</div>
 </div>
             </section>
 

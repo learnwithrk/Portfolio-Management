@@ -1,5 +1,25 @@
 # Technical Analysis {#unit4}
 
+```{r u4-setup, include=FALSE}
+# Loads packages needed by this chapter if it is knit on its own (e.g. by
+# clicking "Knit" on this file directly). When the whole book is built with
+# bookdown::render_book()/"Build Book", index.Rmd's setup chunk already loads
+# these first, and these calls here are harmless no-ops.
+knitr::opts_chunk$set(echo = TRUE, warning = FALSE, message = FALSE)
+
+required_packages <- c("knitr", "kableExtra", "magrittr", "ggplot2", "gridExtra")
+installed <- rownames(installed.packages())
+for (pkg in required_packages) {
+  if (!(pkg %in% installed)) install.packages(pkg, repos = "https://cloud.r-project.org")
+}
+
+library(knitr)
+library(kableExtra)
+library(magrittr)
+library(ggplot2)
+library(gridExtra)
+```
+
 ---
 
 ::: {.learning-objectives}
@@ -266,9 +286,9 @@ trend_df <- data.frame(
 )
 
 ggplot(trend_df, aes(x = Day, y = Price, color = Phase)) +
-  geom_line(size = 1.1, aes(group = 1), color = "#2c3e50") +
+  geom_line(linewidth = 1.1, aes(group = 1), color = "#2c3e50") +
   geom_smooth(aes(group = Phase, color = Phase), method = "lm", se = FALSE,
-              linetype = "dashed", size = 1.2) +
+              linetype = "dashed", linewidth = 1.2) +
   scale_color_manual(values = c("Uptrend" = "#27ae60",
                                  "Downtrend" = "#c0392b",
                                  "Sideways" = "#f39c12")) +
@@ -368,9 +388,9 @@ plot_df <- data.frame(
 )
 
 ggplot(plot_df, aes(x = Day)) +
-  geom_line(aes(y = Price, color = "Price"), alpha = 0.5, size = 0.8) +
-  geom_line(aes(y = SMA_20, color = "20-day SMA"), size = 1.3, na.rm = TRUE) +
-  geom_line(aes(y = EMA_20, color = "20-day EMA"), size = 1.3, na.rm = TRUE) +
+  geom_line(aes(y = Price, color = "Price"), alpha = 0.5, linewidth = 0.8) +
+  geom_line(aes(y = SMA_20, color = "20-day SMA"), linewidth = 1.3, na.rm = TRUE) +
+  geom_line(aes(y = EMA_20, color = "20-day EMA"), linewidth = 1.3, na.rm = TRUE) +
   scale_color_manual(values = c("Price" = "#bdc3c7",
                                  "20-day SMA" = "#2980b9",
                                  "20-day EMA" = "#e74c3c")) +
@@ -496,14 +516,14 @@ macd_df <- data.frame(
 
 # Plot 1: Price
 p1 <- ggplot(macd_df, aes(x = Day, y = Price)) +
-  geom_line(color = "#2c3e50", size = 1) +
+  geom_line(color = "#2c3e50", linewidth = 1) +
   labs(title = "HDFC Bank Price", y = "Price (₹)", x = "") +
   theme_minimal(base_size = 10)
 
 # Plot 2: MACD
 p2 <- ggplot(macd_df, aes(x = Day)) +
-  geom_line(aes(y = MACD, color = "MACD Line"), size = 1, na.rm = TRUE) +
-  geom_line(aes(y = Signal, color = "Signal Line"), size = 1, na.rm = TRUE) +
+  geom_line(aes(y = MACD, color = "MACD Line"), linewidth = 1, na.rm = TRUE) +
+  geom_line(aes(y = Signal, color = "Signal Line"), linewidth = 1, na.rm = TRUE) +
   geom_col(aes(y = Histogram,
                fill = ifelse(Histogram > 0, "Positive", "Negative")),
            alpha = 0.6, na.rm = TRUE) +
@@ -1018,4 +1038,3 @@ cat("PP:", round(PP,0), "\nR1:", round(2*PP-L,0),
 ```
 
 *End of Unit IV*
-

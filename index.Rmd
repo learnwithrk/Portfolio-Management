@@ -13,6 +13,25 @@ knitr::opts_chunk$set(
   message = FALSE
 )
 
+# ---- Ensure required packages are installed, then load them ----
+# NOTE: bookdown knits every chapter Rmd in ONE shared R session, starting
+# from this index.Rmd. Any package loaded here with library() stays loaded
+# for unit2.Rmd, unit3.Rmd, unit4.Rmd, unit5.Rmd, etc. That is why the other
+# chapter files can call ggplot(), kable(), grid.arrange(), mermaid(), etc.
+# without loading these packages again themselves.
+required_packages <- c(
+  "bookdown", "knitr", "kableExtra", "magrittr",
+  "ggplot2", "dplyr", "tidyr", "scales", "ggrepel",
+  "gridExtra", "DiagrammeR"
+)
+
+installed <- rownames(installed.packages())
+for (pkg in required_packages) {
+  if (!(pkg %in% installed)) {
+    install.packages(pkg, repos = "https://cloud.r-project.org")
+  }
+}
+
 library(bookdown)
 library(knitr)
 library(kableExtra)
@@ -22,6 +41,8 @@ library(dplyr)
 library(tidyr)
 library(scales)
 library(ggrepel)
+library(gridExtra)  # Used by unit2.Rmd and unit4.Rmd for grid.arrange()
+library(DiagrammeR) # Used to render Mermaid flowcharts as real diagrams
 ```
 
 # Fundamentals of Investment {#Module1}
@@ -108,7 +129,8 @@ $$\text{Higher Expected Return} \Rightarrow \text{Higher Risk}$$
 
 **6. Marketability:** Whether the investment can be easily bought and sold in secondary markets. NSE and BSE provide marketability to listed securities.
 
-```{mermaid}
+```{r investment-decision-diagram, echo=FALSE, fig.cap="Figure: Six Characteristics of an Investment Decision"}
+DiagrammeR::mermaid(r"(
 flowchart LR
     A[Investment Decision] --> B[Return]
     A --> C[Risk]
@@ -124,8 +146,8 @@ flowchart LR
     style E fill:#8e44ad,color:#fff
     style F fill:#f39c12,color:#fff
     style G fill:#16a085,color:#fff
+)")
 ```
-
 
 ---
 
@@ -242,12 +264,12 @@ sip_df <- data.frame(
 ggplot(sip_df, aes(x = Year)) +
   geom_col(aes(y = Value, fill = "Portfolio Value"), alpha = 0.7) +
   geom_col(aes(y = Invested, fill = "Amount Invested"), alpha = 0.9) +
-  geom_line(aes(y = Value, group = 1), color = "#c0392b", size = 1.2) +
+  geom_line(aes(y = Value, group = 1), color = "#c0392b", linewidth = 1.2) +
   scale_fill_manual(values = c("Portfolio Value" = "#2980b9",
                                 "Amount Invested" = "#27ae60")) +
-  labs(title = "SIP of ₹5,000/Month in Nifty 50 Index Fund",
-       subtitle = "Assumed CAGR: 12% p.a. (2016–2026 Average)",
-       x = "Investment Horizon (Years)", y = "Amount (₹ Lakhs)", fill = "") +
+  labs(title = "SIP of Rs. 5,000/Month in Nifty 50 Index Fund",
+       subtitle = "Assumed CAGR: 12% p.a. (2016-2026 Average)",
+       x = "Investment Horizon (Years)", y = "Amount (Rs. Lakhs)", fill = "") +
   scale_x_continuous(breaks = 1:10) +
   theme_minimal(base_size = 13) +
   theme(legend.position = "bottom")
@@ -255,7 +277,7 @@ ggplot(sip_df, aes(x = Year)) +
 
 ---
 
-*Source: Compiled from AMFI and NSE data. Assumed CAGR of 12% based on Nifty 50 historical average (2016–2026).*
+*Source: Compiled from AMFI and NSE data. Assumed CAGR of 12% based on Nifty 50 historical average (2016-2026).*
 
 At 10 years, a monthly SIP of ₹5,000 would grow the invested corpus of ₹6 lakhs to approximately **₹11.5 lakhs**, representing a wealth gain of **₹5.5 lakhs** — nearly doubling the capital without any active trading.
 
@@ -263,7 +285,7 @@ At 10 years, a monthly SIP of ₹5,000 would grow the invested corpus of ₹6 la
 
 India has historically experienced **inflation between 4–7% annually**. Idle money in a savings account earning 3–4% interest effectively loses purchasing power every year.
 
-```{r inflation-impact, echo=FALSE, fig.cap=": Purchasing Power Erosion Due to Inflation (2016–2026)"}
+```{r inflation-impact, echo=FALSE, fig.cap=": Purchasing Power Erosion Due to Inflation (2016-2026)"}
 years_inf <- 2016:2026
 inflation_rates <- c(4.9, 3.3, 3.9, 4.8, 6.2, 5.1, 6.7, 5.5, 5.4, 4.9, 4.5) # Approximate CPI
 
@@ -273,22 +295,22 @@ equity_growth <- 100000 * cumprod(1 + c(3.0, 28.6, 3.2, 12.0, 15.8, -5.0, 24.1, 
 
 inf_df <- data.frame(
   Year = years_inf,
-  `Purchasing Power (Idle)` = purchasing_power,
-  `Fixed Deposit` = fd_growth,
-  `Equity (Nifty 50)` = equity_growth
+  Purchasing_Power_Idle = purchasing_power,
+  Fixed_Deposit = fd_growth,
+  Equity_Nifty_50 = equity_growth
 )
 
 inf_long <- tidyr::pivot_longer(inf_df, -Year, names_to = "Asset", values_to = "Value")
 
 ggplot(inf_long, aes(x = Year, y = Value/1000, color = Asset)) +
-  geom_line(size = 1.3) +
+  geom_line(linewidth = 1.3) +
   geom_point(size = 2.5) +
-  scale_color_manual(values = c("Purchasing.Power..Idle." = "#c0392b",
-                                 "Fixed.Deposit" = "#f39c12",
-                                 "Equity..Nifty.50." = "#27ae60")) +
-  labs(title = "₹1,00,000 Invested in Different Assets (2016–2026)",
+  scale_color_manual(values = c("Purchasing_Power_Idle" = "#c0392b",
+                                 "Fixed_Deposit" = "#f39c12",
+                                 "Equity_Nifty_50" = "#27ae60")) +
+  labs(title = "Rs. 1,00,000 Invested in Different Assets (2016-2026)",
        subtitle = "Real Purchasing Power vs. FD vs. Equity",
-       x = "Year", y = "Value (₹ Thousands)", color = "Asset Class") +
+       x = "Year", y = "Value (Rs. Thousands)", color = "Asset Class") +
   scale_x_continuous(breaks = 2016:2026) +
   theme_minimal(base_size = 12) +
   theme(axis.text.x = element_text(angle = 45, hjust = 1),
@@ -455,7 +477,7 @@ kable(bank_rates_2024,
   row_spec(0, bold = TRUE, color = "white", background = "#2c3e50")
 ```
 
-**Fixed Deposit Interest Rates (Select Banks, 2024)"**
+**Fixed Deposit Interest Rates (Select Banks, 2024)**
 
 *Source: Compiled from RBI, SEBI, NSE, BSE, AMFI and Government Reports (Latest Available Data).*
 
@@ -474,8 +496,8 @@ kable(bank_rates_2024,
 - Interest rate: 7.1% p.a. (Q1 2024–25, compounded annually)
 - Tax: EEE status — most tax-efficient long-term investment
 
-```{r ppf-growth, echo=FALSE, fig.cap=": PPF Corpus Growth (Annual Investment ₹1.5 Lakh at 7.1%)"}
-# PPF Calculation at ₹1.5 lakh per year for 15 years at 7.1%
+```{r ppf-growth, echo=FALSE, fig.cap=": PPF Corpus Growth (Annual Investment Rs. 1.5 Lakh at 7.1%)"}
+# PPF Calculation at Rs. 1.5 lakh per year for 15 years at 7.1%
 annual_investment <- 150000
 ppf_rate <- 0.071
 years_ppf <- 1:15
@@ -496,11 +518,11 @@ ppf_df <- data.frame(
 ggplot(ppf_df, aes(x = Year)) +
   geom_area(aes(y = Corpus, fill = "PPF Corpus"), alpha = 0.6) +
   geom_area(aes(y = Invested, fill = "Amount Invested"), alpha = 0.8) +
-  geom_line(aes(y = Corpus), color = "#c0392b", size = 1.2) +
+  geom_line(aes(y = Corpus), color = "#c0392b", linewidth = 1.2) +
   scale_fill_manual(values = c("PPF Corpus" = "#2980b9", "Amount Invested" = "#27ae60")) +
-  labs(title = "PPF Growth: ₹1.5 Lakh/Year at 7.1% Interest",
-       subtitle = "15-Year Corpus at Maturity: ₹40.68 Lakhs (Invested: ₹22.5 Lakhs)",
-       x = "Year", y = "Amount (₹ Lakhs)", fill = "") +
+  labs(title = "PPF Growth: Rs. 1.5 Lakh/Year at 7.1% Interest",
+       subtitle = "15-Year Corpus at Maturity: Rs. 40.68 Lakhs (Invested: Rs. 22.5 Lakhs)",
+       x = "Year", y = "Amount (Rs. Lakhs)", fill = "") +
   scale_x_continuous(breaks = seq(1, 15, 2)) +
   theme_minimal(base_size = 13) +
   theme(legend.position = "bottom")
@@ -526,8 +548,8 @@ po_schemes <- data.frame(
              "Sukanya Samriddhi Yojana (SSY)", "Public Provident Fund (PPF)"),
   Rate = c("4.0%", "6.7%", "6.9%", "7.5%", "7.4%", "8.2%",
            "7.7%", "7.5%", "8.2%", "7.1%"),
-  Min_Investment = c("₹500", "₹100/month", "₹1,000", "₹1,000", "₹1,000",
-                     "₹1,000", "₹1,000", "₹1,000", "₹250", "₹500"),
+  Min_Investment = c("Rs. 500", "Rs. 100/month", "Rs. 1,000", "Rs. 1,000", "Rs. 1,000",
+                     "Rs. 1,000", "Rs. 1,000", "Rs. 1,000", "Rs. 250", "Rs. 500"),
   Tenure = c("No fixed tenure", "5 Years", "1 Year", "5 Years", "5 Years",
              "5 Years", "5 Years", "~115 months", "21 years / girl 18", "15 Years"),
   Tax_Benefit = c("80TTA", "No", "No", "80C", "No", "80C", "80C", "No", "80C + EEE", "80C + EEE")
@@ -540,7 +562,7 @@ kable(po_schemes,
   row_spec(0, bold = TRUE, color = "white", background = "#2c3e50")
 ```
 
-**Post Office Investment Schemes (Rates as of Q2 2024–25)**
+**Post Office Investment Schemes (Rates as of Q2 2024-25)**
 
 *Source: Compiled from RBI, SEBI, NSE, BSE, AMFI and Government Reports (Latest Available Data).*
 
@@ -566,13 +588,13 @@ Real estate has been the most preferred physical asset class among Indian househ
 
 *Source: Compiled from RBI, SEBI, NSE, BSE, AMFI and Government Reports (Latest Available Data).*
 
-**Indian Real Estate Market Trends (2016–2026):**
+**Indian Real Estate Market Trends (2016-2026):**
 
-```{r real-estate-trend, echo=FALSE, fig.cap=": Indian Real Estate Price Index and REIT Growth (2016–2026)"}
+```{r real-estate-trend, echo=FALSE, fig.cap=": Indian Real Estate Price Index and REIT Growth (2016-2026)"}
 re_years <- 2016:2026
 # Approximate NHB Residex index growth
 residex_index <- c(100, 108, 115, 118, 122, 126, 131, 145, 158, 167, 178)
-reit_aum <- c(0, 0, 0, 0.1, 0.4, 0.6, 0.8, 1.2, 1.6, 2.1, 2.8) # ₹ Lakh Crore
+reit_aum <- c(0, 0, 0, 0.1, 0.4, 0.6, 0.8, 1.2, 1.6, 2.1, 2.8) # Rs. Lakh Crore
 
 par(mfrow = c(1, 2))
 
@@ -582,7 +604,7 @@ plot(re_years, residex_index, type = "o", col = "#2980b9", lwd = 2,
 grid()
 
 plot(re_years, reit_aum, type = "o", col = "#27ae60", lwd = 2,
-     main = "REIT AUM (₹ Lakh Crore)", xlab = "Year", ylab = "AUM",
+     main = "REIT AUM (Rs. Lakh Crore)", xlab = "Year", ylab = "AUM",
      pch = 16, cex = 1.2)
 grid()
 ```
@@ -606,11 +628,11 @@ Gold occupies a unique position in Indian investment culture — it is simultane
 gold_forms <- data.frame(
   Form = c("Physical Gold (Jewellery)", "Gold Coins/Bars", "Gold ETFs",
            "Sovereign Gold Bonds (SGBs)", "Gold Mutual Funds", "Digital Gold"),
-  Returns = c("Capital appreciation (−making charges)", "Capital appreciation",
+  Returns = c("Capital appreciation (-making charges)", "Capital appreciation",
               "Tracks gold price (MCX/LBMA)", "Gold return + 2.5% p.a. interest",
               "Tracks gold via ETF", "Tracks gold price"),
-  Holding_Cost = c("Making charges 10–20%", "1–3% premium", "0.5–1% expense ratio",
-                   "Nil (government)", "0.2–0.5% extra", "0.5–1%"),
+  Holding_Cost = c("Making charges 10-20%", "1-3% premium", "0.5-1% expense ratio",
+                   "Nil (government)", "0.2-0.5% extra", "0.5-1%"),
   Tax = c("STCG / LTCG 20%+indexation", "Same", "Same", "Tax-free if held to maturity",
           "Same as ETF", "Same"),
   Liquidity = c("Low", "Moderate", "High (exchange)", "Low (lock-in 5 yrs, maturity 8 yrs)",
@@ -635,20 +657,20 @@ kable(gold_forms,
 - Maturity: 8 years (exit possible after 5th year)
 - **Tax advantage**: LTCG on maturity is completely exempt from tax
 
-```{r gold-price-trend, echo=FALSE, fig.cap=": Gold Price Trend in India (2016–2026)"}
+```{r gold-price-trend, echo=FALSE, fig.cap=": Gold Price Trend in India (2016-2026)"}
 gold_data <- data.frame(
   Year = 2016:2026,
   Gold_Price_10g = c(28623, 29667, 31438, 35220, 39494, 48651,
-                      48720, 52670, 56000, 62000, 74000) # Approximate MCX ₹ per 10g
+                      48720, 52670, 56000, 62000, 74000) # Approximate MCX Rs. per 10g
 )
 
 ggplot(gold_data, aes(x = Year, y = Gold_Price_10g / 1000)) +
-  geom_line(color = "#f39c12", size = 1.8) +
+  geom_line(color = "#f39c12", linewidth = 1.8) +
   geom_point(color = "#e67e22", size = 3) +
   geom_area(fill = "#f39c12", alpha = 0.15) +
-  labs(title = "Gold Price in India (MCX, ₹ per 10 grams)",
-       subtitle = "2016–2026 | CAGR ≈ 9.9% p.a.",
-       x = "Year", y = "Price (₹ Thousands per 10g)") +
+  labs(title = "Gold Price in India (MCX, Rs. per 10 grams)",
+       subtitle = "2016-2026 | CAGR ~ 9.9% p.a.",
+       x = "Year", y = "Price (Rs. Thousands per 10g)") +
   scale_x_continuous(breaks = 2016:2026) +
   scale_y_continuous(labels = scales::label_comma()) +
   theme_minimal(base_size = 13) +
@@ -668,7 +690,7 @@ Silver occupies a dual role in India — as a **precious metal** and an **indust
 - Multi-commodity funds
 - MCX silver futures
 
-**Silver vs Gold (2016–2026):**
+**Silver vs Gold (2016-2026):**
 
 ```{r silver-gold-comparison, echo=FALSE}
 metals_data <- data.frame(
