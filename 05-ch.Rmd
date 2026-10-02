@@ -38,9 +38,9 @@ After completing this unit, students will be able to:
 
 ---
 
-## 5.1 Portfolio Analysis — Introduction {#portfolio-analysis}
+## Portfolio Analysis — Introduction {#portfolio-analysis}
 
-### 5.1.1 What is a Portfolio?
+### What is a Portfolio?
 
 A **portfolio** is a collection of financial investments — stocks, bonds, mutual fund units, ETFs, real estate, gold — held by an individual or institutional investor. The fundamental insight of portfolio theory is that:
 
@@ -58,7 +58,7 @@ Combining assets that respond differently to market events can **reduce total ri
 | Suitability | Experts / Speculators | All investors |
 | Monitoring | Single security | Multiple holdings |
 
-### 5.1.2 Portfolio in the Indian Context
+### Portfolio in the Indian Context
 
 Indian investors increasingly hold portfolios through:
 - **Direct equity** (Demat accounts on NSE/BSE — 160 million+ demat accounts in 2024)
@@ -69,9 +69,9 @@ Indian investors increasingly hold portfolios through:
 
 ---
 
-## 5.2 Return and Risk of a Portfolio {#portfolio-risk-return}
+## Return and Risk of a Portfolio {#portfolio-risk-return}
 
-### 5.2.1 Portfolio Return
+### Portfolio Return
 
 The **expected return of a portfolio** is the **weighted average** of the expected returns of its constituent securities:
 
@@ -114,7 +114,7 @@ kable(result_df,
 cat("\nPortfolio Expected Return:", round(port_return * 100, 2), "%\n")
 ```
 
-### 5.2.2 Portfolio Risk (Two-Asset Portfolio)
+### Portfolio Risk (Two-Asset Portfolio)
 
 Portfolio risk is **NOT** simply the weighted average of individual standard deviations — this is the critical insight of portfolio theory. Portfolio risk depends on:
 
@@ -163,7 +163,7 @@ cat("Weighted Avg Std Dev (no diversification):",
 cat("Diversification Benefit:", round((w1*s1 + w2*s2 - sd_p)*100, 2), "percentage points\n")
 ```
 
-### 5.2.3 Three-Asset Portfolio Risk
+### Three-Asset Portfolio Risk
 
 For an **n-asset portfolio**, the variance is:
 
@@ -199,16 +199,16 @@ cat("Portfolio Std Deviation:", round(port_sd_3 * 100, 2), "%\n")
 
 ---
 
-## 5.3 Modern Portfolio Theory — Markowitz Model {#markowitz}
+## Modern Portfolio Theory — Markowitz Model {#markowitz}
 
-### 5.3.1 Background
+### Background
 
 **Harry Markowitz** published his seminal paper *"Portfolio Selection"* in the **Journal of Finance (1952)**, which earned him the **Nobel Prize in Economics in 1990**. The Markowitz model — also called **Mean-Variance Analysis** — provided the first rigorous mathematical framework for portfolio construction.
 
 **Core Proposition:**
 > An investor should choose portfolios that offer the **maximum expected return for a given level of risk**, or equivalently, the **minimum risk for a given expected return**. These optimal portfolios form the **Efficient Frontier**.
 
-### 5.3.2 Assumptions of the Markowitz Model
+### Assumptions of the Markowitz Model
 
 1. Investors are **rational** and **risk-averse**
 2. Decision-making is based on **expected return** (mean) and **risk** (variance/SD)
@@ -218,7 +218,7 @@ cat("Portfolio Std Deviation:", round(port_sd_3 * 100, 2), "%\n")
 6. There are **no taxes or transaction costs** (simplified assumption)
 7. **Single-period** investment horizon
 
-### 5.3.3 The Efficient Frontier
+### The Efficient Frontier
 
 The **Efficient Frontier** is the set of all portfolios that offer:
 - Maximum return for a given level of risk, OR
@@ -293,7 +293,7 @@ ggplot(sim_df, aes(x = Risk, y = Return)) +
 3. **The efficient set** — All portfolios on the upper portion of the frontier from MVP onwards
 4. **Dominated portfolios** — All points below and to the right of the frontier (same risk, lower return)
 
-### 5.3.4 Capital Market Line (CML)
+### Capital Market Line (CML)
 
 When a **risk-free asset** (T-Bills, PPF, G-Secs) is introduced, investors can combine it with the **Market Portfolio** (Nifty 50 index fund) to achieve any desired point on the **Capital Market Line (CML)**:
 
@@ -303,9 +303,9 @@ The slope of CML is the **Sharpe Ratio** of the market portfolio — the maximum
 
 ---
 
-## 5.4 Portfolio Selection {#portfolio-selection}
+## Portfolio Selection {#portfolio-selection}
 
-### 5.4.1 Selection Criteria
+### Selection Criteria
 
 Given the Efficient Frontier, portfolio selection depends on the **investor's risk preference** (indifference curve):
 
@@ -335,7 +335,7 @@ text(5,.65,"Portfolio choice should match risk capacity, risk tolerance and inve
 
 *Figure 5.2: Portfolio Selection Based on Risk Profile*
 
-### 5.4.2 Practical Portfolio Construction — Indian Example
+### Practical Portfolio Construction — Indian Example
 
 **Investor Profile:** 35-year-old IT professional, monthly income ₹1.2 lakh, risk appetite — moderate-aggressive, investment horizon — 15 years, monthly investable surplus — ₹30,000.
 
@@ -369,9 +369,9 @@ kable(portfolio_plan,
 
 ---
 
-## 5.5 Portfolio Revision {#portfolio-revision}
+## Portfolio Revision {#portfolio-revision}
 
-### 5.5.1 Meaning and Need
+### Meaning and Need
 
 **Portfolio revision** is the process of reviewing and modifying the existing portfolio to realign it with the investor's objectives, risk profile, and changed market conditions.
 
@@ -385,7 +385,7 @@ kable(portfolio_plan,
 6. **Underperformance** — Funds consistently underperforming benchmark warrant replacement
 7. **Income Change** — Salary increment allows higher SIP; job loss requires reduction
 
-### 5.5.2 Constraints on Portfolio Revision
+### Constraints on Portfolio Revision
 
 **1. Transaction Costs**
 Every buy/sell transaction involves:
@@ -417,7 +417,7 @@ Every buy/sell transaction involves:
 - **Knowledge gap**: Complex restructuring may require financial advisor
 - **Emotional bias**: Behavioural tendencies (disposition effect, loss aversion)
 
-### 5.5.3 Portfolio Rebalancing Strategies
+### Portfolio Rebalancing Strategies
 
 **A. Calendar Rebalancing** — Review and rebalance at fixed intervals (annual, semi-annual)
 
@@ -453,7 +453,7 @@ for (i in 1:3) {
 
 ---
 
-## 5.6 Portfolio Evaluation {#portfolio-evaluation}
+## Portfolio Evaluation {#portfolio-evaluation}
 
 Portfolio evaluation measures **how well the portfolio manager performed** relative to the risk taken. Three classical measures are used:
 
@@ -483,9 +483,9 @@ text(6,.45,"Use the measure that matches the portfolio's diversification and per
 
 ---
 
-## 5.7 Sharpe Ratio {#sharpe-ratio}
+## Sharpe Ratio {#sharpe-ratio}
 
-### 5.7.1 Formula and Meaning
+### Formula and Meaning
 
 The **Sharpe Ratio**, developed by **William F. Sharpe** (1966), measures the **excess return per unit of total risk** (standard deviation). It answers: "How much return am I earning for every percentage point of risk I'm taking?"
 
@@ -502,7 +502,7 @@ Where:
 - Sharpe > 2: Excellent
 - Sharpe < 0: Portfolio underperformed risk-free asset
 
-### 5.7.2 Sharpe Ratio — Worked Example
+### Sharpe Ratio — Worked Example
 
 **Example 5.3:** Evaluate three mutual funds using Sharpe Ratio. $R_f$ = 6.5%.
 
@@ -552,9 +552,9 @@ ggplot(sharpe_plot_df, aes(x = reorder(Fund, Sharpe), y = Sharpe, fill = Sharpe)
 
 ---
 
-## 5.8 Treynor Ratio {#treynor-ratio}
+## Treynor Ratio {#treynor-ratio}
 
-### 5.8.1 Formula and Meaning
+### Formula and Meaning
 
 The **Treynor Ratio**, developed by **Jack Treynor** (1965), measures **excess return per unit of systematic risk (beta)**. Unlike the Sharpe Ratio, it uses **beta** (not standard deviation) as the risk measure, making it appropriate for **well-diversified portfolios** where unsystematic risk has been eliminated.
 
@@ -570,7 +570,7 @@ $$\boxed{Treynor\ Ratio = \frac{E(R_p) - R_f}{\beta_p}}$$
 | Denominator | Standard deviation | Beta |
 | Developed By | William Sharpe (1966) | Jack Treynor (1965) |
 
-### 5.8.2 Treynor Ratio — Worked Example
+### Treynor Ratio — Worked Example
 
 **Example 5.4:** Calculate Treynor Ratio for three equity mutual funds:
 
@@ -607,9 +607,9 @@ cat("\nBest on Treynor basis:", funds_t[which.max(treynor_ratios)])
 
 ---
 
-## 5.9 Jensen's Alpha {#jensens-alpha}
+## Jensen's Alpha {#jensens-alpha}
 
-### 5.9.1 Formula and Meaning
+### Formula and Meaning
 
 **Jensen's Alpha** (Michael Jensen, 1968) measures the **abnormal return** generated by a portfolio above (or below) what would be expected given its level of systematic risk, as predicted by the **Capital Asset Pricing Model (CAPM)**.
 
@@ -625,7 +625,7 @@ Where:
 - **α = 0**: Portfolio performed exactly as expected for its risk level
 - **α < 0**: Portfolio **underperformed** CAPM — manager destroyed value
 
-### 5.9.2 Jensen's Alpha — Worked Example
+### Jensen's Alpha — Worked Example
 
 **Example 5.5:** Evaluate Indian mutual fund managers using Jensen's Alpha.
 
@@ -685,7 +685,7 @@ ggplot(alpha_plot, aes(x = reorder(Fund, Alpha), y = Alpha,
 
 *Source: Compiled from AMFI fund performance data (illustrative, for pedagogical purposes).*
 
-### 5.9.3 Comprehensive Performance Comparison
+### Comprehensive Performance Comparison
 
 **Example 5.6:** Rank four portfolios using all three measures:
 
@@ -767,7 +767,7 @@ Beyond the classical Markowitz framework, academic research has identified **spe
 
 ---
 
-## 5.10 Summary {#unit5-summary}
+## Summary {#unit5-summary}
 
 1. A **portfolio** is a collection of assets. Portfolio return = weighted average of individual returns. Portfolio risk ≠ weighted average risk — correlation between assets determines diversification benefit.
 
